@@ -11,8 +11,8 @@ export default function AdminPage() {
   const [tab, setTab] = useState<Tab>("products");
 
   useEffect(() => {
-    // Check if already authenticated via cookie
-    fetch("/api/ingredients").then((r) => {
+    // Check if already authenticated via admin auth endpoint
+    fetch("/api/admin/auth").then((r) => {
       if (r.ok) setAuthenticated(true);
     });
   }, []);

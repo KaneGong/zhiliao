@@ -2,6 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 
 const ADMIN_PASSWORD = "zhiliao2026";
 
+export async function GET(request: NextRequest) {
+  const cookie = request.cookies.get("zhiliao_admin");
+  if (cookie?.value === "authenticated") {
+    return NextResponse.json({ authenticated: true });
+  }
+  return NextResponse.json({ authenticated: false }, { status: 401 });
+}
+
 export async function POST(request: NextRequest) {
   try {
     const { password } = await request.json();
