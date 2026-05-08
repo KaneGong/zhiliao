@@ -14,7 +14,7 @@
    - RecommendRequest/Response, SearchFilters/SearchResult
 
 3. **数据层** (`src/lib/data.ts`)
-   - 从共享 JSON 文件加载产品和价格数据
+   - ~~从共享 JSON 文件加载产品和价格数据~~ → 已改为 import JSON（2026-05-08 修复 Vercel 构建）
    - 支持关键词搜索、品类/功能/供应商筛选
    - 价格自动匹配（基于产品名/代码模糊匹配）
 
@@ -144,8 +144,26 @@
 - [ ] 配置 XIAOMI_API_KEY 以启用 AI 推荐
 - [ ] 导入更多法规数据（目前为简单规则引擎）
 - [ ] 产品图片/包装图
-- [ ] 部署到 Vercel
+- [x] 部署到 Vercel（构建问题已修复）
 
 ---
 
-*最后更新：2026-05-08 15:45*
+## 2026-05-08：修复 Vercel 部署构建失败
+
+### 问题
+Vercel 构建报错：`ENOENT: no such file or directory, open '/Volumes/Mac DiskA/Work/ANG/AI-Consultant/shared/products.json'`
+
+原因：`src/lib/data.ts` 使用 `fs.readFileSync` + `path.join` 读取本地文件系统路径，但 Vercel 服务器上不存在该路径。
+
+### 修复
+1. 复制 `shared/products.json` 和 `shared/pricing.json` 到 `src/data/` 目录
+2. 重写 `src/lib/data.ts`：用 `import` 替代 `fs.readFileSync`，数据在构建时嵌入
+3. 清理 `.env.local` 中的 `PROJECT_ROOT` 环境变量
+4. `tsconfig.json` 已有 `resolveJsonModule: true`，无需额外配置
+
+### 验证
+- `npm run build` ✅ 编译成功，12 个页面全部生成
+
+---
+
+*最后更新：2026-05-08 16:44*
