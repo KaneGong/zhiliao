@@ -1,5 +1,3 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import type {
   Product,
   ProductWithPrice,
@@ -7,39 +5,22 @@ import type {
   PricingData,
 } from "@/types";
 
-const DATA_DIR = join(
-  process.env.PROJECT_ROOT || "/Volumes/Mac DiskA/Work/ANG/AI-Consultant",
-  "shared"
-);
+import productsJson from "@/data/products.json";
+import pricingJson from "@/data/pricing.json";
 
-let _productsCache: Product[] | null = null;
-let _pricingCache: PricingData | null = null;
-
-function loadProducts(): Product[] {
-  if (_productsCache) return _productsCache;
-
-  const raw = readFileSync(join(DATA_DIR, "products.json"), "utf-8");
-  const data = JSON.parse(raw);
-
+const _productsCache: Product[] = (() => {
   const products: Product[] = [];
+  const data = productsJson as any;
   for (const lineKey of Object.keys(data.product_lines)) {
     const line = data.product_lines[lineKey];
     if (line.products) {
       products.push(...line.products);
     }
   }
-
-  _productsCache = products;
   return products;
-}
+})();
 
-function loadPricing(): PricingData {
-  if (_pricingCache) return _pricingCache;
-
-  const raw = readFileSync(join(DATA_DIR, "pricing.json"), "utf-8");
-  _pricingCache = JSON.parse(raw);
-  return _pricingCache!;
-}
+const _pricingCache = pricingJson as PricingData;
 
 function matchPricing(
   productName: string,
@@ -63,11 +44,8 @@ function matchPricing(
 }
 
 export function getAllProducts(): ProductWithPrice[] {
-  const products = loadProducts();
-  const pricing = loadPricing();
-
-  return products.map((p) => {
-    const priceData = matchPricing(p.product_name, p.product_code, pricing);
+  return _productsCache.map((p) => {
+    const priceData = matchPricing(p.product_name, p.product_code, _pricingCache);
     return {
       ...p,
       price: priceData.price ?? null,
@@ -79,8 +57,7 @@ export function getAllProducts(): ProductWithPrice[] {
 }
 
 export function getProductById(id: string): ProductWithPrice | undefined {
-  const products = getAllProducts();
-  return products.find((p) => p.id === id);
+  return getAllProducts().find((p) => p.id === id);
 }
 
 export function searchProducts(filters: {
@@ -129,16 +106,13 @@ export function searchProducts(filters: {
 }
 
 export function getCategories(): string[] {
-  const products = loadProducts();
-  const cats = new Set(products.map((p) => p.category));
+  const cats = new Set(_productsCache.map((p) => p.category));
   return Array.from(cats).sort();
 }
 
 export function getFunctions(): string[] {
-  const products = loadProducts();
   const fns = new Set<string>();
-  for (const p of products) {
-    // Extract main function keywords
+  for (const p of _productsCache) {
     const parts = p.function.split(/[：:]/);
     if (parts.length > 1) {
       fns.add(parts[0].trim());
@@ -148,7 +122,6 @@ export function getFunctions(): string[] {
 }
 
 export function getSuppliers(): string[] {
-  const products = loadProducts();
-  const sups = new Set(products.map((p) => p.supplier));
+  const sups = new Set(_productsCache.map((p) => p.supplier));
   return Array.from(sups).sort();
 }
