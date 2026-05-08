@@ -24,7 +24,7 @@ const navLinks = [
   { href: "/search", label: "原料搜索" },
   { href: "/recommend", label: "AI 推荐" },
   { href: "/regulations", label: "法规速查" },
-  { href: "/supplier/ang", label: "供应商" },
+  { href: "/supplier/register", label: "供应商入驻" },
 ];
 
 export default function RootLayout({

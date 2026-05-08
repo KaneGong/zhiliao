@@ -111,6 +111,16 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
+              <span className="text-white/20">|</span>
+              <Link
+                href="/supplier/register"
+                className="text-blue-300 hover:text-white transition-colors flex items-center gap-1"
+              >
+                供应商入驻
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
@@ -245,6 +255,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Footer with Master Link */}
+      <footer className="text-center py-8 text-xs text-gray-400">
+        <Link href="/admin" className="hover:text-gray-600 transition-colors">
+          管理入口
+        </Link>
+      </footer>
     </div>
   );
 }

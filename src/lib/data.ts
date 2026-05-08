@@ -3,10 +3,19 @@ import type {
   ProductWithPrice,
   PricingEntry,
   PricingData,
+  Ingredient,
+  Supplier,
+  TagSystem,
+  SearchFilters,
 } from "@/types";
 
 import productsJson from "@/data/products.json";
 import pricingJson from "@/data/pricing.json";
+import ingredientsJson from "@/data/ingredients.json";
+import suppliersJson from "@/data/suppliers.json";
+import tagsJson from "@/data/tags.json";
+
+// ── Legacy Product Cache ──
 
 const _productsCache: Product[] = (() => {
   const products: Product[] = [];
@@ -21,6 +30,12 @@ const _productsCache: Product[] = (() => {
 })();
 
 const _pricingCache = pricingJson as PricingData;
+
+// ── New Ingredient Cache ──
+
+const _ingredientsCache = ingredientsJson as Ingredient[];
+const _suppliersCache = suppliersJson as Supplier[];
+const _tagsCache = tagsJson as TagSystem;
 
 function matchPricing(
   productName: string,
@@ -42,6 +57,8 @@ function matchPricing(
   }
   return {};
 }
+
+// ── Legacy Product Functions ──
 
 export function getAllProducts(): ProductWithPrice[] {
   return _productsCache.map((p) => {
@@ -124,4 +141,114 @@ export function getFunctions(): string[] {
 export function getSuppliers(): string[] {
   const sups = new Set(_productsCache.map((p) => p.supplier));
   return Array.from(sups).sort();
+}
+
+// ── New Ingredient Functions ──
+
+export function getAllIngredients(): Ingredient[] {
+  return _ingredientsCache;
+}
+
+export function getIngredientById(id: string): Ingredient | undefined {
+  return _ingredientsCache.find((i) => i.id === id);
+}
+
+export function searchIngredients(filters: SearchFilters): {
+  ingredients: Ingredient[];
+  total: number;
+} {
+  let results = [..._ingredientsCache];
+
+  if (filters.query) {
+    const q = filters.query.toLowerCase();
+    results = results.filter(
+      (i) =>
+        i.generic_name.toLowerCase().includes(q) ||
+        i.generic_name_en.toLowerCase().includes(q) ||
+        i.product_name.toLowerCase().includes(q) ||
+        i.function.toLowerCase().includes(q) ||
+        i.supplier_name.toLowerCase().includes(q)
+    );
+  }
+
+  if (filters.category) {
+    results = results.filter((i) => i.category === filters.category);
+  }
+
+  if (filters.source) {
+    results = results.filter((i) => i.source === filters.source);
+  }
+
+  if (filters.process) {
+    results = results.filter((i) => i.process === filters.process);
+  }
+
+  if (filters.functional_tag) {
+    results = results.filter((i) =>
+      i.functional_tags.includes(filters.functional_tag!)
+    );
+  }
+
+  if (filters.application) {
+    results = results.filter((i) =>
+      i.applications.includes(filters.application!)
+    );
+  }
+
+  if (filters.supplier) {
+    results = results.filter(
+      (i) =>
+        i.supplier_id === filters.supplier ||
+        i.supplier_name.toLowerCase().includes(filters.supplier!.toLowerCase())
+    );
+  }
+
+  return { ingredients: results, total: results.length };
+}
+
+export function getIngredientGroups(): {
+  generic_name: string;
+  generic_name_en: string;
+  count: number;
+  category: string;
+}[] {
+  const groups = new Map<
+    string,
+    { generic_name: string; generic_name_en: string; count: number; category: string }
+  >();
+  for (const i of _ingredientsCache) {
+    const key = i.generic_name;
+    if (groups.has(key)) {
+      groups.get(key)!.count++;
+    } else {
+      groups.set(key, {
+        generic_name: i.generic_name,
+        generic_name_en: i.generic_name_en,
+        count: 1,
+        category: i.category,
+      });
+    }
+  }
+  return Array.from(groups.values()).sort((a, b) => b.count - a.count);
+}
+
+// ── Supplier Functions ──
+
+export function getAllSuppliers(): Supplier[] {
+  return _suppliersCache;
+}
+
+export function getSupplierById(id: string): Supplier | undefined {
+  return _suppliersCache.find((s) => s.id === id);
+}
+
+// ── Tag Functions ──
+
+export function getTagSystem(): TagSystem {
+  return _tagsCache;
+}
+
+export function getTagValues(dimension: string): string[] {
+  const dim = _tagsCache.dimensions[dimension as keyof typeof _tagsCache.dimensions];
+  return dim ? dim.values : [];
 }

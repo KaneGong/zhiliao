@@ -1,0 +1,2352 @@
+[
+  {
+    "id": "GLA-PRO-001",
+    "product_name": "Prolibra 浓缩乳清蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "generic_name": "浓缩乳清蛋白",
+    "generic_name_en": "Whey Protein Concentrate",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPI",
+    "functional_tags": [
+      "体重管理",
+      "运动营养"
+    ],
+    "applications": [
+      "体重管理",
+      "蛋白棒",
+      "功能性饮料",
+      "运动营养"
+    ],
+    "key_specs": {
+      "composition": "部分水解乳清分离蛋白、乳清矿物复合物",
+      "form": "粉末"
+    },
+    "function": "体重管理：减脂并保持精瘦组织。专利配方含乳清蛋白、肽类和乳矿物盐",
+    "mechanism": "保持精瘦组织、分解脂肪、抑制脂肪沉积",
+    "dosage_range": "每日24.4克",
+    "clinical_evidence": "12周RCT研究（n=154，BMI 30-42）：体脂减少增加42%，精瘦组织保留翻倍，脂肪/精瘦组织比例改善74%",
+    "regulatory_status": {
+      "china": "普通食品级",
+      "us": "GRAS",
+      "certifications": [
+        "Kosher",
+        "Halal"
+      ],
+      "patent": "专利申请中"
+    },
+    "price_range": null,
+    "origin": "爱尔兰/美国",
+    "data_source": "Glanbia Prolibra中文介绍PDF",
+    "confidence": "high"
+  },
+  {
+    "id": "GLA-BF-002",
+    "product_name": "Bioferrin 乳铁蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "generic_name": "乳铁蛋白",
+    "generic_name_en": "Lactoferrin",
+    "category": "功能性成分",
+    "source": "乳铁蛋白",
+    "process": "喷雾干燥",
+    "functional_tags": [
+      "含乳铁蛋白",
+      "免疫支持",
+      "铁吸收"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "免疫支持",
+      "保健食品"
+    ],
+    "key_specs": {
+      "source": "牛乳来源（含100-300ppm乳铁蛋白）",
+      "molecular_weight": "~80K Daltons",
+      "homology": "与人乳铁蛋白序列同源性~70%"
+    },
+    "function": "铁结合糖蛋白，天然免疫成分。参与先天免疫系统第一道防线，抗病毒抗菌",
+    "mechanism": "铁螯合（阻止铁依赖性细菌生长）、干扰病毒粘附、结合内毒素/LPS",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "允许用于婴幼儿配方和普通食品",
+      "us": "GRAS",
+      "eu": "允许用于婴幼儿配方和普通食品"
+    },
+    "price_range": null,
+    "origin": "爱尔兰/美国",
+    "data_source": "Glanbia Bioferrin英文介绍PDF",
+    "confidence": "high"
+  },
+  {
+    "id": "GLA-TC-003",
+    "product_name": "Trucal 乳矿物盐",
+    "supplier_id": "ang",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "generic_name": "乳矿物盐",
+    "generic_name_en": "Milk Minerals",
+    "category": "维生素矿物质",
+    "source": "乳矿物盐",
+    "process": "粉末",
+    "functional_tags": [
+      "高钙",
+      "骨骼健康"
+    ],
+    "applications": [
+      "骨骼健康",
+      "功能性饮料",
+      "乳制品",
+      "中老年营养"
+    ],
+    "key_specs": {
+      "minerals": "钙、磷、镁、钾、锌、铜（7种矿物质）",
+      "form": "乳矿物盐复合物"
+    },
+    "function": "复合乳矿物盐，含7种重要矿物质，促进骨骼健康",
+    "mechanism": "含钙、磷、镁、钾、锌、铜等，更有效地将钙运至骨骼",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "待确认",
+      "us": "GRAS"
+    },
+    "price_range": {
+      "min": 67,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "爱尔兰/美国",
+    "data_source": "Glanbia Trucal中文介绍PDF",
+    "confidence": "high"
+  },
+  {
+    "id": "GLA-PV-004",
+    "product_name": "Provon 分离乳清蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "generic_name": "分离乳清蛋白",
+    "generic_name_en": "Whey Protein Isolate",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPI",
+    "functional_tags": [
+      "速溶",
+      "高蛋白(>80%)",
+      "低乳糖"
+    ],
+    "applications": [
+      "运动营养",
+      "功能性饮料",
+      "蛋白棒"
+    ],
+    "key_specs": {
+      "protein_content": "≥90%",
+      "fat": "≤1%",
+      "lactose": "≤1%"
+    },
+    "function": "高纯度分离乳清蛋白，低脂低乳糖",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许（乳清蛋白）",
+      "health_food_dir": "在列（2023年10月起）"
+    },
+    "price_range": null,
+    "origin": "爱尔兰/美国",
+    "data_source": "Glanbia Provon产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "GLA-SH-005",
+    "product_name": "Protherma 水解乳清蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "generic_name": "水解乳清蛋白",
+    "generic_name_en": "Hydrolyzed Whey Protein",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPH",
+    "functional_tags": [
+      "速溶",
+      "高蛋白(>80%)"
+    ],
+    "applications": [
+      "运动营养",
+      "功能性饮料"
+    ],
+    "key_specs": {},
+    "function": "热稳定水解乳清蛋白，适用于热处理工艺",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {},
+    "price_range": null,
+    "origin": "爱尔兰/美国",
+    "data_source": "Glanbia Protherma产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "GLA-NS-006",
+    "product_name": "Neoshield 浓缩乳清蛋白粉（含乳脂球膜）",
+    "supplier_id": "ang",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "generic_name": "浓缩乳清蛋白（含MFGM）",
+    "generic_name_en": "WPC with Milk Fat Globule Membrane",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80",
+    "functional_tags": [
+      "含磷脂",
+      "免疫支持",
+      "脑健康"
+    ],
+    "applications": [
+      "运动营养",
+      "中老年营养",
+      "婴幼儿配方"
+    ],
+    "key_specs": {},
+    "function": "含乳脂球膜(MFGM)的浓缩乳清蛋白",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {},
+    "price_range": null,
+    "origin": "爱尔兰/美国",
+    "data_source": "Glanbia产品目录",
+    "confidence": "medium"
+  },
+  {
+    "id": "ING-LA-007",
+    "product_name": "Lactium 酪蛋白水解肽",
+    "supplier_id": "ang",
+    "supplier_name": "Ingredia 安迪亚",
+    "generic_name": "酪蛋白水解肽",
+    "generic_name_en": "Casein Hydrolysate",
+    "category": "功能性成分",
+    "source": "酪蛋白",
+    "process": "水解",
+    "functional_tags": [
+      "睡眠管理",
+      "压力管理"
+    ],
+    "applications": [
+      "保健食品",
+      "功能性饮料"
+    ],
+    "key_specs": {},
+    "function": "缓解压力及睡眠问题的生物活性肽。灵感源于婴儿睡眠秘密，100%原生乳来源",
+    "mechanism": "模拟婴儿体内胰蛋白酶消化场景，得到具有生物活性的十缩氨酸（Alpha-Casozepine）",
+    "dosage_range": "每日150mg以上（可授权Lactium Logo）",
+    "clinical_evidence": "9项人体临床试验，500+志愿者，随机双盲安慰剂对照。2021年消费者调研（300+志愿者，中法美多中心）显示30天后压力和睡眠障碍显著降低",
+    "regulatory_status": {
+      "china": "普通食品级管理（无人群剂型用量限制）",
+      "us": "GRAS认证",
+      "australia": "TGA认证",
+      "korea": "KFDA认证（压力及睡眠功效）",
+      "certifications": [
+        "Kosher",
+        "Halal",
+        "FSSC22000",
+        "ISO9001"
+      ]
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "法国",
+    "data_source": "Ingredia Lactium关键点_ANG.pdf + FBIF2024演示文稿",
+    "confidence": "high"
+  },
+  {
+    "id": "ING-LF-008",
+    "product_name": "Lactoferrin 乳铁蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Ingredia 安迪亚",
+    "generic_name": "乳铁蛋白",
+    "generic_name_en": "Lactoferrin",
+    "category": "功能性成分",
+    "source": "乳铁蛋白",
+    "process": "喷雾干燥",
+    "functional_tags": [
+      "含乳铁蛋白",
+      "免疫支持",
+      "铁吸收"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "免疫支持",
+      "保健食品"
+    ],
+    "key_specs": {},
+    "function": "铁结合蛋白，免疫调节",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "量大可议价"
+    },
+    "origin": "法国",
+    "data_source": "Ingredia产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "ING-CPP-009",
+    "product_name": "OSTEUM CPP 酪蛋白磷酸肽",
+    "supplier_id": "ang",
+    "supplier_name": "Ingredia 安迪亚",
+    "generic_name": "酪蛋白磷酸肽",
+    "generic_name_en": "Casein Phosphopeptide",
+    "category": "功能性成分",
+    "source": "酪蛋白",
+    "process": "水解",
+    "functional_tags": [
+      "含CPP",
+      "骨骼健康",
+      "铁吸收"
+    ],
+    "applications": [
+      "骨骼健康",
+      "保健食品",
+      "婴幼儿配方"
+    ],
+    "key_specs": {},
+    "function": "促进钙、铁、锌等矿物质吸收",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许（酪蛋白磷酸肽）"
+    },
+    "price_range": {
+      "min": 400,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "法国",
+    "data_source": "Ingredia产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "ING-PM-010",
+    "product_name": "Promilk 85B 膜分离酪蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Ingredia 安迪亚",
+    "generic_name": "酪蛋白",
+    "generic_name_en": "Casein",
+    "category": "乳制品原料",
+    "source": "酪蛋白",
+    "process": "膜分离",
+    "functional_tags": [
+      "高蛋白(>80%)"
+    ],
+    "applications": [
+      "乳制品",
+      "烘焙/零食",
+      "运动营养"
+    ],
+    "key_specs": {},
+    "function": "高纯度膜分离酪蛋白",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Ingredia产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "ING-PD-011",
+    "product_name": "Pep2Dia 水解牛奶蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Ingredia 安迪亚",
+    "generic_name": "水解牛奶蛋白",
+    "generic_name_en": "Hydrolyzed Milk Protein",
+    "category": "功能性成分",
+    "source": "酪蛋白",
+    "process": "水解",
+    "functional_tags": [
+      "血糖管理"
+    ],
+    "applications": [
+      "保健食品",
+      "功能性饮料"
+    ],
+    "key_specs": {},
+    "function": "DPPIV抑制肽，有助于血糖管理",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {},
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Ingredia产品目录",
+    "confidence": "medium"
+  },
+  {
+    "id": "ING-PC-012",
+    "product_name": "Prodiet F520 C20 牛初乳粉",
+    "supplier_id": "ang",
+    "supplier_name": "Ingredia 安迪亚",
+    "generic_name": "牛初乳",
+    "generic_name_en": "Bovine Colostrum",
+    "category": "功能性成分",
+    "source": "牛初乳",
+    "process": "喷雾干燥",
+    "functional_tags": [
+      "含IgG",
+      "含乳铁蛋白",
+      "免疫支持"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "免疫支持",
+      "保健食品"
+    ],
+    "key_specs": {
+      "igg_content": "≥35%"
+    },
+    "function": "IgG≥35%牛初乳粉，免疫球蛋白来源",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {},
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "法国",
+    "data_source": "Ingredia产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "KER-BG-013",
+    "product_name": "酵母β-葡聚糖",
+    "supplier_id": "ang",
+    "supplier_name": "Kerry 凯爱瑞",
+    "generic_name": "酵母β-葡聚糖",
+    "generic_name_en": "Yeast Beta-Glucan",
+    "category": "功能性成分",
+    "source": "酵母提取物",
+    "process": "粉末",
+    "functional_tags": [
+      "免疫支持"
+    ],
+    "applications": [
+      "免疫支持",
+      "保健食品",
+      "功能性饮料"
+    ],
+    "key_specs": {},
+    "function": "免疫调节，增强抵抗力",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许（酵母β-葡聚糖，2025年新增）",
+      "china_history": "2010年卫生部公告批准为新资源食品"
+    },
+    "price_range": null,
+    "origin": "爱尔兰",
+    "data_source": "Kerry产品目录 + 卫生部公告",
+    "confidence": "high"
+  },
+  {
+    "id": "CJ-EP-014",
+    "product_name": "EpiCor 发酵提取物",
+    "supplier_id": "ang",
+    "supplier_name": "EpiCor 嘉吉",
+    "generic_name": "后生元",
+    "generic_name_en": "Postbiotic",
+    "category": "功能性成分",
+    "source": "后生元",
+    "process": "粉末",
+    "functional_tags": [
+      "含后生元",
+      "免疫支持",
+      "肠道健康"
+    ],
+    "applications": [
+      "免疫支持",
+      "肠道健康",
+      "保健食品"
+    ],
+    "key_specs": {},
+    "function": "后生元，免疫调节，肠道健康",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {},
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "美国",
+    "data_source": "EpiCor介绍PDF",
+    "confidence": "medium"
+  },
+  {
+    "id": "TAT-LF-015",
+    "product_name": "乳铁蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Tatua 大拓",
+    "generic_name": "乳铁蛋白",
+    "generic_name_en": "Lactoferrin",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {},
+    "function": "铁结合蛋白，免疫调节",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "量大可议价"
+    },
+    "origin": "新西兰",
+    "data_source": "Tatua产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "TAT-HWP-016",
+    "product_name": "HWP 117 水解乳清蛋白",
+    "supplier_id": "ang",
+    "supplier_name": "Tatua 大拓",
+    "generic_name": "水解乳清蛋白",
+    "generic_name_en": "Hydrolyzed Whey Protein",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {},
+    "function": "酶解乳清蛋白，易吸收",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许"
+    },
+    "price_range": {
+      "min": 295,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "新西兰",
+    "data_source": "Tatua产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "TAT-CPP-017",
+    "product_name": "酪蛋白磷酸肽(CPP)",
+    "supplier_id": "ang",
+    "supplier_name": "Tatua 大拓",
+    "generic_name": "酪蛋白磷酸肽",
+    "generic_name_en": "Casein Phosphopeptide",
+    "category": "功能性成分",
+    "source": "酪蛋白",
+    "process": "水解",
+    "functional_tags": [
+      "含CPP",
+      "骨骼健康"
+    ],
+    "applications": [
+      "骨骼健康",
+      "保健食品"
+    ],
+    "key_specs": {},
+    "function": "促进钙铁锌吸收",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "gb14880": "允许（酪蛋白磷酸肽）"
+    },
+    "price_range": null,
+    "origin": "新西兰",
+    "data_source": "Tatua产品目录",
+    "confidence": "high"
+  },
+  {
+    "id": "TAT-PLC-018",
+    "product_name": "牛奶磷脂 PLC",
+    "supplier_id": "ang",
+    "supplier_name": "Tatua 大拓",
+    "generic_name": "牛奶磷脂",
+    "generic_name_en": "Milk Phospholipids",
+    "category": "功能性成分",
+    "source": "磷脂",
+    "process": "液体",
+    "functional_tags": [
+      "含磷脂",
+      "脑健康"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "保健食品"
+    ],
+    "key_specs": {},
+    "function": "牛奶来源磷脂，脑健康/认知功能",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {},
+    "price_range": null,
+    "origin": "新西兰",
+    "data_source": "Tatua产品目录",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-EPX-001",
+    "product_name": "EPAX 1500TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3",
+      "脑健康",
+      "视力健康"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康",
+      "婴幼儿配方",
+      "孕妇营养"
+    ],
+    "key_specs": {
+      "epa_dha_content": "推断：EPA ~15%, DHA ~0%（基于命名规则），总omega-3 ~21%",
+      "form": "TG (甘油三酯)",
+      "other": "规格为图片PDF，具体数值待确认"
+    },
+    "function": "基础Omega-3浓缩物，提供EPA和DHA",
+    "mechanism": "Omega-3脂肪酸参与细胞膜构成、抗炎信号通路调节",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "Friend of the Sea"
+      ]
+    },
+    "price_range": {
+      "min": 142,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 1500 TGN spec 105083-17（图片PDF，无法提取文字）",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-EPX-002",
+    "product_name": "EPAX 2050TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3",
+      "脑健康",
+      "视力健康",
+      "脑健康"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康",
+      "婴幼儿配方",
+      "孕妇营养",
+      "婴幼儿配方",
+      "孕妇营养"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥205 mg/g (20.5%), DHA ≥500 mg/g (50%), 总omega-3 ≥830 mg/g (83%)",
+      "epa_dha_fa": "EPA(FA) ≥196 mg/g, DHA(FA) ≥481 mg/g",
+      "form": "TG (甘油三酯)",
+      "triglycerides": "≥90 A%"
+    },
+    "function": "DHA为主导的高浓度Omega-3浓缩物，支持脑部和视觉健康",
+    "mechanism": "DHA是大脑和视网膜磷脂的关键组成，参与神经信号传导",
+    "dosage_range": "",
+    "clinical_evidence": "高DHA含量适用于脑健康和视觉健康领域",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "Friend of the Sea"
+      ]
+    },
+    "price_range": null,
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 2050 TGN spec 100013-17 dated 04.12.2023",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-003",
+    "product_name": "EPAX 3624TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥360 mg/g (36%), DHA ≥240 mg/g (24%), 总omega-3 ≥660 mg/g (66%)",
+      "epa_dha_fa": "EPA(FA) ≥345 mg/g, DHA(FA) ≥231 mg/g",
+      "form": "TG (甘油三酯)",
+      "triglycerides": "≥90 A%"
+    },
+    "function": "均衡EPA/DHA比例的Omega-3浓缩物",
+    "mechanism": "EPA和DHA协同抗炎、调节血脂",
+    "dosage_range": "",
+    "clinical_evidence": "均衡EPA/DHA比例适合综合心血管健康支持",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "Friend of the Sea"
+      ]
+    },
+    "price_range": {
+      "min": 460,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 3624 TGN spec 104962-17 dated 230823",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-004",
+    "product_name": "EPAX 4020TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥400 mg/g (40%), DHA ~200 mg/g, 总omega-3 ~75%",
+      "form": "TG (甘油三酯)",
+      "triglycerides": "≥90 A%"
+    },
+    "function": "EPA为主导的高浓度Omega-3浓缩物",
+    "mechanism": "EPA主导的抗炎、心血管保护作用",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "Friend of the Sea"
+      ]
+    },
+    "price_range": {
+      "min": 470,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 4020 TGN spec 100045-20 dated 150321",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-EPX-005",
+    "product_name": "EPAX 4030TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥400 mg/g (40%), DHA ≥300 mg/g (30%), 总omega-3 ≥780 mg/g (78%)",
+      "epa_dha_fa": "EPA(FA) ≥383 mg/g, DHA(FA) ≥288 mg/g, EPA+DHA(FA) ≥671 mg/g",
+      "form": "TG (甘油三酯)",
+      "triglycerides": "≥90 A%"
+    },
+    "function": "均衡高浓度EPA/DHA Omega-3浓缩物",
+    "mechanism": "EPA和DHA协同调节炎症反应、改善血脂谱",
+    "dosage_range": "",
+    "clinical_evidence": "高含量均衡型Omega-3，适合多种健康应用",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "Friend of the Sea"
+      ]
+    },
+    "price_range": {
+      "min": 450,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 4030 TGN spec 100021-17 dated 040522",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-006",
+    "product_name": "EPAX 4832TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥480 mg/g (48%), DHA ≥320 mg/g (32%), 总omega-3 ≥860 mg/g (86%)",
+      "epa_dha_fa": "EPA(FA) ≥460 mg/g, DHA(FA) ≥308 mg/g",
+      "epa_dha_tg_percent": "EPA(TG) 51 A%, DHA(TG) 34 A%, 总omega-3(TG) 95 A%",
+      "form": "TG (甘油三酯)",
+      "triglycerides": "≥90 A%",
+      "mixed_tocopherol": "3.0-4.5 mg/g"
+    },
+    "function": "超高浓度EPA/DHA Omega-3浓缩物（旗舰产品）",
+    "mechanism": "极高浓度Omega-3提供强效抗炎和心血管保护",
+    "dosage_range": "",
+    "clinical_evidence": "超高浓度Omega-3，实际检测值EPA 489mg/g, DHA 333mg/g, 总omega-3 911mg/g",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "Friend of the Sea"
+      ]
+    },
+    "price_range": {
+      "min": 650,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 4832 TGN batch 2024000945 COA",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-007",
+    "product_name": "EPAX 5025TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3",
+      "脑健康",
+      "视力健康"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康",
+      "婴幼儿配方",
+      "孕妇营养"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥500 mg/g (50%), DHA ≥250 mg/g (25%), 总omega-3 ≥830 mg/g (83%)",
+      "epa_dha_fa": "EPA(FA) ≥479 mg/g, DHA(FA) ≥240 mg/g",
+      "form": "TG (甘油三酯)",
+      "triglycerides": "≥90 A%"
+    },
+    "function": "EPA主导的高浓度Omega-3浓缩物",
+    "mechanism": "EPA强效抗炎，支持心血管和免疫健康",
+    "dosage_range": "",
+    "clinical_evidence": "高EPA含量适合以抗炎为主要目标的应用",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "Friend of the Sea"
+      ]
+    },
+    "price_range": {
+      "min": 520,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 5025 TGN spec 100777-17 dated 02.10.2023",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-008",
+    "product_name": "EPAX 6000TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3",
+      "脑健康",
+      "视力健康",
+      "脑健康"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康",
+      "婴幼儿配方",
+      "孕妇营养",
+      "婴幼儿配方"
+    ],
+    "key_specs": {
+      "epa_dha_content": "推断：EPA ~60%, DHA ~0%（基于命名规则和价格定位）",
+      "form": "TG (甘油三酯)",
+      "other": "规格为色谱图PDF，具体数值待确认"
+    },
+    "function": "超高EPA浓度Omega-3浓缩物",
+    "mechanism": "极高EPA含量提供最大抗炎效果",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED"
+      ]
+    },
+    "price_range": {
+      "min": 300,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "Kromatogram EPAX 6000 TGN.pdf（色谱图）",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-EPX-009",
+    "product_name": "EPAX 6015TGN",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3",
+      "脑健康"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康",
+      "婴幼儿配方"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA(TG) 典型值596 mg/g (范围565-633), EPA上限645 mg/g TG (620 mg/g FA)",
+      "form": "TG (甘油三酯)",
+      "other": "2MT以上订单"
+    },
+    "function": "超高EPA浓度Omega-3浓缩物（最高端TG产品）",
+    "mechanism": "极高EPA含量提供最大抗炎和心血管保护",
+    "dosage_range": "",
+    "clinical_evidence": "基于2021-2025年8批次检测数据，EPA含量稳定在高水平",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED"
+      ]
+    },
+    "price_range": {
+      "min": 520,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 6015 TGN EPA and DHA test results from 2021 to 2025",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-010",
+    "product_name": "EPAX 3025EE",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "EE型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥300 mg/g (30%), DHA ≥250 mg/g (25%), 总omega-3 ≥620 mg/g (62%)",
+      "form": "EE (乙酯)",
+      "other": "最大酸值6.0 A%"
+    },
+    "function": "均衡EPA/DHA乙酯型浓缩物",
+    "mechanism": "EPA和DHA协同抗炎、调节血脂",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED"
+      ]
+    },
+    "price_range": null,
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 3025 EE spec 100808-20 dated 050523",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-011",
+    "product_name": "EPAX 4030EE",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "EE型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥400 mg/g (40%), DHA ≥300 mg/g (30%), 总omega-3 ≥780 mg/g (78%)",
+      "form": "EE (乙酯)",
+      "other": "最大酸值6.0 A%"
+    },
+    "function": "高浓度EPA/DHA乙酯型浓缩物",
+    "mechanism": "高浓度Omega-3支持心血管和抗炎",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED"
+      ]
+    },
+    "price_range": null,
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 4030 EE spec 100023-20 dated 19.05.2022",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-012",
+    "product_name": "EPAX 4717EE",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "EE型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ≥470 mg/g (47%), DHA ≥180 mg/g (18%), 总omega-3待确认",
+      "form": "EE (乙酯)",
+      "other": "最大酸值6.0 A%"
+    },
+    "function": "EPA主导的高浓度乙酯型浓缩物",
+    "mechanism": "高EPA含量提供强效抗炎",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED"
+      ]
+    },
+    "price_range": null,
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX 4717 EE spec 104975-20 dated 16.01.2023",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-013",
+    "product_name": "EPAX 5007EE",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "鱼油 Omega-3",
+    "generic_name_en": "Fish Oil Omega-3",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "EE型",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "心血管健康"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA(EE) ≥500 mg/g (50%), DHA(EE) ≥70 mg/g (7%), 总omega-3(EE) ≥580 mg/g",
+      "epa_dha_fa": "EPA(FFA) ≥458 mg/g, DHA(FFA) ≥64 mg/g, 总omega-3(FFA) ≥546 mg/g",
+      "form": "EE (乙酯)",
+      "other": "最大总氧化值9.0，符合EP/USP/GOED标准"
+    },
+    "function": "超高EPA浓度乙酯型浓缩物",
+    "mechanism": "极高EPA含量提供最大抗炎效果",
+    "dosage_range": "",
+    "clinical_evidence": "符合EP、USP和GOED专论标准",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED",
+        "EP compliance",
+        "USP compliance"
+      ]
+    },
+    "price_range": null,
+    "origin": "挪威 Ålesund",
+    "data_source": "5007EE产品数据表_挪亚圣诺版20231227.pdf, Statement EP USP GOED",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-014",
+    "product_name": "EPAX Omega 3-9-11",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "特种鱼油 Omega-3-9-11",
+    "generic_name_en": "Specialty Fish Oil Omega-3-9-11",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA+DHA(FA) ≥250 mg/g (25%), EPA(TG) ≥50 mg/g (5%), DHA(TG) ≥200 mg/g (20%)",
+      "total_omega3": "≥300 mg/g (30%)",
+      "lc_mufa": "总LCMUFA ≥420 mg/g (42%)，含鲸蜡烯酸(C22:1n11) ≥300 mg/g, 鳕油酸(C20:1n9) ≥90 mg/g",
+      "form": "TG (甘油三酯)",
+      "triglycerides": "≥60 A%",
+      "special_note": "15°C以下逐渐凝固，室温可逆",
+      "mixed_tocopherol": "2.0-2.8 mg/g"
+    },
+    "function": "独特的Omega-3/9/11组合，含长链单不饱和脂肪酸（LCMUFA）",
+    "mechanism": "Omega-3提供抗炎，Omega-9（油酸）和Omega-11（鲸蜡烯酸）支持心血管和代谢健康",
+    "dosage_range": "",
+    "clinical_evidence": "独特的Omega-3/9/11脂肪酸组合，研究中",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "GOED"
+      ]
+    },
+    "price_range": null,
+    "origin": "挪威 Ålesund",
+    "data_source": "EPAX Omega 3-9-11 specification 105088-17 dated 05.11.2025",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-EPX-015",
+    "product_name": "EPAX Evolve 05",
+    "supplier_id": "novosana",
+    "supplier_name": "EPAX (Pelagia AS)",
+    "generic_name": "VLC-PUFA浓缩物",
+    "generic_name_en": "VLC-PUFA Concentrate",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "TG型",
+    "functional_tags": [
+      "含Omega-3",
+      "脑健康"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "婴幼儿配方"
+    ],
+    "key_specs": {
+      "total_vlc_fa": "≥120 mg/g (C24-C30)",
+      "vlc_pufa": "≥50 mg/g",
+      "vlc_mufa": "≥70 mg/g",
+      "dha": "≥400 mg/g (40%)",
+      "form": "浓缩鱼油",
+      "patent": "专利保护"
+    },
+    "function": "首个商业化VLC-PUFA（超长链多不饱和脂肪酸）浓缩物，超越传统EPA/DHA",
+    "mechanism": "VLC-PUFA（C24-C30）是EPA/DHA的延伸产物，由ELOVL2/ELOVL4酶合成。补充可恢复因衰老导致的VLC-PUFA下降。ELOVL2基因活性与衰老高度相关，可作为生物钟。VLC-PUFA对视力、男性生育力、皮肤健康、大脑发育和骨骼健康至关重要",
+    "dosage_range": "",
+    "clinical_evidence": "动物研究：VLC-PUFA在睑板腺、睾丸等组织中积累。2023年突破性研究：口服鱼源VLC-PUFA油改善视网膜功能。首个商业VLC-PUFA人体干预试验进行中（男性生育力）。EU认定为非新食品（not novel）",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "Non-novel（EU已认定为非新食品）",
+      "certifications": [
+        "专利保护"
+      ]
+    },
+    "price_range": null,
+    "origin": "挪威 Ålesund",
+    "data_source": "Epax_Evolve 05_One pager.pdf, EPAX_Evolve 05_White paper.pdf",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-LYS-001",
+    "product_name": "Lysi Cod Liver Oil 1000",
+    "supplier_id": "novosana",
+    "supplier_name": "Lýsi HF (冰岛)",
+    "generic_name": "鳕鱼肝油",
+    "generic_name_en": "Cod Liver Oil",
+    "category": "油脂类",
+    "source": "鳕鱼肝油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "中老年营养"
+    ],
+    "key_specs": {
+      "vitamin_content": "维生素A/D（1000 IU级别）",
+      "form": "液体/胶囊"
+    },
+    "function": "传统鳕鱼肝油，含天然维生素A/D和Omega-3",
+    "mechanism": "维生素A支持视力和免疫，维生素D支持骨骼健康，Omega-3支持心血管",
+    "dosage_range": "",
+    "clinical_evidence": "传统使用历史，鳕鱼肝油的健康益处已被广泛认可",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "FSSC 22000",
+        "HACCP",
+        "Friend of the Sea",
+        "Halal"
+      ]
+    },
+    "price_range": {
+      "min": 165,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "冰岛",
+    "data_source": "Lysi product pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-LYS-002",
+    "product_name": "Lysi Cod Liver Oil 2500",
+    "supplier_id": "novosana",
+    "supplier_name": "Lýsi HF (冰岛)",
+    "generic_name": "鳕鱼肝油",
+    "generic_name_en": "Cod Liver Oil",
+    "category": "油脂类",
+    "source": "鳕鱼肝油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "中老年营养"
+    ],
+    "key_specs": {
+      "vitamin_content": "维生素A/D（2500 IU级别）",
+      "form": "液体/胶囊"
+    },
+    "function": "高含量鳕鱼肝油，维生素A/D浓度更高",
+    "mechanism": "同CLO 1000，剂量更高",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "FSSC 22000",
+        "HACCP",
+        "Friend of the Sea",
+        "Halal"
+      ]
+    },
+    "price_range": {
+      "min": 165,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "冰岛",
+    "data_source": "Lysi product pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-LYS-003",
+    "product_name": "Lysi Cod Liver Oil 3300",
+    "supplier_id": "novosana",
+    "supplier_name": "Lýsi HF (冰岛)",
+    "generic_name": "鳕鱼肝油",
+    "generic_name_en": "Cod Liver Oil",
+    "category": "油脂类",
+    "source": "鳕鱼肝油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "中老年营养"
+    ],
+    "key_specs": {
+      "vitamin_content": "维生素A/D（3300 IU级别）",
+      "form": "液体/胶囊"
+    },
+    "function": "最高含量鳕鱼肝油",
+    "mechanism": "同CLO系列，最高维生素A/D剂量",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "FSSC 22000",
+        "HACCP",
+        "Friend of the Sea",
+        "Halal"
+      ]
+    },
+    "price_range": {
+      "min": 165,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "冰岛",
+    "data_source": "Lysi product pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-LYS-004",
+    "product_name": "Lysi Cod Liver Oil 1800/600",
+    "supplier_id": "novosana",
+    "supplier_name": "Lýsi HF (冰岛)",
+    "generic_name": "鳕鱼肝油",
+    "generic_name_en": "Cod Liver Oil",
+    "category": "油脂类",
+    "source": "鳕鱼肝油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "中老年营养"
+    ],
+    "key_specs": {
+      "epa_dha_content": "EPA ~1800mg + DHA ~600mg（推测基于型号名称）",
+      "form": "液体/胶囊"
+    },
+    "function": "高浓度鳕鱼肝油，EPA 1800mg + DHA 600mg",
+    "mechanism": "高浓度EPA/DHA提供心血管保护，同时含天然维生素A/D",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "FSSC 22000",
+        "HACCP",
+        "Friend of the Sea",
+        "Halal"
+      ]
+    },
+    "price_range": {
+      "min": 165,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "冰岛",
+    "data_source": "Lysi product pricing list, Lysi CLO 1800-600 COA",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-LYS-005",
+    "product_name": "Lysi HF High Strength",
+    "supplier_id": "novosana",
+    "supplier_name": "Lýsi HF (冰岛)",
+    "generic_name": "鳕鱼肝油",
+    "generic_name_en": "Cod Liver Oil",
+    "category": "油脂类",
+    "source": "鳕鱼肝油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "中老年营养"
+    ],
+    "key_specs": {
+      "form": "胶囊",
+      "certifications": "FSSC 671609, 有效期至2026-06-22"
+    },
+    "function": "高强度鳕鱼肝油制剂",
+    "mechanism": "高浓度鱼油活性成分",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "EU approved",
+      "certifications": [
+        "FSSC 22000",
+        "HACCP",
+        "Friend of the Sea",
+        "Halal"
+      ]
+    },
+    "price_range": null,
+    "origin": "冰岛",
+    "data_source": "FSSC 671609 Lysi HF 2026 06 22.pdf",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-OOL-001",
+    "product_name": "Sea Dragon Squalene 角鲨烯",
+    "supplier_id": "novosana",
+    "supplier_name": "Ocean Oils / Sea Dragon",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "油脂类",
+    "source": "角鲨烯",
+    "process": "液体",
+    "functional_tags": [
+      "美容护肤"
+    ],
+    "applications": [
+      "美容护肤",
+      "保健食品"
+    ],
+    "key_specs": {
+      "purity": "高纯度精炼角鲨烯",
+      "form": "液体油",
+      "appearance": "无色、几乎无味、透明液体",
+      "source": "深海犬鲨（Dogfish）肝脏，含量50-70%"
+    },
+    "function": "高纯度角鲨烯，强效抗氧化剂。促进氧输送、增强免疫力、抑制癌细胞生长、降低胆固醇、保护皮肤免受UV损伤",
+    "mechanism": "角鲨烯（C30H50）是天然三萜烯不饱和烃，6个异戊二烯单元构成。极低电离阈值使其具有强大的电子供体能力，能终止脂质过氧化链式反应。作为内源性抗氧化剂参与氧化-抗氧化平衡调节",
+    "dosage_range": "",
+    "clinical_evidence": "多项研究支持：抗氧化（优于维生素E的脂质过氧化抑制）、免疫增强（刺激巨噬细胞）、抗癌、降胆固醇（LDL↓ HDL↑）、UV防护。2007年南非研究、1996年人体临床试验",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认",
+      "certifications": [
+        "澳大利亚出口证书"
+      ]
+    },
+    "price_range": {
+      "min": 210,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "澳大利亚",
+    "data_source": "Squalene benefits - squalene-antioxidant-of-the-future.pdf, Ocean Oil PPT",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-OOL-002",
+    "product_name": "EFP Squalene 角鲨烯",
+    "supplier_id": "novosana",
+    "supplier_name": "Ocean Oils / EFP",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "油脂类",
+    "source": "角鲨烯",
+    "process": "液体",
+    "functional_tags": [
+      "美容护肤"
+    ],
+    "applications": [
+      "美容护肤",
+      "保健食品"
+    ],
+    "key_specs": {
+      "purity": "高纯度精炼角鲨烯",
+      "form": "液体油"
+    },
+    "function": "同Sea Dragon角鲨烯，EFP品牌版本",
+    "mechanism": "同Sea Dragon角鲨烯",
+    "dosage_range": "",
+    "clinical_evidence": "同Sea Dragon角鲨烯",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认",
+      "certifications": [
+        "澳大利亚出口证书"
+      ]
+    },
+    "price_range": {
+      "min": 210,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "澳大利亚",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-OOL-003",
+    "product_name": "Shark Liver Oil (SLO) 鲨鱼肝油",
+    "supplier_id": "novosana",
+    "supplier_name": "Ocean Oils",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "油脂类",
+    "source": "鲨鱼肝油",
+    "process": "液体",
+    "functional_tags": [
+      "美容护肤"
+    ],
+    "applications": [
+      "美容护肤",
+      "保健食品"
+    ],
+    "key_specs": {
+      "dage_content": ">63%",
+      "akg_content": ">24%",
+      "squalene": "≤3%",
+      "epa": ">0.5%",
+      "dha": ">2.5%",
+      "peroxide_value": "<5.0 meq/kg",
+      "acid_value": "<0.2 mgKOH/g",
+      "form": "液体油",
+      "appearance": "淡黄色油，极低鱼腥味"
+    },
+    "function": "高AKG（烷氧基甘油）鲨鱼肝油，富含DAGE（二酰基甘油醚），增强内源性缩醛磷脂生成、降低血脂异常、减少炎症",
+    "mechanism": "DAGE（>63%）和AKG（>24%）参与缩醛磷脂合成，缩醛磷脂是细胞膜关键成分，尤其在大脑和心脏组织中丰富",
+    "dosage_range": "",
+    "clinical_evidence": "临床研究进行中。传统使用AKG丰富的鲨鱼肝油用于免疫支持",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认",
+      "certifications": [
+        "澳大利亚标准"
+      ]
+    },
+    "price_range": null,
+    "origin": "澳大利亚/新西兰",
+    "data_source": "SLO (DAGE) Spec. & Analytical methods 24% (to NovoSana)2025.pdf",
+    "confidence": "high"
+  },
+  {
+    "id": "NOV-OMX-001",
+    "product_name": "OMAX 1812 TG (STD)",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "epa_dha_content": "EPA ~18%, DHA ~12%（基于型号名称）",
+      "form": "TG (甘油三酯)"
+    },
+    "function": "标准TG型鱼油，EPA 18% / DHA 12%",
+    "mechanism": "Omega-3脂肪酸基础补充",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": ">100吨64-65元，<100吨68元"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-OMX-002",
+    "product_name": "OMAX 3000",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "form": "待确认"
+    },
+    "function": "中等浓度鱼油",
+    "mechanism": "Omega-3脂肪酸补充",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 85,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-OMX-003",
+    "product_name": "OMAX GOLD 3000",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "form": "待确认"
+    },
+    "function": "金装高浓度鱼油",
+    "mechanism": "Omega-3脂肪酸补充",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 100,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-OMX-004",
+    "product_name": "OMAX GOLD 80125",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "form": "待确认"
+    },
+    "function": "高浓度金装鱼油",
+    "mechanism": "Omega-3脂肪酸补充",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 125,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-OMX-005",
+    "product_name": "OMAX SALMON",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "source": "三文鱼",
+      "form": "待确认"
+    },
+    "function": "三文鱼源鱼油",
+    "mechanism": "Omega-3脂肪酸补充，三文鱼源可能含虾青素等天然成分",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 70,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-OMX-006",
+    "product_name": "OMAX TUNA",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "source": "金枪鱼",
+      "form": "待确认"
+    },
+    "function": "金枪鱼源鱼油，DHA含量较高",
+    "mechanism": "DHA主导的Omega-3补充",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 90,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-OMX-007",
+    "product_name": "OMAX TUNA NW",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "source": "金枪鱼",
+      "form": "待确认"
+    },
+    "function": "金枪鱼源鱼油（NW版本）",
+    "mechanism": "同OMAX TUNA",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 90,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "low"
+  },
+  {
+    "id": "NOV-OMX-008",
+    "product_name": "OMAX FLOW EPA 300 NL",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "epa_content": "EPA 300（推测300mg/g）",
+      "form": "微胶囊化粉末",
+      "origin": "NL（荷兰）"
+    },
+    "function": "微胶囊化EPA粉末，适用于固体剂型",
+    "mechanism": "EPA抗炎、心血管保护",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 550,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "荷兰",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-OMX-009",
+    "product_name": "OMAX FLOW DHA 11 NL",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "dha_content": "DHA 11（推测11%）",
+      "form": "微胶囊化粉末",
+      "origin": "NL（荷兰）"
+    },
+    "function": "微胶囊化DHA粉末，适用于固体剂型",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 180,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "荷兰",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-OMX-010",
+    "product_name": "OMAX FLOW VEG DHA 11 NL",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "dha_content": "DHA 11（推测11%）",
+      "form": "微胶囊化粉末",
+      "source": "藻类（素食）",
+      "origin": "NL（荷兰）"
+    },
+    "function": "素食来源微胶囊化DHA粉末",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 205,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "荷兰",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-OMX-011",
+    "product_name": "OMAX FLOW VEG DHA 200 NL",
+    "supplier_id": "novosana",
+    "supplier_name": "OMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "dha_content": "DHA 200（推测200mg/g = 20%）",
+      "form": "微胶囊化粉末",
+      "source": "藻类（素食）",
+      "origin": "NL（荷兰）"
+    },
+    "function": "高浓度素食DHA粉末",
+    "mechanism": "高浓度DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 260,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "荷兰",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-DMX-001",
+    "product_name": "DMAX VEG DHA 500",
+    "supplier_id": "novosana",
+    "supplier_name": "DMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "dha_content": "DHA 500（推测500mg/g = 50%）",
+      "form": "待确认",
+      "source": "藻类（素食）"
+    },
+    "function": "高浓度素食DHA",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 180,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-DMX-002",
+    "product_name": "DMAX VEG DHA 450",
+    "supplier_id": "novosana",
+    "supplier_name": "DMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "dha_content": "DHA 450（推测450mg/g = 45%）",
+      "form": "待确认",
+      "source": "藻类（素食）"
+    },
+    "function": "素食DHA",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 160,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-DMX-003",
+    "product_name": "DMAX VEG DHA 450 NW",
+    "supplier_id": "novosana",
+    "supplier_name": "DMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "dha_content": "DHA 450（推测450mg/g = 45%）",
+      "form": "待确认",
+      "source": "藻类（素食）"
+    },
+    "function": "素食DHA（NW版本）",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 160,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-DMX-004",
+    "product_name": "DMAX VEG DHA 400",
+    "supplier_id": "novosana",
+    "supplier_name": "DMAX",
+    "generic_name": "",
+    "generic_name_en": "",
+    "category": "其他",
+    "source": "其他",
+    "process": "",
+    "functional_tags": [],
+    "applications": [],
+    "key_specs": {
+      "dha_content": "DHA 400（推测400mg/g = 40%）",
+      "form": "待确认",
+      "source": "藻类（素食）"
+    },
+    "function": "素食DHA",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": 140,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "待确认",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-CFI-001",
+    "product_name": "CFI EPA 300 Malaysia",
+    "supplier_id": "novosana",
+    "supplier_name": "CFI",
+    "generic_name": "鱼油",
+    "generic_name_en": "Fish Oil",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂"
+    ],
+    "key_specs": {
+      "epa_content": "EPA 300（推测300mg/g = 30%）",
+      "form": "待确认"
+    },
+    "function": "EPA浓缩物",
+    "mechanism": "EPA抗炎、心血管保护",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "马来西亚",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-CFI-002",
+    "product_name": "CFI DHA 11 Tuna Malaysia",
+    "supplier_id": "novosana",
+    "supplier_name": "CFI",
+    "generic_name": "鱼油",
+    "generic_name_en": "Fish Oil",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含EPA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "膳食补充剂"
+    ],
+    "key_specs": {
+      "dha_content": "DHA 11（推测11%）",
+      "source": "金枪鱼",
+      "form": "待确认"
+    },
+    "function": "金枪鱼源DHA",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "马来西亚",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-CFI-003",
+    "product_name": "CFI DHA 11 Algae Malaysia",
+    "supplier_id": "novosana",
+    "supplier_name": "CFI",
+    "generic_name": "藻油 DHA",
+    "generic_name_en": "Algae DHA Oil",
+    "category": "油脂类",
+    "source": "藻油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "膳食补充剂"
+    ],
+    "key_specs": {
+      "dha_content": "DHA 11（推测11%）",
+      "source": "藻类（素食）",
+      "form": "待确认"
+    },
+    "function": "藻类源DHA（素食）",
+    "mechanism": "DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "马来西亚",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  },
+  {
+    "id": "NOV-CFI-004",
+    "product_name": "CFI DHA 22 Algae Malaysia",
+    "supplier_id": "novosana",
+    "supplier_name": "CFI",
+    "generic_name": "藻油 DHA",
+    "generic_name_en": "Algae DHA Oil",
+    "category": "油脂类",
+    "source": "藻油",
+    "process": "液体",
+    "functional_tags": [
+      "含DHA",
+      "含Omega-3"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "膳食补充剂"
+    ],
+    "key_specs": {
+      "dha_content": "DHA 22（推测22%）",
+      "source": "藻类（素食）",
+      "form": "待确认"
+    },
+    "function": "高浓度藻类源DHA（素食）",
+    "mechanism": "高浓度DHA支持脑部和视觉健康",
+    "dosage_range": "",
+    "clinical_evidence": "待补充",
+    "regulatory_status": {
+      "china": "待确认",
+      "eu": "待确认"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": "仅供参考"
+    },
+    "origin": "马来西亚",
+    "data_source": "Pricing list",
+    "confidence": "medium"
+  }
+]

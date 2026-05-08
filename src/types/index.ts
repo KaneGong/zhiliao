@@ -1,4 +1,4 @@
-// ── Product Types ──
+// ── Product Types (Legacy - kept for compatibility) ──
 
 export interface ProductSpecifications {
   composition?: string;
@@ -59,6 +59,74 @@ export interface ProductWithPrice extends Product {
   price_trend?: string;
 }
 
+// ── Ingredient Types (New Tag System) ──
+
+export interface Ingredient {
+  id: string;
+  product_name: string;
+  supplier_id: string;
+  supplier_name: string;
+  generic_name: string;
+  generic_name_en: string;
+  category: string;
+  source: string;
+  process: string;
+  functional_tags: string[];
+  applications: string[];
+  key_specs: Record<string, string>;
+  function: string;
+  mechanism: string;
+  dosage_range: string;
+  clinical_evidence: string;
+  regulatory_status: RegulatoryStatus;
+  price_range: {
+    min: number | null;
+    max: number | null;
+    unit: string;
+    note: string;
+  } | null;
+  origin: string;
+  data_source: string;
+  confidence: "high" | "medium" | "low";
+}
+
+// ── Tag System Types ──
+
+export interface TagDimension {
+  label: string;
+  values: string[];
+}
+
+export interface TagSystem {
+  last_updated: string;
+  dimensions: {
+    category: TagDimension;
+    source: TagDimension;
+    process: TagDimension;
+    functional_tags: TagDimension;
+    applications: TagDimension;
+    certifications: TagDimension;
+  };
+}
+
+// ── Supplier Types ──
+
+export interface Supplier {
+  id: string;
+  name: string;
+  name_en: string;
+  description: string;
+  contact: {
+    email?: string;
+    phone?: string;
+    person?: string;
+  };
+  website: string;
+  location: string;
+  brands: string[];
+  is_master: boolean;
+}
+
 // ── Pricing Types ──
 
 export interface PricingEntry {
@@ -89,21 +157,6 @@ export interface PricingData {
   [category: string]: PricingEntry[] | string;
 }
 
-// ── Supplier Types ──
-
-export interface Supplier {
-  id: string;
-  name: string;
-  name_en: string;
-  description: string;
-  product_lines: string[];
-  contact: {
-    email?: string;
-    phone?: string;
-    website?: string;
-  };
-}
-
 // ── Regulation Types ──
 
 export interface Regulation {
@@ -123,6 +176,14 @@ export interface RecommendRequest {
   query: string;
 }
 
+export interface RecommendedIngredient {
+  generic_name: string;
+  generic_name_en: string;
+  suggested_dosage: string;
+  function: string;
+  products: RecommendedProduct[];
+}
+
 export interface RecommendedProduct {
   product_id: string;
   product_name: string;
@@ -138,6 +199,7 @@ export interface RecommendedProduct {
 
 export interface RecommendResponse {
   recommendations: RecommendedProduct[];
+  grouped_recommendations?: RecommendedIngredient[];
   reasoning: string;
   disclaimer: string;
 }
@@ -146,13 +208,22 @@ export interface RecommendResponse {
 
 export interface SearchFilters {
   category?: string;
-  function?: string;
+  source?: string;
+  process?: string;
+  functional_tag?: string;
+  application?: string;
   supplier?: string;
   query?: string;
 }
 
 export interface SearchResult {
-  products: ProductWithPrice[];
+  ingredients: Ingredient[];
   total: number;
   filters: SearchFilters;
+}
+
+// ── Admin Types ──
+
+export interface AdminSession {
+  authenticated: boolean;
 }
