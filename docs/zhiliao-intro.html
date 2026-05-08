@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>知料 ZhiLiao - 项目介绍</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    color: #1a1a2e;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== PAGE 1: COVER ===== */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover {
+    width: 100%;
+    height: 297mm;
+    background: linear-gradient(160deg, #0a0f1e 0%, #111d35 40%, #1a3a6b 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 28mm;
+    position: relative;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(96,165,250,0.05) 0%, transparent 70%);
+  }
+  .cover-tag {
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 24px;
+  }
+  .cover-title {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1.1;
+  }
+  .cover-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 8px;
+    margin-top: 6px;
+  }
+  .cover-bar {
+    width: 48px;
+    height: 3px;
+    background: #60a5fa;
+    margin: 32px 0;
+    border-radius: 2px;
+  }
+  .cover-desc {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+  }
+  .cover-year {
+    position: absolute;
+    bottom: 28mm;
+    left: 28mm;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 3px;
+  }
+
+  /* ===== PAGE 2-4: CONTENT ===== */
+  .content-page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 24mm 26mm 20mm;
+    position: relative;
+  }
+  .content-page::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, #2563eb 0%, #60a5fa 100%);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .sec-num {
+    font-size: 10px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .sec-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .sec-text {
+    font-size: 15px;
+    color: #475569;
+    line-height: 2;
+    margin-bottom: 16px;
+  }
+  .sec-text strong {
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  /* Big number box */
+  .bigbox {
+    background: #0f172a;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .bigbox-num {
+    font-size: 52px;
+    font-weight: 900;
+    color: #60a5fa;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .bigbox-desc {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.8;
+  }
+
+  /* Cards 2-column */
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .card {
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .card.pain {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+  .card.gain {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .card.info-c {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+  }
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .card.pain .card-title { color: #991b1b; }
+  .card.gain .card-title { color: #166534; }
+  .card.info-c .card-title { color: #1e40af; }
+  .card-desc {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .card.pain .card-desc { color: #7f1d1d; }
+  .card.gain .card-desc { color: #14532d; }
+  .card.info-c .card-desc { color: #334155; }
+
+  /* Feature list */
+  .feat-list {
+    margin: 20px 0;
+  }
+  .feat-item {
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid #f1f5f9;
+    align-items: flex-start;
+  }
+  .feat-item:last-child { border-bottom: none; }
+  .feat-icon {
+    width: 44px; height: 44px;
+    background: #eff6ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .feat-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .feat-desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.75;
+  }
+
+  /* Info box full width */
+  .info-full {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 18px 0;
+  }
+  .info-full .label {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1e40af;
+    margin-bottom: 8px;
+  }
+  .info-full .text {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.9;
+  }
+
+  /* Roadmap */
+  .rm-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f5f9;
+    align-items: flex-start;
+  }
+  .rm-item:last-child { border-bottom: none; }
+  .rm-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #2563eb;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .rm-item.v2 .rm-dot { background: #7c3aed; }
+  .rm-item.v3 .rm-dot { background: #059669; }
+  .rm-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .rm-item.v2 .rm-tag { color: #7c3aed; }
+  .rm-item.v3 .rm-tag { color: #059669; }
+  .rm-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+  .rm-desc {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.75;
+  }
+
+  /* Stats */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .stat-box {
+    text-align: center;
+    padding: 28px 14px;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-radius: 14px;
+    color: #fff;
+  }
+  .stat-num {
+    font-size: 38px;
+    font-weight: 900;
+    color: #fff;
+  }
+  .stat-unit {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.65;
+  }
+  .stat-label {
+    font-size: 13px;
+    opacity: 0.55;
+    margin-top: 6px;
+  }
+
+  /* Target cards */
+  .target-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .target-card {
+    padding: 24px;
+    border-radius: 14px;
+  }
+  .target-card.up {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+  }
+  .target-card.down {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+  .target-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #fff;
+    padding: 3px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .target-card.up .target-tag { background: #2563eb; }
+  .target-card.down .target-tag { background: #059669; }
+  .target-text {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.85;
+  }
+
+  /* Footer */
+  .page-footer {
+    position: absolute;
+    bottom: 20mm;
+    left: 26mm;
+    right: 26mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+  }
+  .page-footer .brand {
+    font-size: 13px;
+    font-weight: 700;
+    color: #94a3b8;
+  }
+  .page-footer .url {
+    font-size: 12px;
+    color: #cbd5e1;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE 1: COVER ===== -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-tag">Project Overview · 2026</div>
+    <div class="cover-title">知料</div>
+    <div class="cover-sub">ZHI LIAO</div>
+    <div class="cover-bar"></div>
+    <div class="cover-desc">AI 驱动的食品原料智能平台<br>让优质原料不再被埋没</div>
+    <div class="cover-year">zhiliao-ai.cn</div>
+  </div>
+</div>
+
+<!-- ===== PAGE 2: MARKET + PAIN POINTS ===== -->
+<div class="page">
+  <div class="content-page">
+    <div class="sec-num">01 · Market Opportunity</div>
+    <div class="sec-title">万亿级市场的数字化空白</div>
+
+    <div class="bigbox">
+      <div class="bigbox-num">2.45万亿</div>
+      <div class="bigbox-desc">2025 年中国餐饮食材市场规模<br>全球食品配料市场预计 2034 年达 4,875 亿美元（CAGR 6.1%）</div>
+    </div>
+
+    <div class="sec-text">中国食品行业正经历从「规模扩张」到「品质驱动」的深刻转型。健康化、功能化、个性化成为三大核心趋势。<strong>然而，食品原料的信息化水平严重滞后于行业发展</strong>——数以万计的原料 SKU、复杂的法规体系、分散的供应商信息，构成了巨大的效率瓶颈。</div>
+
+    <div class="sec-text">这是一个拥有<strong>万亿级体量</strong>却<strong>缺乏数字化基础设施</strong>的市场。</div>
+
+    <div style="margin-top: 32px;">
+      <div class="sec-num">02 · Pain Points</div>
+      <div class="sec-title">食品研发与采购的四大困境</div>
+    </div>
+
+    <div class="grid2">
+      <div class="card pain">
+        <div class="card-icon">🔍</div>
+        <div class="card-title">找料难</div>
+        <div class="card-desc">一个新产品研发，采购和研发人员需要在几十个供应商之间来回比对原料参数，耗时数天甚至数周。</div>
+      </div>
+      <div class="card pain">
+        <div class="card-icon">⚖️</div>
+        <div class="card-title">合规门槛高</div>
+        <div class="card-desc">GB 2760、GB 14880、保健食品目录……法规体系庞杂，判断一个原料能否用于特定食品类别需要深厚专业知识。</div>
+      </div>
+      <div class="card pain">
+        <div class="card-icon">🔗</div>
+        <div class="card-title">信息孤岛</div>
+        <div class="card-desc">供应商产品信息分散在 PDF、邮件、展会资料中，缺乏统一的数字化标准，上下游严重信息不对称。</div>
+      </div>
+      <div class="card pain">
+        <div class="card-icon">⏱️</div>
+        <div class="card-title">决策低效</div>
+        <div class="card-desc">从需求提出到确定供应商，传统流程冗长低效，新原料引入周期平均超过 3 个月。</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="brand">知料 ZhiLiao</div>
+      <div class="url">zhiliao-ai.cn</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 3: WHAT WE BUILD + EDGE ===== -->
+<div class="page">
+  <div class="content-page">
+    <div class="sec-num">03 · What We Build</div>
+    <div class="sec-title">知料做什么</div>
+    <div class="sec-text">知料是一个<strong>AI 驱动的食品原料智能推荐平台</strong>，连接上游原料供应商与下游食品企业，通过技术手段解决行业信息不对称问题。</div>
+
+    <div class="feat-list">
+      <div class="feat-item">
+        <div class="feat-icon">🤖</div>
+        <div>
+          <div class="feat-title">AI 智能推荐引擎</div>
+          <div class="feat-desc">输入产品需求（如"高蛋白低糖运动饮料"），AI 从海量原料库中智能匹配最优方案，附带科学依据和法规合规说明，30 秒出结果。</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">📑</div>
+        <div>
+          <div class="feat-title">法规合规速查</div>
+          <div class="feat-desc">实时查询原料在中国食品安全法规中的使用状态，覆盖 GB 2760、GB 14880、保健食品原料目录等核心法规。</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">🔎</div>
+        <div>
+          <div class="feat-title">多维度原料搜索</div>
+          <div class="feat-desc">按名称、功能、供应商、应用场景等多维度快速搜索，支持中英文模糊匹配。</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon">💰</div>
+        <div>
+          <div class="feat-title">价格参考与供应商对接</div>
+          <div class="feat-desc">提供原料市场价格参考区间，展示供应商资质和产品线，促进精准商务对接。</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 28px;">
+      <div class="sec-num">04 · Competitive Edge</div>
+      <div class="sec-title">为什么是知料</div>
+    </div>
+
+    <div class="info-full">
+      <div class="label">🎯 数据壁垒</div>
+      <div class="text">已整合 60+ 国际优质原料供应商产品数据，涵盖蛋白质、功能性成分、油脂、植物原料等 10 大产品线。数据来自供应商一手资料，包含临床研究、法规认证、技术规格等深度信息，持续扩充中。</div>
+    </div>
+    <div class="info-full">
+      <div class="label">🧠 AI 技术</div>
+      <div class="text">基于大语言模型的 RAG（检索增强生成）架构，确保 AI 推荐<strong>有据可查、有法可依</strong>。每条推荐都附带数据来源和法规依据，不是「拍脑袋」的建议。</div>
+    </div>
+    <div class="info-full">
+      <div class="label">🌍 行业洞察</div>
+      <div class="text">团队深耕食品原料行业，对国内外供应商体系、法规框架、市场动态有深刻理解。知料不是纯粹的技术产品，而是<strong>行业经验 + AI 技术</strong>的深度融合。</div>
+    </div>
+
+    <div class="page-footer">
+      <div class="brand">知料 ZhiLiao</div>
+      <div class="url">zhiliao-ai.cn</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE 4: ROADMAP + MARKET ===== -->
+<div class="page">
+  <div class="content-page">
+    <div class="sec-num">05 · Roadmap</div>
+    <div class="sec-title">从工具到平台，从信息到交易</div>
+
+    <div class="rm-item">
+      <div class="rm-dot"></div>
+      <div>
+        <div class="rm-tag">PHASE 1 · 当前</div>
+        <div class="rm-title">MVP 验证期</div>
+        <div class="rm-desc">完成核心功能：AI 推荐 + 原料搜索 + 法规速查。积累种子用户，验证产品价值。<br>目标：50+ 供应商数据，1,000+ 月活用户。</div>
+      </div>
+    </div>
+    <div class="rm-item v2">
+      <div class="rm-dot"></div>
+      <div>
+        <div class="rm-tag">PHASE 2</div>
+        <div class="rm-title">平台化扩展</div>
+        <div class="rm-desc">开放供应商入驻，建立标准化数据接入体系。引入在线询价、样品申请、供应商评价等功能。<br>目标：500+ 供应商，覆盖中国主流原料品类。</div>
+      </div>
+    </div>
+    <div class="rm-item v3">
+      <div class="rm-dot"></div>
+      <div>
+        <div class="rm-tag">PHASE 3</div>
+        <div class="rm-title">交易闭环与数据变现</div>
+        <div class="rm-desc">打通从「找料」到「采购」的完整链路。基于交易数据和行业洞察，提供市场趋势分析、价格预测、供应链优化等增值服务。</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 32px;">
+      <div class="sec-num">06 · Target Market</div>
+      <div class="sec-title">覆盖食品全产业链</div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num">10万<span class="stat-unit">+</span></div>
+        <div class="stat-label">食品生产企业</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">5万<span class="stat-unit">+</span></div>
+        <div class="stat-label">原料供应商</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100万<span class="stat-unit">+</span></div>
+        <div class="stat-label">研发/采购从业者</div>
+      </div>
+    </div>
+
+    <div class="target-grid">
+      <div class="target-card up">
+        <div class="target-tag">上游用户</div>
+        <div class="target-text">原料供应商、贸易商——通过知料展示产品、获取精准客户、了解市场需求动态。</div>
+      </div>
+      <div class="target-card down">
+        <div class="target-tag">下游用户</div>
+        <div class="target-text">食品企业研发人员、采购人员——通过知料快速找料、合规验证、对接供应商。</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div class="brand">知料 ZhiLiao</div>
+      <div class="url">zhiliao-ai.cn</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

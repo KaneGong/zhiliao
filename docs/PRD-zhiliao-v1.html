@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>知料 ZhiLiao — 产品需求文档 v1.0</title>
+<style>
+body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.8; color: #333; }
+h1 { color: #1a1a1a; border-bottom: 2px solid #00a88e; padding-bottom: 10px; }
+h2 { color: #00a88e; margin-top: 30px; }
+h3 { color: #555; }
+table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+th { background: #f5f5f5; font-weight: 600; }
+tr:nth-child(even) { background: #fafafa; }
+code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+pre { background: #f5f5f5; padding: 15px; border-radius: 5px; overflow-x: auto; }
+ul, ol { padding-left: 20px; }
+li { margin: 5px 0; }
+strong { color: #1a1a1a; }
+hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+blockquote { border-left: 4px solid #00a88e; margin: 15px 0; padding: 10px 20px; background: #f9f9f9; }
+</style>
+</head>
+<body>
+<h1>知料 ZhiLiao — 产品需求文档 v1.0</h1>
+<blockquote>
+<p>版本：MVP（最小可行产品）
+日期：2026-05-08
+作者：艾希（AI）+ Kane（决策）</p>
+</blockquote>
+<hr />
+<h2>1. 产品定位</h2>
+<p><strong>一句话：帮食品企业快速找到合适的原料，同时确保符合法规。</strong></p>
+<p>知料是一个开放的食品原料智能平台，连接上游原料供应商与下游食品企业：
+- <strong>上游</strong>：供应商展示产品数据（功能、规格、价格）
+- <strong>下游</strong>：食品企业搜索原料、获取 AI 推荐、检查法规合规</p>
+<h3>MVP 阶段范围</h3>
+<ul>
+<li>仅接入 ANG（爱联康营养）作为种子供应商</li>
+<li>60+ 产品数据已就绪（Prochin 乳蛋白 + Novosana 鱼油/藻油）</li>
+<li>验证核心假设：食品企业研发/采购人员是否愿意用 AI 推荐找原料</li>
+</ul>
+<hr />
+<h2>2. 目标用户</h2>
+<h3>主要用户：食品企业研发/采购人员</h3>
+<ul>
+<li><strong>角色</strong>：研发工程师、产品经理、采购专员</li>
+<li><strong>场景</strong>：开发新产品时需要找合适的原料供应商</li>
+<li><strong>痛点</strong>：</li>
+<li>找原料靠人脉和展会，效率低</li>
+<li>不确定原料是否符合 GB 法规</li>
+<li>同类原料跨供应商比价困难</li>
+<li>信息分散，缺乏一站式平台</li>
+</ul>
+<h3>次要用户：原料供应商销售/市场人员</h3>
+<ul>
+<li><strong>MVP 阶段</strong>：由 Kane 手动录入数据，不需要供应商后台</li>
+<li><strong>后期</strong>：供应商自主上传和更新产品数据</li>
+</ul>
+<hr />
+<h2>3. 核心功能（MVP）</h2>
+<h3>3.1 原料搜索</h3>
+<p><strong>用户故事：</strong> 作为食品研发人员，我想按品类/功能搜索原料，快速找到候选产品。</p>
+<p><strong>功能描述：</strong>
+- 按品类筛选：乳蛋白、鱼油、藻油、植物蛋白、功能性原料等
+- 按功能筛选：免疫调节、体重管理、骨骼健康、抗氧化等
+- 按供应商筛选：当前仅 ANG
+- 关键词搜索：支持中英文产品名、功能描述搜索
+- 搜索结果列表：产品名 + 品类 + 供应商 + 一句话功能描述</p>
+<h3>3.2 AI 智能推荐</h3>
+<p><strong>用户故事：</strong> 作为食品研发人员，我输入产品需求描述，AI 帮我推荐最合适的原料组合。</p>
+<p><strong>功能描述：</strong>
+- 输入框：自由文本描述需求（如"我要做一款高蛋白低糖的运动后恢复饮料"）
+- AI 输出：
+  - 3-5 个推荐原料方案
+  - 每个方案包含：原料名称 + 功能 + 建议添加量 + 法规状态 + 参考价格区间
+  - 每个推荐标注数据来源（如"来源：Glanbia Prolibra 产品规格书"）
+- 技术实现：RAG（检索增强生成）+ MiMo API</p>
+<p><strong>幻觉控制机制：</strong>
+- AI 只能推荐数据库中已有的原料
+- 每个推荐必须引用来源
+- 法规检查用规则引擎，不靠 AI 判断
+- 数据库没有的就说"暂无数据，建议向供应商确认"</p>
+<h3>3.3 法规速查</h3>
+<p><strong>用户故事：</strong> 作为食品研发人员，我想快速查某个原料是否符合中国食品安全法规。</p>
+<p><strong>功能描述：</strong>
+- 输入原料名或功能声称
+- 系统检查：
+  - GB 2760（食品添加剂使用标准）
+  - GB 14880（食品营养强化剂使用标准）
+  - 保健食品原料目录
+- 输出：合规状态 + 具体条款引用 + 注意事项</p>
+<h3>3.4 供应商信息展示</h3>
+<p><strong>用户故事：</strong> 作为采购人员，我想看到供应商的联系方式，方便进一步询价。</p>
+<p><strong>功能描述：</strong>
+- 供应商详情页：公司简介 + 产品线概览 + 联系方式
+- 产品详情页：完整规格 + 临床证据 + 法规状态 + 供应商信息
+- 当前阶段：联系方式指向 ANG 官方渠道</p>
+<hr />
+<h2>4. 信息架构</h2>
+<pre><code>首页
+├── 搜索栏（支持关键词 + 分类筛选）
+├── AI 推荐入口（醒目的输入框）
+├── 热门品类入口
+│
+├── 搜索结果页
+│   ├── 筛选面板（品类 / 功能 / 供应商）
+│   ├── 结果列表
+│   └── 排序（相关度 / 品类）
+│
+├── AI 推荐页
+│   ├── 需求输入框
+│   ├── 推荐结果（方案卡片）
+│   └── 查看详情
+│
+├── 产品详情页
+│   ├── 基本信息
+│   ├── 功能与机制
+│   ├── 临床证据
+│   ├── 法规状态
+│   ├── 价格参考
+│   └── 供应商信息
+│
+├── 法规速查页
+│   ├── 搜索 / 输入
+│   ├── 合规检查结果
+│   └── 相关法规引用
+│
+└── 供应商页
+    ├── ANG 简介
+    └── 产品线列表
+</code></pre>
+<hr />
+<h2>5. 数据需求</h2>
+<h3>已有数据</h3>
+<ul>
+<li><strong>产品数据库 v3</strong>：60 个产品，10 条产品线</li>
+<li>Prochin（乳蛋白）：18 个产品</li>
+<li>Novosana（鱼油/藻油）：42 个产品</li>
+<li><strong>法规数据库 v1</strong>：GB 2760、GB 14880、保健食品目录</li>
+<li><strong>价格数据</strong>：参考价（仅供参考，非交易价）</li>
+</ul>
+<h3>需要补充的数据</h3>
+<ul>
+<li>产品图片（供应商 logo、产品包装图）</li>
+<li>产品详细规格（部分产品待补充）</li>
+<li>供应商联系方式</li>
+<li>更多临床证据链接</li>
+</ul>
+<hr />
+<h2>6. 技术方案（概要）</h2>
+<h3>前端</h3>
+<ul>
+<li><strong>框架</strong>：Next.js 14+（React）</li>
+<li><strong>部署</strong>：Vercel（免费额度，MVP 够用）</li>
+<li><strong>UI 库</strong>：Tailwind CSS + shadcn/ui</li>
+</ul>
+<h3>后端</h3>
+<ul>
+<li><strong>框架</strong>：Next.js API Routes 或独立 Node.js 服务</li>
+<li><strong>数据库</strong>：PostgreSQL（Supabase 托管，免费 500MB）</li>
+<li><strong>向量搜索</strong>：pgvector（语义搜索原料）</li>
+</ul>
+<h3>AI 层</h3>
+<ul>
+<li><strong>主模型</strong>：MiMo V2.5（推荐生成）</li>
+<li><strong>搜索</strong>：向量 Embedding + 语义搜索</li>
+<li><strong>法规</strong>：规则引擎（GB 标准校验）</li>
+</ul>
+<h3>域名 &amp; 部署</h3>
+<ul>
+<li><strong>域名</strong>：zhiliao-ai.cn（已注册）</li>
+<li><strong>服务器</strong>：MVP 阶段用 Vercel（海外）+ Supabase（海外）</li>
+<li><strong>ICP 备案</strong>：已提交，待审核</li>
+</ul>
+<hr />
+<h2>7. MVP 开发计划</h2>
+<h3>Phase 1：基础搭建（第 1-2 周）</h3>
+<ul>
+<li>[ ] 设计数据库 Schema</li>
+<li>[ ] 导入 60 个产品数据到 PostgreSQL</li>
+<li>[ ] 搭建 Next.js 项目框架</li>
+<li>[ ] 实现产品搜索功能（基础版）</li>
+</ul>
+<h3>Phase 2：AI 推荐（第 2-3 周）</h3>
+<ul>
+<li>[ ] 接入 MiMo API</li>
+<li>[ ] 实现向量 Embedding + 语义搜索</li>
+<li>[ ] 搭建 RAG 流程</li>
+<li>[ ] 实现 AI 推荐功能</li>
+</ul>
+<h3>Phase 3：法规 &amp; 打磨（第 3-4 周）</h3>
+<ul>
+<li>[ ] 导入法规数据</li>
+<li>[ ] 实现法规速查功能</li>
+<li>[ ] UI 打磨 + 移动端适配</li>
+<li>[ ] 内测上线</li>
+</ul>
+<h3>Phase 4：验证（第 4-6 周）</h3>
+<ul>
+<li>[ ] 找 5-10 个食品行业朋友试用</li>
+<li>[ ] 收集反馈</li>
+<li>[ ] 迭代优化</li>
+</ul>
+<hr />
+<h2>8. 成功指标（MVP 阶段）</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>目标</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注册用户</td>
+<td>50+</td>
+<td>食品行业从业者</td>
+</tr>
+<tr>
+<td>日活跃用户</td>
+<td>10+</td>
+<td>每天至少 10 人使用</td>
+</tr>
+<tr>
+<td>AI 推荐使用率</td>
+<td>30%+</td>
+<td>使用 AI 推荐功能的用户比例</td>
+</tr>
+<tr>
+<td>用户满意度</td>
+<td>NPS &gt; 30</td>
+<td>推荐指数</td>
+</tr>
+<tr>
+<td>数据库准确率</td>
+<td>95%+</td>
+<td>AI 推荐的原料信息准确</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>9. 变现模式（后期规划）</h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1.0</td>
+<td>免费</td>
+<td>MVP 阶段，验证需求</td>
+</tr>
+<tr>
+<td>V1.5</td>
+<td>供应商付费入驻</td>
+<td>供应商付费展示产品数据</td>
+</tr>
+<tr>
+<td>V2.0</td>
+<td>询价服务费</td>
+<td>下游企业通过平台询价，收取服务费</td>
+</tr>
+<tr>
+<td>V2.5</td>
+<td>数据订阅</td>
+<td>行业原料趋势、价格走势等增值服务</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>10. 风险与应对</h2>
+<table>
+<thead>
+<tr>
+<th>风险</th>
+<th>影响</th>
+<th>应对</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 幻觉</td>
+<td>推荐不准确，损害信任</td>
+<td>RAG + 规则引擎 + 引用来源</td>
+</tr>
+<tr>
+<td>数据不全</td>
+<td>推荐范围有限</td>
+<td>先做 60 个核心产品，逐步扩充</td>
+</tr>
+<tr>
+<td>用户不来</td>
+<td>验证失败</td>
+<td>利用 Kane 的行业人脉推广</td>
+</tr>
+<tr>
+<td>竞品出现</td>
+<td>市场被抢</td>
+<td>先发优势 + 数据壁垒</td>
+</tr>
+<tr>
+<td>法规风险</td>
+<td>合规问题</td>
+<td>法规检查用规则引擎，不做法律建议</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>文档版本：v1.0 | 最后更新：2026-05-08</em></p>
+</body>
+</html>

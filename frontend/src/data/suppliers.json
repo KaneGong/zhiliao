@@ -1,0 +1,83 @@
+[
+  {
+    "id": "ang",
+    "name": "爱联康营养",
+    "name_en": "ANG Ingredients",
+    "description": "中国领先的食品原料分销商，代理多个国际知名品牌的乳蛋白、鱼油、功能性原料",
+    "contact": {
+      "email": "",
+      "phone": "",
+      "person": ""
+    },
+    "website": "",
+    "location": "上海",
+    "brands": ["Glanbia", "Ingredia", "Kerry", "EpiCor", "Tatua", "EPAX", "Lysi", "OMAX", "DMAX", "CFI", "Ocean Oils"],
+    "is_master": false
+  },
+  {
+    "id": "glanbia",
+    "name": "哥兰比亚",
+    "name_en": "Glanbia Nutritionals",
+    "description": "全球领先的乳品和营养配料公司，总部位于爱尔兰",
+    "contact": {},
+    "website": "https://www.glanbianutritionals.com",
+    "location": "爱尔兰",
+    "brands": ["Glanbia"],
+    "is_master": false
+  },
+  {
+    "id": "ingredia",
+    "name": "安迪亚",
+    "name_en": "Ingredia",
+    "description": "法国乳制品原料专家，专注于功能性乳蛋白",
+    "contact": {},
+    "website": "https://www.ingredia.com",
+    "location": "法国",
+    "brands": ["Ingredia"],
+    "is_master": false
+  },
+  {
+    "id": "kerry",
+    "name": "凯爱瑞",
+    "name_en": "Kerry Group",
+    "description": "全球领先的风味和营养公司",
+    "contact": {},
+    "website": "https://www.kerry.com",
+    "location": "爱尔兰",
+    "brands": ["Kerry"],
+    "is_master": false
+  },
+  {
+    "id": "epicor",
+    "name": "EpiCor 嘉吉",
+    "name_en": "EpiCor (Cargill)",
+    "description": "嘉吉旗下后生元品牌，专注免疫健康",
+    "contact": {},
+    "website": "",
+    "location": "美国",
+    "brands": ["EpiCor"],
+    "is_master": false
+  },
+  {
+    "id": "tatua",
+    "name": "大拓",
+    "name_en": "Tatua Co-operative Dairy Company",
+    "description": "新西兰乳制品合作社，专注高品质乳蛋白",
+    "contact": {},
+    "website": "https://www.tatua.com",
+    "location": "新西兰",
+    "brands": ["Tatua"],
+    "is_master": false
+  },
+  {
+    "id": "novosana",
+    "name": "Novosana",
+    "name_en": "Novosana",
+    "description": "鱼油和Omega-3原料分销商，代理EPAX、Lysi、OMAX、DMAX等品牌",
+    "contact": {},
+    "website": "",
+    "location": "荷兰",
+    "brands": ["EPAX", "Lysi", "OMAX", "DMAX", "CFI", "Ocean Oils"],
+    "is_master": false
+  }
+]
