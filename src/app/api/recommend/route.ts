@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { searchProducts } from "@/lib/data";
-import type { ProductWithPrice } from "@/types";
+import { searchUnified } from "@/lib/data";
+import type { SearchResultItem } from "@/lib/data";
 
 const MIMO_API_URL = "https://api.xiaomimimo.com/v1/chat/completions";
 
-function buildContext(products: ProductWithPrice[]): string {
+function buildContext(products: SearchResultItem[]): string {
   return products
     .map(
       (p) =>
         `[${p.id}] ${p.product_name} (${p.product_code})\n` +
-        `供应商: ${p.supplier}\n` +
+        `供应商: ${p.supplier_name}\n` +
         `品类: ${p.category}\n` +
         `功能: ${p.function}\n` +
         `${p.mechanism ? `机制: ${p.mechanism}\n` : ""}` +
@@ -39,9 +39,9 @@ export async function POST(request: NextRequest) {
     .split(/\s+/)
     .filter((k) => k.length > 0);
 
-  let matchedProducts: ProductWithPrice[] = [];
+  let matchedProducts: SearchResultItem[] = [];
   for (const keyword of keywords) {
-    const results = searchProducts({ query: keyword });
+    const results = searchUnified({ query: keyword });
     matchedProducts.push(...results);
   }
 
@@ -55,10 +55,10 @@ export async function POST(request: NextRequest) {
 
   // If no matches, get all products (fallback)
   if (matchedProducts.length === 0) {
-    matchedProducts = searchProducts({}).slice(0, 15);
+    matchedProducts = searchUnified({}).slice(0, 15);
   }
 
-  // Step 2: Build context and call MiMo
+  // Step 2: Build context
   const context = buildContext(matchedProducts);
 
   const apiKey = process.env.XIAOMI_API_KEY;
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
         product_id: p.id,
         product_name: p.product_name,
         category: p.category,
-        supplier: p.supplier,
+        supplier: p.supplier_name,
         function: p.function,
         suggested_dosage: p.dosage_range || "待确认",
         price_range: p.price
@@ -161,7 +161,7 @@ export async function POST(request: NextRequest) {
         product_id: p.id,
         product_name: p.product_name,
         category: p.category,
-        supplier: p.supplier,
+        supplier: p.supplier_name,
         function: p.function,
         suggested_dosage: p.dosage_range || "待确认",
         price_range: p.price
@@ -185,7 +185,7 @@ export async function POST(request: NextRequest) {
         product_id: p.id,
         product_name: p.product_name,
         category: p.category,
-        supplier: p.supplier,
+        supplier: p.supplier_name,
         function: p.function,
         suggested_dosage: p.dosage_range || "待确认",
         price_range: p.price

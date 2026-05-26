@@ -1,0 +1,11 @@
+[
+  {
+    "id": "user-admin-001",
+    "email": "kane@zhiliao-ai.cn",
+    "name": "Kane",
+    "password_hash": "$2a$10$cnA71s9Z0CRNOF4Jq5NpIet6H/R9GyXV.uKKbRE/LVmClto/axSia",
+    "role": "admin",
+    "company": "知料 ZhiLiao",
+    "created_at": "2026-05-15T00:00:00Z"
+  }
+]

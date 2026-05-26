@@ -1,154 +1,86 @@
-import { cn } from "@/lib/utils";
+import React from "react";
 
-// ── Loading Skeleton ──
-export function Skeleton({ className }: { className?: string }) {
-  return <div className={cn("skeleton", className)} />;
+// ── Spinner ──
+export function Spinner({ className = "h-5 w-5" }: { className?: string }) {
+  return <svg className={`animate-spin text-amber-400 ${className}`} fill="none" viewBox="0 0 24 24">
+    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+  </svg>;
 }
 
-// ── Empty State ──
-export function EmptyState({
-  icon,
-  title,
-  description,
-}: {
-  icon: string;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <div className="text-center py-16 fade-in">
-      <div className="text-5xl mb-4">{icon}</div>
-      <h3 className="text-lg font-medium text-gray-900 mb-1">{title}</h3>
-      {description && (
-        <p className="text-sm text-gray-500 max-w-md mx-auto">{description}</p>
-      )}
-    </div>
-  );
-}
-
-// ── Loading Spinner ──
-export function Spinner({ className }: { className?: string }) {
-  return (
-    <svg
-      className={cn("animate-spin h-5 w-5 text-blue-600", className)}
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-    </svg>
-  );
+// ── Skeleton ──
+export function Skeleton({ className = "h-4 w-full" }: { className?: string }) {
+  return <div className={`skeleton ${className}`} />;
 }
 
 // ── Badge ──
-export function Badge({
-  children,
-  variant = "default",
-  className,
-}: {
-  children: React.ReactNode;
-  variant?: "default" | "blue" | "green" | "yellow" | "red" | "gray";
-  className?: string;
+const badgeColors: Record<string, string> = {
+  blue: "bg-orange-500/10 text-amber-300 border-orange-500/15",
+  green: "bg-emerald-500/10 text-emerald-400 border-emerald-500/15",
+  amber: "bg-amber-500/10 text-amber-400 border-amber-500/15",
+  red: "bg-red-500/10 text-red-400 border-red-500/15",
+  purple: "bg-purple-500/10 text-purple-400 border-purple-500/15",
+  gray: "bg-[var(--bg-surface)]/[0.04] text-slate-500 border-white/[0.06]",
+};
+export function Badge({ children, variant = "gray", className = "" }: {
+  children: React.ReactNode; variant?: string; className?: string;
 }) {
-  const variants = {
-    default: "bg-gray-100 text-gray-700",
-    blue: "bg-blue-50 text-blue-700",
-    green: "bg-green-50 text-green-700",
-    yellow: "bg-yellow-50 text-yellow-700",
-    red: "bg-red-50 text-red-700",
-    gray: "bg-gray-100 text-gray-600",
+  return <span className={`inline-flex items-center text-xs font-medium px-2 py-0.5 rounded-full border ${badgeColors[variant] || badgeColors.gray} ${className}`}>
+    {children}
+  </span>;
+}
+
+// ── Empty State ──
+export function EmptyState({ icon, title, description, action }: {
+  icon?: string; title: string; description?: string; action?: React.ReactNode;
+}) {
+  return <div className="text-center py-16 fade-in">
+    {icon && <div className="text-5xl mb-4">{icon}</div>}
+    <h3 className="text-lg font-medium text-slate-200 mb-1">{title}</h3>
+    {description && <p className="text-sm text-slate-500 max-w-md mx-auto mb-4">{description}</p>}
+    {action}
+  </div>;
+}
+
+// ── Modal ──
+export function Modal({ open, onClose, title, children, footer }: {
+  open: boolean; onClose: () => void; title: string; children: React.ReactNode; footer?: React.ReactNode;
+}) {
+  if (!open) return null;
+  return <div className="fixed inset-0 z-50 flex items-start justify-center pt-10 pb-10 overflow-y-auto" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+    <div className="fixed inset-0  bg-black/60 backdrop-blur-sm" />
+    <div className="relative bg-[var(--bg-surface)] rounded-2xl shadow-2xl w-full max-w-3xl mx-4 slide-up">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.05]">
+        <h2 className="text-lg font-bold text-slate-200">{title}</h2>
+        <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.04] text-slate-500 hover:text-slate-500">✕</button>
+      </div>
+      <div className="px-6 py-5 space-y-5 max-h-[70vh] overflow-y-auto">{children}</div>
+      {footer && <div className="flex items-center justify-end gap-3 px-6 py-4 border-t border-white/[0.05] bg-white/[0.02]/50 rounded-b-2xl">{footer}</div>}
+    </div>
+  </div>;
+}
+
+// ── Input / Select / Textarea helpers ──
+const inputClass = "w-full px-3 py-2.5 border border-white/[0.08] rounded-lg text-sm bg-[var(--bg-surface)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500/30 transition-colors disabled:bg-white/[0.02] disabled:text-slate-500";
+export function Input({ className = "", ...props }: React.InputHTMLAttributes<HTMLInputElement>) {
+  return <input className={`${inputClass} ${className}`} {...props} />;
+}
+export function Select({ className = "", children, ...props }: React.SelectHTMLAttributes<HTMLSelectElement>) {
+  return <select className={`${inputClass} cursor-pointer ${className}`} {...props}>{children}</select>;
+}
+export function Textarea({ className = "", ...props }: React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
+  return <textarea className={`${inputClass} resize-none ${className}`} {...props} />;
+}
+
+// ── Button ──
+export function Button({ variant = "primary", size = "md", className = "", children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" | "ghost" | "danger"; size?: "sm" | "md" | "lg" }) {
+  const base = "inline-flex items-center justify-center gap-2 font-medium rounded-xl transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed";
+  const sizes: Record<string, string> = { sm: "px-3 py-1.5 text-xs", md: "px-5 py-2.5 text-sm", lg: "px-7 py-3 text-base" };
+  const styles: Record<string, string> = {
+    primary: "bg-gradient-to-r from-amber-500 to-orange-500 text-slate-200 hover:from-amber-400 hover:to-orange-400 shadow-[0_0_12px_rgba(34,211,238,0.12)]",
+    secondary: "bg-[var(--bg-surface)] text-slate-300 border border-white/[0.08] hover:bg-white/[0.02]",
+    ghost: "text-slate-500 hover:text-slate-200 hover:bg-white/[0.04]",
+    danger: "bg-red-500/80 text-white hover:bg-red-500",
   };
-
-  return (
-    <span
-      className={cn(
-        "inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full",
-        variants[variant],
-        className
-      )}
-    >
-      {children}
-    </span>
-  );
-}
-
-// ── Card ──
-export function Card({
-  children,
-  className,
-  hover = false,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  hover?: boolean;
-}) {
-  return (
-    <div
-      className={cn(
-        "bg-white rounded-xl border border-gray-200",
-        hover && "card-hover",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-}
-
-// ── Section Title ──
-export function SectionTitle({
-  title,
-  subtitle,
-  action,
-}: {
-  title: string;
-  subtitle?: string;
-  action?: React.ReactNode;
-}) {
-  return (
-    <div className="flex items-end justify-between mb-6">
-      <div>
-        <h2 className="text-xl font-bold text-gray-900 tracking-tight">{title}</h2>
-        {subtitle && <p className="text-sm text-gray-500 mt-1">{subtitle}</p>}
-      </div>
-      {action}
-    </div>
-  );
-}
-
-// ── Price Display ──
-export function PriceDisplay({
-  price,
-  priceRange,
-  unit,
-  trend,
-  size = "md",
-}: {
-  price?: number | null;
-  priceRange?: string;
-  unit?: string;
-  trend?: string;
-  size?: "sm" | "md" | "lg";
-}) {
-  const sizeClasses = {
-    sm: "text-sm",
-    md: "text-lg",
-    lg: "text-2xl",
-  };
-
-  if (!price && !priceRange) {
-    return <span className="text-sm text-gray-400">待询价</span>;
-  }
-
-  return (
-    <div className="text-right">
-      <div className={cn("font-bold text-blue-600", sizeClasses[size])}>
-        ¥{price || priceRange}
-      </div>
-      <div className="text-xs text-gray-400 mt-0.5">
-        {unit || "元/kg"}
-        {trend && <span className="ml-1">{trend}</span>}
-      </div>
-    </div>
-  );
+  return <button className={`${base} ${sizes[size]} ${styles[variant]} ${className}`} {...props}>{children}</button>;
 }

@@ -11,7 +11,19 @@
     },
     "website": "",
     "location": "上海",
-    "brands": ["Glanbia", "Ingredia", "Kerry", "EpiCor", "Tatua", "EPAX", "Lysi", "OMAX", "DMAX", "CFI", "Ocean Oils"],
+    "brands": [
+      "Glanbia",
+      "Ingredia",
+      "Kerry",
+      "EpiCor",
+      "Tatua",
+      "EPAX",
+      "Lysi",
+      "OMAX",
+      "DMAX",
+      "CFI",
+      "Ocean Oils"
+    ],
     "is_master": false
   },
   {
@@ -22,7 +34,9 @@
     "contact": {},
     "website": "https://www.glanbianutritionals.com",
     "location": "爱尔兰",
-    "brands": ["Glanbia"],
+    "brands": [
+      "Glanbia"
+    ],
     "is_master": false
   },
   {
@@ -33,7 +47,9 @@
     "contact": {},
     "website": "https://www.ingredia.com",
     "location": "法国",
-    "brands": ["Ingredia"],
+    "brands": [
+      "Ingredia"
+    ],
     "is_master": false
   },
   {
@@ -44,7 +60,9 @@
     "contact": {},
     "website": "https://www.kerry.com",
     "location": "爱尔兰",
-    "brands": ["Kerry"],
+    "brands": [
+      "Kerry"
+    ],
     "is_master": false
   },
   {
@@ -55,7 +73,9 @@
     "contact": {},
     "website": "",
     "location": "美国",
-    "brands": ["EpiCor"],
+    "brands": [
+      "EpiCor"
+    ],
     "is_master": false
   },
   {
@@ -66,7 +86,9 @@
     "contact": {},
     "website": "https://www.tatua.com",
     "location": "新西兰",
-    "brands": ["Tatua"],
+    "brands": [
+      "Tatua"
+    ],
     "is_master": false
   },
   {
@@ -77,7 +99,33 @@
     "contact": {},
     "website": "",
     "location": "荷兰",
-    "brands": ["EPAX", "Lysi", "OMAX", "DMAX", "CFI", "Ocean Oils"],
+    "brands": [
+      "EPAX",
+      "Lysi",
+      "OMAX",
+      "DMAX",
+      "CFI",
+      "Ocean Oils"
+    ],
+    "is_master": false
+  },
+  {
+    "id": "ANG",
+    "name": "荷兰爱联康营养",
+    "name_en": "Alliance Nutriton",
+    "description": "",
+    "contact": {
+      "email": "",
+      "phone": "18601666173",
+      "person": "Kane"
+    },
+    "website": "",
+    "location": "上海",
+    "brands": [
+      "Glanbia",
+      "Ingredia",
+      "大拓，Provico"
+    ],
     "is_master": false
   }
 ]

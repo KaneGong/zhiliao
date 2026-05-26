@@ -1,1697 +1,3825 @@
 [
   {
-    "id": "GLA-PRO-001",
-    "product_name": "Prolibra 浓缩乳清蛋白",
-    "supplier_id": "ang",
+    "id": "GLA-A282",
+    "supplier_id": "glanbia",
     "supplier_name": "Glanbia 哥兰比亚",
-    "generic_name": "浓缩乳清蛋白",
-    "generic_name_en": "Whey Protein Concentrate",
+    "product_name": "Avonlac 282",
+    "generic_name": "速溶浓缩乳清蛋白粉",
+    "generic_name_en": "WPC80 Instant",
     "category": "蛋白质类",
     "source": "乳清蛋白",
-    "process": "WPI",
+    "process": "WPC80 速溶型",
     "functional_tags": [
+      "运动营养",
       "体重管理",
+      "蛋白补充"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白棒",
+      "蛋白饮料",
+      "固体饮料",
+      "烘焙"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤9%",
+      "水分": "≤6%",
+      "乳糖": "≤5%"
+    },
+    "function": "速溶型浓缩乳清蛋白粉，冷水可分散，提供优质乳清蛋白促进肌肉蛋白合成",
+    "mechanism": "乳清蛋白富含BCAA快速吸收刺激mTOR通路",
+    "dosage_range": "15-30g/份",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-A282",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GLA-O1007",
+    "supplier_id": "glanbia",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "product_name": "Optisol 1007",
+    "generic_name": "浓缩乳清蛋白粉",
+    "generic_name_en": "WPC80",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80",
+    "functional_tags": [
+      "运动营养",
+      "体重管理"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "乳制品",
+      "烘焙"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤8%",
+      "水分": "≤6%",
+      "pH": "6.2-7.0"
+    },
+    "function": "标准浓缩乳清蛋白粉适用于多种食品加工体系",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-O1007",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GLA-B181",
+    "supplier_id": "glanbia",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "product_name": "BarFlex 181",
+    "generic_name": "浓缩乳清蛋白粉(蛋白棒专用)",
+    "generic_name_en": "WPC80 Bar-Specific",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80 蛋白棒专用",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充"
+    ],
+    "applications": [
+      "蛋白棒",
+      "能量棒",
+      "营养棒"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤8%",
+      "水分": "≤5.5%"
+    },
+    "function": "专为蛋白棒设计的浓缩乳清蛋白，保持柔软质地延缓硬化",
+    "mechanism": "优化蛋白结构减少蛋白棒储存期间质地变化",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Glanbia BarFlex181规格书",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GLA-P292",
+    "supplier_id": "glanbia",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "product_name": "Provon 292",
+    "generic_name": "分离乳清蛋白粉",
+    "generic_name_en": "WPI90 Instant",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPI90 速溶型",
+    "functional_tags": [
+      "运动营养",
+      "体重管理",
+      "蛋白补充",
+      "乳糖不耐受"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "RTD饮料",
+      "营养补充"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥90%(干基)",
+      "脂肪": "≤1.5%",
+      "水分": "≤6%",
+      "乳糖": "≤1%",
+      "灰分": "≤3%"
+    },
+    "function": "高纯度速溶分离乳清蛋白，低脂低乳糖适合乳糖不耐受",
+    "mechanism": "高纯度WPI，BCAA丰富快速吸收促进肌肉恢复",
+    "dosage_range": "20-30g/份",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-P292",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GLA-T690",
+    "supplier_id": "glanbia",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "product_name": "Thermax 690",
+    "generic_name": "水解乳清蛋白粉(热稳定型)",
+    "generic_name_en": "WPH Heat Stable",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "水解乳清蛋白 热稳型",
+    "functional_tags": [
+      "运动营养",
+      "体重管理"
+    ],
+    "applications": [
+      "运动营养",
+      "RTD饮料",
+      "UHT饮料",
+      "液体蛋白"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥82%(干基)",
+      "脂肪": "≤7%",
+      "水分": "≤6%",
+      "水解度": "8-12%"
+    },
+    "function": "热稳定型水解乳清蛋白，UHT高温下不沉淀不凝胶",
+    "mechanism": "预水解降低肽链长度提高热稳定性",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-T690",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GLA-PFA",
+    "supplier_id": "glanbia",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "product_name": "PepForm A",
+    "generic_name": "水解乳清蛋白肽(富含精氨酸)",
+    "generic_name_en": "WPH Peptide(Arginine)",
+    "category": "功能性成分",
+    "source": "乳清蛋白",
+    "process": "水解乳清蛋白肽",
+    "functional_tags": [
       "运动营养"
     ],
     "applications": [
-      "体重管理",
-      "蛋白棒",
-      "功能性饮料",
-      "运动营养"
+      "运动营养",
+      "蛋白饮料",
+      "功能性食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "composition": "部分水解乳清分离蛋白、乳清矿物复合物",
-      "form": "粉末"
+      "蛋白": "≥78%",
+      "精氨酸": "≥4.5%",
+      "分子量": "<5000Da"
     },
-    "function": "体重管理：减脂并保持精瘦组织。专利配方含乳清蛋白、肽类和乳矿物盐",
-    "mechanism": "保持精瘦组织、分解脂肪、抑制脂肪沉积",
-    "dosage_range": "每日24.4克",
-    "clinical_evidence": "12周RCT研究（n=154，BMI 30-42）：体脂减少增加42%，精瘦组织保留翻倍，脂肪/精瘦组织比例改善74%",
+    "function": "富含精氨酸的水解乳清蛋白肽，促进NO生成支持运动表现",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "普通食品级",
-      "us": "GRAS",
-      "certifications": [
-        "Kosher",
-        "Halal"
-      ],
-      "patent": "专利申请中"
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
     },
     "price_range": null,
-    "origin": "爱尔兰/美国",
-    "data_source": "Glanbia Prolibra中文介绍PDF",
-    "confidence": "high"
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-PepFormA",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "GLA-BF-002",
-    "product_name": "Bioferrin 乳铁蛋白",
-    "supplier_id": "ang",
+    "id": "GLA-PFT",
+    "supplier_id": "glanbia",
     "supplier_name": "Glanbia 哥兰比亚",
-    "generic_name": "乳铁蛋白",
-    "generic_name_en": "Lactoferrin",
+    "product_name": "PepForm Tryptophan",
+    "generic_name": "水解乳清蛋白肽(富含色氨酸)",
+    "generic_name_en": "WPH Peptide(Tryptophan)",
     "category": "功能性成分",
-    "source": "乳铁蛋白",
-    "process": "喷雾干燥",
+    "source": "乳清蛋白",
+    "process": "水解乳清蛋白肽",
     "functional_tags": [
-      "含乳铁蛋白",
+      "改善睡眠",
+      "情绪调节"
+    ],
+    "applications": [
+      "功能性食品",
+      "助眠产品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥75%",
+      "色氨酸": "≥1.5%"
+    },
+    "function": "富含色氨酸的水解乳清蛋白肽，色氨酸为血清素和褪黑素前体",
+    "mechanism": "色氨酸→血清素→褪黑素代谢通路",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-PepFormTryptophan",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GLA-NEO",
+    "supplier_id": "glanbia",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "product_name": "NeoShield",
+    "generic_name": "浓缩乳清蛋白粉(含MFGM)",
+    "generic_name_en": "WPC with MFGM",
+    "category": "功能性成分",
+    "source": "乳清蛋白",
+    "process": "含MFGM浓缩乳清蛋白",
+    "functional_tags": [
+      "婴幼儿营养",
       "免疫支持",
-      "铁吸收"
+      "脑部发育"
     ],
     "applications": [
       "婴幼儿配方",
-      "免疫支持",
-      "保健食品"
+      "功能性食品",
+      "特医食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
     ],
     "key_specs": {
-      "source": "牛乳来源（含100-300ppm乳铁蛋白）",
-      "molecular_weight": "~80K Daltons",
-      "homology": "与人乳铁蛋白序列同源性~70%"
+      "蛋白": "≥65%",
+      "磷脂": "≥5%",
+      "脂肪": "≤22%",
+      "神经节苷脂": "180mg/100g",
+      "鞘磷脂": "25g/100g磷脂"
     },
-    "function": "铁结合糖蛋白，天然免疫成分。参与先天免疫系统第一道防线，抗病毒抗菌",
-    "mechanism": "铁螯合（阻止铁依赖性细菌生长）、干扰病毒粘附、结合内毒素/LPS",
+    "function": "含天然乳脂球膜MFGM，提供脑部发育关键营养素",
+    "mechanism": "MFGM中神经节苷脂和鞘磷脂参与神经髓鞘形成",
     "dosage_range": "",
-    "clinical_evidence": "",
+    "clinical_evidence": "多项RCT支持MFGM促进婴幼儿认知发育",
     "regulatory_status": {
-      "china": "允许用于婴幼儿配方和普通食品",
-      "us": "GRAS",
-      "eu": "允许用于婴幼儿配方和普通食品"
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
     },
     "price_range": null,
-    "origin": "爱尔兰/美国",
-    "data_source": "Glanbia Bioferrin英文介绍PDF",
-    "confidence": "high"
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-Neoshield",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "GLA-TC-003",
-    "product_name": "Trucal 乳矿物盐",
-    "supplier_id": "ang",
+    "id": "GLA-FUP",
+    "supplier_id": "glanbia",
     "supplier_name": "Glanbia 哥兰比亚",
-    "generic_name": "乳矿物盐",
-    "generic_name_en": "Milk Minerals",
-    "category": "维生素矿物质",
-    "source": "乳矿物盐",
-    "process": "粉末",
+    "product_name": "FerriUp",
+    "generic_name": "浓缩乳清蛋白粉(含乳铁蛋白2%)",
+    "generic_name_en": "WPC with Lactoferrin 2%",
+    "category": "功能性成分",
+    "source": "乳清蛋白",
+    "process": "含乳铁蛋白WPC",
     "functional_tags": [
-      "高钙",
-      "骨骼健康"
+      "免疫支持",
+      "婴幼儿营养"
     ],
     "applications": [
-      "骨骼健康",
-      "功能性饮料",
-      "乳制品",
-      "中老年营养"
+      "婴幼儿配方",
+      "功能性食品",
+      "免疫营养"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
     ],
     "key_specs": {
-      "minerals": "钙、磷、镁、钾、锌、铜（7种矿物质）",
-      "form": "乳矿物盐复合物"
+      "蛋白": "≥78%",
+      "乳铁蛋白": "≥2%",
+      "脂肪": "≤7%"
     },
-    "function": "复合乳矿物盐，含7种重要矿物质，促进骨骼健康",
-    "mechanism": "含钙、磷、镁、钾、锌、铜等，更有效地将钙运至骨骼",
+    "function": "含2%天然乳铁蛋白的浓缩乳清蛋白，兼具蛋白营养和免疫支持",
+    "mechanism": "乳铁蛋白抗菌抗病毒免疫调节",
     "dosage_range": "",
     "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "us": "GRAS"
+      "china": "compliant",
+      "gb14880": "GB 14880允许作为营养强化剂使用",
+      "note": "可用于婴幼儿配方、调制乳粉。保健食品需蓝帽子批文方可声称增强免疫力。"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-FerriUp",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GLA-TCD7",
+    "supplier_id": "glanbia",
+    "supplier_name": "Glanbia 哥兰比亚",
+    "product_name": "TruCal D7",
+    "generic_name": "乳矿物盐",
+    "generic_name_en": "Milk Mineral Complex",
+    "category": "维生素矿物质",
+    "source": "乳矿物盐",
+    "process": "乳矿物盐",
+    "functional_tags": [
+      "骨骼健康",
+      "钙补充"
+    ],
+    "applications": [
+      "钙强化食品",
+      "营养补充剂",
+      "乳制品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "钙": "23-28%",
+      "磷": "10-14%",
+      "蛋白": "≤5%",
+      "乳糖": "6-10%"
+    },
+    "function": "天然乳矿物盐，钙磷2:1黄金比例高生物利用度",
+    "mechanism": "钙磷比例接近人体骨骼组成吸收率优于碳酸钙",
+    "dosage_range": "≤5g/天",
+    "clinical_evidence": "多项临床证实改善骨密度",
+    "regulatory_status": {
+      "china": "新食品原料(婴幼儿食品禁止使用)"
     },
     "price_range": {
       "min": 67,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
-    "origin": "爱尔兰/美国",
-    "data_source": "Glanbia Trucal中文介绍PDF",
-    "confidence": "high"
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-TrucalD7",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "GLA-PV-004",
-    "product_name": "Provon 分离乳清蛋白",
-    "supplier_id": "ang",
+    "id": "GLA-S700",
+    "supplier_id": "glanbia",
     "supplier_name": "Glanbia 哥兰比亚",
-    "generic_name": "分离乳清蛋白",
-    "generic_name_en": "Whey Protein Isolate",
+    "product_name": "Salibra 700",
+    "generic_name": "浓缩乳清蛋白粉(富含免疫球蛋白)",
+    "generic_name_en": "WPC with IgG",
     "category": "蛋白质类",
     "source": "乳清蛋白",
-    "process": "WPI",
+    "process": "含免疫球蛋白WPC",
     "functional_tags": [
-      "速溶",
-      "高蛋白(>80%)",
-      "低乳糖"
+      "免疫支持",
+      "蛋白补充"
     ],
     "applications": [
-      "运动营养",
-      "功能性饮料",
-      "蛋白棒"
+      "功能性食品",
+      "免疫营养"
     ],
+    "certifications": [],
     "key_specs": {
-      "protein_content": "≥90%",
-      "fat": "≤1%",
-      "lactose": "≤1%"
+      "蛋白": "≥78%",
+      "免疫球蛋白": "≥5%",
+      "乳铁蛋白": "≥1.5%"
     },
-    "function": "高纯度分离乳清蛋白，低脂低乳糖",
+    "function": "保留天然乳清生物活性蛋白含免疫球蛋白和乳铁蛋白",
     "mechanism": "",
     "dosage_range": "",
     "clinical_evidence": "",
     "regulatory_status": {
-      "gb14880": "允许（乳清蛋白）",
-      "health_food_dir": "在列（2023年10月起）"
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
     },
     "price_range": null,
-    "origin": "爱尔兰/美国",
-    "data_source": "Glanbia Provon产品目录",
-    "confidence": "high"
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-S700",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "GLA-SH-005",
-    "product_name": "Protherma 水解乳清蛋白",
-    "supplier_id": "ang",
+    "id": "GLA-S1001",
+    "supplier_id": "glanbia",
     "supplier_name": "Glanbia 哥兰比亚",
-    "generic_name": "水解乳清蛋白",
-    "generic_name_en": "Hydrolyzed Whey Protein",
+    "product_name": "Salibra 1001",
+    "generic_name": "浓缩乳清蛋白粉(高免疫活性)",
+    "generic_name_en": "WPC with High Bioactives",
     "category": "蛋白质类",
     "source": "乳清蛋白",
-    "process": "WPH",
+    "process": "高免疫活性浓缩乳清蛋白",
     "functional_tags": [
-      "速溶",
-      "高蛋白(>80%)"
-    ],
-    "applications": [
-      "运动营养",
-      "功能性饮料"
-    ],
-    "key_specs": {},
-    "function": "热稳定水解乳清蛋白，适用于热处理工艺",
-    "mechanism": "",
-    "dosage_range": "",
-    "clinical_evidence": "",
-    "regulatory_status": {},
-    "price_range": null,
-    "origin": "爱尔兰/美国",
-    "data_source": "Glanbia Protherma产品目录",
-    "confidence": "high"
-  },
-  {
-    "id": "GLA-NS-006",
-    "product_name": "Neoshield 浓缩乳清蛋白粉（含乳脂球膜）",
-    "supplier_id": "ang",
-    "supplier_name": "Glanbia 哥兰比亚",
-    "generic_name": "浓缩乳清蛋白（含MFGM）",
-    "generic_name_en": "WPC with Milk Fat Globule Membrane",
-    "category": "蛋白质类",
-    "source": "乳清蛋白",
-    "process": "WPC80",
-    "functional_tags": [
-      "含磷脂",
       "免疫支持",
-      "脑健康"
+      "蛋白补充"
     ],
     "applications": [
-      "运动营养",
-      "中老年营养",
+      "功能性食品",
+      "免疫营养",
       "婴幼儿配方"
     ],
-    "key_specs": {},
-    "function": "含乳脂球膜(MFGM)的浓缩乳清蛋白",
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥75%",
+      "免疫球蛋白": "≥10%",
+      "乳铁蛋白": "≥3%"
+    },
+    "function": "高活性乳清蛋白浓缩物，免疫球蛋白和乳铁蛋白含量显著高于普通WPC",
     "mechanism": "",
     "dosage_range": "",
     "clinical_evidence": "",
-    "regulatory_status": {},
-    "price_range": null,
-    "origin": "爱尔兰/美国",
-    "data_source": "Glanbia产品目录",
-    "confidence": "medium"
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": {
+      "min": 100,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "美国",
+    "data_source": "Glanbia PC-QLT-SPEC-S1001",
+    "confidence": "high",
+    "manufacturer": "Glanbia 哥兰比亚（美国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "ING-LA-007",
-    "product_name": "Lactium 酪蛋白水解肽",
-    "supplier_id": "ang",
+    "id": "ING-LAC",
+    "supplier_id": "ingredia",
     "supplier_name": "Ingredia 安迪亚",
+    "product_name": "Lactium",
     "generic_name": "酪蛋白水解肽",
-    "generic_name_en": "Casein Hydrolysate",
+    "generic_name_en": "Casein Hydrolysate(α-casozepine)",
     "category": "功能性成分",
     "source": "酪蛋白",
-    "process": "水解",
+    "process": "酪蛋白水解肽",
     "functional_tags": [
-      "睡眠管理",
-      "压力管理"
+      "改善睡眠",
+      "抗压",
+      "情绪调节"
     ],
     "applications": [
-      "保健食品",
-      "功能性饮料"
+      "功能性食品",
+      "助眠产品",
+      "抗压食品",
+      "固体饮料"
     ],
-    "key_specs": {},
-    "function": "缓解压力及睡眠问题的生物活性肽。灵感源于婴儿睡眠秘密，100%原生乳来源",
-    "mechanism": "模拟婴儿体内胰蛋白酶消化场景，得到具有生物活性的十缩氨酸（Alpha-Casozepine）",
-    "dosage_range": "每日150mg以上（可授权Lactium Logo）",
-    "clinical_evidence": "9项人体临床试验，500+志愿者，随机双盲安慰剂对照。2021年消费者调研（300+志愿者，中法美多中心）显示30天后压力和睡眠障碍显著降低",
+    "certifications": [
+      "FSSC 22000",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%",
+      "α-casozepine": "≥1.5%",
+      "分子量": "<2000Da"
+    },
+    "function": "含α-casozepine十肽的酪蛋白水解物，抗焦虑改善睡眠，非镇静性",
+    "mechanism": "α-casozepine与GABA-A受体结合产生抗焦虑作用无镇静副作用",
+    "dosage_range": "150mg/天",
+    "clinical_evidence": "8项已发表临床研究(含双盲RCT)",
     "regulatory_status": {
-      "china": "普通食品级管理（无人群剂型用量限制）",
-      "us": "GRAS认证",
-      "australia": "TGA认证",
-      "korea": "KFDA认证（压力及睡眠功效）",
-      "certifications": [
-        "Kosher",
-        "Halal",
-        "FSSC22000",
-        "ISO9001"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
     },
     "price_range": {
       "min": null,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
     "origin": "法国",
-    "data_source": "Ingredia Lactium关键点_ANG.pdf + FBIF2024演示文稿",
-    "confidence": "high"
+    "data_source": "Ingredia PC-QLT-SPEC-Lactium",
+    "confidence": "high",
+    "manufacturer": "Ingredia 安迪亚（法国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "ING-LF-008",
-    "product_name": "Lactoferrin 乳铁蛋白",
-    "supplier_id": "ang",
+    "id": "ING-PRF",
+    "supplier_id": "ingredia",
     "supplier_name": "Ingredia 安迪亚",
+    "product_name": "Proferrin",
     "generic_name": "乳铁蛋白",
     "generic_name_en": "Lactoferrin",
     "category": "功能性成分",
     "source": "乳铁蛋白",
-    "process": "喷雾干燥",
+    "process": "乳铁蛋白",
     "functional_tags": [
-      "含乳铁蛋白",
       "免疫支持",
+      "婴幼儿营养",
       "铁吸收"
     ],
     "applications": [
       "婴幼儿配方",
-      "免疫支持",
-      "保健食品"
+      "功能性食品",
+      "免疫营养"
     ],
-    "key_specs": {},
-    "function": "铁结合蛋白，免疫调节",
-    "mechanism": "",
-    "dosage_range": "",
-    "clinical_evidence": "",
-    "regulatory_status": {
-      "gb14880": "允许"
-    },
-    "price_range": {
-      "min": null,
-      "max": null,
-      "unit": "元/kg",
-      "note": "量大可议价"
-    },
-    "origin": "法国",
-    "data_source": "Ingredia产品目录",
-    "confidence": "high"
-  },
-  {
-    "id": "ING-CPP-009",
-    "product_name": "OSTEUM CPP 酪蛋白磷酸肽",
-    "supplier_id": "ang",
-    "supplier_name": "Ingredia 安迪亚",
-    "generic_name": "酪蛋白磷酸肽",
-    "generic_name_en": "Casein Phosphopeptide",
-    "category": "功能性成分",
-    "source": "酪蛋白",
-    "process": "水解",
-    "functional_tags": [
-      "含CPP",
-      "骨骼健康",
-      "铁吸收"
-    ],
-    "applications": [
-      "骨骼健康",
-      "保健食品",
-      "婴幼儿配方"
-    ],
-    "key_specs": {},
-    "function": "促进钙、铁、锌等矿物质吸收",
-    "mechanism": "",
-    "dosage_range": "",
-    "clinical_evidence": "",
-    "regulatory_status": {
-      "gb14880": "允许（酪蛋白磷酸肽）"
-    },
-    "price_range": {
-      "min": 400,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "法国",
-    "data_source": "Ingredia产品目录",
-    "confidence": "high"
-  },
-  {
-    "id": "ING-PM-010",
-    "product_name": "Promilk 85B 膜分离酪蛋白",
-    "supplier_id": "ang",
-    "supplier_name": "Ingredia 安迪亚",
-    "generic_name": "酪蛋白",
-    "generic_name_en": "Casein",
-    "category": "乳制品原料",
-    "source": "酪蛋白",
-    "process": "膜分离",
-    "functional_tags": [
-      "高蛋白(>80%)"
-    ],
-    "applications": [
-      "乳制品",
-      "烘焙/零食",
-      "运动营养"
-    ],
-    "key_specs": {},
-    "function": "高纯度膜分离酪蛋白",
-    "mechanism": "",
-    "dosage_range": "",
-    "clinical_evidence": "",
-    "regulatory_status": {
-      "gb14880": "允许"
-    },
-    "price_range": null,
-    "origin": "法国",
-    "data_source": "Ingredia产品目录",
-    "confidence": "high"
-  },
-  {
-    "id": "ING-PD-011",
-    "product_name": "Pep2Dia 水解牛奶蛋白",
-    "supplier_id": "ang",
-    "supplier_name": "Ingredia 安迪亚",
-    "generic_name": "水解牛奶蛋白",
-    "generic_name_en": "Hydrolyzed Milk Protein",
-    "category": "功能性成分",
-    "source": "酪蛋白",
-    "process": "水解",
-    "functional_tags": [
-      "血糖管理"
-    ],
-    "applications": [
-      "保健食品",
-      "功能性饮料"
-    ],
-    "key_specs": {},
-    "function": "DPPIV抑制肽，有助于血糖管理",
-    "mechanism": "",
-    "dosage_range": "",
-    "clinical_evidence": "",
-    "regulatory_status": {},
-    "price_range": null,
-    "origin": "法国",
-    "data_source": "Ingredia产品目录",
-    "confidence": "medium"
-  },
-  {
-    "id": "ING-PC-012",
-    "product_name": "Prodiet F520 C20 牛初乳粉",
-    "supplier_id": "ang",
-    "supplier_name": "Ingredia 安迪亚",
-    "generic_name": "牛初乳",
-    "generic_name_en": "Bovine Colostrum",
-    "category": "功能性成分",
-    "source": "牛初乳",
-    "process": "喷雾干燥",
-    "functional_tags": [
-      "含IgG",
-      "含乳铁蛋白",
-      "免疫支持"
-    ],
-    "applications": [
-      "婴幼儿配方",
-      "免疫支持",
-      "保健食品"
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
     ],
     "key_specs": {
-      "igg_content": "≥35%"
+      "蛋白": "≥93%",
+      "乳铁蛋白纯度": "≥95%",
+      "铁饱和度": "10-20%",
+      "水分": "≤4.5%"
     },
-    "function": "IgG≥35%牛初乳粉，免疫球蛋白来源",
-    "mechanism": "",
-    "dosage_range": "",
+    "function": "法国产高纯度乳铁蛋白，免疫调节促进铁吸收维护肠道健康",
+    "mechanism": "乳铁蛋白螯合铁离子剥夺细菌铁源与免疫细胞受体结合调节免疫",
+    "dosage_range": "按GB 14880规定",
     "clinical_evidence": "",
-    "regulatory_status": {},
+    "regulatory_status": {
+      "china": "compliant",
+      "gb14880": "GB 14880允许作为营养强化剂使用",
+      "note": "可用于婴幼儿配方、调制乳粉。保健食品需蓝帽子批文方可声称增强免疫力。"
+    },
     "price_range": {
       "min": null,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
     "origin": "法国",
-    "data_source": "Ingredia产品目录",
-    "confidence": "high"
+    "data_source": "Ingredia PC-QLT-SPEC-Proferrin",
+    "confidence": "high",
+    "manufacturer": "Ingredia 安迪亚（法国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "KER-BG-013",
-    "product_name": "酵母β-葡聚糖",
-    "supplier_id": "ang",
-    "supplier_name": "Kerry 凯爱瑞",
-    "generic_name": "酵母β-葡聚糖",
-    "generic_name_en": "Yeast Beta-Glucan",
+    "id": "ING-P2D",
+    "supplier_id": "ingredia",
+    "supplier_name": "Ingredia 安迪亚",
+    "product_name": "Pep2Dia",
+    "generic_name": "水解牛奶蛋白(血糖管理)",
+    "generic_name_en": "Hydrolyzed Milk Protein",
     "category": "功能性成分",
-    "source": "酵母提取物",
-    "process": "粉末",
+    "source": "乳清蛋白",
+    "process": "水解牛奶蛋白",
+    "functional_tags": [
+      "血糖管理",
+      "体重管理"
+    ],
+    "applications": [
+      "功能性食品",
+      "血糖管理产品",
+      "糖尿病前期营养"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥75%",
+      "水解度": "15-25%"
+    },
+    "function": "含天然α-葡萄糖苷酶抑制肽，降低餐后血糖峰值",
+    "mechanism": "特定肽段抑制α-葡萄糖苷酶活性延缓碳水吸收",
+    "dosage_range": "2-4g/餐",
+    "clinical_evidence": "2项RCT证实降低餐后血糖",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Ingredia PC-QLT-SPEC-Pep2Dia",
+    "confidence": "high",
+    "manufacturer": "Ingredia 安迪亚（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ING-87B",
+    "supplier_id": "ingredia",
+    "supplier_name": "Ingredia 安迪亚",
+    "product_name": "Prodiet 87B Fluid",
+    "generic_name": "膜分离酪蛋白",
+    "generic_name_en": "Micellar Casein",
+    "category": "蛋白质类",
+    "source": "酪蛋白",
+    "process": "膜分离酪蛋白",
+    "functional_tags": [
+      "运动营养",
+      "体重管理",
+      "蛋白补充"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "UHT饮料",
+      "乳制品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥84%(干基)",
+      "酪蛋白占蛋白": "≥82%",
+      "脂肪": "≤5%",
+      "乳糖": "≤3%"
+    },
+    "function": "天然胶束酪蛋白膜分离保留原始胶束结构缓慢消化持续氨基酸释放",
+    "mechanism": "胶束酪蛋白在胃酸中形成凝块缓释氨基酸4-6小时",
+    "dosage_range": "20-30g/份",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": {
+      "min": 95,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "法国",
+    "data_source": "Ingredia PC-QLT-SPEC-87B",
+    "confidence": "high",
+    "manufacturer": "Ingredia 安迪亚（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ING-PM85",
+    "supplier_id": "ingredia",
+    "supplier_name": "Ingredia 安迪亚",
+    "product_name": "Promilk 85",
+    "generic_name": "分离牛奶蛋白",
+    "generic_name_en": "Milk Protein Isolate(MPI85)",
+    "category": "蛋白质类",
+    "source": "牛奶蛋白",
+    "process": "MPI85",
+    "functional_tags": [
+      "运动营养",
+      "体重管理",
+      "蛋白补充"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "代餐",
+      "乳制品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥85%(干基)",
+      "脂肪": "≤2%",
+      "乳糖": "≤5%"
+    },
+    "function": "高纯度分离牛奶蛋白含80:20酪蛋白乳清蛋白天然比例兼具快速和缓释",
+    "mechanism": "天然酪蛋白乳清蛋白比例提供即时和持续氨基酸供应",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "法国",
+    "data_source": "Ingredia PC-QLT-SPEC-Promilk85",
+    "confidence": "high",
+    "manufacturer": "Ingredia 安迪亚（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ING-PFC",
+    "supplier_id": "ingredia",
+    "supplier_name": "Ingredia 安迪亚",
+    "product_name": "Prodiet F520 C20",
+    "generic_name": "牛初乳粉(IgG 35%)",
+    "generic_name_en": "Bovine Colostrum Powder IgG35%",
+    "category": "功能性成分",
+    "source": "牛初乳",
+    "process": "牛初乳",
     "functional_tags": [
       "免疫支持"
     ],
     "applications": [
-      "免疫支持",
-      "保健食品",
-      "功能性饮料"
+      "免疫营养",
+      "功能性食品"
     ],
-    "key_specs": {},
-    "function": "免疫调节，增强抵抗力",
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥70%(干基)",
+      "IgG": "≥35%(干基)",
+      "脂肪": "≤5%",
+      "水分": "≤6%"
+    },
+    "function": "高IgG含量牛初乳粉35%IgG提供被动免疫支持",
     "mechanism": "",
     "dosage_range": "",
     "clinical_evidence": "",
     "regulatory_status": {
-      "gb14880": "允许（酵母β-葡聚糖，2025年新增）",
-      "china_history": "2010年卫生部公告批准为新资源食品"
+      "china": "婴幼儿配方食品中禁止使用"
     },
-    "price_range": null,
-    "origin": "爱尔兰",
-    "data_source": "Kerry产品目录 + 卫生部公告",
-    "confidence": "high"
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "法国",
+    "data_source": "Ingredia PC-QLT-SPEC-PFC",
+    "confidence": "high",
+    "manufacturer": "Ingredia 安迪亚（法国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "CJ-EP-014",
-    "product_name": "EpiCor 发酵提取物",
-    "supplier_id": "ang",
-    "supplier_name": "EpiCor 嘉吉",
-    "generic_name": "后生元",
-    "generic_name_en": "Postbiotic",
-    "category": "功能性成分",
-    "source": "后生元",
-    "process": "粉末",
+    "id": "WHC-W80",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "W80",
+    "generic_name": "浓缩乳清蛋白粉",
+    "generic_name_en": "WPC80",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80",
     "functional_tags": [
-      "含后生元",
-      "免疫支持",
-      "肠道健康"
+      "运动营养",
+      "体重管理",
+      "蛋白补充"
     ],
     "applications": [
-      "免疫支持",
-      "肠道健康",
-      "保健食品"
+      "运动营养",
+      "蛋白饮料",
+      "乳制品",
+      "烘焙",
+      "固体饮料"
     ],
-    "key_specs": {},
-    "function": "后生元，免疫调节，肠道健康",
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤9%",
+      "水分": "≤6%",
+      "pH": "6.0-7.0"
+    },
+    "function": "德国产标准浓缩乳清蛋白粉甜乳清来源优良乳化性和溶解性",
     "mechanism": "",
     "dosage_range": "",
     "clinical_evidence": "",
-    "regulatory_status": {},
-    "price_range": {
-      "min": null,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
     },
-    "origin": "美国",
-    "data_source": "EpiCor介绍PDF",
-    "confidence": "medium"
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-W80",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "TAT-LF-015",
-    "product_name": "乳铁蛋白",
-    "supplier_id": "ang",
-    "supplier_name": "Tatua 大拓",
+    "id": "WHC-W80I",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "W80I",
+    "generic_name": "浓缩乳清蛋白粉(速溶型)",
+    "generic_name_en": "WPC80 Instant",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80 速溶型",
+    "functional_tags": [
+      "运动营养",
+      "体重管理",
+      "蛋白补充"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "固体饮料",
+      "即溶饮品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤10%",
+      "水分": "≤5.5%"
+    },
+    "function": "速溶型浓缩乳清蛋白冷水可溶良好分散性",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-W80I",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WHC-W80HS",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "W80HS",
+    "generic_name": "浓缩乳清蛋白粉(热稳定型)",
+    "generic_name_en": "WPC80 Heat Stable",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80 热稳型",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充"
+    ],
+    "applications": [
+      "运动营养",
+      "UHT饮料",
+      "RTD",
+      "高温杀菌乳制品",
+      "烘焙"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "水分": "≤6%",
+      "灰分": "≤9%",
+      "pH": "6.8-7.2"
+    },
+    "function": "热稳定型浓缩乳清蛋白耐受UHT/HTST加工高温不凝胶",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-W80HS",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WHC-W80ILAF",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "W80 I LAF",
+    "generic_name": "无乳糖浓缩乳清蛋白粉(速溶型)",
+    "generic_name_en": "WPC80 Instant Lactose-Free",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80 无乳糖速溶型",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充",
+      "乳糖不耐受"
+    ],
+    "applications": [
+      "运动营养",
+      "乳糖不耐受产品",
+      "蛋白饮料",
+      "固体饮料"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤8%",
+      "乳糖": "≤0.5%"
+    },
+    "function": "无乳糖速溶型浓缩乳清蛋白适合乳糖不耐受人群",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-W80ILAF",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WHC-W90",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "W90",
+    "generic_name": "分离乳清蛋白粉",
+    "generic_name_en": "WPI90",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPI90",
+    "functional_tags": [
+      "运动营养",
+      "体重管理",
+      "蛋白补充",
+      "乳糖不耐受"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "营养补充"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥90%(干基)",
+      "脂肪": "≤3%",
+      "水分": "≤6%",
+      "乳糖": "≤1%"
+    },
+    "function": "高纯度分离乳清蛋白粉低脂低乳糖高生物利用度",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-W90",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WHC-W90I",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "W90I",
+    "generic_name": "分离乳清蛋白粉(速溶型)",
+    "generic_name_en": "WPI90 Instant",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPI90 速溶型",
+    "functional_tags": [
+      "运动营养",
+      "体重管理",
+      "蛋白补充",
+      "乳糖不耐受"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "固体饮料",
+      "即溶饮品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥90%(干基)",
+      "脂肪": "≤4%",
+      "水分": "≤5.5%",
+      "乳糖": "≤1%"
+    },
+    "function": "高纯度速溶分离乳清蛋白冷水即溶",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-W90I",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WHC-MFGM70",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "MFGM70",
+    "generic_name": "浓缩乳清蛋白粉(富含MFGM)",
+    "generic_name_en": "WPC with MFGM",
+    "category": "功能性成分",
+    "source": "乳清蛋白",
+    "process": "含MFGM浓缩乳清蛋白",
+    "functional_tags": [
+      "婴幼儿营养",
+      "脑部发育",
+      "免疫支持"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "特医食品",
+      "功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥65%",
+      "磷脂": "≥5%",
+      "脂肪": "≤22%",
+      "神经节苷脂": "≥180mg/100g",
+      "鞘磷脂": "≥25g/100g磷脂"
+    },
+    "function": "富含乳脂球膜MFGM含神经节苷脂和鞘磷脂等脑部发育关键营养素",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "MFGM在多项婴儿配方RCT中显示促进认知发育",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-MFGM70",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WHC-PL7",
+    "supplier_id": "wheyco",
+    "supplier_name": "Wheyco 德国",
+    "product_name": "PL7",
+    "generic_name": "浓缩乳清蛋白粉(高免疫活性)",
+    "generic_name_en": "WPC with Immune Factors",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "高免疫活性浓缩乳清蛋白",
+    "functional_tags": [
+      "免疫支持",
+      "婴幼儿营养"
+    ],
+    "applications": [
+      "特医食品",
+      "婴幼儿营养",
+      "免疫营养"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal",
+      "Kosher"
+    ],
+    "key_specs": {
+      "蛋白": "≥60%",
+      "免疫球蛋白": "≥10%",
+      "乳铁蛋白": "≥4%",
+      "唾液酸": "≥1.8g/100g"
+    },
+    "function": "高免疫活性乳清蛋白富含天然IgG和乳铁蛋白提供被动免疫支持",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Wheyco PC-QLT-SPEC-PL7",
+    "confidence": "high",
+    "manufacturer": "Wheyco（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "TAT-LF",
+    "supplier_id": "tatua",
+    "supplier_name": "Tatua 大拓 新西兰",
+    "product_name": "TATUALF",
     "generic_name": "乳铁蛋白",
     "generic_name_en": "Lactoferrin",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {},
-    "function": "铁结合蛋白，免疫调节",
-    "mechanism": "",
-    "dosage_range": "",
+    "category": "功能性成分",
+    "source": "乳铁蛋白",
+    "process": "乳铁蛋白",
+    "functional_tags": [
+      "免疫支持",
+      "婴幼儿营养",
+      "铁吸收"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "免疫营养",
+      "功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥93%",
+      "乳铁蛋白纯度": "≥95%",
+      "水分": "≤4.5%",
+      "铁": "≤35mg/100g"
+    },
+    "function": "新西兰产高纯度乳铁蛋白天然免疫调节广谱抗菌抗病毒促进铁吸收",
+    "mechanism": "乳铁蛋白螯合铁离子与免疫细胞受体结合调节免疫",
+    "dosage_range": "按GB 14880规定",
     "clinical_evidence": "",
     "regulatory_status": {
-      "gb14880": "允许"
+      "china": "compliant",
+      "gb14880": "GB 14880允许作为营养强化剂使用",
+      "note": "可用于婴幼儿配方、调制乳粉。保健食品需蓝帽子批文方可声称增强免疫力。"
     },
     "price_range": {
       "min": null,
       "max": null,
       "unit": "元/kg",
-      "note": "量大可议价"
+      "note": ""
     },
     "origin": "新西兰",
-    "data_source": "Tatua产品目录",
-    "confidence": "high"
+    "data_source": "Tatua PC-QLT-SPEC-TATUALF",
+    "confidence": "high",
+    "manufacturer": "Tatua 大拓（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "TAT-HWP-016",
-    "product_name": "HWP 117 水解乳清蛋白",
-    "supplier_id": "ang",
-    "supplier_name": "Tatua 大拓",
-    "generic_name": "水解乳清蛋白",
-    "generic_name_en": "Hydrolyzed Whey Protein",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {},
-    "function": "酶解乳清蛋白，易吸收",
+    "id": "TAT-HWP117",
+    "supplier_id": "tatua",
+    "supplier_name": "Tatua 大拓 新西兰",
+    "product_name": "HWP 117",
+    "generic_name": "水解乳清蛋白粉",
+    "generic_name_en": "WPH(10-15%DH)",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "水解乳清蛋白",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充",
+      "易消化"
+    ],
+    "applications": [
+      "运动营养",
+      "特医食品",
+      "婴幼儿配方"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤7%",
+      "水解度": "10-15%"
+    },
+    "function": "部分水解乳清蛋白降低致敏性易于消化吸收",
     "mechanism": "",
     "dosage_range": "",
     "clinical_evidence": "",
     "regulatory_status": {
-      "gb14880": "允许"
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
     },
     "price_range": {
       "min": 295,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
     "origin": "新西兰",
-    "data_source": "Tatua产品目录",
-    "confidence": "high"
+    "data_source": "Tatua PC-QLT-SPEC-HWP117",
+    "confidence": "high",
+    "manufacturer": "Tatua 大拓（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "TAT-CPP-017",
-    "product_name": "酪蛋白磷酸肽(CPP)",
-    "supplier_id": "ang",
-    "supplier_name": "Tatua 大拓",
+    "id": "TAT-CPP102",
+    "supplier_id": "tatua",
+    "supplier_name": "Tatua 大拓 新西兰",
+    "product_name": "HCP 102",
     "generic_name": "酪蛋白磷酸肽",
-    "generic_name_en": "Casein Phosphopeptide",
+    "generic_name_en": "Casein Phosphopeptide(CPP)",
     "category": "功能性成分",
     "source": "酪蛋白",
-    "process": "水解",
+    "process": "酪蛋白磷酸肽",
     "functional_tags": [
-      "含CPP",
+      "骨骼健康",
+      "矿物质吸收"
+    ],
+    "applications": [
+      "钙强化食品",
+      "营养补充剂",
+      "乳制品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥90%(干基)",
+      "CPP含量": "≥22%(干基)",
+      "脂肪": "≤1.5%"
+    },
+    "function": "酪蛋白磷酸肽CPP防止钙磷在肠道中沉淀显著促进钙铁锌吸收",
+    "mechanism": "CPP磷酸丝氨酸簇与钙形成可溶性复合物",
+    "dosage_range": "按GB 14880规定",
+    "clinical_evidence": "多项研究证实CPP显著提高钙铁锌生物利用度",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
+    },
+    "price_range": {
+      "min": 2300,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "新西兰",
+    "data_source": "Tatua PC-QLT-SPEC-HCP102",
+    "confidence": "high",
+    "manufacturer": "Tatua 大拓（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "TAT-PLC1",
+    "supplier_id": "tatua",
+    "supplier_name": "Tatua 大拓 新西兰",
+    "product_name": "Milk+Phospholipid PLC",
+    "generic_name": "牛奶磷脂浓缩物",
+    "generic_name_en": "Milk Phospholipid Concentrate",
+    "category": "功能性成分",
+    "source": "磷脂",
+    "process": "牛奶磷脂",
+    "functional_tags": [
+      "脑部发育",
+      "认知功能",
+      "婴幼儿营养"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "功能性食品",
+      "脑部营养"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥20%",
+      "总磷脂": "≥10%",
+      "脂肪": "≥10%"
+    },
+    "function": "天然牛奶磷脂浓缩物含MFGM关键磷脂成分支持脑部和认知发育",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
+    },
+    "price_range": null,
+    "origin": "新西兰",
+    "data_source": "Tatua PC-QLT-SPEC-PLC1",
+    "confidence": "high",
+    "manufacturer": "Tatua 大拓（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "TAT-T200",
+    "supplier_id": "tatua",
+    "supplier_name": "Tatua 大拓 新西兰",
+    "product_name": "T200",
+    "generic_name": "酪蛋白酸钙",
+    "generic_name_en": "Calcium Caseinate",
+    "category": "蛋白质类",
+    "source": "酪蛋白",
+    "process": "酪蛋白酸钙",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充",
       "骨骼健康"
     ],
     "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "乳制品",
+      "乳化体系"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥92%(干基)",
+      "脂肪": "≤3%",
+      "水分": "≤6%",
+      "pH": "6.0-7.5",
+      "钙": "≥1.2%"
+    },
+    "function": "高蛋白酪蛋白酸钙优良乳化性和水溶性兼具蛋白补充和钙强化",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "新西兰",
+    "data_source": "Tatua PC-QLT-SPEC-T200",
+    "confidence": "high",
+    "manufacturer": "Tatua 大拓（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ARM-P80",
+    "supplier_id": "armor",
+    "supplier_name": "Armor Proteines 法国",
+    "product_name": "Protarmor 80",
+    "generic_name": "浓缩乳清蛋白粉",
+    "generic_name_en": "WPC80",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80",
+    "functional_tags": [
+      "运动营养",
+      "体重管理"
+    ],
+    "applications": [
+      "运动营养",
+      "乳制品",
+      "蛋白饮料",
+      "烘焙"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤8%",
+      "水分": "≤6%"
+    },
+    "function": "法国产浓缩乳清蛋白甜乳清来源",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Armor PC-QLT-SPEC-PTM80",
+    "confidence": "high",
+    "manufacturer": "Armor Proteines（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ARM-VCM10",
+    "supplier_id": "armor",
+    "supplier_name": "Armor Proteines 法国",
+    "product_name": "Vitalarmor Ca M10",
+    "generic_name": "乳矿物盐",
+    "generic_name_en": "Milk Mineral Complex",
+    "category": "维生素矿物质",
+    "source": "乳矿物盐",
+    "process": "乳矿物盐",
+    "functional_tags": [
       "骨骼健康",
-      "保健食品"
+      "钙补充"
     ],
-    "key_specs": {},
-    "function": "促进钙铁锌吸收",
+    "applications": [
+      "钙强化食品",
+      "营养补充剂"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "钙": "23-28%",
+      "磷": "10-14%",
+      "蛋白": "≤5%",
+      "乳糖": "6-10%"
+    },
+    "function": "天然乳矿物盐钙磷2:1黄金比例",
+    "mechanism": "",
+    "dosage_range": "≤5g/天",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "婴幼儿食品禁止使用"
+    },
+    "price_range": {
+      "min": 67,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "法国",
+    "data_source": "Armor PC-QLT-SPEC-VCM10",
+    "confidence": "high",
+    "manufacturer": "Armor Proteines（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ARM-CC",
+    "supplier_id": "armor",
+    "supplier_name": "Armor Proteines 法国",
+    "product_name": "Calcium Caseinate",
+    "generic_name": "酪蛋白酸钙",
+    "generic_name_en": "Calcium Caseinate",
+    "category": "蛋白质类",
+    "source": "酪蛋白",
+    "process": "酪蛋白酸钙",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充",
+      "骨骼健康"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "咖啡伴侣",
+      "乳化体系"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥88%(干基)",
+      "脂肪": "≤2%",
+      "水分": "≤6%",
+      "pH": "6.0-7.5"
+    },
+    "function": "酪蛋白酸钙优良乳化性兼具蛋白和钙强化",
     "mechanism": "",
     "dosage_range": "",
     "clinical_evidence": "",
     "regulatory_status": {
-      "gb14880": "允许（酪蛋白磷酸肽）"
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
     },
     "price_range": null,
-    "origin": "新西兰",
-    "data_source": "Tatua产品目录",
-    "confidence": "high"
+    "origin": "法国",
+    "data_source": "Armor PC-QLT-SPEC-ArmorCC",
+    "confidence": "high",
+    "manufacturer": "Armor Proteines（法国）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "TAT-PLC-018",
-    "product_name": "牛奶磷脂 PLC",
-    "supplier_id": "ang",
-    "supplier_name": "Tatua 大拓",
-    "generic_name": "牛奶磷脂",
-    "generic_name_en": "Milk Phospholipids",
+    "id": "ARM-SC",
+    "supplier_id": "armor",
+    "supplier_name": "Armor Proteines 法国",
+    "product_name": "Sodium Caseinate",
+    "generic_name": "酪蛋白酸钠",
+    "generic_name_en": "Sodium Caseinate",
+    "category": "蛋白质类",
+    "source": "酪蛋白",
+    "process": "酪蛋白酸钠",
+    "functional_tags": [
+      "蛋白补充",
+      "食品加工"
+    ],
+    "applications": [
+      "咖啡伴侣",
+      "非乳奶精",
+      "乳化体系",
+      "蛋白饮料"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥88%(干基)",
+      "脂肪": "≤2%",
+      "pH": "6.5-7.0"
+    },
+    "function": "酪蛋白酸钠高溶解性优良乳化能力",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Armor PC-QLT-SPEC-ArmorSC",
+    "confidence": "high",
+    "manufacturer": "Armor Proteines（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ARM-AC",
+    "supplier_id": "armor",
+    "supplier_name": "Armor Proteines 法国",
+    "product_name": "Acid Casein",
+    "generic_name": "酸法酪蛋白",
+    "generic_name_en": "Acid Casein",
+    "category": "蛋白质类",
+    "source": "酪蛋白",
+    "process": "酸法酪蛋白",
+    "functional_tags": [
+      "蛋白补充",
+      "食品加工"
+    ],
+    "applications": [
+      "食品配料",
+      "酪蛋白酸盐原料"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥90%(干基)",
+      "脂肪": "≤2%",
+      "水分": "≤12%"
+    },
+    "function": "酸法沉淀酪蛋白高蛋白纯度用于加工酪蛋白酸盐",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Armor PC-QLT-SPEC-ArmorAC",
+    "confidence": "high",
+    "manufacturer": "Armor Proteines（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WEI-N1000",
+    "supplier_id": "weishardt",
+    "supplier_name": "Weishardt Naticol 法国",
+    "product_name": "Naticol 1000",
+    "generic_name": "鱼胶原蛋白肽",
+    "generic_name_en": "Fish Collagen Peptide Type I",
     "category": "功能性成分",
-    "source": "磷脂",
-    "process": "液体",
+    "source": "胶原蛋白",
+    "process": "鱼胶原蛋白肽",
     "functional_tags": [
-      "含磷脂",
-      "脑健康"
+      "美容护肤",
+      "骨骼健康",
+      "关节健康"
     ],
     "applications": [
-      "婴幼儿配方",
-      "保健食品"
+      "口服美容",
+      "功能性食品",
+      "骨骼关节产品"
     ],
-    "key_specs": {},
-    "function": "牛奶来源磷脂，脑健康/认知功能",
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "分子量": "<10000Da≥90%",
+      "羟脯氨酸": "≥3%(干基)",
+      "总氮": "≥15%(干基)"
+    },
+    "function": "I型鱼胶原蛋白肽高生物利用度促进皮肤成纤维细胞合成胶原蛋白",
+    "mechanism": "二肽和三肽被肠道直接吸收靶向皮肤和关节",
+    "dosage_range": "2.5-10g/天",
+    "clinical_evidence": "临床证实改善皮肤弹性减少皱纹深度",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。美容功能声称需保健食品批文。"
+    },
+    "price_range": {
+      "min": 200,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "法国",
+    "data_source": "Weishardt PC-QLT-SPEC-Naticol1000",
+    "confidence": "high",
+    "manufacturer": "Weishardt Naticol（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WEI-BPMG",
+    "supplier_id": "weishardt",
+    "supplier_name": "Weishardt Naticol 法国",
+    "product_name": "Naticol BPMG Premium",
+    "generic_name": "鱼胶原蛋白肽(优质型)",
+    "generic_name_en": "Fish Collagen Peptide Premium",
+    "category": "功能性成分",
+    "source": "胶原蛋白",
+    "process": "鱼胶原蛋白肽",
+    "functional_tags": [
+      "美容护肤",
+      "骨骼健康",
+      "运动营养"
+    ],
+    "applications": [
+      "口服美容",
+      "高端功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "分子量": "<10000Da≥90%",
+      "羟脯氨酸": "≥3%(干基)",
+      "总氮": "≥15%(干基)"
+    },
+    "function": "高品质鱼胶原蛋白肽BPMG工艺优化肽段分布",
+    "mechanism": "",
+    "dosage_range": "2.5-10g/天",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。美容功能声称需保健食品批文。"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Weishardt PC-QLT-SPEC-BPMG",
+    "confidence": "high",
+    "manufacturer": "Weishardt Naticol（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "WEI-TRI",
+    "supplier_id": "weishardt",
+    "supplier_name": "Weishardt Naticol 法国",
+    "product_name": "Naticol Tripeptide MG",
+    "generic_name": "鱼胶原蛋白三肽",
+    "generic_name_en": "Fish Collagen Tripeptide",
+    "category": "功能性成分",
+    "source": "胶原蛋白",
+    "process": "鱼胶原蛋白三肽",
+    "functional_tags": [
+      "美容护肤",
+      "抗衰老"
+    ],
+    "applications": [
+      "高端口服美容",
+      "功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "分子量": "<10000Da≥90%",
+      "三肽含量": "≥25%",
+      "羟脯氨酸": "≥3%(干基)"
+    },
+    "function": "富含Gly-Pro-Hyp三肽结构可直接被肠道吸收利用度更高",
+    "mechanism": "胶原蛋白三肽无需消化即可被PepT1转运蛋白直接吸收",
+    "dosage_range": "0.5-2g/天",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。美容功能声称需保健食品批文。"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Weishardt PC-QLT-SPEC-Tripeptide",
+    "confidence": "high",
+    "manufacturer": "Weishardt Naticol（法国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "SEP-WHP",
+    "supplier_id": "seperex",
+    "supplier_name": "Seperex 适华利 新西兰",
+    "product_name": "WheyPro",
+    "generic_name": "浓缩乳清蛋白粉(富含IgG)",
+    "generic_name_en": "WPC with High IgG(20%)",
+    "category": "功能性成分",
+    "source": "乳清蛋白",
+    "process": "富含IgG浓缩乳清蛋白",
+    "functional_tags": [
+      "免疫支持",
+      "蛋白补充"
+    ],
+    "applications": [
+      "免疫营养",
+      "特医食品",
+      "婴幼儿配方"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "IgG": "≥20%",
+      "乳铁蛋白": "≥5mg/g",
+      "脂肪": "≤15%"
+    },
+    "function": "富含IgG(≥20%)的高价值乳清蛋白提供免疫球蛋白支持",
     "mechanism": "",
     "dosage_range": "",
     "clinical_evidence": "",
-    "regulatory_status": {},
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。功能声称需保健食品批文。"
+    },
     "price_range": null,
     "origin": "新西兰",
-    "data_source": "Tatua产品目录",
-    "confidence": "medium"
+    "data_source": "Seperex PC-QLT-SPEC-WheyPro",
+    "confidence": "high",
+    "manufacturer": "Seperex 适华利（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "NOV-EPX-001",
-    "product_name": "EPAX 1500TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
+    "id": "SEP-CBP",
+    "supplier_id": "seperex",
+    "supplier_name": "Seperex 适华利 新西兰",
+    "product_name": "CBP",
+    "generic_name": "初乳碱性蛋白",
+    "generic_name_en": "Colostrum Basic Protein",
+    "category": "功能性成分",
+    "source": "牛初乳",
+    "process": "初乳碱性蛋白",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3",
-      "脑健康",
-      "视力健康"
+      "骨骼健康"
     ],
     "applications": [
-      "膳食补充剂",
-      "心血管健康",
-      "婴幼儿配方",
-      "孕妇营养"
+      "骨骼健康产品",
+      "中老年营养"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "推断：EPA ~15%, DHA ~0%（基于命名规则），总omega-3 ~21%",
-      "form": "TG (甘油三酯)",
-      "other": "规格为图片PDF，具体数值待确认"
+      "蛋白": "≥80%",
+      "分子量": "1-30kDa≥50%",
+      "水分": "≤7%"
     },
-    "function": "基础Omega-3浓缩物，提供EPA和DHA",
-    "mechanism": "Omega-3脂肪酸参与细胞膜构成、抗炎信号通路调节",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "function": "牛初乳来源碱性蛋白促进成骨细胞活性支持骨骼健康",
+    "mechanism": "CBP中活性蛋白促进成骨细胞分化和骨基质合成",
+    "dosage_range": "≤100mg/天",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "Friend of the Sea"
-      ]
+      "china": "婴幼儿食品禁止使用"
     },
     "price_range": {
-      "min": 142,
+      "min": 2300,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 1500 TGN spec 105083-17（图片PDF，无法提取文字）",
-    "confidence": "low"
+    "origin": "新西兰",
+    "data_source": "Seperex PC-QLT-SPEC-CBP",
+    "confidence": "high",
+    "manufacturer": "Seperex 适华利（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "NOV-EPX-002",
-    "product_name": "EPAX 2050TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
+    "id": "APS-6020I",
+    "supplier_id": "aps",
+    "supplier_name": "APS 美国",
+    "product_name": "ColostrumOne 60-20I",
+    "generic_name": "牛初乳粉(IgG 20%)",
+    "generic_name_en": "Bovine Colostrum IgG20%",
+    "category": "功能性成分",
+    "source": "牛初乳",
+    "process": "牛初乳",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3",
-      "脑健康",
-      "视力健康",
-      "脑健康"
+      "免疫支持"
     ],
     "applications": [
-      "膳食补充剂",
-      "心血管健康",
-      "婴幼儿配方",
-      "孕妇营养",
-      "婴幼儿配方",
-      "孕妇营养"
+      "免疫营养",
+      "功能性食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "EPA ≥205 mg/g (20.5%), DHA ≥500 mg/g (50%), 总omega-3 ≥830 mg/g (83%)",
-      "epa_dha_fa": "EPA(FA) ≥196 mg/g, DHA(FA) ≥481 mg/g",
-      "form": "TG (甘油三酯)",
-      "triglycerides": "≥90 A%"
+      "蛋白": "≥60%",
+      "IgG": "≥20%",
+      "脂肪": "≤5%",
+      "水分": "≤5%"
     },
-    "function": "DHA为主导的高浓度Omega-3浓缩物，支持脑部和视觉健康",
-    "mechanism": "DHA是大脑和视网膜磷脂的关键组成，参与神经信号传导",
+    "function": "富含免疫球蛋白的牛初乳粉提供被动免疫支持",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "高DHA含量适用于脑健康和视觉健康领域",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "Friend of the Sea"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。功能声称需保健食品批文。"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "美国",
+    "data_source": "APS PC-QLT-SPEC-6020I",
+    "confidence": "high",
+    "manufacturer": "APS（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "APS-7025I",
+    "supplier_id": "aps",
+    "supplier_name": "APS 美国",
+    "product_name": "ColostrumOne 70-25I",
+    "generic_name": "牛初乳粉(IgG 25%)",
+    "generic_name_en": "Bovine Colostrum IgG25%",
+    "category": "功能性成分",
+    "source": "牛初乳",
+    "process": "牛初乳",
+    "functional_tags": [
+      "免疫支持"
+    ],
+    "applications": [
+      "免疫营养",
+      "高端功能食品",
+      "运动免疫"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥70%",
+      "IgG": "≥25%",
+      "脂肪": "≤5%",
+      "水分": "≤5%"
+    },
+    "function": "高蛋白高IgG牛初乳粉25%IgG",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。功能声称需保健食品批文。"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "美国",
+    "data_source": "APS PC-QLT-SPEC-7025I",
+    "confidence": "high",
+    "manufacturer": "APS（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "APS-7035",
+    "supplier_id": "aps",
+    "supplier_name": "APS 美国",
+    "product_name": "ColostrumOne 70-35",
+    "generic_name": "牛初乳粉(IgG 35%)",
+    "generic_name_en": "Bovine Colostrum IgG35%",
+    "category": "功能性成分",
+    "source": "牛初乳",
+    "process": "牛初乳",
+    "functional_tags": [
+      "免疫支持"
+    ],
+    "applications": [
+      "高端免疫支持",
+      "特殊营养"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥70%",
+      "IgG": "≥35%(干基)",
+      "脂肪": "≤5%",
+      "水分": "≤6%"
+    },
+    "function": "超高IgG含量牛初乳粉35%IgG",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "婴幼儿配方食品中禁止使用"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "美国",
+    "data_source": "APS PC-QLT-SPEC-7035",
+    "confidence": "high",
+    "manufacturer": "APS（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "GEL-VERP",
+    "supplier_id": "gelita",
+    "supplier_name": "Gelita 嘉丽达",
+    "product_name": "Verisol P(维丽素)",
+    "generic_name": "胶原蛋白肽(口服美容)",
+    "generic_name_en": "Bioactive Collagen Peptide",
+    "category": "功能性成分",
+    "source": "胶原蛋白",
+    "process": "胶原蛋白肽 口服美容型",
+    "functional_tags": [
+      "美容护肤",
+      "抗衰老"
+    ],
+    "applications": [
+      "口服美容",
+      "功能性食品",
+      "皮肤健康"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "平均分子量": "≈2.1kDa"
+    },
+    "function": "特异性刺激皮肤成纤维细胞合成胶原蛋白，临床验证减少皱纹提升弹性",
+    "mechanism": "特定肽段刺激成纤维细胞胶原合成上调",
+    "dosage_range": "2.5-5g/天",
+    "clinical_evidence": "多项RCT证实减少皱纹提升弹性促进指甲生长",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。美容功能声称需保健食品批文。"
     },
     "price_range": null,
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 2050 TGN spec 100013-17 dated 04.12.2023",
-    "confidence": "high"
+    "origin": "德国",
+    "data_source": "Gelita Verisol P规格",
+    "confidence": "high",
+    "manufacturer": "Gelita 嘉丽达（德国/中国辽源）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "NOV-EPX-003",
-    "product_name": "EPAX 3624TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
+    "id": "GEL-FORT",
+    "supplier_id": "gelita",
+    "supplier_name": "Gelita 嘉丽达",
+    "product_name": "Fortibone",
+    "generic_name": "胶原蛋白肽(骨骼健康)",
+    "generic_name_en": "Bioactive Collagen Peptide Fortibone",
+    "category": "功能性成分",
+    "source": "胶原蛋白",
+    "process": "胶原蛋白肽 骨骼健康型",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "骨骼健康",
+      "骨质疏松"
     ],
     "applications": [
-      "膳食补充剂",
-      "心血管健康"
+      "骨骼健康产品",
+      "中老年营养"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "EPA ≥360 mg/g (36%), DHA ≥240 mg/g (24%), 总omega-3 ≥660 mg/g (66%)",
-      "epa_dha_fa": "EPA(FA) ≥345 mg/g, DHA(FA) ≥231 mg/g",
-      "form": "TG (甘油三酯)",
-      "triglycerides": "≥90 A%"
+      "分子量": "<10000Da≥90%",
+      "羟脯氨酸": "≥3%",
+      "总氮": "≥15%"
     },
-    "function": "均衡EPA/DHA比例的Omega-3浓缩物",
-    "mechanism": "EPA和DHA协同抗炎、调节血脂",
-    "dosage_range": "",
-    "clinical_evidence": "均衡EPA/DHA比例适合综合心血管健康支持",
+    "function": "促进骨密度提升刺激成骨细胞活性增加骨合成代谢",
+    "mechanism": "促进成骨细胞分化和I型胶原合成增加骨基质形成",
+    "dosage_range": "5g/天",
+    "clinical_evidence": "临床证实每日5g显著改善绝经后女性骨密度",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "Friend of the Sea"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。美容功能声称需保健食品批文。"
     },
-    "price_range": {
-      "min": 460,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 3624 TGN spec 104962-17 dated 230823",
-    "confidence": "high"
+    "price_range": null,
+    "origin": "中国辽源",
+    "data_source": "Gelita Fortibone规格",
+    "confidence": "high",
+    "manufacturer": "Gelita 嘉丽达（德国/中国辽源）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "NOV-EPX-004",
-    "product_name": "EPAX 4020TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
+    "id": "NOU-PNF",
+    "supplier_id": "noumi",
+    "supplier_name": "Noumi 澳大利亚",
+    "product_name": "PUREnFERRIN",
+    "generic_name": "乳铁蛋白",
+    "generic_name_en": "Lactoferrin",
+    "category": "功能性成分",
+    "source": "乳铁蛋白",
+    "process": "乳铁蛋白",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "免疫支持",
+      "婴幼儿营养",
+      "铁吸收"
     ],
     "applications": [
-      "膳食补充剂",
-      "心血管健康"
-    ],
-    "key_specs": {
-      "epa_dha_content": "EPA ≥400 mg/g (40%), DHA ~200 mg/g, 总omega-3 ~75%",
-      "form": "TG (甘油三酯)",
-      "triglycerides": "≥90 A%"
-    },
-    "function": "EPA为主导的高浓度Omega-3浓缩物",
-    "mechanism": "EPA主导的抗炎、心血管保护作用",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "Friend of the Sea"
-      ]
-    },
-    "price_range": {
-      "min": 470,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 4020 TGN spec 100045-20 dated 150321",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-EPX-005",
-    "product_name": "EPAX 4030TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
-    "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
-    ],
-    "applications": [
-      "膳食补充剂",
-      "心血管健康"
-    ],
-    "key_specs": {
-      "epa_dha_content": "EPA ≥400 mg/g (40%), DHA ≥300 mg/g (30%), 总omega-3 ≥780 mg/g (78%)",
-      "epa_dha_fa": "EPA(FA) ≥383 mg/g, DHA(FA) ≥288 mg/g, EPA+DHA(FA) ≥671 mg/g",
-      "form": "TG (甘油三酯)",
-      "triglycerides": "≥90 A%"
-    },
-    "function": "均衡高浓度EPA/DHA Omega-3浓缩物",
-    "mechanism": "EPA和DHA协同调节炎症反应、改善血脂谱",
-    "dosage_range": "",
-    "clinical_evidence": "高含量均衡型Omega-3，适合多种健康应用",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "Friend of the Sea"
-      ]
-    },
-    "price_range": {
-      "min": 450,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 4030 TGN spec 100021-17 dated 040522",
-    "confidence": "high"
-  },
-  {
-    "id": "NOV-EPX-006",
-    "product_name": "EPAX 4832TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
-    "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
-    ],
-    "applications": [
-      "膳食补充剂",
-      "心血管健康"
-    ],
-    "key_specs": {
-      "epa_dha_content": "EPA ≥480 mg/g (48%), DHA ≥320 mg/g (32%), 总omega-3 ≥860 mg/g (86%)",
-      "epa_dha_fa": "EPA(FA) ≥460 mg/g, DHA(FA) ≥308 mg/g",
-      "epa_dha_tg_percent": "EPA(TG) 51 A%, DHA(TG) 34 A%, 总omega-3(TG) 95 A%",
-      "form": "TG (甘油三酯)",
-      "triglycerides": "≥90 A%",
-      "mixed_tocopherol": "3.0-4.5 mg/g"
-    },
-    "function": "超高浓度EPA/DHA Omega-3浓缩物（旗舰产品）",
-    "mechanism": "极高浓度Omega-3提供强效抗炎和心血管保护",
-    "dosage_range": "",
-    "clinical_evidence": "超高浓度Omega-3，实际检测值EPA 489mg/g, DHA 333mg/g, 总omega-3 911mg/g",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "Friend of the Sea"
-      ]
-    },
-    "price_range": {
-      "min": 650,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 4832 TGN batch 2024000945 COA",
-    "confidence": "high"
-  },
-  {
-    "id": "NOV-EPX-007",
-    "product_name": "EPAX 5025TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
-    "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3",
-      "脑健康",
-      "视力健康"
-    ],
-    "applications": [
-      "膳食补充剂",
-      "心血管健康",
       "婴幼儿配方",
-      "孕妇营养"
+      "免疫营养",
+      "功能性食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "EPA ≥500 mg/g (50%), DHA ≥250 mg/g (25%), 总omega-3 ≥830 mg/g (83%)",
-      "epa_dha_fa": "EPA(FA) ≥479 mg/g, DHA(FA) ≥240 mg/g",
-      "form": "TG (甘油三酯)",
-      "triglycerides": "≥90 A%"
+      "蛋白": "≥93%",
+      "乳铁蛋白纯度": "≥95%",
+      "水分": "≤4.5%"
     },
-    "function": "EPA主导的高浓度Omega-3浓缩物",
-    "mechanism": "EPA强效抗炎，支持心血管和免疫健康",
-    "dosage_range": "",
-    "clinical_evidence": "高EPA含量适合以抗炎为主要目标的应用",
+    "function": "澳大利亚产高纯度乳铁蛋白天然免疫调节蛋白",
+    "mechanism": "",
+    "dosage_range": "按GB 14880规定",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "Friend of the Sea"
-      ]
+      "china": "compliant",
+      "gb14880": "GB 14880允许作为营养强化剂使用",
+      "note": "可用于婴幼儿配方、调制乳粉。保健食品需蓝帽子批文方可声称增强免疫力。"
     },
     "price_range": {
-      "min": 520,
+      "min": null,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 5025 TGN spec 100777-17 dated 02.10.2023",
-    "confidence": "high"
+    "origin": "澳大利亚",
+    "data_source": "Noumi PC-QLT-SPEC-PnF",
+    "confidence": "high",
+    "manufacturer": "Noumi（澳大利亚）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "NOV-EPX-008",
-    "product_name": "EPAX 6000TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
+    "id": "NOU-MCC",
+    "supplier_id": "noumi",
+    "supplier_name": "Noumi 澳大利亚",
+    "product_name": "PUREnMCC",
+    "generic_name": "膜分离酪蛋白",
+    "generic_name_en": "Micellar Casein Concentrate",
+    "category": "蛋白质类",
+    "source": "酪蛋白",
+    "process": "膜分离酪蛋白",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3",
-      "脑健康",
-      "视力健康",
-      "脑健康"
+      "运动营养",
+      "体重管理",
+      "蛋白补充"
     ],
     "applications": [
-      "膳食补充剂",
-      "心血管健康",
+      "运动营养",
+      "蛋白饮料",
+      "乳制品",
+      "特医食品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥84%(干基)",
+      "酪蛋白占蛋白": "≥82%",
+      "脂肪": "≤5%",
+      "水分": "≤12%"
+    },
+    "function": "温和膜分离酪蛋白保留天然胶束结构缓慢消化",
+    "mechanism": "胶束酪蛋白在胃酸中形成凝块缓释氨基酸",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "澳大利亚",
+    "data_source": "Noumi PC-QLT-SPEC-PUREnMCC",
+    "confidence": "high",
+    "manufacturer": "Noumi（澳大利亚）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "TKT-T2NDC",
+    "supplier_id": "tenkate",
+    "supplier_name": "Ten Kate 荷兰",
+    "product_name": "T2NDC",
+    "generic_name": "非变性II型胶原蛋白",
+    "generic_name_en": "Undenatured Type II Collagen",
+    "category": "功能性成分",
+    "source": "胶原蛋白",
+    "process": "非变性II型胶原蛋白",
+    "functional_tags": [
+      "骨关节健康",
+      "关节舒适"
+    ],
+    "applications": [
+      "骨关节健康产品",
+      "功能性食品",
+      "宠物关节健康"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥80%",
+      "非变性II型胶原": "≥12%",
+      "羟脯氨酸": "≥5%"
+    },
+    "function": "天然鸡胸软骨来源非变性II型胶原通过口服耐受机制减轻关节炎症",
+    "mechanism": "口服耐受机制训练免疫系统不对自身关节胶原产生攻击",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。美容功能声称需保健食品批文。"
+    },
+    "price_range": null,
+    "origin": "荷兰",
+    "data_source": "Ten Kate T2NDC客户规格书",
+    "confidence": "high",
+    "manufacturer": "Ten Kate（荷兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "LAC-MCC85",
+    "supplier_id": "lactoland",
+    "supplier_name": "Lactoland 德国",
+    "product_name": "MCC85",
+    "generic_name": "膜分离酪蛋白",
+    "generic_name_en": "Micellar Casein(MCC85)",
+    "category": "蛋白质类",
+    "source": "酪蛋白",
+    "process": "膜分离酪蛋白",
+    "functional_tags": [
+      "运动营养",
+      "体重管理"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "乳制品",
+      "夜间蛋白"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥84%(干基)",
+      "酪蛋白占蛋白": "≥82%",
+      "脂肪": "≤5%",
+      "水分": "≤12%"
+    },
+    "function": "德国产膜分离酪蛋白天然胶束结构缓释氨基酸",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Lactoland PC-QLT-SPEC-MCC85",
+    "confidence": "high",
+    "manufacturer": "Lactoland（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "LAC-MPC70",
+    "supplier_id": "lactoland",
+    "supplier_name": "Lactoland 德国",
+    "product_name": "MPC70",
+    "generic_name": "浓缩牛奶蛋白",
+    "generic_name_en": "Milk Protein Concentrate(MPC70)",
+    "category": "蛋白质类",
+    "source": "牛奶蛋白",
+    "process": "MPC70",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充"
+    ],
+    "applications": [
+      "乳制品",
+      "蛋白强化",
+      "酸奶",
+      "奶酪"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥70%(干基)",
+      "脂肪": "≤3%",
+      "水分": "≤6%"
+    },
+    "function": "浓缩牛奶蛋白保持酪蛋白/乳清蛋白天然比例",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Lactoland PC-QLT-SPEC-MPC70",
+    "confidence": "high",
+    "manufacturer": "Lactoland（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "LAC-MPC85",
+    "supplier_id": "lactoland",
+    "supplier_name": "Lactoland 德国",
+    "product_name": "MPC85",
+    "generic_name": "浓缩牛奶蛋白",
+    "generic_name_en": "Milk Protein Concentrate(MPC85)",
+    "category": "蛋白质类",
+    "source": "牛奶蛋白",
+    "process": "MPC85",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "高蛋白乳制品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥85%(干基)",
+      "脂肪": "≤4%",
+      "水分": "≤6%",
+      "灰分": "≤9%"
+    },
+    "function": "高纯度浓缩牛奶蛋白",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "Lactoland PC-QLT-SPEC-MPC85",
+    "confidence": "high",
+    "manufacturer": "Lactoland（德国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ENT-W80",
+    "supplier_id": "entc",
+    "supplier_name": "ENTC 波兰",
+    "product_name": "ENTC WPC80",
+    "generic_name": "浓缩乳清蛋白粉",
+    "generic_name_en": "WPC80",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80",
+    "functional_tags": [
+      "运动营养",
+      "体重管理"
+    ],
+    "applications": [
+      "运动营养",
+      "乳制品",
+      "蛋白饮料",
+      "烘焙"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤7%",
+      "水分": "≤6%"
+    },
+    "function": "波兰产浓缩乳清蛋白粉",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "波兰",
+    "data_source": "ENTC PC-QLT-SPEC-ENTC80",
+    "confidence": "high",
+    "manufacturer": "ENTC（波兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ENT-W80I",
+    "supplier_id": "entc",
+    "supplier_name": "ENTC 波兰",
+    "product_name": "ENTC WPC80 Instant",
+    "generic_name": "浓缩乳清蛋白粉(速溶型)",
+    "generic_name_en": "WPC80 Instant",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPC80速溶型",
+    "functional_tags": [
+      "运动营养",
+      "体重管理"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "固体饮料"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥80%(干基)",
+      "脂肪": "≤9%",
+      "水分": "≤5.5%"
+    },
+    "function": "波兰产速溶型浓缩乳清蛋白",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "波兰",
+    "data_source": "ENTC PC-QLT-SPEC-ENTC80I",
+    "confidence": "high",
+    "manufacturer": "ENTC（波兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "ENT-W90I",
+    "supplier_id": "entc",
+    "supplier_name": "ENTC 波兰",
+    "product_name": "ENTC WPI90 Instant",
+    "generic_name": "分离乳清蛋白粉(速溶型)",
+    "generic_name_en": "WPI90 Instant",
+    "category": "蛋白质类",
+    "source": "乳清蛋白",
+    "process": "WPI90速溶型",
+    "functional_tags": [
+      "运动营养",
+      "体重管理",
+      "乳糖不耐受"
+    ],
+    "applications": [
+      "运动营养",
+      "蛋白饮料",
+      "固体饮料"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥90%(干基)",
+      "脂肪": "≤4%",
+      "水分": "≤5.5%",
+      "乳糖": "≤1%"
+    },
+    "function": "波兰产速溶型分离乳清蛋白",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料，按GB 2760/14880规定使用。普通食品不得声称保健功能。",
+      "gb24154": "可用于运动营养食品（GB 24154-2025）"
+    },
+    "price_range": null,
+    "origin": "波兰",
+    "data_source": "ENTC PC-QLT-SPEC-ENTC90I",
+    "confidence": "high",
+    "manufacturer": "ENTC（波兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "PVC-FP",
+    "supplier_id": "provico",
+    "supplier_name": "ProviCo 澳大利亚",
+    "product_name": "FerrinPro",
+    "generic_name": "乳铁蛋白",
+    "generic_name_en": "Lactoferrin",
+    "category": "功能性成分",
+    "source": "乳铁蛋白",
+    "process": "乳铁蛋白",
+    "functional_tags": [
+      "免疫支持",
+      "婴幼儿营养",
+      "铁吸收"
+    ],
+    "applications": [
       "婴幼儿配方",
-      "孕妇营养",
-      "婴幼儿配方"
+      "免疫营养",
+      "功能性食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "推断：EPA ~60%, DHA ~0%（基于命名规则和价格定位）",
-      "form": "TG (甘油三酯)",
-      "other": "规格为色谱图PDF，具体数值待确认"
+      "蛋白": "≥93%",
+      "乳铁蛋白纯度": "≥95%",
+      "水分": "≤4.5%"
     },
-    "function": "超高EPA浓度Omega-3浓缩物",
-    "mechanism": "极高EPA含量提供最大抗炎效果",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "function": "澳大利亚ProviCo产高纯度乳铁蛋白",
+    "mechanism": "",
+    "dosage_range": "按GB 14880规定",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED"
-      ]
+      "china": "compliant",
+      "gb14880": "GB 14880允许作为营养强化剂使用",
+      "note": "可用于婴幼儿配方、调制乳粉。保健食品需蓝帽子批文方可声称增强免疫力。"
     },
     "price_range": {
-      "min": 300,
+      "min": null,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
-    "origin": "挪威 Ålesund",
-    "data_source": "Kromatogram EPAX 6000 TGN.pdf（色谱图）",
-    "confidence": "low"
+    "origin": "澳大利亚",
+    "data_source": "ProviCo PC-QLT-SPEC-FerrinPro",
+    "confidence": "high",
+    "manufacturer": "ProviCo（澳大利亚）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "NOV-EPX-009",
-    "product_name": "EPAX 6015TGN",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
-    "category": "油脂类",
-    "source": "鱼油",
-    "process": "TG型",
+    "id": "BES-MF",
+    "supplier_id": "beston",
+    "supplier_name": "Beston 百乐缇 澳大利亚",
+    "product_name": "Mediferrin",
+    "generic_name": "乳铁蛋白",
+    "generic_name_en": "Lactoferrin",
+    "category": "功能性成分",
+    "source": "乳铁蛋白",
+    "process": "乳铁蛋白",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3",
-      "脑健康"
+      "免疫支持",
+      "婴幼儿营养",
+      "铁吸收"
     ],
     "applications": [
-      "膳食补充剂",
-      "心血管健康",
-      "婴幼儿配方"
+      "婴幼儿配方",
+      "免疫营养",
+      "功能性食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "EPA(TG) 典型值596 mg/g (范围565-633), EPA上限645 mg/g TG (620 mg/g FA)",
-      "form": "TG (甘油三酯)",
-      "other": "2MT以上订单"
+      "蛋白": "≥93%",
+      "乳铁蛋白纯度": "≥95%",
+      "水分": "≤4.5%"
     },
-    "function": "超高EPA浓度Omega-3浓缩物（最高端TG产品）",
-    "mechanism": "极高EPA含量提供最大抗炎和心血管保护",
-    "dosage_range": "",
-    "clinical_evidence": "基于2021-2025年8批次检测数据，EPA含量稳定在高水平",
+    "function": "澳大利亚Beston产高纯度乳铁蛋白Mediferrin",
+    "mechanism": "",
+    "dosage_range": "按GB 14880规定",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED"
-      ]
+      "china": "compliant",
+      "gb14880": "GB 14880允许作为营养强化剂使用",
+      "note": "可用于婴幼儿配方、调制乳粉。保健食品需蓝帽子批文方可声称增强免疫力。"
     },
     "price_range": {
-      "min": 520,
+      "min": null,
       "max": null,
       "unit": "元/kg",
-      "note": "仅供参考"
+      "note": ""
     },
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 6015 TGN EPA and DHA test results from 2021 to 2025",
-    "confidence": "high"
+    "origin": "澳大利亚",
+    "data_source": "Beston PC-QLT-SPEC-Mediferrin",
+    "confidence": "high",
+    "manufacturer": "Beston 百乐缇（澳大利亚）",
+    "supplier": "荷兰爱联康营养集团"
   },
   {
-    "id": "NOV-EPX-010",
-    "product_name": "EPAX 3025EE",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
+    "id": "HBC-PROGO",
+    "supplier_id": "hbc",
+    "supplier_name": "HBC 挪威",
+    "product_name": "ProGo",
+    "generic_name": "三文鱼水解蛋白肽",
+    "generic_name_en": "Salmon Protein Hydrolysate",
+    "category": "功能性成分",
+    "source": "鱼蛋白",
+    "process": "三文鱼水解蛋白肽",
+    "functional_tags": [
+      "运动营养",
+      "蛋白补充",
+      "血压管理"
+    ],
+    "applications": [
+      "运动营养",
+      "功能性食品",
+      "血压管理产品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥85%",
+      "脂肪": "≤2%",
+      "分子量": "<3000Da"
+    },
+    "function": "挪威三文鱼来源水解蛋白肽含天然ACE抑制肽",
+    "mechanism": "三文鱼蛋白水解产物中特定肽段具有ACE抑制活性",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "HBC PC-QLT-SPEC-ProGo",
+    "confidence": "high",
+    "manufacturer": "HBC（挪威）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "CLA-BGOS",
+    "supplier_id": "clasado",
+    "supplier_name": "Clasado 英国",
+    "product_name": "Bimuno GOS",
+    "generic_name": "低聚半乳糖",
+    "generic_name_en": "Galacto-oligosaccharide(GOS)",
+    "category": "功能性成分",
+    "source": "益生元",
+    "process": "低聚半乳糖",
+    "functional_tags": [
+      "肠道健康",
+      "益生元",
+      "免疫支持"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "功能性食品",
+      "肠道健康产品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "GOS含量": "≥57%(干基)",
+      "水分": "≤3.5%"
+    },
+    "function": "高纯度低聚半乳糖GOS选择性促进双歧杆菌增殖",
+    "mechanism": "GOS作为益生元选择性被双歧杆菌发酵产生短链脂肪酸",
+    "dosage_range": "",
+    "clinical_evidence": "多项临床证实GOS促进肠道有益菌群",
+    "regulatory_status": {
+      "china": "新食品原料"
+    },
+    "price_range": null,
+    "origin": "英国",
+    "data_source": "Clasado PC-QLT-SPEC-BimunoGOS",
+    "confidence": "high",
+    "manufacturer": "Clasado（英国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "KER-BG",
+    "supplier_id": "kerry",
+    "supplier_name": "Kerry 凯爱瑞",
+    "product_name": "Wellmune",
+    "generic_name": "酵母β-葡聚糖",
+    "generic_name_en": "Yeast Beta-Glucan",
+    "category": "功能性成分",
+    "source": "酵母提取物",
+    "process": "酵母β-葡聚糖",
+    "functional_tags": [
+      "免疫支持"
+    ],
+    "applications": [
+      "功能性食品",
+      "免疫营养",
+      "运动营养"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "β-葡聚糖": "≥75%",
+      "蛋白": "≤3%",
+      "水分": "≤8%"
+    },
+    "function": "天然酵母来源β-1,3/1,6-葡聚糖经临床验证支持先天免疫功能",
+    "mechanism": "β-葡聚糖被肠道派氏结M细胞捕获激活巨噬细胞和中性粒细胞",
+    "dosage_range": "250mg/天",
+    "clinical_evidence": "20+项临床证实减少上呼吸道感染发生率",
+    "regulatory_status": {
+      "china": "新食品原料(酵母来源)"
+    },
+    "price_range": null,
+    "origin": "美国",
+    "data_source": "Kerry Wellmune规格",
+    "confidence": "high",
+    "manufacturer": "Kerry 凯爱瑞（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "EPC-EPC",
+    "supplier_id": "cargill_epicor",
+    "supplier_name": "EpiCor 嘉吉",
+    "product_name": "EpiCor",
+    "generic_name": "后生元(非活性食用酵母)",
+    "generic_name_en": "Postbiotic(Inactive Yeast Fermentate)",
+    "category": "功能性成分",
+    "source": "后生元",
+    "process": "后生元",
+    "functional_tags": [
+      "免疫支持",
+      "肠道健康"
+    ],
+    "applications": [
+      "功能性食品",
+      "免疫营养",
+      "肠道健康"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "Non-GMO",
+      "Kosher",
+      "Halal"
+    ],
+    "key_specs": {
+      "蛋白": "≥40%",
+      "膳食纤维": "≥25%",
+      "水分": "≤8%"
+    },
+    "function": "非活性食用酵母发酵产物后生元经临床验证支持免疫和肠道健康",
+    "mechanism": "酵母代谢产物与肠道免疫细胞互作",
+    "dosage_range": "500mg/天",
+    "clinical_evidence": "10+项临床证实减少感冒改善肠道菌群",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料/新食品原料，使用范围和限量需查阅具体公告。"
+    },
+    "price_range": {
+      "min": null,
+      "max": null,
+      "unit": "元/kg",
+      "note": ""
+    },
+    "origin": "美国",
+    "data_source": "EpiCor PC-QLT-SPEC-Epicor",
+    "confidence": "high",
+    "manufacturer": "EpiCor/Cargill（美国）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "SSH-WMP",
+    "supplier_id": "springsheep",
+    "supplier_name": "Spring Sheep 春绵 新西兰",
+    "product_name": "全脂绵羊乳粉",
+    "generic_name": "全脂绵羊乳粉",
+    "generic_name_en": "Whole Sheep Milk Powder",
+    "category": "乳制品原料",
+    "source": "绵羊乳",
+    "process": "喷雾干燥",
+    "functional_tags": [
+      "婴幼儿营养",
+      "蛋白补充"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "高端乳制品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥24%",
+      "脂肪": "≥26%",
+      "水分": "≤3%"
+    },
+    "function": "新西兰春绵全脂绵羊乳粉A2蛋白天然更易消化",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。普通食品不得声称保健功能。"
+    },
+    "price_range": null,
+    "origin": "新西兰",
+    "data_source": "Spring Sheep PC-QLT-SPEC-SWMP",
+    "confidence": "high",
+    "manufacturer": "Spring Sheep 春绵（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "SSH-LFMP",
+    "supplier_id": "springsheep",
+    "supplier_name": "Spring Sheep 春绵 新西兰",
+    "product_name": "无乳糖调制绵羊乳粉",
+    "generic_name": "无乳糖调制绵羊乳粉",
+    "generic_name_en": "Lactose-Free Sheep Milk Powder",
+    "category": "乳制品原料",
+    "source": "绵羊乳",
+    "process": "无乳糖喷雾干燥",
+    "functional_tags": [
+      "婴幼儿营养",
+      "乳糖不耐受"
+    ],
+    "applications": [
+      "婴幼儿配方",
+      "乳糖不耐受产品"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "蛋白": "≥15%",
+      "脂肪": "≥26%",
+      "乳糖": "≤0.5%",
+      "水分": "≤3%"
+    },
+    "function": "无乳糖绵羊乳粉A2蛋白适合乳糖不耐受人群",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。普通食品不得声称保健功能。"
+    },
+    "price_range": null,
+    "origin": "新西兰",
+    "data_source": "Spring Sheep PC-QLT-SPEC-LFMSMPS",
+    "confidence": "high",
+    "manufacturer": "Spring Sheep 春绵（新西兰）",
+    "supplier": "荷兰爱联康营养集团"
+  },
+  {
+    "id": "EPX-0460TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "0460 TGN",
+    "generic_name": "Omega-3甘油三酯(DHA型 600/40)",
+    "generic_name_en": "Omega-3 Triglyceride DHA 600 EPA 40",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "EE型",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "脑部健康",
+      "眼部健康",
+      "婴幼儿营养"
     ],
     "applications": [
       "膳食补充剂",
-      "心血管健康"
+      "功能性食品",
+      "软胶囊"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "epa_dha_content": "EPA ≥300 mg/g (30%), DHA ≥250 mg/g (25%), 总omega-3 ≥620 mg/g (62%)",
-      "form": "EE (乙酯)",
-      "other": "最大酸值6.0 A%"
+      "DHA": "≥600mg/g",
+      "EPA": "≥40mg/g",
+      "总Omega-3": "≥721mg/g",
+      "形式": "TGN(再酯化甘油三酯)"
     },
-    "function": "均衡EPA/DHA乙酯型浓缩物",
-    "mechanism": "EPA和DHA协同抗炎、调节血脂",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "function": "DHA主导型Omega-3浓缩物，超高DHA含量适合脑部和眼部健康",
+    "mechanism": "DHA是视网膜和大脑灰质的关键结构脂肪酸",
+    "dosage_range": "按产品配方添加",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。",
+      "gb10765": "可用于婴幼儿配方食品（需符合GB 10765）"
     },
     "price_range": null,
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 3025 EE spec 100808-20 dated 050523",
-    "confidence": "high"
+    "origin": "挪威",
+    "data_source": "EPAX spec 100797-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-EPX-011",
-    "product_name": "EPAX 4030EE",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
+    "id": "EPX-1500TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "1500 TGN",
+    "generic_name": "Omega-3甘油三酯(DHA型 500/105)",
+    "generic_name_en": "Omega-3 Triglyceride DHA 500 EPA 105",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "EE型",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "脑部健康",
+      "眼部健康",
+      "婴幼儿营养"
     ],
     "applications": [
       "膳食补充剂",
-      "心血管健康"
+      "功能性食品",
+      "软胶囊"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "epa_dha_content": "EPA ≥400 mg/g (40%), DHA ≥300 mg/g (30%), 总omega-3 ≥780 mg/g (78%)",
-      "form": "EE (乙酯)",
-      "other": "最大酸值6.0 A%"
+      "DHA": "≥500mg/g",
+      "EPA": "≥105mg/g",
+      "总Omega-3": "≥672mg/g",
+      "形式": "TGN(甘油三酯>90%)"
     },
-    "function": "高浓度EPA/DHA乙酯型浓缩物",
-    "mechanism": "高浓度Omega-3支持心血管和抗炎",
+    "function": "DHA主导型Omega-3浓缩物",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。",
+      "gb10765": "可用于婴幼儿配方食品（需符合GB 10765）"
     },
     "price_range": null,
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 4030 EE spec 100023-20 dated 19.05.2022",
-    "confidence": "high"
+    "origin": "挪威",
+    "data_source": "EPAX spec 100827-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-EPX-012",
-    "product_name": "EPAX 4717EE",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
+    "id": "EPX-2050TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "2050 TGN",
+    "generic_name": "Omega-3甘油三酯(DHA型 500/205)",
+    "generic_name_en": "Omega-3 Triglyceride DHA 500 EPA 205",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "EE型",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "脑部健康",
+      "心脑血管"
     ],
     "applications": [
       "膳食补充剂",
-      "心血管健康"
+      "功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "epa_dha_content": "EPA ≥470 mg/g (47%), DHA ≥180 mg/g (18%), 总omega-3待确认",
-      "form": "EE (乙酯)",
-      "other": "最大酸值6.0 A%"
+      "DHA": "≥500mg/g",
+      "EPA": "≥205mg/g",
+      "总Omega-3": "≥797mg/g",
+      "形式": "TGN(甘油三酯>90%)"
     },
-    "function": "EPA主导的高浓度乙酯型浓缩物",
-    "mechanism": "高EPA含量提供强效抗炎",
+    "function": "EPA加强型DHA浓缩物",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
     "price_range": null,
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX 4717 EE spec 104975-20 dated 16.01.2023",
-    "confidence": "high"
+    "origin": "挪威",
+    "data_source": "EPAX spec 100013-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-EPX-013",
-    "product_name": "EPAX 5007EE",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "鱼油 Omega-3",
-    "generic_name_en": "Fish Oil Omega-3",
+    "id": "EPX-3025EE",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "3025 EE",
+    "generic_name": "Omega-3乙酯(EPA 300/DHA 250)",
+    "generic_name_en": "Omega-3 Ethyl Ester EPA300 DHA250",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "EE型",
+    "process": "浓缩鱼油 EE",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "心脑血管",
+      "认知功能"
     ],
     "applications": [
       "膳食补充剂",
-      "心血管健康"
+      "软胶囊",
+      "制药"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC"
     ],
     "key_specs": {
-      "epa_dha_content": "EPA(EE) ≥500 mg/g (50%), DHA(EE) ≥70 mg/g (7%), 总omega-3(EE) ≥580 mg/g",
-      "epa_dha_fa": "EPA(FFA) ≥458 mg/g, DHA(FFA) ≥64 mg/g, 总omega-3(FFA) ≥546 mg/g",
-      "form": "EE (乙酯)",
-      "other": "最大总氧化值9.0，符合EP/USP/GOED标准"
+      "EPA": "≥300mg/g",
+      "DHA": "≥250mg/g",
+      "总Omega-3": "≥620mg/g",
+      "形式": "EE(乙酯型)"
     },
-    "function": "超高EPA浓度乙酯型浓缩物",
-    "mechanism": "极高EPA含量提供最大抗炎效果",
+    "function": "平衡型EPA/DHA乙酯浓缩物",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "符合EP、USP和GOED专论标准",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED",
-        "EP compliance",
-        "USP compliance"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
     "price_range": null,
-    "origin": "挪威 Ålesund",
-    "data_source": "5007EE产品数据表_挪亚圣诺版20231227.pdf, Statement EP USP GOED",
-    "confidence": "high"
+    "origin": "挪威",
+    "data_source": "EPAX spec 100808-20",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-EPX-014",
-    "product_name": "EPAX Omega 3-9-11",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "特种鱼油 Omega-3-9-11",
-    "generic_name_en": "Specialty Fish Oil Omega-3-9-11",
+    "id": "EPX-3624TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "3624 TGN",
+    "generic_name": "Omega-3甘油三酯(EPA型 360/240)",
+    "generic_name_en": "Omega-3 Triglyceride EPA360 DHA240",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "TG型",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含Omega-3"
+      "心脑血管",
+      "抗炎"
     ],
     "applications": [
+      "膳食补充剂",
+      "功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "EPA": "≥360mg/g",
+      "DHA": "≥240mg/g",
+      "总Omega-3": "≥634mg/g",
+      "形式": "TGN(甘油三酯>90%)"
+    },
+    "function": "EPA主导型Omega-3甘油三酯浓缩物",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 104962-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "EPX-4020TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "4020 TGN",
+    "generic_name": "Omega-3甘油三酯(EPA型 400/200)",
+    "generic_name_en": "Omega-3 Triglyceride EPA400 DHA200",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "浓缩鱼油 TGN",
+    "functional_tags": [
+      "心脑血管",
+      "抗炎"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "EPA": "≥400mg/g",
+      "DHA": "≥200mg/g",
+      "总Omega-3": "≥670mg/g",
+      "形式": "TGN(甘油三酯>90%)"
+    },
+    "function": "高EPA型甘油三酯浓缩物适合心脑血管和抗炎",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 100045-20",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "EPX-4030TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "4030 TGN",
+    "generic_name": "Omega-3甘油三酯(EPA型 400/300)",
+    "generic_name_en": "Omega-3 Triglyceride EPA400 DHA300",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "浓缩鱼油 TGN",
+    "functional_tags": [
+      "心脑血管",
+      "抗炎",
+      "认知功能"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "功能性食品",
+      "高端软胶囊"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "EPA": "≥400mg/g",
+      "DHA": "≥300mg/g",
+      "总Omega-3": "≥749mg/g",
+      "形式": "TGN(甘油三酯>90%)"
+    },
+    "function": "高EPA+DHA甘油三酯浓缩物总Omega-3≥749mg/g",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 100021-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "EPX-4030EE",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "4030 EE",
+    "generic_name": "Omega-3乙酯(EPA型 400/300)",
+    "generic_name_en": "Omega-3 Ethyl Ester EPA400 DHA300",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "浓缩鱼油 EE",
+    "functional_tags": [
+      "心脑血管",
+      "抗炎"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "软胶囊",
+      "制药"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC"
+    ],
+    "key_specs": {
+      "EPA": "≥400mg/g",
+      "DHA": "≥300mg/g",
+      "总Omega-3": "≥780mg/g",
+      "形式": "EE(乙酯型)"
+    },
+    "function": "高EPA+DHA乙酯浓缩物",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 100023-20",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "EPX-4717EE",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "4717 EE",
+    "generic_name": "Omega-3乙酯(超高EPA 470/180)",
+    "generic_name_en": "Omega-3 Ethyl Ester EPA470 DHA180",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "浓缩鱼油 EE",
+    "functional_tags": [
+      "心脑血管",
+      "抗炎"
+    ],
+    "applications": [
+      "制药级",
       "膳食补充剂"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "EPA+DHA(FA) ≥250 mg/g (25%), EPA(TG) ≥50 mg/g (5%), DHA(TG) ≥200 mg/g (20%)",
-      "total_omega3": "≥300 mg/g (30%)",
-      "lc_mufa": "总LCMUFA ≥420 mg/g (42%)，含鲸蜡烯酸(C22:1n11) ≥300 mg/g, 鳕油酸(C20:1n9) ≥90 mg/g",
-      "form": "TG (甘油三酯)",
-      "triglycerides": "≥60 A%",
-      "special_note": "15°C以下逐渐凝固，室温可逆",
-      "mixed_tocopherol": "2.0-2.8 mg/g"
+      "EPA": "≥470mg/g",
+      "DHA": "≥180mg/g",
+      "形式": "EE(乙酯型)"
     },
-    "function": "独特的Omega-3/9/11组合，含长链单不饱和脂肪酸（LCMUFA）",
-    "mechanism": "Omega-3提供抗炎，Omega-9（油酸）和Omega-11（鲸蜡烯酸）支持心血管和代谢健康",
+    "function": "超高EPA乙酯浓缩物制药级",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "独特的Omega-3/9/11脂肪酸组合，研究中",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "GOED"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
     "price_range": null,
-    "origin": "挪威 Ålesund",
-    "data_source": "EPAX Omega 3-9-11 specification 105088-17 dated 05.11.2025",
-    "confidence": "high"
+    "origin": "挪威",
+    "data_source": "EPAX spec 104975-20",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-EPX-015",
-    "product_name": "EPAX Evolve 05",
-    "supplier_id": "novosana",
-    "supplier_name": "EPAX (Pelagia AS)",
-    "generic_name": "VLC-PUFA浓缩物",
-    "generic_name_en": "VLC-PUFA Concentrate",
+    "id": "EPX-4832TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "4832 TGN",
+    "generic_name": "Omega-3甘油三酯(超高EPA+DHA 480/320)",
+    "generic_name_en": "Omega-3 Triglyceride EPA480 DHA320",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "TG型",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含Omega-3",
-      "脑健康"
+      "心脑血管",
+      "抗炎",
+      "认知功能"
     ],
     "applications": [
       "膳食补充剂",
-      "婴幼儿配方"
+      "功能性食品",
+      "高端软胶囊"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "total_vlc_fa": "≥120 mg/g (C24-C30)",
-      "vlc_pufa": "≥50 mg/g",
-      "vlc_mufa": "≥70 mg/g",
-      "dha": "≥400 mg/g (40%)",
-      "form": "浓缩鱼油",
-      "patent": "专利保护"
+      "EPA": "≥480mg/g",
+      "DHA": "≥320mg/g",
+      "总Omega-3": "≥826mg/g",
+      "形式": "TGN"
     },
-    "function": "首个商业化VLC-PUFA（超长链多不饱和脂肪酸）浓缩物，超越传统EPA/DHA",
-    "mechanism": "VLC-PUFA（C24-C30）是EPA/DHA的延伸产物，由ELOVL2/ELOVL4酶合成。补充可恢复因衰老导致的VLC-PUFA下降。ELOVL2基因活性与衰老高度相关，可作为生物钟。VLC-PUFA对视力、男性生育力、皮肤健康、大脑发育和骨骼健康至关重要",
+    "function": "TGN系列最高总Omega-3含量(≥826mg/g)",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "动物研究：VLC-PUFA在睑板腺、睾丸等组织中积累。2023年突破性研究：口服鱼源VLC-PUFA油改善视网膜功能。首个商业VLC-PUFA人体干预试验进行中（男性生育力）。EU认定为非新食品（not novel）",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "Non-novel（EU已认定为非新食品）",
-      "certifications": [
-        "专利保护"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
     "price_range": null,
-    "origin": "挪威 Ålesund",
-    "data_source": "Epax_Evolve 05_One pager.pdf, EPAX_Evolve 05_White paper.pdf",
-    "confidence": "high"
+    "origin": "挪威",
+    "data_source": "EPAX spec 105007-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-LYS-001",
-    "product_name": "Lysi Cod Liver Oil 1000",
-    "supplier_id": "novosana",
-    "supplier_name": "Lýsi HF (冰岛)",
-    "generic_name": "鳕鱼肝油",
-    "generic_name_en": "Cod Liver Oil",
+    "id": "EPX-5025TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "5025 TGN",
+    "generic_name": "Omega-3甘油三酯(超高EPA 500/250)",
+    "generic_name_en": "Omega-3 Triglyceride EPA500 DHA250",
     "category": "油脂类",
-    "source": "鳕鱼肝油",
-    "process": "液体",
+    "source": "鱼油",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "心脑血管",
+      "抗炎"
     ],
     "applications": [
       "膳食补充剂",
-      "中老年营养"
+      "功能性食品",
+      "高端软胶囊"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "vitamin_content": "维生素A/D（1000 IU级别）",
-      "form": "液体/胶囊"
+      "EPA": "≥500mg/g",
+      "DHA": "≥250mg/g",
+      "总Omega-3": "≥797mg/g",
+      "形式": "TGN"
     },
-    "function": "传统鳕鱼肝油，含天然维生素A/D和Omega-3",
-    "mechanism": "维生素A支持视力和免疫，维生素D支持骨骼健康，Omega-3支持心血管",
+    "function": "超高EPA甘油三酯浓缩物EPA/DHA 2:1比例",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "传统使用历史，鳕鱼肝油的健康益处已被广泛认可",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "FSSC 22000",
-        "HACCP",
-        "Friend of the Sea",
-        "Halal"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
-    "price_range": {
-      "min": 165,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "冰岛",
-    "data_source": "Lysi product pricing list",
-    "confidence": "medium"
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 100777-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-LYS-002",
-    "product_name": "Lysi Cod Liver Oil 2500",
-    "supplier_id": "novosana",
-    "supplier_name": "Lýsi HF (冰岛)",
-    "generic_name": "鳕鱼肝油",
-    "generic_name_en": "Cod Liver Oil",
+    "id": "EPX-6000EE",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "6000 EE",
+    "generic_name": "Omega-3乙酯(经典平衡型 300/200)",
+    "generic_name_en": "Omega-3 Ethyl Ester EPA300 DHA200",
     "category": "油脂类",
-    "source": "鳕鱼肝油",
-    "process": "液体",
+    "source": "鱼油",
+    "process": "浓缩鱼油 EE",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "心脑血管",
+      "基础营养"
     ],
     "applications": [
       "膳食补充剂",
-      "中老年营养"
+      "软胶囊",
+      "大批量生产"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC"
     ],
     "key_specs": {
-      "vitamin_content": "维生素A/D（2500 IU级别）",
-      "form": "液体/胶囊"
+      "EPA": "≥300mg/g(33%)",
+      "DHA": "≥200mg/g(22%)",
+      "总Omega-3": "≥550mg/g",
+      "形式": "EE(乙酯型)"
     },
-    "function": "高含量鳕鱼肝油，维生素A/D浓度更高",
-    "mechanism": "同CLO 1000，剂量更高",
+    "function": "经典平衡型EPA/DHA乙酯浓缩物适合大批量生产",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "FSSC 22000",
-        "HACCP",
-        "Friend of the Sea",
-        "Halal"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
-    "price_range": {
-      "min": 165,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "冰岛",
-    "data_source": "Lysi product pricing list",
-    "confidence": "medium"
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 100001-20",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-LYS-003",
-    "product_name": "Lysi Cod Liver Oil 3300",
-    "supplier_id": "novosana",
-    "supplier_name": "Lýsi HF (冰岛)",
-    "generic_name": "鳕鱼肝油",
-    "generic_name_en": "Cod Liver Oil",
+    "id": "EPX-6000TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "6000 TGN",
+    "generic_name": "Omega-3甘油三酯(经典平衡型 300/200)",
+    "generic_name_en": "Omega-3 Triglyceride EPA300 DHA200",
     "category": "油脂类",
-    "source": "鳕鱼肝油",
-    "process": "液体",
+    "source": "鱼油",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "心脑血管",
+      "基础营养"
     ],
     "applications": [
       "膳食补充剂",
-      "中老年营养"
+      "功能性食品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "vitamin_content": "维生素A/D（3300 IU级别）",
-      "form": "液体/胶囊"
+      "EPA": "≥300mg/g(34%)",
+      "DHA": "≥200mg/g(24%)",
+      "总Omega-3": "≥576mg/g",
+      "形式": "TGN(甘油三酯>90%)"
     },
-    "function": "最高含量鳕鱼肝油",
-    "mechanism": "同CLO系列，最高维生素A/D剂量",
+    "function": "经典平衡型再酯化甘油三酯",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "FSSC 22000",
-        "HACCP",
-        "Friend of the Sea",
-        "Halal"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
-    "price_range": {
-      "min": 165,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "冰岛",
-    "data_source": "Lysi product pricing list",
-    "confidence": "medium"
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 100033-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-LYS-004",
-    "product_name": "Lysi Cod Liver Oil 1800/600",
-    "supplier_id": "novosana",
-    "supplier_name": "Lýsi HF (冰岛)",
-    "generic_name": "鳕鱼肝油",
-    "generic_name_en": "Cod Liver Oil",
+    "id": "EPX-6015TGN",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "6015 TGN",
+    "generic_name": "Omega-3甘油三酯(超超高EPA 530)",
+    "generic_name_en": "Omega-3 Triglyceride EPA530",
     "category": "油脂类",
-    "source": "鳕鱼肝油",
-    "process": "液体",
+    "source": "鱼油",
+    "process": "浓缩鱼油 TGN",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "心脑血管",
+      "抗炎(靶向)"
+    ],
+    "applications": [
+      "专业膳食补充剂",
+      "高EPA应用"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "EPA": "≥530mg/g",
+      "DHA": "100-190mg/g",
+      "EPA+DHA": "≥700mg/g",
+      "总Omega-3": "≥759mg/g",
+      "形式": "TGN"
+    },
+    "function": "TGN系列最高EPA含量(≥530mg/g)瞄准性抗炎",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX spec 100039-17",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "EPX-OMEGA3911",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "Omega 3-9-11",
+    "generic_name": "特种海洋油脂(Omega-3/9/11)",
+    "generic_name_en": "Omega-3/9/11 Specialty Oil",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "特种海洋油脂 天然TG",
+    "functional_tags": [
+      "心脑血管",
+      "代谢健康"
+    ],
+    "applications": [
+      "专业膳食补充剂",
+      "代谢健康产品"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC"
+    ],
+    "key_specs": {
+      "EPA": "≥50mg/g",
+      "DHA": "≥200mg/g",
+      "Cetoleic酸(C22:1 n11)": "≥300mg/g",
+      "Gondoic酸(C20:1 n9)": "≥90mg/g",
+      "总LCMUFA": "≥420mg/g",
+      "形式": "天然TG(≥60%)"
+    },
+    "function": "独特Omega-3+9+11长链单不饱和脂肪酸组合天然鱼油",
+    "mechanism": "Cetoleic酸和Gondoic酸为独特的长链单不饱和脂肪酸",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX Omega3-9-11 spec 105088",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "EPX-EVOLVE05",
+    "supplier_id": "epax",
+    "supplier_name": "EPAX 挪威",
+    "product_name": "Evolve 05",
+    "generic_name": "VLC-PUFA浓缩物(超长链Omega-3)",
+    "generic_name_en": "VLC-PUFA Omega-3(C24-C30)",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "VLC-PUFA 特种油脂",
+    "functional_tags": [
+      "脑部健康",
+      "眼部健康(高端)"
+    ],
+    "applications": [
+      "专业膳食补充剂",
+      "神经系统营养"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC"
+    ],
+    "key_specs": {
+      "VLC-FA C24-C30": "≥100mg/g",
+      "VLC-PUFA C24-C30": "≥50mg/g",
+      "DHA+EPA": "≤400mg/g",
+      "TOTOX": "≤20",
+      "形式": "TGN"
+    },
+    "function": "含C24-C30超长链多不饱和脂肪酸超越标准EPA/DHA",
+    "mechanism": "VLC-PUFA在视网膜和神经组织中具有特殊生理功能",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "挪威",
+    "data_source": "EPAX Evolve05 spec 105136-20",
+    "confidence": "high",
+    "manufacturer": "EPAX（挪威）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "LYS-1812TG",
+    "supplier_id": "lysi",
+    "supplier_name": "Lýsi 冰岛",
+    "product_name": "1812TG",
+    "generic_name": "Omega-3鱼油(天然TG 180/120)",
+    "generic_name_en": "Omega-3 Fish Oil(TG 180/120)",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "鱼油 天然TG",
+    "functional_tags": [
+      "心脑血管",
+      "基础营养"
     ],
     "applications": [
       "膳食补充剂",
-      "中老年营养"
+      "软胶囊"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "epa_dha_content": "EPA ~1800mg + DHA ~600mg（推测基于型号名称）",
-      "form": "液体/胶囊"
+      "EPA": "≥180mg/gTG",
+      "DHA": "≥120mg/gTG",
+      "总Omega-3": "≥330mg/gTG",
+      "形式": "天然TG"
     },
-    "function": "高浓度鳕鱼肝油，EPA 1800mg + DHA 600mg",
-    "mechanism": "高浓度EPA/DHA提供心血管保护，同时含天然维生素A/D",
+    "function": "冰岛产浓缩Omega-3鱼油天然甘油三酯形式",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "FSSC 22000",
-        "HACCP",
-        "Friend of the Sea",
-        "Halal"
-      ]
-    },
-    "price_range": {
-      "min": 165,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "冰岛",
-    "data_source": "Lysi product pricing list, Lysi CLO 1800-600 COA",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-LYS-005",
-    "product_name": "Lysi HF High Strength",
-    "supplier_id": "novosana",
-    "supplier_name": "Lýsi HF (冰岛)",
-    "generic_name": "鳕鱼肝油",
-    "generic_name_en": "Cod Liver Oil",
-    "category": "油脂类",
-    "source": "鳕鱼肝油",
-    "process": "液体",
-    "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
-    ],
-    "applications": [
-      "膳食补充剂",
-      "中老年营养"
-    ],
-    "key_specs": {
-      "form": "胶囊",
-      "certifications": "FSSC 671609, 有效期至2026-06-22"
-    },
-    "function": "高强度鳕鱼肝油制剂",
-    "mechanism": "高浓度鱼油活性成分",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "EU approved",
-      "certifications": [
-        "FSSC 22000",
-        "HACCP",
-        "Friend of the Sea",
-        "Halal"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
     "price_range": null,
     "origin": "冰岛",
-    "data_source": "FSSC 671609 Lysi HF 2026 06 22.pdf",
-    "confidence": "medium"
+    "data_source": "Lysi 1812TG HO306-01",
+    "confidence": "high",
+    "manufacturer": "Lýsi（冰岛）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-OOL-001",
-    "product_name": "Sea Dragon Squalene 角鲨烯",
-    "supplier_id": "novosana",
-    "supplier_name": "Ocean Oils / Sea Dragon",
-    "generic_name": "",
-    "generic_name_en": "",
+    "id": "LYS-CLO1800600",
+    "supplier_id": "lysi",
+    "supplier_name": "Lýsi 冰岛",
+    "product_name": "CLO 1800-600",
+    "generic_name": "鳕鱼肝油(高维A/D)",
+    "generic_name_en": "Cod Liver Oil VitA1800 VitD600",
     "category": "油脂类",
-    "source": "角鲨烯",
-    "process": "液体",
+    "source": "鳕鱼肝油",
+    "process": "鳕鱼肝油 高维生素型",
     "functional_tags": [
-      "美容护肤"
+      "免疫支持",
+      "骨骼健康",
+      "基础营养"
     ],
     "applications": [
-      "美容护肤",
-      "保健食品"
+      "膳食补充剂",
+      "传统鳕鱼肝油"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "purity": "高纯度精炼角鲨烯",
-      "form": "液体油",
-      "appearance": "无色、几乎无味、透明液体",
-      "source": "深海犬鲨（Dogfish）肝脏，含量50-70%"
+      "VitA": "1800-2200IU/g",
+      "VitD3": "600-800IU/g",
+      "EPA": "72-88mg/g",
+      "DHA": "99-121mg/g",
+      "总Omega-3": "216-264mg/gTG"
     },
-    "function": "高纯度角鲨烯，强效抗氧化剂。促进氧输送、增强免疫力、抑制癌细胞生长、降低胆固醇、保护皮肤免受UV损伤",
-    "mechanism": "角鲨烯（C30H50）是天然三萜烯不饱和烃，6个异戊二烯单元构成。极低电离阈值使其具有强大的电子供体能力，能终止脂质过氧化链式反应。作为内源性抗氧化剂参与氧化-抗氧化平衡调节",
+    "function": "高维生素A和D3鳕鱼肝油",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "多项研究支持：抗氧化（优于维生素E的脂质过氧化抑制）、免疫增强（刺激巨噬细胞）、抗癌、降胆固醇（LDL↓ HDL↑）、UV防护。2007年南非研究、1996年人体临床试验",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认",
-      "certifications": [
-        "澳大利亚出口证书"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
-    "price_range": {
-      "min": 210,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "澳大利亚",
-    "data_source": "Squalene benefits - squalene-antioxidant-of-the-future.pdf, Ocean Oil PPT",
-    "confidence": "high"
+    "price_range": null,
+    "origin": "冰岛",
+    "data_source": "Lysi CLO 1800-600 HC317-2",
+    "confidence": "high",
+    "manufacturer": "Lýsi（冰岛）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-OOL-002",
-    "product_name": "EFP Squalene 角鲨烯",
-    "supplier_id": "novosana",
-    "supplier_name": "Ocean Oils / EFP",
-    "generic_name": "",
-    "generic_name_en": "",
+    "id": "LYS-CLO2500800",
+    "supplier_id": "lysi",
+    "supplier_name": "Lýsi 冰岛",
+    "product_name": "CLO 2500-800",
+    "generic_name": "鳕鱼肝油(超高维D3)",
+    "generic_name_en": "Cod Liver Oil VitA2500 VitD800",
     "category": "油脂类",
-    "source": "角鲨烯",
-    "process": "液体",
+    "source": "鳕鱼肝油",
+    "process": "鳕鱼肝油 超高D3型",
     "functional_tags": [
-      "美容护肤"
+      "骨骼健康",
+      "免疫支持",
+      "基础营养"
     ],
     "applications": [
-      "美容护肤",
-      "保健食品"
+      "膳食补充剂",
+      "高D3补充"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
     ],
     "key_specs": {
-      "purity": "高纯度精炼角鲨烯",
-      "form": "液体油"
+      "VitA": "2500-3000IU/g",
+      "VitD3": "800-1150IU/g",
+      "EPA": "≥65mg/g",
+      "DHA": "≥100mg/g"
     },
-    "function": "同Sea Dragon角鲨烯，EFP品牌版本",
-    "mechanism": "同Sea Dragon角鲨烯",
+    "function": "超高维生素D3鳕鱼肝油",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "同Sea Dragon角鲨烯",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认",
-      "certifications": [
-        "澳大利亚出口证书"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
-    "price_range": {
-      "min": 210,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "澳大利亚",
-    "data_source": "Pricing list",
-    "confidence": "medium"
+    "price_range": null,
+    "origin": "冰岛",
+    "data_source": "Lysi CLO 2500-800 HC333-2",
+    "confidence": "high",
+    "manufacturer": "Lýsi（冰岛）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-OOL-003",
-    "product_name": "Shark Liver Oil (SLO) 鲨鱼肝油",
-    "supplier_id": "novosana",
-    "supplier_name": "Ocean Oils",
-    "generic_name": "",
-    "generic_name_en": "",
+    "id": "LYS-TUNA",
+    "supplier_id": "lysi",
+    "supplier_name": "Lýsi 冰岛",
+    "product_name": "Tuna Oil",
+    "generic_name": "金枪鱼油(DHA丰富型)",
+    "generic_name_en": "Tuna Oil(DHA-rich)",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "金枪鱼油 天然TG",
+    "functional_tags": [
+      "脑部健康",
+      "眼部健康",
+      "婴幼儿营养"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "婴幼儿营养",
+      "孕期营养"
+    ],
+    "certifications": [
+      "FSSC 22000",
+      "MSC",
+      "Halal"
+    ],
+    "key_specs": {
+      "EPA": "≥50mg/g(≥6%)",
+      "DHA": "≥230mg/g(≥25%)",
+      "形式": "短程蒸馏天然TG"
+    },
+    "function": "DHA丰富型金枪鱼油短程蒸馏纯化",
+    "mechanism": "金枪鱼天然富含DHA",
+    "dosage_range": "≤300mgDHA/天",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。",
+      "gb10765": "可用于婴幼儿配方食品（需符合GB 10765）"
+    },
+    "price_range": null,
+    "origin": "冰岛",
+    "data_source": "Lysi Tuna Oil HT409-2",
+    "confidence": "high",
+    "manufacturer": "Lýsi（冰岛）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "OOL-SQE99",
+    "supplier_id": "ocean_oil",
+    "supplier_name": "Ocean Oils 澳大利亚",
+    "product_name": "Squalene 99.9%",
+    "generic_name": "角鲨烯(高纯度99.9%)",
+    "generic_name_en": "Squalene(99.9% purity)",
+    "category": "油脂类",
+    "source": "角鲨烯",
+    "process": "鲨鱼肝来源 高纯度",
+    "functional_tags": [
+      "免疫支持",
+      "抗氧化",
+      "皮肤健康"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "化妆品",
+      "疫苗佐剂"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "纯度": "≥99.8%(GC)",
+      "过氧化物": "≤1.0meq/kg",
+      "碘值": "360-380",
+      "比重": "0.856-0.858"
+    },
+    "function": "高纯度角鲨烯天然海洋来源的抗氧化烃",
+    "mechanism": "角鲨烯作为单线态氧淬灭剂具有独特的抗氧化机制",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "澳大利亚",
+    "data_source": "Ocean Oil Squalene 99.9% Spec",
+    "confidence": "high",
+    "manufacturer": "Ocean Oils（澳大利亚）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "OOL-AKG25",
+    "supplier_id": "ocean_oil",
+    "supplier_name": "Ocean Oils 澳大利亚",
+    "product_name": "AlkyPure AKG25",
+    "generic_name": "鲨鱼肝油(烷氧基甘油24%)",
+    "generic_name_en": "Shark Liver Oil(AKG 24%)",
     "category": "油脂类",
     "source": "鲨鱼肝油",
-    "process": "液体",
+    "process": "鲨鱼肝油 烷氧基甘油型",
     "functional_tags": [
-      "美容护肤"
+      "免疫支持",
+      "白细胞调节"
     ],
     "applications": [
-      "美容护肤",
-      "保健食品"
+      "专业膳食补充剂",
+      "免疫健康",
+      "肿瘤辅助"
     ],
+    "certifications": [],
     "key_specs": {
-      "dage_content": ">63%",
-      "akg_content": ">24%",
-      "squalene": "≤3%",
-      "epa": ">0.5%",
-      "dha": ">2.5%",
-      "peroxide_value": "<5.0 meq/kg",
-      "acid_value": "<0.2 mgKOH/g",
-      "form": "液体油",
-      "appearance": "淡黄色油，极低鱼腥味"
+      "D.A.G.E.": ">63%",
+      "烷氧基甘油": "≥24%",
+      "角鲨烯": "<3%",
+      "DHA": "≥2.5%"
     },
-    "function": "高AKG（烷氧基甘油）鲨鱼肝油，富含DAGE（二酰基甘油醚），增强内源性缩醛磷脂生成、降低血脂异常、减少炎症",
-    "mechanism": "DAGE（>63%）和AKG（>24%）参与缩醛磷脂合成，缩醛磷脂是细胞膜关键成分，尤其在大脑和心脏组织中丰富",
-    "dosage_range": "",
-    "clinical_evidence": "临床研究进行中。传统使用AKG丰富的鲨鱼肝油用于免疫支持",
+    "function": "富含烷氧基甘油(D.A.G.E.)的鲨鱼肝油支持免疫和骨髓功能",
+    "mechanism": "烷氧基甘油参与白细胞生成和调节",
+    "dosage_range": "按产品配方添加",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认",
-      "certifications": [
-        "澳大利亚标准"
-      ]
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
     "price_range": null,
-    "origin": "澳大利亚/新西兰",
-    "data_source": "SLO (DAGE) Spec. & Analytical methods 24% (to NovoSana)2025.pdf",
-    "confidence": "high"
+    "origin": "澳大利亚",
+    "data_source": "Ocean Oil AKG25 Spec",
+    "confidence": "high",
+    "manufacturer": "Ocean Oils（澳大利亚）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-OMX-001",
-    "product_name": "OMAX 1812 TG (STD)",
+    "id": "OMX-1812",
     "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
+    "supplier_name": "Novosana 挪亚圣诺",
+    "product_name": "OMAX 1812",
+    "generic_name": "食品级鱼油(天然TG 180/120)",
+    "generic_name_en": "Food Fish Oil(TG EPA160 DHA110)",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "鱼油 天然TG",
+    "functional_tags": [
+      "心脑血管",
+      "基础营养"
+    ],
+    "applications": [
+      "食品原料",
+      "Omega-3强化"
+    ],
+    "certifications": [],
     "key_specs": {
-      "epa_dha_content": "EPA ~18%, DHA ~12%（基于型号名称）",
-      "form": "TG (甘油三酯)"
+      "EPA": "≥160mg/g",
+      "DHA": "≥110mg/g",
+      "总Omega-3": "≥330mg/g",
+      "形式": "天然TG"
     },
-    "function": "标准TG型鱼油，EPA 18% / DHA 12%",
-    "mechanism": "Omega-3脂肪酸基础补充",
+    "function": "食品级Omega-3鱼油适用于食品强化",
+    "mechanism": "",
     "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
     "price_range": {
       "min": null,
@@ -1699,654 +3827,336 @@
       "unit": "元/kg",
       "note": ">100吨64-65元，<100吨68元"
     },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "medium"
+    "origin": "中国太仓",
+    "data_source": "Novosana OMAX 1812 PD",
+    "confidence": "high",
+    "manufacturer": "外协加工（马来西亚等）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-OMX-002",
-    "product_name": "OMAX 3000",
+    "id": "OMX-EPA300",
     "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "form": "待确认"
-    },
-    "function": "中等浓度鱼油",
-    "mechanism": "Omega-3脂肪酸补充",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 85,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "low"
-  },
-  {
-    "id": "NOV-OMX-003",
-    "product_name": "OMAX GOLD 3000",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "form": "待确认"
-    },
-    "function": "金装高浓度鱼油",
-    "mechanism": "Omega-3脂肪酸补充",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 100,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "low"
-  },
-  {
-    "id": "NOV-OMX-004",
-    "product_name": "OMAX GOLD 80125",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "form": "待确认"
-    },
-    "function": "高浓度金装鱼油",
-    "mechanism": "Omega-3脂肪酸补充",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 125,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "low"
-  },
-  {
-    "id": "NOV-OMX-005",
-    "product_name": "OMAX SALMON",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "source": "三文鱼",
-      "form": "待确认"
-    },
-    "function": "三文鱼源鱼油",
-    "mechanism": "Omega-3脂肪酸补充，三文鱼源可能含虾青素等天然成分",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 70,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "low"
-  },
-  {
-    "id": "NOV-OMX-006",
-    "product_name": "OMAX TUNA",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "source": "金枪鱼",
-      "form": "待确认"
-    },
-    "function": "金枪鱼源鱼油，DHA含量较高",
-    "mechanism": "DHA主导的Omega-3补充",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 90,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "low"
-  },
-  {
-    "id": "NOV-OMX-007",
-    "product_name": "OMAX TUNA NW",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "source": "金枪鱼",
-      "form": "待确认"
-    },
-    "function": "金枪鱼源鱼油（NW版本）",
-    "mechanism": "同OMAX TUNA",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 90,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "low"
-  },
-  {
-    "id": "NOV-OMX-008",
-    "product_name": "OMAX FLOW EPA 300 NL",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "epa_content": "EPA 300（推测300mg/g）",
-      "form": "微胶囊化粉末",
-      "origin": "NL（荷兰）"
-    },
-    "function": "微胶囊化EPA粉末，适用于固体剂型",
-    "mechanism": "EPA抗炎、心血管保护",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 550,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "荷兰",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-OMX-009",
-    "product_name": "OMAX FLOW DHA 11 NL",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "dha_content": "DHA 11（推测11%）",
-      "form": "微胶囊化粉末",
-      "origin": "NL（荷兰）"
-    },
-    "function": "微胶囊化DHA粉末，适用于固体剂型",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 180,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "荷兰",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-OMX-010",
-    "product_name": "OMAX FLOW VEG DHA 11 NL",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "dha_content": "DHA 11（推测11%）",
-      "form": "微胶囊化粉末",
-      "source": "藻类（素食）",
-      "origin": "NL（荷兰）"
-    },
-    "function": "素食来源微胶囊化DHA粉末",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 205,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "荷兰",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-OMX-011",
-    "product_name": "OMAX FLOW VEG DHA 200 NL",
-    "supplier_id": "novosana",
-    "supplier_name": "OMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "dha_content": "DHA 200（推测200mg/g = 20%）",
-      "form": "微胶囊化粉末",
-      "source": "藻类（素食）",
-      "origin": "NL（荷兰）"
-    },
-    "function": "高浓度素食DHA粉末",
-    "mechanism": "高浓度DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 260,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "荷兰",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-DMX-001",
-    "product_name": "DMAX VEG DHA 500",
-    "supplier_id": "novosana",
-    "supplier_name": "DMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "dha_content": "DHA 500（推测500mg/g = 50%）",
-      "form": "待确认",
-      "source": "藻类（素食）"
-    },
-    "function": "高浓度素食DHA",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 180,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-DMX-002",
-    "product_name": "DMAX VEG DHA 450",
-    "supplier_id": "novosana",
-    "supplier_name": "DMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "dha_content": "DHA 450（推测450mg/g = 45%）",
-      "form": "待确认",
-      "source": "藻类（素食）"
-    },
-    "function": "素食DHA",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 160,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-DMX-003",
-    "product_name": "DMAX VEG DHA 450 NW",
-    "supplier_id": "novosana",
-    "supplier_name": "DMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "dha_content": "DHA 450（推测450mg/g = 45%）",
-      "form": "待确认",
-      "source": "藻类（素食）"
-    },
-    "function": "素食DHA（NW版本）",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 160,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-DMX-004",
-    "product_name": "DMAX VEG DHA 400",
-    "supplier_id": "novosana",
-    "supplier_name": "DMAX",
-    "generic_name": "",
-    "generic_name_en": "",
-    "category": "其他",
-    "source": "其他",
-    "process": "",
-    "functional_tags": [],
-    "applications": [],
-    "key_specs": {
-      "dha_content": "DHA 400（推测400mg/g = 40%）",
-      "form": "待确认",
-      "source": "藻类（素食）"
-    },
-    "function": "素食DHA",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
-    "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
-    },
-    "price_range": {
-      "min": 140,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
-    "origin": "待确认",
-    "data_source": "Pricing list",
-    "confidence": "medium"
-  },
-  {
-    "id": "NOV-CFI-001",
-    "product_name": "CFI EPA 300 Malaysia",
-    "supplier_id": "novosana",
-    "supplier_name": "CFI",
-    "generic_name": "鱼油",
-    "generic_name_en": "Fish Oil",
+    "supplier_name": "Novosana 挪亚圣诺",
+    "product_name": "OMAX FLOW EPA300",
+    "generic_name": "微胶囊化鱼油粉(EPA型)",
+    "generic_name_en": "Microencapsulated Fish Oil Powder(EPA-rich)",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "液体",
+    "process": "微胶囊鱼油粉 EPA型",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "心脑血管",
+      "抗炎"
     ],
     "applications": [
-      "膳食补充剂"
+      "固体饮料",
+      "食品强化",
+      "功能性食品",
+      "片剂"
     ],
+    "certifications": [],
     "key_specs": {
-      "epa_content": "EPA 300（推测300mg/g = 30%）",
-      "form": "待确认"
+      "EPA": "≥255mg/g",
+      "DHA": "50-125mg/g",
+      "EPA+DHA": "≥330mg/g",
+      "总Omega-3": "≥380mg/g",
+      "形式": "微胶囊粉末"
     },
-    "function": "EPA浓缩物",
-    "mechanism": "EPA抗炎、心血管保护",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "function": "微胶囊化EPA型Omega-3粉末适合固体饮料和食品强化",
+    "mechanism": "",
+    "dosage_range": "≤3g/天(以鱼油计)",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
     },
-    "price_range": {
-      "min": null,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
+    "price_range": null,
     "origin": "马来西亚",
-    "data_source": "Pricing list",
-    "confidence": "medium"
+    "data_source": "Novosana OMAX FLOW EPA300 PD",
+    "confidence": "high",
+    "manufacturer": "外协加工（马来西亚等）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-CFI-002",
-    "product_name": "CFI DHA 11 Tuna Malaysia",
+    "id": "OMX-DHA11",
     "supplier_id": "novosana",
-    "supplier_name": "CFI",
-    "generic_name": "鱼油",
-    "generic_name_en": "Fish Oil",
+    "supplier_name": "Novosana 挪亚圣诺",
+    "product_name": "OMAX FLOW DHA11",
+    "generic_name": "微胶囊化金枪鱼油粉(DHA型)",
+    "generic_name_en": "Microencapsulated Tuna Oil Powder(DHA 11%)",
     "category": "油脂类",
     "source": "鱼油",
-    "process": "液体",
+    "process": "微胶囊鱼油粉 DHA型",
     "functional_tags": [
-      "含DHA",
-      "含EPA",
-      "含Omega-3"
+      "脑部健康",
+      "婴幼儿营养"
     ],
     "applications": [
-      "膳食补充剂"
+      "固体饮料",
+      "食品强化",
+      "婴幼儿食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "dha_content": "DHA 11（推测11%）",
-      "source": "金枪鱼",
-      "form": "待确认"
+      "DHA": "≥110mg/g",
+      "DHA/EPA": "≥4",
+      "形式": "微胶囊粉末"
     },
-    "function": "金枪鱼源DHA",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "function": "DHA型微胶囊金枪鱼油粉",
+    "mechanism": "",
+    "dosage_range": "≤3g/天(以鱼油计)",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。",
+      "gb10765": "可用于婴幼儿配方食品（需符合GB 10765）"
     },
-    "price_range": {
-      "min": null,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
+    "price_range": null,
     "origin": "马来西亚",
-    "data_source": "Pricing list",
-    "confidence": "medium"
+    "data_source": "Novosana OMAX FLOW DHA11 PD",
+    "confidence": "high",
+    "manufacturer": "外协加工（马来西亚等）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-CFI-003",
-    "product_name": "CFI DHA 11 Algae Malaysia",
+    "id": "OMX-VEGDHA11",
     "supplier_id": "novosana",
-    "supplier_name": "CFI",
-    "generic_name": "藻油 DHA",
-    "generic_name_en": "Algae DHA Oil",
+    "supplier_name": "Novosana 挪亚圣诺",
+    "product_name": "OMAX FLOW VEG DHA11",
+    "generic_name": "微胶囊化藻油DHA粉(素食DHA11%)",
+    "generic_name_en": "Microencapsulated Algal DHA Powder(Vegan DHA11%)",
     "category": "油脂类",
     "source": "藻油",
-    "process": "液体",
+    "process": "微胶囊藻油粉 DHA型",
     "functional_tags": [
-      "含DHA",
-      "含Omega-3"
+      "脑部健康",
+      "素食营养",
+      "婴幼儿营养"
     ],
     "applications": [
-      "婴幼儿配方",
-      "膳食补充剂"
+      "固体饮料",
+      "素食产品",
+      "婴幼儿食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "dha_content": "DHA 11（推测11%）",
-      "source": "藻类（素食）",
-      "form": "待确认"
+      "DHA": "≥110mg/g",
+      "来源": "裂壶藻(Schizochytrium sp.)",
+      "形式": "微胶囊粉末"
     },
-    "function": "藻类源DHA（素食）",
-    "mechanism": "DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "function": "素食藻油DHA微胶囊粉适合素食人群",
+    "mechanism": "",
+    "dosage_range": "≤300mg/天(以纯DHA计)",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
+      "china": "新食品原料(裂壶藻来源DHA)"
     },
-    "price_range": {
-      "min": null,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
+    "price_range": null,
     "origin": "马来西亚",
-    "data_source": "Pricing list",
-    "confidence": "medium"
+    "data_source": "Novosana OMAX FLOW VEG DHA11 PD",
+    "confidence": "high",
+    "manufacturer": "外协加工（马来西亚等）",
+    "supplier": "Novosana 挪亚圣诺"
   },
   {
-    "id": "NOV-CFI-004",
-    "product_name": "CFI DHA 22 Algae Malaysia",
+    "id": "OMX-VEGDHA22",
     "supplier_id": "novosana",
-    "supplier_name": "CFI",
-    "generic_name": "藻油 DHA",
-    "generic_name_en": "Algae DHA Oil",
+    "supplier_name": "Novosana 挪亚圣诺",
+    "product_name": "OMAX FLOW VEG DHA22",
+    "generic_name": "微胶囊化藻油DHA粉(高浓度素食DHA22%)",
+    "generic_name_en": "Microencapsulated Algal DHA Powder(Vegan DHA22%)",
     "category": "油脂类",
     "source": "藻油",
-    "process": "液体",
+    "process": "微胶囊藻油粉 高浓度DHA型",
     "functional_tags": [
-      "含DHA",
-      "含Omega-3"
+      "脑部健康",
+      "素食营养",
+      "婴幼儿营养"
     ],
     "applications": [
-      "婴幼儿配方",
-      "膳食补充剂"
+      "固体饮料",
+      "素食产品",
+      "婴幼儿食品"
     ],
+    "certifications": [],
     "key_specs": {
-      "dha_content": "DHA 22（推测22%）",
-      "source": "藻类（素食）",
-      "form": "待确认"
+      "DHA": "≥220mg/g",
+      "来源": "裂壶藻(Schizochytrium sp.)",
+      "形式": "微胶囊粉末"
     },
-    "function": "高浓度藻类源DHA（素食）",
-    "mechanism": "高浓度DHA支持脑部和视觉健康",
-    "dosage_range": "",
-    "clinical_evidence": "待补充",
+    "function": "高浓度素食藻油DHA微胶囊粉",
+    "mechanism": "",
+    "dosage_range": "≤300mg/天(以纯DHA计)",
+    "clinical_evidence": "",
     "regulatory_status": {
-      "china": "待确认",
-      "eu": "待确认"
+      "china": "新食品原料(裂壶藻来源DHA)"
     },
-    "price_range": {
-      "min": null,
-      "max": null,
-      "unit": "元/kg",
-      "note": "仅供参考"
-    },
+    "price_range": null,
     "origin": "马来西亚",
-    "data_source": "Pricing list",
-    "confidence": "medium"
+    "data_source": "Novosana OMAX FLOW VEG DHA22 PD",
+    "confidence": "high",
+    "manufacturer": "外协加工（马来西亚等）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "FER-DHA400",
+    "supplier_id": "fermentalg",
+    "supplier_name": "Fermentalg 法国",
+    "product_name": "DHA ORIGINS 400",
+    "generic_name": "藻油DHA(400mg/g)",
+    "generic_name_en": "Algal DHA Oil(400mg/g)",
+    "category": "油脂类",
+    "source": "藻油",
+    "process": "藻油DHA",
+    "functional_tags": [
+      "脑部健康",
+      "眼部健康",
+      "素食营养"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "食品应用",
+      "素食DHA"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "DHA": "≥400mg/g(FA)",
+      "EPA": "≥2mg/g",
+      "总Omega-3": "≥402mg/g",
+      "形式": "藻油液体"
+    },
+    "function": "法国产藻油DHA非转基因裂壶藻发酵",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Fermentalg PDS 0243F DHA ORIGINS 400 CN",
+    "confidence": "high",
+    "manufacturer": "Fermentalg（法国）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "FER-DHA510HP",
+    "supplier_id": "fermentalg",
+    "supplier_name": "Fermentalg 法国",
+    "product_name": "DHA ORIGINS 510-O HP",
+    "generic_name": "藻油DHA(高浓度510mg/g)",
+    "generic_name_en": "Algal DHA Oil(510mg/g HP)",
+    "category": "油脂类",
+    "source": "藻油",
+    "process": "藻油DHA 高浓度",
+    "functional_tags": [
+      "脑部健康",
+      "眼部健康",
+      "素食营养"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "高端素食DHA"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "DHA": "≥510mg/g(FA)",
+      "EPA": "≥3mg/g",
+      "总Omega-3": "≥513mg/g",
+      "形式": "藻油液体(高保护型)"
+    },
+    "function": "高浓度藻油DHA抗氧化保护型",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "法国",
+    "data_source": "Fermentalg PDS 0313 DHA ORIGINS 510 O HP",
+    "confidence": "high",
+    "manufacturer": "Fermentalg（法国）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "KDP-EPA965",
+    "supplier_id": "kd_pharma",
+    "supplier_name": "KD Pharma 德国",
+    "product_name": "KD-PUR EPA965EE",
+    "generic_name": "超高纯度EPA乙酯(965mg/g)",
+    "generic_name_en": "Ultra-high EPA Ethyl Ester(965mg/g)",
+    "category": "油脂类",
+    "source": "鱼油",
+    "process": "超高纯度EPA EE",
+    "functional_tags": [
+      "心脑血管",
+      "抗炎(制药级)"
+    ],
+    "applications": [
+      "制药",
+      "高端膳食补充剂"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "EPA": "≥965mg/g",
+      "总Omega-3": "≥965mg/g",
+      "形式": "EE(乙酯型)"
+    },
+    "function": "制药级超高纯度EPA乙酯浓缩物EPA≥965mg/g",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "德国",
+    "data_source": "KD Pharma Art.300692 Spec",
+    "confidence": "high",
+    "manufacturer": "KD Pharma（德国）",
+    "supplier": "Novosana 挪亚圣诺"
+  },
+  {
+    "id": "SOF-ALGS40",
+    "supplier_id": "sofinol",
+    "supplier_name": "Sofinol 瑞士",
+    "product_name": "ALG-S 40WF",
+    "generic_name": "藻油DHA(40%含葵花籽油)",
+    "generic_name_en": "Algal DHA Oil(40% with Sunflower Oil)",
+    "category": "油脂类",
+    "source": "藻油",
+    "process": "藻油DHA 混合型",
+    "functional_tags": [
+      "脑部健康",
+      "素食营养"
+    ],
+    "applications": [
+      "膳食补充剂",
+      "食品应用"
+    ],
+    "certifications": [],
+    "key_specs": {
+      "DHA": "≥40g/100g(≥400mg/g)",
+      "EPA": "≤0.5g/100g",
+      "载体": "葵花籽油",
+      "来源": "裂壶藻"
+    },
+    "function": "瑞士产藻油DHA葵花籽油载体",
+    "mechanism": "",
+    "dosage_range": "",
+    "clinical_evidence": "",
+    "regulatory_status": {
+      "china": "compliant",
+      "note": "一般食品配料。鱼油/藻油来源的DHA/EPA可用于婴幼儿配方及保健食品。"
+    },
+    "price_range": null,
+    "origin": "瑞士",
+    "data_source": "Sofinol ALG-S 40WF Spec",
+    "confidence": "high",
+    "manufacturer": "Sofinol（瑞士）",
+    "supplier": "Novosana 挪亚圣诺"
   }
 ]

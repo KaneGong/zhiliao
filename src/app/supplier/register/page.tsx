@@ -65,7 +65,7 @@ export default function SupplierRegisterPage() {
   if (success) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <div className="bg-[var(--bg-surface)] rounded-2xl shadow-lg p-8 text-center">
           <div className="text-4xl mb-4">✅</div>
           <h2 className="text-xl font-bold text-gray-900 mb-2">注册成功！</h2>
           <p className="text-gray-500">正在跳转到供应商后台...</p>
@@ -84,7 +84,7 @@ export default function SupplierRegisterPage() {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8">
+        <div className="bg-[var(--bg-surface)] rounded-2xl shadow-lg p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               { key: "id", label: "供应商ID *", placeholder: "如: my-company" },

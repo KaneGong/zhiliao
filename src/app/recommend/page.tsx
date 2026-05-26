@@ -1,269 +1,313 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback, Suspense } from "react";
 import Link from "next/link";
-import { Badge, Card, Spinner, EmptyState } from "../components/ui";
+import { useSearchParams } from "next/navigation";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { Sparkles, FlaskConical, Dumbbell, Moon, Baby, Stethoscope, Send, Square, ChevronDown, Copy, Check, Plus, ArrowUp } from "lucide-react";
 
-interface RecommendedProduct {
-  product_id: string;
-  product_name: string;
-  category: string;
-  supplier: string;
-  function: string;
-  suggested_dosage?: string;
-  price_range?: string;
-  regulatory_status?: string;
-  source: string;
-  confidence: "high" | "medium" | "low";
-}
+interface Message { role: "user" | "assistant"; content: string; }
 
-interface RecommendResult {
-  recommendations: RecommendedProduct[];
-  reasoning: string;
-  disclaimer: string;
-}
-
-const exampleQueries = [
-  { text: "我要做一款高蛋白低糖的运动后恢复饮料", icon: "💪" },
-  { text: "开发一款助眠功能软糖，需要安全的原料", icon: "😴" },
-  { text: "寻找适合婴幼儿配方的免疫调节原料", icon: "👶" },
-  { text: "需要一款能促进骨骼健康的乳制品原料", icon: "🦴" },
-  { text: "开发针对中老年人的 Omega-3 功能性食品", icon: "🐟" },
+const examples = [
+  { text: "做一款针对办公人群的减重代餐奶昔", Icon: Dumbbell },
+  { text: "开发一款助眠功能软糖，需要安全的原料", Icon: Moon },
+  { text: "寻找适合婴幼儿配方的免疫调节原料", Icon: Baby },
+  { text: "需要一款能促进骨骼健康的乳制品原料", Icon: Stethoscope },
 ];
 
-export default function RecommendPage() {
-  const [query, setQuery] = useState("");
-  const [result, setResult] = useState<RecommendResult | null>(null);
+function PageContent() {
+  const searchParams = useSearchParams();
+  const initialQuery = searchParams.get("q") || "";
+  const [input, setInput] = useState(initialQuery);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [streaming, setStreaming] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [showScrollBtn, setShowScrollBtn] = useState(false);
+  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
 
-  const handleSubmit = async (q?: string) => {
-    const searchQuery = q || query;
-    if (!searchQuery.trim()) return;
+  const chatRef = useRef<HTMLDivElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const autoScrollRef = useRef(true);
+  const abortRef = useRef<AbortController | null>(null);
 
+  const checkScroll = useCallback(() => {
+    const el = chatRef.current;
+    if (!el) return;
+    const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 120;
+    autoScrollRef.current = atBottom;
+    setShowScrollBtn(!atBottom);
+  }, []);
+
+  useEffect(() => {
+    if (autoScrollRef.current && chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  useEffect(() => { if (initialQuery.trim()) doSearch(initialQuery); }, []);
+
+  useEffect(() => {
+    const ta = textareaRef.current;
+    if (ta) { ta.style.height = "auto"; ta.style.height = Math.min(ta.scrollHeight, 160) + "px"; }
+  }, [input]);
+
+  const scrollToBottom = () => {
+    autoScrollRef.current = true;
+    setShowScrollBtn(false);
+    if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
+  };
+
+  const stopGeneration = () => {
+    abortRef.current?.abort();
+    abortRef.current = null;
+    setLoading(false);
+    setStreaming(false);
+  };
+
+  const copyMessage = async (content: string, idx: number) => {
+    try { await navigator.clipboard.writeText(content); setCopiedIdx(idx); setTimeout(() => setCopiedIdx(null), 2000); } catch {}
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); doSearch(input); }
+  };
+
+  const doSearch = async (q: string) => {
+    if (!q.trim() || loading) return;
+    setInput("");
+    const newMsgs: Message[] = [...messages, { role: "user", content: q }];
+    setMessages(newMsgs);
+    setSaved(false);
     setLoading(true);
-    setError("");
-    setResult(null);
+    setStreaming(false);
+    autoScrollRef.current = true;
+
+    const controller = new AbortController();
+    abortRef.current = controller;
 
     try {
-      const res = await fetch("/api/recommend", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: searchQuery }),
+      const history = newMsgs.slice(-6).map(m => ({ role: m.role, content: m.content }));
+      const res = await fetch("/api/ai-recommend", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: q, history }), signal: controller.signal,
       });
+      if (!res.ok) { const e = await res.json().catch(() => ({})); throw new Error(e.error || "服务暂不可用"); }
+      const reader = res.body?.getReader();
+      if (!reader) throw new Error("浏览器不支持流式读取");
 
-      if (!res.ok) {
-        throw new Error("推荐服务暂时不可用");
+      const decoder = new TextDecoder();
+      let assistantContent = "";
+      setMessages([...newMsgs, { role: "assistant" as const, content: "" }]);
+      setStreaming(true);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const text = decoder.decode(value, { stream: true });
+        for (const line of text.split("\n")) {
+          if (!line.startsWith("data: ")) continue;
+          const data = line.slice(6).trim();
+          if (data === "[DONE]") continue;
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.error) { assistantContent = `❌ ${parsed.error}`; setMessages([...newMsgs, { role: "assistant", content: assistantContent }]); }
+            else if (!parsed.done && parsed.content) { assistantContent += parsed.content; setMessages([...newMsgs, { role: "assistant", content: assistantContent }]); }
+          } catch {}
+        }
       }
-
-      const data = await res.json();
-      setResult(data);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "发生错误，请重试");
-    } finally {
-      setLoading(false);
-    }
+      setMessages([...newMsgs, { role: "assistant", content: assistantContent || "（AI 未返回内容）" }]);
+    } catch (e: any) {
+      if (e.name !== "AbortError") setMessages([...newMsgs, { role: "assistant", content: `❌ ${e.message}` }]);
+    } finally { setLoading(false); setStreaming(false); abortRef.current = null; }
   };
 
-  const confidenceConfig = {
-    high: { label: "高匹配", variant: "green" as const },
-    medium: { label: "中匹配", variant: "yellow" as const },
-    low: { label: "参考", variant: "gray" as const },
+  const saveRecipe = async () => {
+    const lastUser = [...messages].reverse().find(m => m.role === "user");
+    const lastAI = [...messages].reverse().find(m => m.role === "assistant");
+    if (!lastUser || !lastAI) return;
+    try { const res = await fetch("/api/recipes", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query: lastUser.content, recommendation: lastAI.content }) }); if (res.ok) setSaved(true); } catch {}
   };
+
+  const newChat = () => { stopGeneration(); setMessages([]); setSaved(false); setInput(""); };
+
+  const msgCount = messages.length;
+
+  // AI Avatar icon component
+  const AiAvatar = () => (
+    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shrink-0 shadow-[0_0_8px_rgba(240,165,80,0.15)]">
+      <Sparkles className="w-3.5 h-3.5 text-white" strokeWidth={2} />
+    </div>
+  );
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 fade-in flex flex-col h-[calc(100vh-64px)]">
       {/* Header */}
-      <div className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 rounded-full px-4 py-1.5 text-sm font-medium mb-4">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-          </svg>
-          AI 智能推荐
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-3">
-          描述你的产品需求
-        </h1>
-        <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
-          AI 从 60+ 原料中为你推荐最合适的方案，
-          并自动检查法规合规性。
-        </p>
-      </div>
-
-      {/* Input Area */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-8 shadow-sm">
-        <textarea
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
-              handleSubmit();
-            }
-          }}
-          placeholder="描述你的产品需求，例如：&#10;• 我要做一款高蛋白低糖的运动后恢复饮料&#10;• 开发一款助眠功能软糖&#10;• 寻找适合婴幼儿配方的免疫调节原料"
-          rows={4}
-          className="w-full px-4 py-3 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 bg-gray-50"
-        />
-        <div className="flex items-center justify-between mt-4">
-          <button
-            onClick={() => handleSubmit()}
-            disabled={loading || !query.trim()}
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-xl hover:from-blue-500 hover:to-blue-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-sm shadow-blue-500/25"
-          >
-            {loading ? (
-              <>
-                <Spinner className="w-4 h-4 text-white" />
-                推荐中...
-              </>
-            ) : (
-              <>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                获取推荐方案
-              </>
-            )}
-          </button>
-          <span className="text-xs text-gray-400 hidden sm:block">
-            ⌘ + Enter 快速提交
-          </span>
-        </div>
-      </div>
-
-      {/* Example Queries */}
-      {!result && !loading && (
-        <div className="mb-8">
-          <h2 className="text-sm font-medium text-gray-500 mb-3">
-            💡 试试这些需求描述
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {exampleQueries.map((ex) => (
-              <button
-                key={ex.text}
-                onClick={() => {
-                  setQuery(ex.text);
-                  handleSubmit(ex.text);
-                }}
-                className="flex items-start gap-3 text-left p-3 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:bg-blue-50/50 transition-all card-hover"
-              >
-                <span className="text-lg shrink-0">{ex.icon}</span>
-                <span className="text-sm text-gray-700">{ex.text}</span>
-              </button>
-            ))}
+      <div className="flex items-center justify-between mb-3 shrink-0">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shadow-[0_0_12px_rgba(240,165,80,0.15)]">
+            <Sparkles className="w-4 h-4 text-white" strokeWidth={2} />
+          </div>
+          <div>
+            <h1 className="text-sm font-bold text-slate-300">AI 配方顾问</h1>
+            <p className="text-[11px] text-slate-500">多轮对话 · 追问调整</p>
           </div>
         </div>
-      )}
-
-      {/* Error */}
-      {error && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 text-red-700 text-sm flex items-start gap-3">
-          <svg className="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          {error}
-        </div>
-      )}
-
-      {/* Results */}
-      {result && (
-        <div className="fade-in">
-          {/* Reasoning */}
-          {result.reasoning && (
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl p-6 mb-6">
-              <h2 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                推荐分析
-              </h2>
-              <p className="text-sm text-gray-700 whitespace-pre-wrap leading-relaxed">
-                {result.reasoning}
-              </p>
-            </div>
+        <div className="flex items-center gap-2">
+          {msgCount > 0 && (
+            <button onClick={newChat} className="flex items-center gap-1 text-xs text-slate-500 hover:text-slate-300 transition-colors px-3 py-1.5 rounded-lg hover:bg-white/[0.04]">
+              <Plus className="w-3 h-3" strokeWidth={2} /> 新对话
+            </button>
           )}
+          <Link href="/recipes" className="text-xs text-amber-400 hover:text-amber-300 transition-colors">配方库 →</Link>
+        </div>
+      </div>
 
-          {/* Recommendations */}
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-bold text-gray-900 tracking-tight">
-              推荐方案
-            </h2>
-            <Badge variant="blue">{result.recommendations.length} 个结果</Badge>
+      {/* Chat Area */}
+      <div ref={chatRef} onScroll={checkScroll}
+        className="flex-1 min-h-0 mb-3 overflow-y-auto rounded-2xl glass-card p-4 sm:p-6 relative">
+
+        {msgCount === 0 ? (
+          <div className="flex flex-col items-center justify-center h-full text-center py-8">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/10 to-orange-500/10 flex items-center justify-center mb-6 border border-amber-500/10">
+              <Sparkles className="w-8 h-8 text-amber-400" strokeWidth={1.5} />
+            </div>
+            <h2 className="text-base font-semibold text-slate-300 mb-1.5">描述你的产品需求</h2>
+            <p className="text-sm text-slate-500 mb-8 max-w-sm">
+              基于 768 种原料与 70+ 法规，AI 为你设计完整配方方案
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-lg w-full">
+              {examples.map(ex => (
+                <button key={ex.text} onClick={() => doSearch(ex.text)}
+                  className="flex items-start gap-3 text-left p-3.5 rounded-xl border border-white/[0.06] hover:border-amber-500/20 hover:bg-amber-500/[0.03] transition-all text-sm bg-white/[0.02]">
+                  <ex.Icon className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <span className="text-slate-400">{ex.text}</span>
+                </button>
+              ))}
+            </div>
           </div>
-
-          <div className="space-y-4">
-            {result.recommendations.map((rec, i) => {
-              const conf = confidenceConfig[rec.confidence];
+        ) : (
+          <div className="space-y-5">
+            {messages.map((m, i) => {
+              const isLast = i === messages.length - 1;
+              const isStreaming = isLast && streaming && m.role === "assistant";
               return (
-                <div
-                  key={rec.product_id}
-                  className="bg-white rounded-xl border border-gray-200 p-6 hover:border-blue-300 card-hover"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3 flex-wrap">
-                        <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-100 text-blue-700 text-sm font-bold">
-                          {i + 1}
-                        </span>
-                        <h3 className="font-semibold text-gray-900 text-lg">
-                          {rec.product_name}
-                        </h3>
-                        <Badge variant={conf.variant}>{conf.label}</Badge>
-                      </div>
-                      <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                        {rec.function}
-                      </p>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                        <div>
-                          <span className="text-xs text-gray-400 block mb-1">品类</span>
-                          <p className="text-sm font-medium text-gray-900">{rec.category}</p>
-                        </div>
-                        <div>
-                          <span className="text-xs text-gray-400 block mb-1">供应商</span>
-                          <p className="text-sm font-medium text-gray-900">{rec.supplier}</p>
-                        </div>
-                        {rec.suggested_dosage && (
-                          <div>
-                            <span className="text-xs text-gray-400 block mb-1">建议用量</span>
-                            <p className="text-sm font-medium text-gray-900">{rec.suggested_dosage}</p>
-                          </div>
-                        )}
-                        {rec.price_range && (
-                          <div>
-                            <span className="text-xs text-gray-400 block mb-1">参考价</span>
-                            <p className="text-sm font-bold text-blue-600">¥{rec.price_range}</p>
-                          </div>
-                        )}
-                      </div>
-                      {rec.regulatory_status && (
-                        <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-500">
-                          📜 法规状态：{rec.regulatory_status}
+                <div key={i} className={`flex gap-3 ${m.role === "user" ? "justify-end" : ""}`}>
+                  {m.role === "assistant" && <AiAvatar />}
+                  <div className={`max-w-[85%] group relative ${m.role === "user" ? "" : "min-w-0"}`}>
+                    <div className={
+                      m.role === "user"
+                        ? "bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-2xl rounded-tr-md px-4 py-2.5 shadow-[0_2px_8px_rgba(240,165,80,0.12)]"
+                        : "rounded-2xl rounded-tl-md px-4 py-3 border border-white/[0.06] bg-white/[0.02]"
+                    }>
+                      {m.role === "user" ? (
+                        <p className="text-sm leading-relaxed">{m.content}</p>
+                      ) : (
+                        <div className={`zhiliao-answer text-sm ${isStreaming ? "streaming-cursor" : ""}`}>
+                          <Markdown remarkPlugins={[remarkGfm]} components={{
+                            table: ({children}) => (
+                              <div className="overflow-x-auto my-3 rounded-lg border border-white/[0.06]">
+                                <table className="w-full text-sm border-collapse">{children}</table>
+                              </div>
+                            ),
+                            thead: ({children}) => <thead className="bg-white/[0.03]">{children}</thead>,
+                            th: ({children}) => <th className="px-3 py-2 text-left font-semibold text-slate-300 border-b border-white/[0.06] text-xs">{children}</th>,
+                            td: ({children}) => <td className="px-3 py-2 border-b border-white/[0.04] text-slate-400">{children}</td>,
+                            h2: ({children}) => <h2 className="text-base font-bold text-slate-300 mt-5 mb-2">{children}</h2>,
+                            h3: ({children}) => <h3 className="text-sm font-semibold text-slate-400 mt-4 mb-1">{children}</h3>,
+                            strong: ({children}) => <strong className="font-semibold text-slate-300">{children}</strong>,
+                            p: ({children}) => <p className="mb-2">{children}</p>,
+                            ul: ({children}) => <ul className="list-disc list-inside mb-2 space-y-1">{children}</ul>,
+                            li: ({children}) => <li className="text-slate-400">{children}</li>,
+                            hr: () => <hr className="my-3 border-white/[0.06]" />,
+                          }}>{m.content}</Markdown>
                         </div>
                       )}
                     </div>
-                    <Link
-                      href={`/product/${rec.product_id}`}
-                      className="shrink-0 flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors"
-                    >
-                      详情
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
+                    {m.role === "assistant" && m.content && !isStreaming && (
+                      <button onClick={() => copyMessage(m.content, i)}
+                        className="absolute -bottom-1 right-0 translate-y-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 text-[10px] text-slate-500 hover:text-amber-400 px-2 py-0.5 rounded">
+                        {copiedIdx === i ? <><Check className="w-3 h-3" strokeWidth={2} /> 已复制</> : <><Copy className="w-3 h-3" strokeWidth={1.5} /> 复制</>}
+                      </button>
+                    )}
                   </div>
-                  <div className="mt-3 pt-3 border-t border-gray-100 text-xs text-gray-400">
-                    来源：{rec.source}
-                  </div>
+                  {m.role === "user" && (
+                    <div className="w-7 h-7 rounded-full bg-slate-600 flex items-center justify-center shrink-0 mt-1">
+                      <span className="text-[11px] font-bold text-slate-300">你</span>
+                    </div>
+                  )}
                 </div>
               );
             })}
+            {loading && !streaming && (
+              <div className="flex gap-3">
+                <AiAvatar />
+                <div className="rounded-2xl rounded-tl-md px-5 py-3 border border-white/[0.06] bg-white/[0.02]">
+                  <div className="typing-dots"><span /><span /><span /></div>
+                </div>
+              </div>
+            )}
           </div>
+        )}
 
-          {/* Disclaimer */}
-          <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
-            ⚠️ {result.disclaimer}
-          </div>
+        {showScrollBtn && (
+          <button onClick={scrollToBottom}
+            className="absolute bottom-3 right-3 w-8 h-8 rounded-full glass-strong flex items-center justify-center text-slate-400 hover:text-amber-400 transition-all z-10 shadow-lg">
+            <ChevronDown className="w-4 h-4" strokeWidth={2} />
+          </button>
+        )}
+      </div>
+
+      {/* Action Bar */}
+      {msgCount > 0 && (
+        <div className="flex items-center gap-3 mb-2 shrink-0">
+          <button onClick={saveRecipe} disabled={saved || loading}
+            className={`text-xs px-3 py-1.5 rounded-lg border transition-all ${
+              saved ? "border-emerald-500/20 bg-emerald-500/10 text-emerald-400" : "border-white/[0.06] text-slate-500 hover:text-slate-300 hover:border-white/[0.1]"
+            }`}>
+            {saved ? "✓ 已保存" : "保存方案"}
+          </button>
+          <span className="text-[10px] text-slate-500 ml-auto">AI 生成 · 仅供参考</span>
         </div>
       )}
+
+      {/* Input */}
+      <div className="shrink-0">
+        <div className="glass-strong rounded-2xl p-[1px] focus-within:shadow-[0_0_20px_rgba(240,165,80,0.06)] transition-shadow">
+          <div className="bg-[#131a25] rounded-2xl p-2.5 flex gap-2 items-end">
+            <textarea ref={textareaRef} value={input} onChange={e => setInput(e.target.value)}
+              onKeyDown={handleKeyDown} rows={1}
+              placeholder={msgCount > 0 ? "追问或调整方案… (Enter 发送, Shift+Enter 换行)" : "描述产品需求，例如：开发一款助眠功能软糖…"}
+              className="flex-1 bg-transparent text-slate-300 placeholder:text-slate-500 text-sm py-2 px-1 focus:outline-none resize-none max-h-[160px]" />
+            <div className="flex items-center gap-1.5 shrink-0">
+              {loading && (
+                <button onClick={stopGeneration}
+                  className="flex items-center gap-1 px-3 py-2 rounded-xl text-xs font-medium text-red-400 hover:bg-red-500/10 transition-colors border border-red-500/15">
+                  <Square className="w-3 h-3" strokeWidth={2} /> 停止
+                </button>
+              )}
+              <button type="button" onClick={() => doSearch(input)} disabled={loading || !input.trim()}
+                className="p-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl hover:from-amber-400 hover:to-orange-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-[0_0_12px_rgba(240,165,80,0.1)]">
+                <Send className="w-4 h-4" strokeWidth={2} />
+              </button>
+            </div>
+          </div>
+        </div>
+        <p className="text-[10px] text-slate-500 text-center mt-2">Enter 发送 · Shift+Enter 换行</p>
+      </div>
     </div>
+  );
+}
+
+export default function RecommendPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center h-[calc(100vh-200px)]">
+        <div className="typing-dots"><span /><span /><span /></div>
+      </div>
+    }>
+      <PageContent />
+    </Suspense>
   );
 }

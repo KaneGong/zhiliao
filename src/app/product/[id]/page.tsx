@@ -1,342 +1,150 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, PriceDisplay } from "../../components/ui";
+import { Badge } from "../../components/ui";
 
 interface ProductDetail {
-  id: string;
-  supplier: string;
-  product_name: string;
-  product_code: string;
-  category: string;
-  origin: string;
-  function: string;
-  mechanism?: string;
-  applications: string[];
-  dosage_range?: string;
-  key_specifications?: Record<string, string>;
-  clinical_evidence?: string;
-  regulatory_status?: Record<string, string | string[]>;
-  dosage_form?: string;
-  flavor_options?: string;
-  stability?: string;
-  confidence: string;
-  data_source: string;
-  price?: number | null;
-  price_range?: string;
-  price_unit?: string;
-  price_trend?: string;
+  id: string; product_name: string; product_code: string;
+  generic_name: string; generic_name_en: string;
+  manufacturer: string; supplier: string; supplier_name: string;
+  category: string; source: string; process: string; origin: string;
+  function: string; mechanism?: string;
+  applications: string[]; functional_tags: string[]; certifications: string[];
+  key_specs?: Record<string, string | undefined>;
+  dosage_range?: string; clinical_evidence?: string;
+  regulatory_status?: Record<string, string | string[] | undefined>;
+  confidence: string; data_source: string;
+  price?: number | null; price_range?: string | null; price_unit?: string | null; price_trend?: string | null;
 }
 
 async function getProduct(id: string): Promise<ProductDetail | null> {
   try {
-    const baseUrl =
-      process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-    const res = await fetch(`${baseUrl}/api/products/${id}`, {
-      cache: "no-store",
-    });
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+    const res = await fetch(`${baseUrl}/api/products/${id}`, { cache: "no-store" });
     if (!res.ok) return null;
     return res.json();
-  } catch {
-    return null;
-  }
+  } catch { return null; }
 }
 
-export default async function ProductPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const product = await getProduct(id);
-
-  if (!product) {
-    notFound();
-  }
+  if (!product) notFound();
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-gray-700 transition-colors">首页</Link>
-        <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-        <Link href="/search" className="hover:text-gray-700 transition-colors">原料搜索</Link>
-        <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-        <span className="text-gray-900 font-medium">{product.product_name}</span>
+      <nav className="flex items-center gap-2 text-xs text-slate-400 mb-6">
+        <Link href="/" className="hover:text-slate-400">首页</Link><span>/</span>
+        <Link href="/search" className="hover:text-slate-400">原料库</Link><span>/</span>
+        <span className="text-slate-300 font-medium">{product.generic_name || product.product_name}</span>
       </nav>
 
-      {/* Product Header Card */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 mb-6">
+      {/* Header Card */}
+      <div className="bg-[var(--bg-surface)] rounded-2xl border border-white/[0.06] p-6 sm:p-8 mb-6 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
           <div className="flex-1">
-            <div className="flex items-center gap-3 mb-3 flex-wrap">
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-                {product.product_name}
-              </h1>
-              <span className="text-sm text-gray-400 font-mono bg-gray-50 px-2 py-0.5 rounded">
-                {product.product_code}
-              </span>
+            <div className="flex items-center gap-3 mb-2 flex-wrap">
+              <h1 className="text-xl sm:text-2xl font-bold text-slate-200">{product.generic_name || product.product_name}</h1>
+              <span className="text-xs text-slate-400 font-mono bg-white/[0.05] px-2 py-0.5 rounded">{product.product_name}</span>
             </div>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-1.5 mb-3">
               <Badge variant="blue">{product.category}</Badge>
-              <Badge variant="gray">{product.supplier}</Badge>
-              <Badge variant="default">{product.origin}</Badge>
-              {product.confidence === "high" && (
-                <Badge variant="green">高可信度</Badge>
-              )}
+              <Badge variant="gray">{product.origin}</Badge>
+              {product.confidence === "high" && <Badge variant="green">高可信度</Badge>}
+              {product.confidence === "medium" && <Badge variant="amber">中可信度</Badge>}
             </div>
-            <p className="text-gray-700 leading-relaxed">{product.function}</p>
+            <p className="text-slate-400 text-sm leading-relaxed">{product.function}</p>
           </div>
           <div className="sm:text-right shrink-0">
-            <PriceDisplay
-              price={product.price}
-              priceRange={product.price_range}
-              unit={product.price_unit}
-              trend={product.price_trend}
-              size="lg"
-            />
-            <a
-              href={`mailto:info@ang-ingredients.com?subject=咨询：${product.product_name}&body=您好，我想了解 ${product.product_name}（${product.product_code}）的更多信息。`}
-              className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              联系供应商
-            </a>
+            <div className="text-lg font-bold text-amber-400">{product.price ? `¥${product.price}` : product.price_range || "待询价"}</div>
+            <div className="text-xs text-slate-400">{product.price_unit || ""}</div>
+            <a href={`mailto:info@ang-ingredients.com?subject=咨询：${product.product_name}`}
+              className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-200 text-sm font-medium rounded-xl hover:from-amber-400 hover:to-orange-400 transition-colors">✉️ 联系供应商</a>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
           {/* Mechanism */}
-          {product.mechanism && (
-            <Section title="作用机制" icon="🔬">
-              {product.mechanism}
+          {product.mechanism && <Section title="作用机制" icon="🔬"><p className="text-slate-400 text-sm">{product.mechanism}</p></Section>}
+
+          {/* Key Specs */}
+          {product.key_specs && Object.keys(product.key_specs).length > 0 && (
+            <Section title="关键规格" icon="📊">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {Object.entries(product.key_specs).map(([k, v]) => v ? (
+                  <div key={k} className="bg-white/[0.03] rounded-lg p-3">
+                    <div className="text-xs text-slate-400 mb-0.5 uppercase tracking-wide">{k.replace(/_/g, " ")}</div>
+                    <div className="text-sm font-semibold text-slate-300">{v}</div>
+                  </div>
+                ) : null)}
+              </div>
             </Section>
           )}
-
-          {/* Key Specifications */}
-          {product.key_specifications &&
-            Object.keys(product.key_specifications).length > 0 && (
-              <Section title="关键规格" icon="📊">
-                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {Object.entries(product.key_specifications).map(
-                    ([key, value]) => (
-                      <div key={key} className="bg-gray-50 rounded-lg p-3">
-                        <dt className="text-xs text-gray-500 mb-1 uppercase tracking-wide">
-                          {key.replace(/_/g, " ")}
-                        </dt>
-                        <dd className="text-sm font-medium text-gray-900">
-                          {value}
-                        </dd>
-                      </div>
-                    )
-                  )}
-                </dl>
-              </Section>
-            )}
 
           {/* Applications */}
-          <Section title="应用领域" icon="🎯">
-            <div className="flex flex-wrap gap-2">
-              {product.applications.map((app) => (
-                <span
-                  key={app}
-                  className="text-sm bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg font-medium"
-                >
-                  {app}
-                </span>
-              ))}
-            </div>
+          <Section title="应用场景" icon="🎯">
+            <div className="flex flex-wrap gap-1.5">{product.applications.map(a => <Badge key={a} variant="blue">{a}</Badge>)}</div>
           </Section>
 
-          {/* Clinical Evidence */}
-          {product.clinical_evidence && (
-            <Section title="临床证据" icon="📚">
-              <p className="text-gray-700 text-sm leading-relaxed">
-                {product.clinical_evidence}
-              </p>
-            </Section>
-          )}
+          {/* Clinical */}
+          {product.clinical_evidence && <Section title="临床证据" icon="📚"><p className="text-slate-400 text-sm">{product.clinical_evidence}</p></Section>}
 
-          {/* Dosage Form */}
-          {product.dosage_form && (
-            <Section title="剂型" icon="💊">
-              {product.dosage_form}
-            </Section>
-          )}
+          {/* Functional Tags */}
+          {product.functional_tags.length > 0 && <Section title="功能标签" icon="🏷️"><div className="flex flex-wrap gap-1.5">{product.functional_tags.map(t => <Badge key={t} variant="purple">{t}</Badge>)}</div></Section>}
+
+          {/* Certifications */}
+          {product.certifications.length > 0 && <Section title="认证" icon="✅"><div className="flex flex-wrap gap-1.5">{product.certifications.map(c => <Badge key={c} variant="green">{c}</Badge>)}</div></Section>}
         </div>
 
-        {/* Sidebar */}
         <div className="space-y-6">
           {/* Dosage */}
-          {product.dosage_range && (
-            <SideCard title="建议用量" icon="📏">
-              {product.dosage_range}
-            </SideCard>
-          )}
+          {product.dosage_range && <SideCard title="建议用量" icon="📏">{product.dosage_range}</SideCard>}
 
-          {/* Stability */}
-          {product.stability && (
-            <SideCard title="稳定性" icon="🧪">
-              {product.stability}
-            </SideCard>
-          )}
+          {/* Manufacturer & Supplier */}
+          <SideCard title="厂家与供应商" icon="🏢">
+            <div className="space-y-2 text-sm">
+              <div><span className="text-slate-400">厂家：</span><span className="text-slate-300">{product.manufacturer || product.supplier_name}</span></div>
+              {product.supplier && product.supplier !== product.manufacturer && <div><span className="text-slate-400">供应商：</span><span className="text-slate-300">{product.supplier}</span></div>}
+            </div>
+          </SideCard>
 
-          {/* Regulatory Status */}
-          {product.regulatory_status && (
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <span>📜</span>
-                法规状态
-              </h3>
-              <dl className="space-y-3">
-                {Object.entries(product.regulatory_status).map(
-                  ([key, value]) => {
-                    if (key === "certifications" && Array.isArray(value)) {
-                      return (
-                        <div key={key}>
-                          <dt className="text-xs text-gray-500 mb-1">认证</dt>
-                          <dd className="flex flex-wrap gap-1.5">
-                            {value.map((cert) => (
-                              <Badge key={cert} variant="green">{cert}</Badge>
-                            ))}
-                          </dd>
-                        </div>
-                      );
-                    }
-                    if (typeof value === "string") {
-                      const labelMap: Record<string, string> = {
-                        china: "中国",
-                        us: "美国",
-                        eu: "欧盟",
-                        gb14880: "GB 14880",
-                        gb2760: "GB 2760",
-                        health_food_dir: "保健食品目录",
-                        australia: "澳大利亚",
-                        korea: "韩国",
-                      };
-                      return (
-                        <div key={key}>
-                          <dt className="text-xs text-gray-500">
-                            {labelMap[key] || key}
-                          </dt>
-                          <dd className="text-sm text-gray-900 mt-0.5">{value}</dd>
-                        </div>
-                      );
-                    }
-                    return null;
-                  }
-                )}
-              </dl>
+          {/* Regulatory */}
+          {product.regulatory_status && Object.keys(product.regulatory_status).length > 0 && (
+            <div className="bg-[var(--bg-surface)] rounded-xl border border-white/[0.06] p-5">
+              <h3 className="font-semibold text-slate-200 mb-3 text-sm">📜 法规状态</h3>
+              <div className="space-y-2">
+                {Object.entries(product.regulatory_status).map(([k, v]) => (
+                  <div key={k}>
+                    <div className="text-xs text-slate-400">{k}</div>
+                    <div className="text-sm text-slate-300">
+                      {Array.isArray(v) ? v.map((c, i) => <Badge key={i} variant="green">{String(c)}</Badge>) : String(v)}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
-
-          {/* Supplier Info */}
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
-            <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-              <span>🏢</span>
-              供应商信息
-            </h3>
-            <p className="text-sm text-gray-600 mb-3">{product.supplier}</p>
-            <div className="space-y-2">
-              <Link
-                href="/supplier/ang"
-                className="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors"
-              >
-                查看供应商详情
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-              <a
-                href={`mailto:info@ang-ingredients.com?subject=咨询：${product.product_name}`}
-                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                发送邮件咨询
-              </a>
-            </div>
-          </div>
 
           {/* Data Source */}
-          <div className="bg-gray-50 rounded-xl p-4">
-            <h4 className="text-xs font-medium text-gray-500 mb-2">数据来源</h4>
-            <p className="text-xs text-gray-400">{product.data_source}</p>
-            <p className="text-xs text-gray-400 mt-2">
-              可信度：
-              <span
-                className={
-                  product.confidence === "high"
-                    ? "text-green-600 font-medium"
-                    : product.confidence === "medium"
-                      ? "text-yellow-600 font-medium"
-                      : "text-red-600 font-medium"
-                }
-              >
-                {product.confidence === "high"
-                  ? "高"
-                  : product.confidence === "medium"
-                    ? "中"
-                    : "低"}
-              </span>
-            </p>
+          <div className="bg-white/[0.03] rounded-xl p-4">
+            <h4 className="text-xs font-medium text-slate-400 mb-1">数据来源</h4>
+            <p className="text-xs text-slate-400">{product.data_source}</p>
+            <p className="text-xs text-slate-400 mt-1">可信度：<span className={product.confidence === "high" ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{product.confidence === "high" ? "高" : "中"}</span></p>
           </div>
         </div>
       </div>
 
       {/* Disclaimer */}
-      <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
-        ⚠️ 免责声明：以上产品信息仅供参考，不构成购买建议。价格为参考价，实际成交价可能因量、客户关系等因素浮动。请向供应商确认最新信息。
-      </div>
+      <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-700">⚠️ 以上产品信息仅供参考，不构成购买建议。价格为参考价。请向供应商确认最新信息。</div>
     </div>
   );
 }
 
-function Section({
-  title,
-  icon,
-  children,
-}: {
-  title: string;
-  icon?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6">
-      <h2 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-        {icon && <span>{icon}</span>}
-        {title}
-      </h2>
-      <div className="text-gray-700 text-sm leading-relaxed">{children}</div>
-    </div>
-  );
+function Section({ title, icon, children }: { title: string; icon?: string; children: React.ReactNode }) {
+  return <div className="bg-[var(--bg-surface)] rounded-xl border border-white/[0.06] p-5"><h2 className="font-semibold text-slate-200 mb-3 text-sm flex items-center gap-2">{icon}{title}</h2>{children}</div>;
 }
-
-function SideCard({
-  title,
-  icon,
-  children,
-}: {
-  title: string;
-  icon?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6">
-      <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-        {icon && <span>{icon}</span>}
-        {title}
-      </h3>
-      <div className="text-gray-700 text-sm">{children}</div>
-    </div>
-  );
+function SideCard({ title, icon, children }: { title: string; icon?: string; children: React.ReactNode }) {
+  return <div className="bg-[var(--bg-surface)] rounded-xl border border-white/[0.06] p-5"><h3 className="font-semibold text-slate-200 mb-2 text-sm flex items-center gap-2">{icon}{title}</h3><div className="text-slate-400 text-sm">{children}</div></div>;
 }

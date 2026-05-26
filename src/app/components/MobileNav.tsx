@@ -41,7 +41,7 @@ export function MobileNav({ links }: { links: NavLink[] }) {
 
       {/* Slide-in menu */}
       <div
-        className={`fixed top-16 right-0 w-64 h-[calc(100dvh-4rem)] bg-white border-l border-gray-200 z-50 transform transition-transform duration-200 ease-out ${
+        className={`fixed top-16 right-0 w-64 h-[calc(100dvh-4rem)] bg-[var(--bg-surface)] border-l border-gray-200 z-50 transform transition-transform duration-200 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >

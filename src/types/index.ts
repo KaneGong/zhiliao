@@ -66,6 +66,8 @@ export interface Ingredient {
   product_name: string;
   supplier_id: string;
   supplier_name: string;
+  manufacturer: string;          // 实际生产厂家
+  supplier: string;              // 代理商/供应商（入驻商家）
   generic_name: string;
   generic_name_en: string;
   category: string;
@@ -73,7 +75,8 @@ export interface Ingredient {
   process: string;
   functional_tags: string[];
   applications: string[];
-  key_specs: Record<string, string>;
+  certifications: string[];
+  key_specs: Record<string, string | undefined>;
   function: string;
   mechanism: string;
   dosage_range: string;

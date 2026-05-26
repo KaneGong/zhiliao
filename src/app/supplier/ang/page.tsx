@@ -13,9 +13,9 @@ export default function SupplierANGPage() {
       </nav>
 
       {/* Header */}
-      <div className="bg-white rounded-xl border border-gray-200 p-8 mb-6">
+      <div className="bg-[var(--bg-surface)] rounded-xl border border-gray-200 p-8 mb-6">
         <div className="flex items-start gap-6">
-          <div className="w-20 h-20 bg-blue-100 rounded-xl flex items-center justify-center text-3xl font-bold text-blue-600 shrink-0">
+          <div className="w-20 h-20 bg-blue-100 rounded-xl flex items-center justify-center text-3xl font-bold text-amber-400 shrink-0">
             ANG
           </div>
           <div>
@@ -34,7 +34,7 @@ export default function SupplierANGPage() {
       </div>
 
       {/* Product Lines */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+      <div className="bg-[var(--bg-surface)] rounded-xl border border-gray-200 p-6 mb-6">
         <h2 className="font-semibold text-gray-900 mb-4">代理品牌 & 产品线</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <BrandCard
@@ -85,7 +85,7 @@ export default function SupplierANGPage() {
       </div>
 
       {/* Contact */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="bg-[var(--bg-surface)] rounded-xl border border-gray-200 p-6">
         <h2 className="font-semibold text-gray-900 mb-4">联系我们</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
@@ -115,7 +115,7 @@ export default function SupplierANGPage() {
                 <dd>
                   <a
                     href="mailto:info@ang-ingredients.com"
-                    className="text-blue-600 hover:underline"
+                    className="text-amber-400 hover:underline"
                   >
                     info@ang-ingredients.com
                   </a>
@@ -130,7 +130,7 @@ export default function SupplierANGPage() {
         </div>
       </div>
 
-      <div className="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800">
+      <div className="mt-6 bg-orange-500/8 border border-blue-200 rounded-xl p-4 text-sm text-amber-200">
         💡 提示：通过知料平台搜索原料，可直接查看 ANG 代理的所有产品详情、价格参考和法规状态。
       </div>
     </div>
@@ -151,7 +151,7 @@ function BrandCard({
   return (
     <Link
       href={href}
-      className="block bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition-colors"
+      className="block bg-gray-50 rounded-lg p-4 hover:bg-orange-500/8 transition-colors"
     >
       <div className="font-medium text-gray-900 mb-1">{brand}</div>
       <div className="text-xs text-gray-400 mb-2">{country}</div>
@@ -162,8 +162,8 @@ function BrandCard({
 
 function StatCard({ number, label }: { number: string; label: string }) {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-4 text-center">
-      <div className="text-2xl font-bold text-blue-600">{number}</div>
+    <div className="bg-[var(--bg-surface)] rounded-xl border border-gray-200 p-4 text-center">
+      <div className="text-2xl font-bold text-amber-400">{number}</div>
       <div className="text-sm text-gray-500 mt-1">{label}</div>
     </div>
   );

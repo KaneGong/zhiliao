@@ -1,0 +1,1505 @@
+[
+    {
+        "ingredient": "维生素C",
+        "ingredient_en": "Vitamin C",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉、饮料类、固体饮料、果冻、即食谷物等14类食品中强化，用量50-13000 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "维生素C作为营养强化剂，可在多种食品类别中按GB 14880规定使用。同时列入保健食品原料目录（营养素补充剂2023年版）。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012; 2023年第22号公告"
+    },
+    {
+        "ingredient": "维生素A",
+        "ingredient_en": "Vitamin A",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳、调制乳粉、植物油、即食谷物等食品中强化，用量300-17000 μg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "维生素D",
+        "ingredient_en": "Vitamin D",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳、调制乳粉、饮料类等食品中强化，用量2-156 μg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "维生素E",
+        "ingredient_en": "Vitamin E",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳、调制乳粉、植物油、饮料类等食品中强化，用量5-180 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "维生素K",
+        "ingredient_en": "Vitamin K",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉（儿童/孕产妇）中强化，用量340-750 μg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "2025年修订草案新增维生素K2作为化合物来源。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "维生素B1",
+        "ingredient_en": "Vitamin B1",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在大米、小麦粉、即食谷物、饮料类等食品中强化，用量1-33 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "维生素B2",
+        "ingredient_en": "Vitamin B2",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在大米、小麦粉、即食谷物、饮料类等食品中强化，用量1-33 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "维生素B6",
+        "ingredient_en": "Vitamin B6",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉、即食谷物、饮料类等食品中强化，用量0.4-22 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "维生素B12",
+        "ingredient_en": "Vitamin B12",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉（儿童/孕产妇）、即食谷物、饮料类等食品中强化，用量0.6-70 μg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "烟酸（烟酰胺）",
+        "ingredient_en": "Niacin (Nicotinamide)",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉、大米、小麦粉、即食谷物、饮料类等食品中强化，用量3-330 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "叶酸",
+        "ingredient_en": "Folic Acid",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳（孕产妇）、调制乳粉、大米、小麦粉、即食谷物等食品中强化，用量50-8200 μg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "泛酸",
+        "ingredient_en": "Pantothenic Acid",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉（儿童/孕产妇）、即食谷物、饮料类等食品中强化，用量1.1-80 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "生物素",
+        "ingredient_en": "Biotin",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉（儿童）中强化，用量38-76 μg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "钙",
+        "ingredient_en": "Calcium",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳、调制乳粉、饮料类、即食谷物、饼干等20+类食品中强化，用量160-15000 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "铁",
+        "ingredient_en": "Iron",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳、调制乳粉、大米、小麦粉、酱油、饮料类等食品中强化，用量10-280 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "锌",
+        "ingredient_en": "Zinc",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳、调制乳粉、大米、小麦粉、即食谷物、饮料类等食品中强化，用量3-175 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "硒",
+        "ingredient_en": "Selenium",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉（儿童/孕产妇）、大米、小麦粉、即食谷物等食品中强化，用量14-280 μg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "镁",
+        "ingredient_en": "Magnesium",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉（儿童/孕产妇）、饮料类等食品中强化，用量300-2100 mg/kg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "锰",
+        "ingredient_en": "Manganese",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录A 表A.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许在调制乳粉等食品中强化"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "DHA（二十二碳六烯酸）",
+        "ingredient_en": "DHA (Docosahexaenoic Acid)",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录C",
+                "requirement": "允许用于婴幼儿配方食品、调制乳粉等，推荐每日摄入量≤300mg",
+                "effective_date": "2013-01-01",
+                "status": "compliant"
+            },
+            {
+                "code": "保健食品原料目录 营养素补充剂（2023年版）",
+                "name": "保健食品原料目录",
+                "clause": "营养素补充剂目录",
+                "requirement": "DHA藻油来源可备案为保健食品营养素补充剂",
+                "effective_date": "2023-10-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "DHA在GB 14880-2012附录C中列出，属于特殊膳食用食品营养强化剂。2023年版保健食品原料目录新增DHA藻油原料。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012; 2023年第22号公告"
+    },
+    {
+        "ingredient": "左旋肉碱",
+        "ingredient_en": "L-Carnitine",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录B 表B.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许用于运动营养食品、特殊膳食食品"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "左旋肉碱在GB 14880-2012附录B中列出化合物来源。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "叶黄素",
+        "ingredient_en": "Lutein",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录B 表B.1",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许用于调制乳粉、饮料、糖果等食品，推荐每日摄入量≤12mg"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "CPP（酪蛋白磷酸肽）",
+        "ingredient_en": "Casein Phosphopeptide",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录C",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "促进钙、铁、锌吸收，按GB 14880规定使用"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "CPP作为促矿物质吸收剂列入GB 14880-2012附录C。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "乳铁蛋白",
+        "ingredient_en": "Lactoferrin",
+        "category": "营养强化剂",
+        "standards": [
+            {
+                "code": "GB 14880-2012",
+                "name": "食品安全国家标准 食品营养强化剂使用标准",
+                "clause": "附录C",
+                "effective_date": "2013-01-01",
+                "status": "compliant",
+                "requirement": "允许用于婴幼儿配方食品、调制乳等，使用量按生产需要适量使用"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "乳铁蛋白在GB 14880-2012附录C中列出，属于特殊膳食用食品营养强化剂。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 14880-2012"
+    },
+    {
+        "ingredient": "辅酶Q10",
+        "ingredient_en": "Coenzyme Q10",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2020年第54号公告",
+                "requirement": "仅限保健食品，每日30-50mg，不可与其他原料复配",
+                "effective_date": "2020-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2020年第54号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2020年第54号公告"
+    },
+    {
+        "ingredient": "破壁灵芝孢子粉",
+        "ingredient_en": "Ganoderma Lucidum Spore Powder",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2020年第54号公告",
+                "requirement": "仅限保健食品，每日1-4g，增强免疫力",
+                "effective_date": "2020-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2020年第54号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2020年第54号公告"
+    },
+    {
+        "ingredient": "螺旋藻",
+        "ingredient_en": "Spirulina",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2020年第54号公告",
+                "requirement": "仅限保健食品，每日3-4g，增强免疫力",
+                "effective_date": "2020-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2020年第54号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2020年第54号公告"
+    },
+    {
+        "ingredient": "鱼油",
+        "ingredient_en": "Fish Oil",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2020年第54号公告",
+                "requirement": "仅限保健食品（辅助降血脂），EPA+DHA≥1.0g/日",
+                "effective_date": "2020-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2020年第54号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2020年第54号公告"
+    },
+    {
+        "ingredient": "褪黑素",
+        "ingredient_en": "Melatonin",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2020年第54号公告",
+                "requirement": "仅限保健食品（改善睡眠），每日1-3mg，可配伍维生素B6",
+                "effective_date": "2020-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2020年第54号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2020年第54号公告"
+    },
+    {
+        "ingredient": "大豆分离蛋白",
+        "ingredient_en": "Soy Protein Isolate",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2023年第22号公告",
+                "requirement": "仅限保健食品（增强免疫力），每日6-25g，可单独或与乳清蛋白复配",
+                "effective_date": "2023-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2023年第22号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2023年第22号公告"
+    },
+    {
+        "ingredient": "乳清蛋白",
+        "ingredient_en": "Whey Protein",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2023年第22号公告",
+                "requirement": "仅限保健食品（增强免疫力），每日6-25g。同时属于普通食品原料。",
+                "effective_date": "2023-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2023年第22号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2023年第22号公告"
+    },
+    {
+        "ingredient": "人参",
+        "ingredient_en": "Panax Ginseng",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2023年第57号公告",
+                "requirement": "仅限保健食品，每日1-3g，单方。缓解体力疲劳、增强免疫力",
+                "effective_date": "2023-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2023年第57号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2023年第57号公告"
+    },
+    {
+        "ingredient": "西洋参",
+        "ingredient_en": "Panax Quinquefolius",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2023年第57号公告",
+                "requirement": "仅限保健食品，每日1.5-3g，单方。缓解体力疲劳、增强免疫力",
+                "effective_date": "2023-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2023年第57号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2023年第57号公告"
+    },
+    {
+        "ingredient": "灵芝",
+        "ingredient_en": "Ganoderma Lucidum",
+        "category": "保健食品原料目录",
+        "standards": [
+            {
+                "code": "保健食品原料目录",
+                "name": "保健食品原料目录",
+                "clause": "2023年第57号公告",
+                "requirement": "仅限保健食品，每日4-6g，单方。增强免疫力",
+                "effective_date": "2023-01-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "依据2023年第57号公告纳入保健食品原料目录。注意：保健食品原料只能用于保健食品生产，不得用于其他食品生产。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "2023年第57号公告"
+    },
+    {
+        "ingredient": "藻油DHA",
+        "ingredient_en": "Algal Oil DHA",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委公告",
+                "requirement": "可用于婴幼儿食品、保健食品、普通食品，推荐每日≤300mg",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委公告"
+    },
+    {
+        "ingredient": "乳矿物盐",
+        "ingredient_en": "Milk Mineral Salt",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2009年第18号公告",
+                "requirement": "可用于普通食品，婴幼儿食品禁止使用",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2009年第18号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2009年第18号公告"
+    },
+    {
+        "ingredient": "虾青素",
+        "ingredient_en": "Astaxanthin",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2010年第17号公告",
+                "requirement": "可用于普通食品、保健食品",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2010年第17号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2010年第17号公告"
+    },
+    {
+        "ingredient": "透明质酸钠",
+        "ingredient_en": "Sodium Hyaluronate",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2021年第9号公告",
+                "requirement": "可用于乳及乳制品、饮料、糖果，每日≤200mg",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2021年第9号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2021年第9号公告"
+    },
+    {
+        "ingredient": "酵母β-葡聚糖",
+        "ingredient_en": "Yeast Beta-Glucan",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2010年第9号公告",
+                "requirement": "可用于普通食品（婴幼儿食品除外），每日≤210mg",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2010年第9号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2010年第9号公告"
+    },
+    {
+        "ingredient": "菊粉",
+        "ingredient_en": "Inulin",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2009年第5号公告",
+                "requirement": "可用于普通食品，每日≤15g，婴幼儿不宜",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2009年第5号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2009年第5号公告"
+    },
+    {
+        "ingredient": "低聚果糖",
+        "ingredient_en": "Fructo-oligosaccharide",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委公告",
+                "requirement": "可用于婴幼儿食品、普通食品",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委公告"
+    },
+    {
+        "ingredient": "低聚半乳糖",
+        "ingredient_en": "Galacto-oligosaccharide",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2008年第20号公告",
+                "requirement": "可用于婴幼儿食品、普通食品",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2008年第20号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2008年第20号公告"
+    },
+    {
+        "ingredient": "植物甾醇/酯",
+        "ingredient_en": "Phytosterols/Esters",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委公告",
+                "requirement": "可用于普通食品，每日≤2.4g（游离型）",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委公告"
+    },
+    {
+        "ingredient": "GABA（γ-氨基丁酸）",
+        "ingredient_en": "Gamma-Aminobutyric Acid",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2009年第12号公告",
+                "requirement": "可用于普通食品，每日≤500mg",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2009年第12号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2009年第12号公告"
+    },
+    {
+        "ingredient": "茶氨酸",
+        "ingredient_en": "L-Theanine",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2014年第15号公告",
+                "requirement": "可用于普通食品（婴幼儿食品除外），每日≤400mg",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2014年第15号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2014年第15号公告"
+    },
+    {
+        "ingredient": "燕窝酸（N-乙酰神经氨酸）",
+        "ingredient_en": "Sialic Acid (N-Acetylneuraminic Acid)",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2017年第7号公告",
+                "requirement": "可用于普通食品",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2017年第7号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2017年第7号公告"
+    },
+    {
+        "ingredient": "磷虾油",
+        "ingredient_en": "Krill Oil",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2013年第16号公告",
+                "requirement": "可用于普通食品、保健食品，每日≤3g",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2013年第16号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2013年第16号公告"
+    },
+    {
+        "ingredient": "共轭亚油酸（CLA）",
+        "ingredient_en": "Conjugated Linoleic Acid",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2009年第12号公告",
+                "requirement": "可用于保健食品",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2009年第12号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2009年第12号公告"
+    },
+    {
+        "ingredient": "MCT油（中链甘油三酯）",
+        "ingredient_en": "Medium Chain Triglycerides",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委公告",
+                "requirement": "可用于特医食品、运动营养食品",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委公告"
+    },
+    {
+        "ingredient": "β-羟基-β-甲基丁酸钙（HMB）",
+        "ingredient_en": "Calcium β-Hydroxy-β-Methylbutyrate",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委2017年第7号公告",
+                "requirement": "可用于运动营养、特医食品。2025年第1号公告调整",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委2017年第7号公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2017年第7号公告"
+    },
+    {
+        "ingredient": "植物甾醇",
+        "ingredient_en": "Plant Sterols",
+        "category": "新食品原料",
+        "standards": [
+            {
+                "code": "新食品原料公告",
+                "name": "新食品原料公告",
+                "clause": "卫健委公告",
+                "requirement": "可用于普通食品，每日≤2.4g",
+                "effective_date": "依公告日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "经卫健委公告批准为新食品原料。使用量和使用范围以公告为准。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委公告"
+    },
+    {
+        "ingredient": "乳清蛋白（普通食品）",
+        "ingredient_en": "Whey Protein (General Food)",
+        "category": "普通食品原料",
+        "standards": [
+            {
+                "code": "普通食品管理",
+                "name": "普通食品管理",
+                "clause": "—",
+                "requirement": "乳清蛋白属于乳制品，是普通食品原料。另见保健食品原料目录中的乳清蛋白条目。",
+                "effective_date": "—",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "行业通用分类"
+    },
+    {
+        "ingredient": "酪蛋白",
+        "ingredient_en": "Casein",
+        "category": "普通食品原料",
+        "standards": [
+            {
+                "code": "普通食品管理",
+                "name": "普通食品管理",
+                "clause": "—",
+                "requirement": "酪蛋白属于乳制品，是普通食品原料。",
+                "effective_date": "—",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "行业通用分类"
+    },
+    {
+        "ingredient": "大豆蛋白",
+        "ingredient_en": "Soy Protein",
+        "category": "普通食品原料",
+        "standards": [
+            {
+                "code": "普通食品管理",
+                "name": "普通食品管理",
+                "clause": "—",
+                "requirement": "大豆蛋白是普通食品原料。另见保健食品原料目录中的大豆分离蛋白条目。",
+                "effective_date": "—",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "行业通用分类"
+    },
+    {
+        "ingredient": "胶原蛋白",
+        "ingredient_en": "Collagen",
+        "category": "普通食品原料",
+        "standards": [
+            {
+                "code": "普通食品管理",
+                "name": "普通食品管理",
+                "clause": "—",
+                "requirement": "胶原蛋白属于普通食品原料管理。用于保健食品时需符合保健食品规定。",
+                "effective_date": "—",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "行业通用分类"
+    },
+    {
+        "ingredient": "膳食纤维",
+        "ingredient_en": "Dietary Fiber",
+        "category": "普通食品原料",
+        "standards": [
+            {
+                "code": "普通食品管理",
+                "name": "普通食品管理",
+                "clause": "—",
+                "requirement": "膳食纤维属于普通食品原料/食品添加剂。根据具体类型（如聚葡萄糖、抗性糊精、菊粉等），部分属于新食品原料。",
+                "effective_date": "—",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "行业通用分类"
+    },
+    {
+        "ingredient": "白芸豆提取物",
+        "ingredient_en": "White Kidney Bean Extract",
+        "category": "普通食品原料",
+        "standards": [
+            {
+                "code": "普通食品管理",
+                "name": "普通食品管理",
+                "clause": "—",
+                "requirement": "白芸豆提取物属于普通食品原料。",
+                "effective_date": "—",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "行业通用分类"
+    },
+    {
+        "ingredient": "甜菊糖苷",
+        "ingredient_en": "Steviol Glycosides",
+        "category": "食品添加剂",
+        "standards": [
+            {
+                "code": "GB 2760-2024",
+                "name": "食品安全国家标准 食品添加剂使用标准",
+                "clause": "GB 2760-2024 附录A",
+                "requirement": "GB 2760-2024，甜味剂，各类食品适量使用（相关食品类别）",
+                "effective_date": "2024-02-08",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 2760-2024"
+    },
+    {
+        "ingredient": "赤藓糖醇",
+        "ingredient_en": "Erythritol",
+        "category": "食品添加剂",
+        "standards": [
+            {
+                "code": "GB 2760-2024",
+                "name": "食品安全国家标准 食品添加剂使用标准",
+                "clause": "GB 2760-2024 附录A",
+                "requirement": "GB 2760-2024，甜味剂，按生产需要适量使用",
+                "effective_date": "2024-02-08",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 2760-2024"
+    },
+    {
+        "ingredient": "罗汉果甜苷",
+        "ingredient_en": "Mogroside",
+        "category": "食品添加剂",
+        "standards": [
+            {
+                "code": "GB 2760-2024",
+                "name": "食品安全国家标准 食品添加剂使用标准",
+                "clause": "GB 2760-2024 附录A",
+                "requirement": "GB 2760-2024，甜味剂，各类食品适量使用",
+                "effective_date": "2024-02-08",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 2760-2024"
+    },
+    {
+        "ingredient": "聚葡萄糖",
+        "ingredient_en": "Polydextrose",
+        "category": "食品添加剂",
+        "standards": [
+            {
+                "code": "GB 2760-2024",
+                "name": "食品安全国家标准 食品添加剂使用标准",
+                "clause": "GB 2760-2024 附录A",
+                "requirement": "GB 2760-2024，增稠剂/膳食纤维",
+                "effective_date": "2024-02-08",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 2760-2024"
+    },
+    {
+        "ingredient": "姜黄素",
+        "ingredient_en": "Curcumin",
+        "category": "食品添加剂",
+        "standards": [
+            {
+                "code": "GB 2760-2024",
+                "name": "食品安全国家标准 食品添加剂使用标准",
+                "clause": "GB 2760-2024 附录A",
+                "requirement": "GB 2760-2024，着色剂",
+                "effective_date": "2024-02-08",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 2760-2024"
+    },
+    {
+        "ingredient": "磷脂",
+        "ingredient_en": "Phospholipids",
+        "category": "食品添加剂",
+        "standards": [
+            {
+                "code": "GB 2760-2024",
+                "name": "食品安全国家标准 食品添加剂使用标准",
+                "clause": "GB 2760-2024 附录A",
+                "requirement": "GB 2760-2024，乳化剂（注：磷脂不是营养强化剂，不在GB 14880中）",
+                "effective_date": "2024-02-08",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 2760-2024"
+    },
+    {
+        "ingredient": "酸枣仁",
+        "ingredient_en": "Ziziphi Spinosae Semen",
+        "category": "药食同源",
+        "standards": [
+            {
+                "code": "食药物质目录",
+                "name": "按照传统既是食品又是中药材的物质目录",
+                "clause": "相关目录",
+                "requirement": "可用于普通食品和保健食品",
+                "effective_date": "依目录日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委食药物质目录"
+    },
+    {
+        "ingredient": "枸杞",
+        "ingredient_en": "Lycium Barbarum",
+        "category": "药食同源",
+        "standards": [
+            {
+                "code": "食药物质目录",
+                "name": "按照传统既是食品又是中药材的物质目录",
+                "clause": "相关目录",
+                "requirement": "可用于普通食品和保健食品",
+                "effective_date": "依目录日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委食药物质目录"
+    },
+    {
+        "ingredient": "山药",
+        "ingredient_en": "Dioscorea Opposita",
+        "category": "药食同源",
+        "standards": [
+            {
+                "code": "食药物质目录",
+                "name": "按照传统既是食品又是中药材的物质目录",
+                "clause": "相关目录",
+                "requirement": "可用于普通食品和保健食品",
+                "effective_date": "依目录日期",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委食药物质目录"
+    },
+    {
+        "ingredient": "肌酸",
+        "ingredient_en": "Creatine",
+        "category": "运动营养食品成分",
+        "standards": [
+            {
+                "code": "GB 24154-2015",
+                "name": "运动营养食品通则",
+                "clause": "速度力量类",
+                "requirement": "速度力量类产品肌酸含量≥1.0%",
+                "effective_date": "2015-11-01",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "肌酸是运动营养食品中速度力量类的特征成分。注意：肌酸不在GB 14880-2012的营养强化剂清单中。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 24154-2015"
+    },
+    {
+        "ingredient": "BCAA（支链氨基酸）",
+        "ingredient_en": "Branched-Chain Amino Acids",
+        "category": "运动营养食品成分",
+        "standards": [
+            {
+                "code": "GB 24154-2015",
+                "name": "运动营养食品通则",
+                "clause": "—",
+                "requirement": "运动营养食品中常用氨基酸类成分",
+                "effective_date": "—",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "BCAA（亮氨酸、异亮氨酸、缬氨酸）是运动营养食品中的常见成分。"
+        ],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "GB 24154-2015; 行业通用"
+    },
+    {
+        "ingredient": "乳双歧杆菌",
+        "ingredient_en": "Bifidobacterium Lactis",
+        "category": "可用于食品的菌种",
+        "standards": [
+            {
+                "code": "可用于食品的菌种名单",
+                "name": "可用于食品的菌种名单",
+                "clause": "2022年第4号公告",
+                "requirement": "可用于普通食品（含婴幼儿食品）",
+                "effective_date": "2022-08-25",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2022年第4号公告"
+    },
+    {
+        "ingredient": "鼠李糖乳杆菌",
+        "ingredient_en": "Lactobacillus Rhamnosus",
+        "category": "可用于食品的菌种",
+        "standards": [
+            {
+                "code": "可用于食品的菌种名单",
+                "name": "可用于食品的菌种名单",
+                "clause": "2022年第4号公告",
+                "requirement": "可用于普通食品（婴幼儿食品除外）",
+                "effective_date": "2022-08-25",
+                "status": "compliant"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [],
+        "last_updated": "2026-05-15",
+        "data_confidence": "verified",
+        "verified_by": "卫健委2022年第4号公告"
+    },
+    {
+        "ingredient": "乳脂球膜蛋白",
+        "ingredient_en": "Milk Fat Globule Membrane (MFGM)",
+        "category": "乳蛋白组分",
+        "standards": [
+            {
+                "code": "GB 10765-2021 / GB 10766-2021 / GB 10767-2021",
+                "name": "婴幼儿配方食品标准",
+                "clause": "乳清蛋白作为蛋白质来源",
+                "requirement": "MFGM作为乳清蛋白的天然组分之一，随乳清蛋白原料用于婴幼儿配方食品。非独立批准物质，属组分带入路径。",
+                "effective_date": "2021-02-22",
+                "status": "caution"
+            }
+        ],
+        "usage_limits": [],
+        "special_notes": [
+            "未被卫健委单独批准为新食品原料",
+            "作为乳清蛋白天然组分跟随使用，非独立原料批准",
+            "牛奶磷脂（相关物质）已被卫健委终止审查，可作为普通食品",
+            "普通食品中使用MFGM需走新食品原料申报路径"
+        ],
+        "last_updated": "2026-05-17",
+        "data_confidence": "verified",
+        "verified_by": "GB 10765/10766/10767 + 卫健委公告 + 行业实操"
+    }
+]

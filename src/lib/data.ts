@@ -1,45 +1,32 @@
 import type {
   Product,
-  ProductWithPrice,
   PricingEntry,
   PricingData,
   Ingredient,
+  RegulatoryStatus,
   Supplier,
   TagSystem,
   SearchFilters,
 } from "@/types";
 
-import productsJson from "@/data/products.json";
 import pricingJson from "@/data/pricing.json";
 import ingredientsJson from "@/data/ingredients.json";
 import suppliersJson from "@/data/suppliers.json";
 import tagsJson from "@/data/tags.json";
 
-// ── Legacy Product Cache ──
+// ── Unified Data Cache (single source of truth: ingredients.json) ──
 
-const _productsCache: Product[] = (() => {
-  const products: Product[] = [];
-  const data = productsJson as any;
-  for (const lineKey of Object.keys(data.product_lines)) {
-    const line = data.product_lines[lineKey];
-    if (line.products) {
-      products.push(...line.products);
-    }
-  }
-  return products;
-})();
-
+const _ingredientsCache = ingredientsJson as unknown as Ingredient[];
 const _pricingCache = pricingJson as PricingData;
-
-// ── New Ingredient Cache ──
-
-const _ingredientsCache = ingredientsJson as Ingredient[];
 const _suppliersCache = suppliersJson as Supplier[];
 const _tagsCache = tagsJson as TagSystem;
 
+// ── Price matching helper ──
+
 function matchPricing(
   productName: string,
-  productCode: string,
+  supplierName: string,
+  genericName: string,
   pricing: PricingData
 ): Partial<PricingEntry> {
   for (const key of Object.keys(pricing)) {
@@ -47,9 +34,10 @@ function matchPricing(
     const entries = pricing[key] as PricingEntry[];
     for (const entry of entries) {
       if (
-        entry.product.includes(productCode) ||
+        entry.product.includes(productName) ||
         productName.includes(entry.product) ||
-        entry.product.includes(productName)
+        entry.product.includes(genericName) ||
+        genericName.includes(entry.product)
       ) {
         return entry;
       }
@@ -58,92 +46,169 @@ function matchPricing(
   return {};
 }
 
-// ── Legacy Product Functions ──
+// ── Unified Search Result (for frontend consumption) ──
 
-export function getAllProducts(): ProductWithPrice[] {
-  return _productsCache.map((p) => {
-    const priceData = matchPricing(p.product_name, p.product_code, _pricingCache);
-    return {
-      ...p,
-      price: priceData.price ?? null,
-      price_range: priceData.price_range,
-      price_unit: priceData.unit,
-      price_trend: priceData.trend,
-    };
-  });
+export interface SearchResultItem {
+  id: string;
+  product_name: string;
+  generic_name: string;
+  generic_name_en: string;
+  supplier_name: string;         // 保留向后兼容
+  supplier_id: string;
+  manufacturer: string;          // 实际生产厂家
+  supplier: string;              // 代理商/供应商
+  category: string;
+  source: string;
+  process: string;
+  function: string;
+  mechanism: string;
+  functional_tags: string[];
+  applications: string[];
+  certifications: string[];
+  key_specs: Record<string, string | undefined>;
+  dosage_range: string;
+  clinical_evidence: string;
+  regulatory_status: RegulatoryStatus;
+  origin: string;
+  confidence: "high" | "medium" | "low";
+  data_source: string;
+  // Price (enriched from pricing.json)
+  price: number | null;
+  price_range: string | null;
+  price_unit: string | null;
+  price_trend: string | null;
+  // For backward compat with old UI components
+  product_code: string;
 }
 
-export function getProductById(id: string): ProductWithPrice | undefined {
-  return getAllProducts().find((p) => p.id === id);
+function ingredientToSearchResult(i: Ingredient): SearchResultItem {
+  const priceData = matchPricing(
+    i.product_name,
+    i.supplier_name,
+    i.generic_name,
+    _pricingCache
+  );
+  return {
+    id: i.id,
+    product_name: i.product_name,
+    generic_name: i.generic_name,
+    generic_name_en: i.generic_name_en,
+    supplier_name: i.supplier_name || i.manufacturer || "",
+    supplier_id: i.supplier_id,
+    manufacturer: i.manufacturer || i.supplier_name || "",
+    supplier: i.supplier || "",
+    category: i.category,
+    source: i.source,
+    process: i.process,
+    function: i.function,
+    mechanism: i.mechanism || "",
+    functional_tags: i.functional_tags || [],
+    applications: i.applications || [],
+    certifications: i.certifications || [],
+    key_specs: i.key_specs || {},
+    dosage_range: i.dosage_range || "",
+    clinical_evidence: i.clinical_evidence || "",
+    regulatory_status: i.regulatory_status || {},
+    origin: i.origin || "",
+    confidence: i.confidence || "medium",
+    data_source: i.data_source || "",
+    price: priceData.price ?? (i.price_range?.min ?? null),
+    price_range: priceData.price_range || (i.price_range ? `${i.price_range.min}-${i.price_range.max}` : null),
+    price_unit: priceData.unit || i.price_range?.unit || null,
+    price_trend: priceData.trend || null,
+    product_code: i.id,
+  };
 }
 
-export function searchProducts(filters: {
+// ── Unified Search ──
+
+export function searchUnified(filters: {
   query?: string;
   category?: string;
-  function?: string;
+  functional_tag?: string;
+  application?: string;
   supplier?: string;
-}): ProductWithPrice[] {
-  let products = getAllProducts();
+  source?: string;
+  process?: string;
+}): SearchResultItem[] {
+  let results = _ingredientsCache.map(ingredientToSearchResult);
 
   if (filters.query) {
     const q = filters.query.toLowerCase();
-    products = products.filter(
-      (p) =>
-        p.product_name.toLowerCase().includes(q) ||
-        p.product_code.toLowerCase().includes(q) ||
-        p.function.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        p.applications.some((a) => a.toLowerCase().includes(q))
+    results = results.filter(
+      (r) =>
+        r.product_name.toLowerCase().includes(q) ||
+        r.generic_name.toLowerCase().includes(q) ||
+        r.generic_name_en.toLowerCase().includes(q) ||
+        r.function.toLowerCase().includes(q) ||
+        r.mechanism.toLowerCase().includes(q) ||
+        r.supplier_name.toLowerCase().includes(q) ||
+        r.category.toLowerCase().includes(q) ||
+        r.applications.some((a) => a.toLowerCase().includes(q)) ||
+        r.functional_tags.some((t) => t.toLowerCase().includes(q))
     );
   }
 
   if (filters.category) {
-    products = products.filter(
-      (p) =>
-        p.category.toLowerCase().includes(filters.category!.toLowerCase())
+    const cat = filters.category.toLowerCase();
+    results = results.filter(
+      (r) =>
+        r.category.toLowerCase().includes(cat) ||
+        r.functional_tags.some((t) => t.toLowerCase().includes(cat)) ||
+        r.applications.some((a) => a.toLowerCase().includes(cat))
     );
   }
 
-  if (filters.function) {
-    const fn = filters.function.toLowerCase();
-    products = products.filter(
-      (p) =>
-        p.function.toLowerCase().includes(fn) ||
-        (p.mechanism && p.mechanism.toLowerCase().includes(fn))
+  if (filters.functional_tag) {
+    results = results.filter((r) =>
+      r.functional_tags.includes(filters.functional_tag!)
+    );
+  }
+
+  if (filters.application) {
+    results = results.filter((r) =>
+      r.applications.includes(filters.application!)
     );
   }
 
   if (filters.supplier) {
-    products = products.filter(
-      (p) => p.supplier.toLowerCase().includes(filters.supplier!.toLowerCase())
+    const sup = filters.supplier.toLowerCase();
+    results = results.filter(
+      (r) =>
+        r.supplier_id === sup ||
+        r.supplier_name.toLowerCase().includes(sup)
     );
   }
 
-  return products;
+  if (filters.source) {
+    results = results.filter((r) => r.source === filters.source);
+  }
+
+  if (filters.process) {
+    results = results.filter((r) => r.process === filters.process);
+  }
+
+  return results;
 }
 
+// ── Category & Supplier metadata (derived from ingredients) ──
+
 export function getCategories(): string[] {
-  const cats = new Set(_productsCache.map((p) => p.category));
+  const cats = new Set(_ingredientsCache.map((i) => i.category).filter(Boolean));
   return Array.from(cats).sort();
 }
 
-export function getFunctions(): string[] {
-  const fns = new Set<string>();
-  for (const p of _productsCache) {
-    const parts = p.function.split(/[：:]/);
-    if (parts.length > 1) {
-      fns.add(parts[0].trim());
-    }
-  }
-  return Array.from(fns).sort();
-}
-
 export function getSuppliers(): string[] {
-  const sups = new Set(_productsCache.map((p) => p.supplier));
+  const sups = new Set(_ingredientsCache.map((i) => i.supplier_name).filter(Boolean));
   return Array.from(sups).sort();
 }
 
-// ── New Ingredient Functions ──
+export function getFunctionalTags(): string[] {
+  const tags = new Set(_ingredientsCache.flatMap((i) => i.functional_tags || []));
+  return Array.from(tags).sort();
+}
+
+// ── Ingredient Functions (primary data system) ──
 
 export function getAllIngredients(): Ingredient[] {
   return _ingredientsCache;
@@ -151,6 +216,11 @@ export function getAllIngredients(): Ingredient[] {
 
 export function getIngredientById(id: string): Ingredient | undefined {
   return _ingredientsCache.find((i) => i.id === id);
+}
+
+export function getSearchResultById(id: string): SearchResultItem | undefined {
+  const ingredient = _ingredientsCache.find((i) => i.id === id);
+  return ingredient ? ingredientToSearchResult(ingredient) : undefined;
 }
 
 export function searchIngredients(filters: SearchFilters): {
@@ -251,4 +321,11 @@ export function getTagSystem(): TagSystem {
 export function getTagValues(dimension: string): string[] {
   const dim = _tagsCache.dimensions[dimension as keyof typeof _tagsCache.dimensions];
   return dim ? dim.values : [];
+}
+
+// ── Backward compat: getAllProducts() for pages that still reference it ──
+
+/** @deprecated Use searchUnified() or getAllIngredients() instead */
+export function getAllProducts(): SearchResultItem[] {
+  return _ingredientsCache.map(ingredientToSearchResult);
 }

@@ -137,7 +137,11 @@
             "婴幼儿"
           ],
           "confidence": "high",
-          "data_source": "Glanbia Protherma产品目录"
+          "data_source": "Glanbia Protherma产品目录",
+          "regulatory_status": {
+            "china": "compliant",
+            "note": "一般食品配料。具体使用需查阅相关标准。"
+          }
         },
         {
           "id": "GLA-NS-006",
@@ -153,7 +157,11 @@
             "认知健康产品"
           ],
           "confidence": "medium",
-          "data_source": "Glanbia产品目录"
+          "data_source": "Glanbia产品目录",
+          "regulatory_status": {
+            "china": "compliant",
+            "note": "一般食品配料。具体使用需查阅相关标准。"
+          }
         },
         {
           "id": "ING-LA-007",
@@ -263,7 +271,11 @@
             "特医食品"
           ],
           "confidence": "medium",
-          "data_source": "Ingredia产品目录"
+          "data_source": "Ingredia产品目录",
+          "regulatory_status": {
+            "china": "compliant",
+            "note": "一般食品配料。具体使用需查阅相关标准。"
+          }
         },
         {
           "id": "ING-PC-012",
@@ -281,7 +293,11 @@
             "igg_content": "≥35%"
           },
           "confidence": "high",
-          "data_source": "Ingredia产品目录"
+          "data_source": "Ingredia产品目录",
+          "regulatory_status": {
+            "china": "compliant",
+            "note": "一般食品配料。具体使用需查阅相关标准。"
+          }
         },
         {
           "id": "KER-BG-013",
@@ -318,7 +334,11 @@
           ],
           "market_context": "2021年中国益生菌市场112亿，后生元是新兴方向",
           "confidence": "medium",
-          "data_source": "EpiCor介绍PDF"
+          "data_source": "EpiCor介绍PDF",
+          "regulatory_status": {
+            "china": "compliant",
+            "note": "一般食品配料。具体使用需查阅相关标准。"
+          }
         },
         {
           "id": "TAT-LF-015",
@@ -389,7 +409,11 @@
             "功能性食品"
           ],
           "confidence": "medium",
-          "data_source": "Tatua产品目录"
+          "data_source": "Tatua产品目录",
+          "regulatory_status": {
+            "china": "compliant",
+            "note": "一般食品配料。具体使用需查阅相关标准。"
+          }
         }
       ]
     },
