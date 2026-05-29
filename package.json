@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:golden": "node scripts/run-golden-questions.mjs"
+    "test:golden": "node scripts/run-golden-questions.mjs",
+    "test:golden:all": "GOLDEN_SET=all node scripts/run-golden-questions.mjs"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
