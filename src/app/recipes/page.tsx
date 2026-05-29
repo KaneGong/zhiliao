@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { ClipboardList, Plus, Trash2, ShieldCheck } from "lucide-react";
 import { Spinner } from "../components/ui";
+import type { FormulaBrief } from "@/lib/formula-brief";
+import FormulaBriefView from "../recommend/components/FormulaBriefView";
 
 
 function escapeHtml(value: unknown): string {
@@ -15,13 +17,116 @@ function escapeHtml(value: unknown): string {
     .replace(/'/g, "&#039;");
 }
 
+function renderInlineMarkdown(value: string): string {
+  return escapeHtml(value).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
+function splitMarkdownTableRow(line: string): string[] {
+  const trimmed = line.trim().replace(/^\|/, "").replace(/\|$/, "");
+  return trimmed.split("|").map((cell) => cell.trim());
+}
+
+function isMarkdownTableDivider(line: string): boolean {
+  const cells = splitMarkdownTableRow(line);
+  return cells.length > 1 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+}
+
+function isMarkdownTable(lines: string[], index: number): boolean {
+  return (
+    index + 1 < lines.length &&
+    lines[index].includes("|") &&
+    isMarkdownTableDivider(lines[index + 1]) &&
+    splitMarkdownTableRow(lines[index]).length === splitMarkdownTableRow(lines[index + 1]).length
+  );
+}
+
+function renderMarkdownTable(lines: string[], startIndex: number): { html: string; nextIndex: number } {
+  const headers = splitMarkdownTableRow(lines[startIndex]);
+  const rows: string[][] = [];
+  let cursor = startIndex + 2;
+
+  while (cursor < lines.length && lines[cursor].includes("|") && lines[cursor].trim() !== "") {
+    const cells = splitMarkdownTableRow(lines[cursor]);
+    if (cells.length !== headers.length) break;
+    rows.push(cells);
+    cursor += 1;
+  }
+
+  const head = `<thead><tr>${headers.map((cell) => `<th>${renderInlineMarkdown(cell)}</th>`).join("")}</tr></thead>`;
+  const body = `<tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${renderInlineMarkdown(cell)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+  return { html: `<div class="md-table-wrap"><table>${head}${body}</table></div>`, nextIndex: cursor };
+}
+
 function renderMarkdownLite(markdown: string): string {
-  return escapeHtml(markdown)
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/^## (.+)$/gm, '<h3>$1</h3>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\n\n/g, '<br/><br/>')
-    .replace(/\n/g, '<br/>');
+  const lines = String(markdown ?? "").split(/\r?\n/);
+  const html: string[] = [];
+  let paragraph: string[] = [];
+  let listItems: string[] = [];
+
+  const flushParagraph = () => {
+    if (!paragraph.length) return;
+    html.push(`<p>${renderInlineMarkdown(paragraph.join(" ").trim())}</p>`);
+    paragraph = [];
+  };
+
+  const flushList = () => {
+    if (!listItems.length) return;
+    html.push(`<ul>${listItems.map((item) => `<li>${renderInlineMarkdown(item)}</li>`).join("")}</ul>`);
+    listItems = [];
+  };
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i].trim();
+
+    if (!line) {
+      flushParagraph();
+      flushList();
+      continue;
+    }
+
+    if (isMarkdownTable(lines, i)) {
+      flushParagraph();
+      flushList();
+      const table = renderMarkdownTable(lines, i);
+      html.push(table.html);
+      i = table.nextIndex - 1;
+      continue;
+    }
+
+    const heading = line.match(/^(#{2,4})\s+(.+)$/);
+    if (heading) {
+      flushParagraph();
+      flushList();
+      html.push(`<h3>${renderInlineMarkdown(heading[2])}</h3>`);
+      continue;
+    }
+
+    const bullet = line.match(/^[-*]\s+(.+)$/);
+    if (bullet) {
+      flushParagraph();
+      listItems.push(bullet[1]);
+      continue;
+    }
+
+    flushList();
+    paragraph.push(line);
+  }
+
+  flushParagraph();
+  flushList();
+  return html.join("\n");
+}
+
+function renderScoreRing(scoreValue: unknown): string {
+  const numericScore = Number(scoreValue);
+  const pct = Number.isFinite(numericScore) ? Math.max(0, Math.min(100, Math.round(numericScore))) : 0;
+  return `
+    <div class="score-ring" style="--score-deg:${pct * 3.6}deg">
+      <div class="score-ring-inner">
+        <b>${escapeHtml(pct)}</b>
+        <span>trust</span>
+      </div>
+    </div>`;
 }
 
 function renderFormulaBriefHtml(brief: any): string {
@@ -36,7 +141,7 @@ function renderFormulaBriefHtml(brief: any): string {
     <div class="brief-saved">
       <div class="brief-saved-head">
         <div><span>Formula Brief v1</span><h3>${escapeHtml(pb.product_type || "结构化方案包")}</h3><p>${escapeHtml(brief.markdown_summary || score.evidence_summary || "已保存结构化方案。")}</p></div>
-        <b>${escapeHtml(score.total_score ?? "--")}</b>
+        ${renderScoreRing(score.total_score)}
       </div>
       <div class="brief-meta">
         <span>人群：${escapeHtml(pb.target_audience || "待确认")}</span>
@@ -112,14 +217,21 @@ export default function RecipesPage() {
                   <button onClick={(e) => { e.stopPropagation(); deleteRecipe(r.id); }}><Trash2 className="w-4 h-4" /> 删除</button>
                 </div>
                 {expanded === r.id && (
-                  <div
-                    className="recipe-body"
-                    dangerouslySetInnerHTML={{
-                      __html: r.formula_brief
-                        ? `${renderFormulaBriefHtml(r.formula_brief)}<div class="legacy-md">${renderMarkdownLite(r.recommendation || "")}</div>`
-                        : renderMarkdownLite(r.recommendation || ""),
-                    }}
-                  />
+                  <div className="recipe-body">
+                    {r.formula_brief ? (
+                      <>
+                        <FormulaBriefView brief={r.formula_brief as FormulaBrief} />
+                        {r.recommendation && (
+                          <details className="legacy-details">
+                            <summary>查看原始摘要</summary>
+                            <div className="legacy-md" dangerouslySetInnerHTML={{ __html: renderMarkdownLite(r.recommendation || "") }} />
+                          </details>
+                        )}
+                      </>
+                    ) : (
+                      <div className="legacy-md" dangerouslySetInnerHTML={{ __html: renderMarkdownLite(r.recommendation || "") }} />
+                    )}
+                  </div>
                 )}
               </article>
             ))}
@@ -147,8 +259,16 @@ export default function RecipesPage() {
         .chip-row span { border:1px solid rgba(242,237,228,.09); border-radius:999px; padding:4px 9px; color:#7e7464; font-size:12px; }
         .recipe-head button { display:flex; align-items:center; gap:5px; align-self:flex-start; border:0; background:transparent; color:#e07373; cursor:pointer; font-size:13px; }
         .recipe-body { border-top:1px solid rgba(242,237,228,.09); padding:18px; color:#b8ad9a; line-height:1.8; font-size:14px; }
-        .recipe-body :global(h3) { color:#f2ede4; font-size:16px; margin:16px 0 8px; }
-        .recipe-body :global(strong) { color:#f2ede4; }
+        .recipe-body :global(.legacy-md h3) { color:#f2ede4; font-size:16px; margin:16px 0 8px; }
+        .recipe-body :global(.legacy-md strong) { color:#f2ede4; }
+        .recipe-body :global(.legacy-md p) { margin:0 0 10px; }
+        .recipe-body :global(.legacy-md ul) { margin:8px 0 12px; padding-left:18px; }
+        .recipe-body :global(.legacy-md li) { margin:3px 0; }
+        .recipe-body :global(.legacy-md .md-table-wrap) { overflow-x:auto; margin:12px 0 16px; border:1px solid rgba(242,237,228,.08); border-radius:12px; background:rgba(255,255,255,.02); }
+        .recipe-body :global(.legacy-md .md-table-wrap table) { width:100%; border-collapse:collapse; min-width:560px; }
+        .recipe-body :global(.legacy-md .md-table-wrap th) { padding:10px 12px; text-align:left; color:#f2ede4; background:rgba(240,165,80,.07); border-bottom:1px solid rgba(242,237,228,.08); font-size:12px; font-weight:800; }
+        .recipe-body :global(.legacy-md .md-table-wrap td) { padding:10px 12px; color:#b8ad9a; border-bottom:1px solid rgba(242,237,228,.06); vertical-align:top; }
+        .recipe-body :global(.legacy-md .md-table-wrap tr:last-child td) { border-bottom:0; }
 
         .chip-row .structured { display:inline-flex; align-items:center; gap:4px; color:#64b987; border-color:rgba(100,185,135,.18); background:rgba(100,185,135,.06); }
         .recipe-body :global(.brief-saved) { border:1px solid rgba(240,165,80,.13); border-radius:16px; background:rgba(14,18,23,.38); padding:16px; margin-bottom:18px; }
@@ -156,7 +276,10 @@ export default function RecipesPage() {
         .recipe-body :global(.brief-saved-head span) { color:#f0a550; font:800 10px/1 var(--font-mono); letter-spacing:.14em; text-transform:uppercase; }
         .recipe-body :global(.brief-saved-head h3) { margin:6px 0 6px; color:#f2ede4; font-size:18px; }
         .recipe-body :global(.brief-saved-head p) { margin:0; color:#b8ad9a; }
-        .recipe-body :global(.brief-saved-head b) { width:56px; height:56px; border-radius:16px; display:grid; place-items:center; color:#f0a550; background:rgba(240,165,80,.09); border:1px solid rgba(240,165,80,.16); font-size:20px; }
+        .recipe-body :global(.score-ring) { width:64px; height:64px; flex:0 0 auto; display:grid; place-items:center; border-radius:18px; background:conic-gradient(rgba(240,165,80,.95) var(--score-deg), rgba(255,255,255,.06) 0deg); box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); }
+        .recipe-body :global(.score-ring-inner) { width:48px; height:48px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; border-radius:14px; background:#121a24; text-align:center; }
+        .recipe-body :global(.score-ring-inner b) { color:#fcd34d; font-size:18px; line-height:1; font-weight:900; }
+        .recipe-body :global(.score-ring-inner span) { color:#64748b; font:800 8px/1 var(--font-mono); letter-spacing:.18em; text-transform:uppercase; }
         .recipe-body :global(.brief-meta) { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin-bottom:14px; }
         .recipe-body :global(.brief-meta span) { border:1px solid rgba(242,237,228,.08); border-radius:10px; padding:8px; color:#8f8574; font-size:12px; }
         .recipe-body :global(.brief-routes), .recipe-body :global(.brief-checks) { display:grid; gap:10px; margin-bottom:14px; }
@@ -165,6 +288,8 @@ export default function RecipesPage() {
         .recipe-body :global(.brief-routes b), .recipe-body :global(.brief-checks b) { color:#f2ede4; font-size:13px; }
         .recipe-body :global(.brief-saved ul) { margin:8px 0 0; padding-left:16px; color:#b8ad9a; }
         .recipe-body :global(.legacy-md) { margin-top:14px; opacity:.9; }
+        .legacy-details { margin-top:14px; border:1px solid rgba(242,237,228,.08); border-radius:12px; background:rgba(255,255,255,.02); padding:10px 12px; }
+        .legacy-details summary { cursor:pointer; color:#8f8574; font-size:12px; font-weight:800; }
         .loading { min-height:280px; display:grid; place-items:center; }
         @media (max-width: 760px) { .recipe-body :global(.brief-meta), .recipe-body :global(.brief-routes) { grid-template-columns:1fr; } }
         @media (max-width: 640px) { .recipes-hero { display:grid; align-items:start; } h1 { font-size:30px; } }
