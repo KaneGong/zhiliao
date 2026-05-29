@@ -11,6 +11,8 @@ interface Recipe {
   query: string;
   recommendation: string;
   created_at: string;
+  formula_brief?: unknown;
+  trust_score?: unknown;
 }
 
 function readRecipes(): Recipe[] {
@@ -32,10 +34,20 @@ export async function POST(request: NextRequest) {
   const user = await getCurrentUser();
   if (!user) return NextResponse.json({ error: "请先登录" }, { status: 401 });
   try {
-    const { query, recommendation } = await request.json();
+    const body = await request.json();
+    const { query, recommendation, formula_brief, trust_score } = body;
     if (!query || !recommendation) return NextResponse.json({ error: "缺少参数" }, { status: 400 });
     const recipes = readRecipes();
-    const recipe: Recipe = { id: `rec-${Date.now()}`, user_id: user.id, query, recommendation, created_at: new Date().toISOString() };
+    const formulaBriefRecord = formula_brief && typeof formula_brief === "object" ? formula_brief as Record<string, unknown> : null;
+    const recipe: Recipe = {
+      id: `rec-${Date.now()}`,
+      user_id: user.id,
+      query,
+      recommendation,
+      formula_brief,
+      trust_score: trust_score || formulaBriefRecord?.trust_score,
+      created_at: new Date().toISOString(),
+    };
     recipes.push(recipe);
     writeRecipes(recipes);
     return NextResponse.json({ success: true, recipe });
