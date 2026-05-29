@@ -1,0 +1,104 @@
+[
+  {
+    "regulatory_id": "REG-CLAIM-CHILD-PROBIOTIC-001",
+    "source_type": "internal_rule",
+    "source_name": "儿童益生菌普通食品表达边界（内部规则）",
+    "rule_type": "claim_boundary",
+    "scenario": "儿童益生菌 / 日常营养支持",
+    "forbidden_expressions": [
+      "调节肠道菌群",
+      "增强免疫",
+      "改善消化",
+      "治疗便秘"
+    ],
+    "risky_expressions": [
+      "肠道健康",
+      "肚肚舒服",
+      "守护吸收"
+    ],
+    "safe_expression_examples": [
+      "添加益生菌菌株",
+      "儿童日常营养补充",
+      "果味固体饮料"
+    ],
+    "applies_to": [
+      "儿童普通食品",
+      "儿童固体饮料"
+    ],
+    "manual_review_required": true,
+    "linked_golden_questions": [
+      "GQ-003"
+    ],
+    "linked_ingredient_ids": [
+      "ING-PROBIOTIC-CHILD-001"
+    ]
+  },
+  {
+    "regulatory_id": "REG-CLAIM-PLANT-PROTEIN-001",
+    "source_type": "internal_rule",
+    "source_name": "植物基蛋白普通食品表达边界（内部规则）",
+    "rule_type": "claim_boundary",
+    "scenario": "植物基蛋白饮 / 轻健身场景",
+    "forbidden_expressions": [
+      "快速增肌",
+      "代谢提升",
+      "燃脂",
+      "塑形效果"
+    ],
+    "risky_expressions": [
+      "健身恢复",
+      "能量提升"
+    ],
+    "safe_expression_examples": [
+      "植物基高蛋白",
+      "轻负担营养补充",
+      "乳糖友好"
+    ],
+    "applies_to": [
+      "植物蛋白饮",
+      "植物基奶昔"
+    ],
+    "manual_review_required": true,
+    "linked_golden_questions": [
+      "GQ-007"
+    ],
+    "linked_ingredient_ids": [
+      "ING-PLANT-PROTEIN-BLEND-001"
+    ]
+  },
+  {
+    "regulatory_id": "REG-CLAIM-SOCIAL-DRINKING-001",
+    "source_type": "internal_rule",
+    "source_name": "饮酒场景普通食品表达边界（内部规则）",
+    "rule_type": "claim_boundary",
+    "scenario": "聚会 / 饮酒场景软糖",
+    "forbidden_expressions": [
+      "解酒",
+      "护肝",
+      "保护肝脏",
+      "降低酒精伤害"
+    ],
+    "risky_expressions": [
+      "酒前准备",
+      "聚会保护",
+      "轻松续杯"
+    ],
+    "safe_expression_examples": [
+      "聚会场景小食",
+      "清爽口味软糖",
+      "含某某食材"
+    ],
+    "applies_to": [
+      "普通食品",
+      "软糖",
+      "社交场景零食"
+    ],
+    "manual_review_required": true,
+    "linked_golden_questions": [
+      "GQ-015"
+    ],
+    "linked_ingredient_ids": [
+      "ING-SOCIAL-GUMMY-HERBAL-001"
+    ]
+  }
+]

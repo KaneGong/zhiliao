@@ -1,0 +1,136 @@
+[
+  {
+    "id": "SUP-PROBIOTIC-CHILD-SEED-001",
+    "status": "draft",
+    "confidence": "low",
+    "source_refs": [
+      "docs/data/supplier-gap-shortlist-v1.md#sg-001",
+      "docs/tasks/golden-question-results-2026-05-30-20q.md#gq-003"
+    ],
+    "owner": "codex-agent",
+    "last_reviewed_at": "2026-05-30",
+    "notes": "示例记录，先固定儿童益生菌供应商资料结构。",
+    "supplier_id": "SUP-PROBIOTIC-CHILD-SEED-001",
+    "supplier_name": "待补充儿童益生菌供应商 A",
+    "ingredient_ids": [
+      "ING-PROBIOTIC-CHILD-001"
+    ],
+    "spec_name": "3岁以上儿童适用益生菌菌株组合（待确认）",
+    "active_content": "≥100亿 CFU/克（待供应商确认）",
+    "dosage_form_fit": [
+      "固体饮料",
+      "条包粉",
+      "滴剂"
+    ],
+    "certificates": [],
+    "coa_required": true,
+    "required_docs": [
+      "菌株规格书",
+      "COA",
+      "菌株身份证明 / strain identity",
+      "活菌稳定性资料",
+      "适用食品类别声明",
+      "儿童适用年龄说明"
+    ],
+    "moq": "待询价",
+    "lead_time": "待询价",
+    "sample_available": "unknown",
+    "application_cases": [
+      "儿童益生菌固体饮料",
+      "儿童营养条包"
+    ],
+    "data_completeness": "low",
+    "next_contact_action": "优先寻找可用于3岁以上儿童普通食品场景的菌株供应商，并索取完整资料包。"
+  },
+  {
+    "id": "SUP-PLANT-PROTEIN-SEED-001",
+    "status": "draft",
+    "confidence": "low",
+    "source_refs": [
+      "docs/tasks/golden-question-results-2026-05-30-20q.md#gq-007",
+      "docs/data/data-gap-backlog-2026-05-29.md#sup-006"
+    ],
+    "owner": "codex-agent",
+    "last_reviewed_at": "2026-05-30",
+    "notes": "植物基蛋白饮方向示例记录，用于补平台暂无核心匹配的问题。",
+    "supplier_id": "SUP-PLANT-PROTEIN-SEED-001",
+    "supplier_name": "待补充植物蛋白供应商 A",
+    "ingredient_ids": [
+      "ING-PLANT-PROTEIN-BLEND-001"
+    ],
+    "spec_name": "豌豆蛋白 + 大米蛋白饮品级复配方案（待确认）",
+    "active_content": "蛋白含量待确认，需区分分离蛋白 / 浓缩蛋白",
+    "dosage_form_fit": [
+      "RTD 饮料",
+      "固体饮料",
+      "植物基奶昔"
+    ],
+    "certificates": [
+      "非转基因（待确认）",
+      "过敏原声明（待确认）"
+    ],
+    "coa_required": true,
+    "required_docs": [
+      "规格书",
+      "COA",
+      "溶解性与分散性资料",
+      "豆腥味 / 砂感控制建议",
+      "推荐应用场景说明",
+      "过敏原声明"
+    ],
+    "moq": "待询价",
+    "lead_time": "待询价",
+    "sample_available": "unknown",
+    "application_cases": [
+      "植物基蛋白饮",
+      "高蛋白奶昔",
+      "轻健身营养饮"
+    ],
+    "data_completeness": "low",
+    "next_contact_action": "优先补豌豆蛋白和大米蛋白的饮料级规格、风味遮蔽方案和样品可得性。"
+  },
+  {
+    "id": "SUP-SOCIAL-GUMMY-SEED-001",
+    "status": "draft",
+    "confidence": "low",
+    "source_refs": [
+      "docs/tasks/golden-question-results-2026-05-30-20q.md#gq-015",
+      "docs/data/data-gap-backlog-2026-05-29.md#sup-012"
+    ],
+    "owner": "codex-agent",
+    "last_reviewed_at": "2026-05-30",
+    "notes": "饮酒场景软糖高风险，示例记录重点在资料边界和禁用表达控制。",
+    "supplier_id": "SUP-SOCIAL-GUMMY-SEED-001",
+    "supplier_name": "待补充饮酒场景原料供应商 A",
+    "ingredient_ids": [
+      "ING-SOCIAL-GUMMY-HERBAL-001"
+    ],
+    "spec_name": "聚会场景软糖原料组合（葛根 / 枳椇子 / B族维生素）待确认",
+    "active_content": "待供应商确认",
+    "dosage_form_fit": [
+      "软糖",
+      "凝胶糖果",
+      "固体饮料"
+    ],
+    "certificates": [],
+    "coa_required": true,
+    "required_docs": [
+      "规格书",
+      "COA",
+      "适用食品类别说明",
+      "药食同源或原料属性说明",
+      "风味遮蔽建议",
+      "软糖应用建议"
+    ],
+    "moq": "待询价",
+    "lead_time": "待询价",
+    "sample_available": "unknown",
+    "application_cases": [
+      "聚会场景软糖",
+      "社交小食",
+      "清爽口味固体饮料"
+    ],
+    "data_completeness": "low",
+    "next_contact_action": "优先确认葛根、枳椇子等原料的食品属性和适用类别，再决定是否进入软糖方案。"
+  }
+]

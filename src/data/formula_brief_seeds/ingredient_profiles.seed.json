@@ -1,0 +1,182 @@
+[
+  {
+    "id": "ING-PROBIOTIC-CHILD-001",
+    "status": "draft",
+    "confidence": "low",
+    "source_refs": [
+      "docs/tasks/golden-question-results-2026-05-30-20q.md#gq-003",
+      "docs/data/supplier-spec-seed-records-v1.md#sp-seed-001",
+      "docs/data/regulatory-schema-v1.md#reg-seed-001"
+    ],
+    "owner": "codex-agent",
+    "last_reviewed_at": "2026-05-30",
+    "notes": "儿童益生菌方向示例记录，重点在儿童普通食品表达边界和供应商缺口。",
+    "ingredient_id": "ING-PROBIOTIC-CHILD-001",
+    "name_cn": "儿童适用益生菌菌株（待确认具体菌株）",
+    "name_en": "Child-use probiotic strain(s)",
+    "aliases": [
+      "儿童益生菌",
+      "儿童菌株组合"
+    ],
+    "category": "益生菌 / 儿童营养方向原料",
+    "function_roles": [
+      "日常营养场景原料",
+      "儿童产品差异化认知",
+      "可与益生元搭配的配方核心"
+    ],
+    "applicable_forms": [
+      "固体饮料",
+      "条包粉",
+      "滴剂"
+    ],
+    "dosage_range_draft": "待复核",
+    "sensory_notes": "需关注活菌稳定性、风味兼容性和冲调接受度。",
+    "process_stability": {
+      "heat": "高温敏感，需避开高温杀菌后添加问题",
+      "pH": "需按具体菌株确认",
+      "solubility": "需确认条包或冲调体系分散性"
+    },
+    "regulatory_flags": [
+      "儿童适用年龄需复核",
+      "普通食品表达边界需复核",
+      "菌株身份和适用食品类别需复核"
+    ],
+    "forbidden_claim_domains": [
+      "调节肠道菌群",
+      "增强免疫",
+      "改善消化",
+      "治疗便秘"
+    ],
+    "supplier_ids": [
+      "SUP-PROBIOTIC-CHILD-SEED-001"
+    ],
+    "data_gaps": [
+      "菌株编号",
+      "活菌数规格",
+      "适用人群和年龄说明",
+      "稳定性资料",
+      "食品类别声明"
+    ],
+    "review_status": "needs_supplier_docs"
+  },
+  {
+    "id": "ING-PLANT-PROTEIN-BLEND-001",
+    "status": "draft",
+    "confidence": "low",
+    "source_refs": [
+      "docs/tasks/golden-question-results-2026-05-30-20q.md#gq-007",
+      "docs/data/supplier-spec-seed-records-v1.md#sp-seed-002",
+      "docs/data/regulatory-schema-v1.md#reg-seed-002"
+    ],
+    "owner": "codex-agent",
+    "last_reviewed_at": "2026-05-30",
+    "notes": "植物基蛋白饮方向示例记录，先固定功能角色、风味问题和普通食品表达边界。",
+    "ingredient_id": "ING-PLANT-PROTEIN-BLEND-001",
+    "name_cn": "植物基蛋白复配（豌豆蛋白 / 大米蛋白方向）",
+    "name_en": "Plant protein blend (pea / rice protein)",
+    "aliases": [
+      "植物蛋白复配",
+      "豌豆蛋白+米蛋白"
+    ],
+    "category": "蛋白原料 / 植物基营养",
+    "function_roles": [
+      "高蛋白卖点核心",
+      "乳糖友好路线",
+      "植物基差异化定位"
+    ],
+    "applicable_forms": [
+      "RTD 饮料",
+      "固体饮料",
+      "植物基奶昔"
+    ],
+    "dosage_range_draft": "待复核",
+    "sensory_notes": "需重点关注豆腥味、砂感、挂壁感和蛋白分散稳定性。",
+    "process_stability": {
+      "heat": "需确认饮料级热稳定性",
+      "pH": "酸性饮料中风险较高，需专项验证",
+      "solubility": "为当前关键短板，需要具体规格支持"
+    },
+    "regulatory_flags": [
+      "普通食品高蛋白声称需满足标签条件",
+      "植物基高蛋白表达需与增肌/燃脂边界区分",
+      "过敏原和非转基因声明需确认"
+    ],
+    "forbidden_claim_domains": [
+      "快速增肌",
+      "代谢提升",
+      "燃脂",
+      "塑形效果"
+    ],
+    "supplier_ids": [
+      "SUP-PLANT-PROTEIN-SEED-001"
+    ],
+    "data_gaps": [
+      "蛋白含量规格",
+      "溶解性数据",
+      "风味遮蔽方案",
+      "过敏原声明",
+      "饮料级应用案例"
+    ],
+    "review_status": "needs_supplier_docs"
+  },
+  {
+    "id": "ING-SOCIAL-GUMMY-HERBAL-001",
+    "status": "draft",
+    "confidence": "low",
+    "source_refs": [
+      "docs/tasks/golden-question-results-2026-05-30-20q.md#gq-015",
+      "docs/data/supplier-spec-seed-records-v1.md#sp-seed-003",
+      "docs/data/regulatory-schema-v1.md#reg-seed-003"
+    ],
+    "owner": "codex-agent",
+    "last_reviewed_at": "2026-05-30",
+    "notes": "饮酒场景原料示例记录，重点在属性确认和高风险表达边界，不在于快速推荐。",
+    "ingredient_id": "ING-SOCIAL-GUMMY-HERBAL-001",
+    "name_cn": "聚会场景软糖草本原料组合（葛根 / 枳椇子方向）",
+    "name_en": "Social-scene gummy herbal blend",
+    "aliases": [
+      "饮酒场景软糖原料",
+      "聚会软糖草本组合"
+    ],
+    "category": "草本 / 场景化原料组合",
+    "function_roles": [
+      "聚会场景记忆点",
+      "社交小食差异化",
+      "风味故事辅助"
+    ],
+    "applicable_forms": [
+      "软糖",
+      "凝胶糖果",
+      "固体饮料"
+    ],
+    "dosage_range_draft": "待复核",
+    "sensory_notes": "可能存在草本苦涩味和后段风味残留，需配合清爽口味遮蔽。",
+    "process_stability": {
+      "heat": "需确认软糖加热工艺适配性",
+      "pH": "需按具体提取物确认",
+      "solubility": "需确认是否适合凝胶体系或粉末分散"
+    },
+    "regulatory_flags": [
+      "原料属性需确认（食品 / 药食同源 / 其他）",
+      "饮酒场景高风险表达边界需严格控制",
+      "平台审核和广告风险需人工复核"
+    ],
+    "forbidden_claim_domains": [
+      "解酒",
+      "护肝",
+      "保护肝脏",
+      "降低酒精伤害"
+    ],
+    "supplier_ids": [
+      "SUP-SOCIAL-GUMMY-SEED-001"
+    ],
+    "data_gaps": [
+      "原料食品属性",
+      "适用食品类别",
+      "风味遮蔽方案",
+      "软糖应用案例",
+      "渠道审核风险说明"
+    ],
+    "review_status": "needs_regulatory_review"
+  }
+]
