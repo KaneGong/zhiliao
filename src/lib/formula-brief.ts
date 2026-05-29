@@ -1,3 +1,4 @@
+import { resolveFormulaBriefSeedContext, type FormulaBriefSeedContext, type SeedScenarioConfig } from "@/lib/formula-brief-seeds";
 import type { VerificationResult } from "@/lib/verify-output";
 
 export type RegulatoryPath = "普通食品" | "保健食品" | "特殊食品" | "待确认" | string;
@@ -237,11 +238,60 @@ function createUnavailableSupplierMatch(ingredient: string, reason: string, next
   };
 }
 
+function supplierContainsKeyword(supplier: SupplierMatch, keywords: string[]): boolean {
+  const text = `${supplier.ingredient} ${supplier.product_name} ${supplier.supplier_name}`.toLowerCase();
+  return keywords.some((keyword) => text.includes(keyword.toLowerCase()));
+}
+
+function buildSeedScenarioPlaceholder(scenario: SeedScenarioConfig, seedContext: FormulaBriefSeedContext): SupplierMatch {
+  const ingredientProfile = seedContext.ingredientProfiles.find((item) => item.ingredient_id === scenario.ingredientId || item.id === scenario.ingredientId);
+  const supplierSeed = seedContext.supplierSpecs.find((item) => item.supplier_id === scenario.supplierId || item.id === scenario.supplierId);
+  const gapSnippet = ingredientProfile?.data_gaps?.slice(0, 3).join("、");
+  const reason = gapSnippet
+    ? `当前平台原料目录暂无该场景核心原料的真实匹配，需补齐 ${gapSnippet} 等资料后再建立供应商匹配。`
+    : "当前平台原料目录暂无该场景核心原料的真实匹配，不能用相邻原料凑 supplier_matches。";
+
+  return createUnavailableSupplierMatch(
+    scenario.placeholderIngredient,
+    reason,
+    supplierSeed?.next_contact_action || "优先补充规格书、COA、适用食品类别与应用案例。"
+  );
+}
+
+function applySeedSupplierGuidance(suppliers: SupplierMatch[], seedContext: FormulaBriefSeedContext): SupplierMatch[] {
+  if (seedContext.scenarios.length === 0) return suppliers.slice(0, 8);
+
+  const filtered = suppliers.filter((supplier) => {
+    if (!supplier.platform_available) return true;
+    return seedContext.scenarios.some((scenario) => supplierContainsKeyword(supplier, scenario.supplierKeywords));
+  });
+
+  for (const scenario of seedContext.scenarios) {
+    const hasAvailableMatch = filtered.some((supplier) => supplier.platform_available && supplierContainsKeyword(supplier, scenario.supplierKeywords));
+    const hasPlaceholder = filtered.some((supplier) => !supplier.platform_available && (supplierContainsKeyword(supplier, scenario.supplierKeywords) || supplier.ingredient.includes(scenario.placeholderIngredient)));
+    if (!hasAvailableMatch && !hasPlaceholder) {
+      filtered.unshift(buildSeedScenarioPlaceholder(scenario, seedContext));
+    }
+  }
+
+  const deduped: SupplierMatch[] = [];
+  const seen = new Set<string>();
+  for (const supplier of filtered) {
+    const key = normalizeMatchText(`${supplier.ingredient}|${supplier.supplier_name}|${supplier.product_name}`);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    deduped.push(supplier);
+  }
+
+  return deduped.slice(0, 8);
+}
+
 function sanitizeSupplierMatches(
   suppliers: SupplierMatch[],
   routes: FormulaRoute[],
   query: string,
-  productType: string
+  productType: string,
+  seedContext: FormulaBriefSeedContext
 ): SupplierMatch[] {
   const coreIngredients = routes.flatMap((route) => route.core_ingredients || []);
   const probioticIntent = isProbioticIntent(query, productType);
@@ -277,7 +327,7 @@ function sanitizeSupplierMatches(
     ));
   }
 
-  return sanitized.slice(0, 8);
+  return applySeedSupplierGuidance(sanitized.slice(0, 8), seedContext);
 }
 
 function normalizeClaims(value: unknown): ClaimSuggestion {
@@ -437,7 +487,12 @@ function sanitizeRoutes(routes: FormulaRoute[]): FormulaRoute[] {
   });
 }
 
-function sanitizeClaimSuggestions(claims: ClaimSuggestion, query: string, productType: string): ClaimSuggestion {
+function sanitizeClaimSuggestions(
+  claims: ClaimSuggestion,
+  query: string,
+  productType: string,
+  seedContext: FormulaBriefSeedContext
+): ClaimSuggestion {
   const risky = new Set([
     ...cleanExpressionList(claims.risky_expressions),
     ...inferRiskyClaimExpressions(query, productType),
@@ -454,15 +509,23 @@ function sanitizeClaimSuggestions(claims: ClaimSuggestion, query: string, produc
   });
 
   const safeFallbacks = inferSafeClaimExpressions(query, productType);
+  for (const rule of seedContext.regulatoryRules) {
+    for (const expression of rule.forbidden_expressions || []) risky.add(expression);
+    for (const expression of rule.risky_expressions || []) risky.add(expression);
+    for (const expression of rule.safe_expression_examples || []) {
+      if (!safeFallbacks.includes(expression)) safeFallbacks.push(expression);
+    }
+  }
+
   for (const fallback of safeFallbacks) {
-    if (allowed.length >= 5) break;
+    if (allowed.length >= 6) break;
     if (!hasRiskyClaimTerm(fallback) && !allowed.includes(fallback)) allowed.push(fallback);
   }
 
   return {
     ...claims,
     allowed_expressions: cleanExpressionList(allowed).slice(0, 6),
-    risky_expressions: cleanExpressionList([...risky]).slice(0, 12),
+    risky_expressions: cleanExpressionList([...risky]).slice(0, 14),
   };
 }
 
@@ -511,6 +574,86 @@ function ensureClaimComplianceCheck(
       human_review_points: ["上市标签、详情页、小红书/直播话术需由法规人员复核", "确认所有功能性表达是否构成保健功能暗示"],
     },
   ];
+}
+
+function applySeedComplianceGuidance(checks: ComplianceCheck[], seedContext: FormulaBriefSeedContext): ComplianceCheck[] {
+  if (seedContext.scenarios.length === 0) return checks;
+
+  const prohibited = new Set<string>();
+  const alternative = new Set<string>();
+  const reviewPoints = new Set<string>();
+
+  for (const rule of seedContext.regulatoryRules) {
+    for (const expression of rule.forbidden_expressions || []) prohibited.add(expression);
+    for (const expression of rule.risky_expressions || []) prohibited.add(expression);
+    for (const expression of rule.safe_expression_examples || []) {
+      if (!hasRiskyClaimTerm(expression)) alternative.add(expression);
+    }
+    if (rule.manual_review_required) reviewPoints.add(`${rule.scenario} 的对外表达需人工法规复核`);
+  }
+
+  for (const ingredient of seedContext.ingredientProfiles) {
+    for (const flag of ingredient.regulatory_flags || []) reviewPoints.add(flag);
+  }
+
+  for (const supplier of seedContext.supplierSpecs) {
+    if (supplier.required_docs?.length) reviewPoints.add(`补齐 ${supplier.required_docs.slice(0, 3).join("、")} 后再确认对外口径`);
+  }
+
+  if (prohibited.size === 0 && alternative.size === 0 && reviewPoints.size === 0) return checks;
+
+  const index = checks.findIndex((check) => /声称|表达|标签|宣称|合规/.test(check.check_item));
+  if (index >= 0) {
+    const check = checks[index];
+    const merged: ComplianceCheck = {
+      ...check,
+      risk_level: check.risk_level === "低" ? "高" : check.risk_level,
+      prohibited_expressions: cleanExpressionList([...check.prohibited_expressions, ...prohibited]).slice(0, 12),
+      alternative_expressions: cleanExpressionList([...check.alternative_expressions, ...alternative]).slice(0, 8),
+      human_review_points: cleanExpressionList([...check.human_review_points, ...reviewPoints]).slice(0, 8),
+    };
+    return checks.map((item, idx) => idx === index ? merged : item);
+  }
+
+  return [
+    ...checks,
+    {
+      check_item: "场景化表达与数据缺口复核",
+      risk_level: "高",
+      general_food_allowed: "普通食品场景下只能使用原料事实、食用场景、剂型和感官体验表达，不得把内部研发目标直接外化成标签或广告卖点。",
+      health_food_note: "如确需使用功能性表达，应先判断是否需要保健食品或其他特殊路径。",
+      novel_food_note: "涉及新食品原料或草本提取物时，必须复核公告范围、食品属性和适用类别。",
+      nutrient_fortification_note: "涉及维生素、矿物质等营养强化剂时，需复核 GB 14880 食品类别、添加量和标签条件。",
+      prohibited_expressions: cleanExpressionList([...prohibited]).slice(0, 12),
+      alternative_expressions: cleanExpressionList([...alternative]).slice(0, 8),
+      references: ["GB 7718", "GB 28050", "GB 14880（如涉及营养强化剂）"],
+      human_review_points: cleanExpressionList([...reviewPoints]).slice(0, 8),
+    },
+  ];
+}
+
+function buildSeedNextSteps(nextSteps: string[], seedContext: FormulaBriefSeedContext): string[] {
+  if (seedContext.scenarios.length === 0) return nextSteps.slice(0, 6);
+
+  const combined = new Set<string>(nextSteps.filter(Boolean));
+
+  for (const supplier of seedContext.supplierSpecs) {
+    if (supplier.next_contact_action) combined.add(supplier.next_contact_action);
+  }
+
+  for (const ingredient of seedContext.ingredientProfiles) {
+    if (ingredient.data_gaps?.length) {
+      combined.add(`补齐 ${ingredient.name_cn} 的关键资料：${ingredient.data_gaps.slice(0, 3).join("、")}`);
+    }
+  }
+
+  for (const rule of seedContext.regulatoryRules) {
+    if (rule.manual_review_required) {
+      combined.add(`对 ${rule.scenario} 的标签、详情页和渠道话术做人工法规复核`);
+    }
+  }
+
+  return cleanExpressionList([...combined]).slice(0, 6);
 }
 
 export function createTrustScore(
@@ -614,17 +757,22 @@ export function normalizeFormulaBrief(
     cost_constraint: asString((v.product_brief as Record<string, unknown> | undefined)?.cost_constraint),
     key_constraints: asStringArray((v.product_brief as Record<string, unknown> | undefined)?.key_constraints),
   };
-  const sanitizedClaims = sanitizeClaimSuggestions(normalizeClaims(v.claim_suggestions), query, productBrief.product_type);
+  const seedContext = resolveFormulaBriefSeedContext(query, productBrief.product_type);
+  const sanitizedClaims = sanitizeClaimSuggestions(normalizeClaims(v.claim_suggestions), query, productBrief.product_type, seedContext);
   const sanitizedSuppliers = sanitizeSupplierMatches(
     Array.isArray(v.supplier_matches) ? v.supplier_matches.map(normalizeSupplier) : [],
     routes,
     query,
-    productBrief.product_type
+    productBrief.product_type,
+    seedContext
   );
-  const sanitizedChecks = ensureClaimComplianceCheck(
-    sanitizeComplianceChecks(checks, sanitizedClaims.risky_expressions),
-    sanitizedClaims.risky_expressions,
-    sanitizedClaims.allowed_expressions
+  const sanitizedChecks = applySeedComplianceGuidance(
+    ensureClaimComplianceCheck(
+      sanitizeComplianceChecks(checks, sanitizedClaims.risky_expressions),
+      sanitizedClaims.risky_expressions,
+      sanitizedClaims.allowed_expressions
+    ),
+    seedContext
   );
   const fallbackTrust = createTrustScore(verification, sanitizedSuppliers, sanitizedChecks);
 
@@ -639,7 +787,7 @@ export function normalizeFormulaBrief(
     supplier_matches: sanitizedSuppliers,
     claim_suggestions: sanitizedClaims,
     trust_score: normalizeTrustScore(v.trust_score, fallbackTrust),
-    next_steps: asStringArray(v.next_steps).slice(0, 6),
+    next_steps: buildSeedNextSteps(asStringArray(v.next_steps).slice(0, 6), seedContext),
     markdown_summary: sanitizePositiveMarketingText(asString(v.markdown_summary, markdownSummary.slice(0, 1200))),
   };
 }
