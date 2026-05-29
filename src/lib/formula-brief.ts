@@ -135,6 +135,20 @@ function normalizeRoute(value: unknown, index: number): FormulaRoute {
   };
 }
 
+const ROUTE_TYPE_ORDER = ["保守路线", "主流路线", "创新路线"] as const;
+
+function normalizeRouteTypes(routes: FormulaRoute[]): FormulaRoute[] {
+  if (routes.length < 2) return routes;
+  return routes.map((route, index) => {
+    const expectedType = ROUTE_TYPE_ORDER[index];
+    if (!expectedType) return route;
+    return {
+      ...route,
+      route_type: expectedType,
+    };
+  });
+}
+
 function normalizeCompliance(value: unknown): ComplianceCheck {
   const v = (value || {}) as Record<string, unknown>;
   return {
@@ -163,6 +177,109 @@ function normalizeSupplier(value: unknown): SupplierMatch {
   };
 }
 
+function normalizeMatchText(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[（(][^）)]*[）)]/g, "")
+    .replace(/[\s·•,，、/\|：:;；\-—_]+/g, "")
+    .trim();
+}
+
+const SUPPLIER_CORE_TERMS = [
+  "益生菌", "菌株", "乳酸菌", "双歧杆菌", "杆菌",
+  "胶原", "透明质酸", "玻尿酸",
+  "乳矿物盐", "维生素d", "维生素D", "钙",
+  "乳清", "酪蛋白", "蛋白", "肽",
+  "膳食纤维", "菊粉", "低聚", "GOS", "FOS",
+  "gaba", "茶氨酸", "酸枣仁",
+  "dha", "epa", "鱼油", "藻油", "omega",
+].map(normalizeMatchText);
+
+function hasSupplierCoreOverlap(supplier: SupplierMatch, coreIngredients: FormulaIngredient[]): boolean {
+  if (!supplier.platform_available) return true;
+  if (coreIngredients.length === 0) return true;
+
+  const supplierText = normalizeMatchText(`${supplier.ingredient} ${supplier.product_name}`);
+  const supplierIngredient = normalizeMatchText(supplier.ingredient);
+  const coreTexts = coreIngredients.map((ingredient) => normalizeMatchText(ingredient.name)).filter(Boolean);
+
+  return coreTexts.some((core) => {
+    if (!core) return false;
+    if (supplierText.includes(core) || core.includes(supplierIngredient)) return true;
+    return SUPPLIER_CORE_TERMS.some((term) => term.length >= 2 && core.includes(term) && supplierText.includes(term));
+  });
+}
+
+function isProbioticIntent(query: string, productType: string): boolean {
+  return /益生菌|菌株|乳酸菌|双歧杆菌/.test(`${query} ${productType}`);
+}
+
+function isProbioticSupplierMatch(supplier: SupplierMatch): boolean {
+  return /益生菌|菌株|乳酸菌|双歧杆菌|杆菌/.test(`${supplier.ingredient} ${supplier.product_name}`);
+}
+
+function isSleepIntent(query: string, productType: string): boolean {
+  return /助眠|睡眠|睡前|夜间|好眠|放松|舒缓|压力/.test(`${query} ${productType}`);
+}
+
+function isSleepOnlySupplierMatch(supplier: SupplierMatch): boolean {
+  return /lactium|酪蛋白水解肽|褪黑素|gaba|γ-氨基丁酸|茶氨酸|酸枣仁|好眠|舒缓|助眠/i.test(`${supplier.ingredient} ${supplier.product_name}`);
+}
+
+function createUnavailableSupplierMatch(ingredient: string, reason: string, nextAction: string): SupplierMatch {
+  return {
+    ingredient,
+    supplier_name: "暂无平台匹配",
+    product_name: "暂无平台匹配",
+    platform_available: false,
+    match_reason: reason,
+    next_action: nextAction,
+  };
+}
+
+function sanitizeSupplierMatches(
+  suppliers: SupplierMatch[],
+  routes: FormulaRoute[],
+  query: string,
+  productType: string
+): SupplierMatch[] {
+  const coreIngredients = routes.flatMap((route) => route.core_ingredients || []);
+  const probioticIntent = isProbioticIntent(query, productType);
+  const sleepIntent = isSleepIntent(query, productType);
+  const seen = new Set<string>();
+  const sanitized: SupplierMatch[] = [];
+
+  for (const supplier of suppliers) {
+    if (probioticIntent && supplier.platform_available && !isProbioticSupplierMatch(supplier)) continue;
+    if (!sleepIntent && supplier.platform_available && isSleepOnlySupplierMatch(supplier)) continue;
+    if (!hasSupplierCoreOverlap(supplier, coreIngredients)) continue;
+
+    const available = supplier.platform_available && !/暂无|待匹配/.test(`${supplier.supplier_name}${supplier.product_name}`);
+    const normalizedSupplier = available
+      ? supplier
+      : {
+          ...supplier,
+          supplier_name: supplier.supplier_name || "暂无平台匹配",
+          product_name: supplier.product_name || "暂无平台匹配",
+          platform_available: false,
+        };
+    const key = normalizeMatchText(`${normalizedSupplier.ingredient}|${normalizedSupplier.supplier_name}|${normalizedSupplier.product_name}`);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    sanitized.push(normalizedSupplier);
+  }
+
+  if (probioticIntent && !sanitized.some((supplier) => isProbioticSupplierMatch(supplier))) {
+    sanitized.unshift(createUnavailableSupplierMatch(
+      "益生菌菌株",
+      "当前平台原料目录未收录可直接匹配的益生菌菌株供应商，不能用益生元、膳食纤维或矿物质原料替代菌株匹配。",
+      "补充目标菌株、活菌数、适用食品类别、法规状态与供应商规格书后再询样。"
+    ));
+  }
+
+  return sanitized.slice(0, 8);
+}
+
 function normalizeClaims(value: unknown): ClaimSuggestion {
   const v = (value || {}) as Record<string, unknown>;
   return {
@@ -175,13 +292,73 @@ function normalizeClaims(value: unknown): ClaimSuggestion {
 
 const CLAIM_RISK_TERMS = [
   "改善", "调节", "增强", "提高", "促进", "保护", "缓解", "预防", "治疗", "修复",
-  "抗炎", "抗氧", "抗氧化", "锁水", "助眠", "睡眠质量", "免疫", "美容养颜", "逆龄",
-  "减肥", "瘦身", "降血脂", "降血糖", "降血压", "心血管", "骨质疏松", "骨密度",
-  "肠道菌群", "消化功能", "视力", "智力", "学习成绩", "疲劳", "排毒",
+  "抗炎", "抗氧", "抗氧化", "锁水", "补水", "水光", "水光感", "水光肌", "内服补水", "助眠", "促进睡眠", "深度睡眠", "睡眠质量", "好眠", "安神", "失眠", "放松身心", "舒缓压力", "舒缓",
+  "免疫", "增强免疫", "提高免疫", "美容养颜", "美容", "逆龄", "抗衰", "皮肤状态", "改善皮肤", "皮肤喝饱水",
+  "减肥", "瘦身", "燃脂", "控血糖", "降血脂", "降血糖", "降血压", "心血管",
+  "骨质疏松", "骨密度", "骨骼健康", "增强骨骼", "强健骨骼", "促进钙吸收", "有助于钙吸收", "有助于钙的吸收", "助力钙质利用", "钙质利用", "钙的吸收", "骨骼和牙齿", "骨骼发育", "关节健康", "肠道菌群", "肠道健康", "有益菌生长", "帮助有益菌", "改善消化",
+  "消化功能", "视力", "智力", "学习成绩", "疲劳", "排毒",
 ];
+
+function cleanExpressionList(expressions: string[]): string[] {
+  const invalid = new Set(["无", "暂无", "无明显", "不适用", "待确认", "none", "null", "n/a"]);
+  const seen = new Set<string>();
+  const cleaned: string[] = [];
+  for (const raw of expressions) {
+    const expression = raw.trim();
+    if (!expression || invalid.has(expression.toLowerCase())) continue;
+    if (seen.has(expression)) continue;
+    seen.add(expression);
+    cleaned.push(expression);
+  }
+  return cleaned;
+}
 
 function hasRiskyClaimTerm(expression: string): boolean {
   return CLAIM_RISK_TERMS.some((term) => expression.includes(term));
+}
+
+function inferRiskyClaimExpressions(query: string, productType: string): string[] {
+  const text = `${query} ${productType}`;
+  const risky = new Set<string>();
+
+  if (/助眠|睡眠|睡|眠|放松|压力|夜/.test(text)) {
+    risky.add("助眠");
+    risky.add("改善睡眠");
+    risky.add("放松身心");
+    risky.add("舒缓压力");
+  }
+  if (/儿童|孩子|益生菌|肠道|消化|免疫/.test(text)) {
+    risky.add("调节肠道菌群");
+    risky.add("改善消化");
+    risky.add("增强免疫");
+    risky.add("肠道健康");
+  }
+  if (/骨|钙|银发|维生素D|乳矿物盐|骨骼/.test(text)) {
+    risky.add("增强骨骼");
+    risky.add("促进钙吸收");
+    risky.add("改善骨密度");
+    risky.add("预防骨质疏松");
+  }
+  if (/美容|胶原|皮肤|透明质酸|小红书|直播|光泽|锁水|抗氧/.test(text)) {
+    risky.add("美容养颜");
+    risky.add("改善皮肤");
+    risky.add("锁水");
+    risky.add("抗氧化");
+    risky.add("逆龄");
+  }
+  if (/omega|Omega|鱼油|藻油|DHA|EPA|血脂|心血管|三高/.test(text)) {
+    risky.add("辅助降血脂");
+    risky.add("保护心血管");
+    risky.add("预防三高");
+  }
+  if (/控糖|血糖|低GI|体重|减肥|代餐|燃脂/.test(text)) {
+    risky.add("控血糖");
+    risky.add("降血糖");
+    risky.add("减肥");
+    risky.add("燃脂");
+  }
+
+  return [...risky];
 }
 
 function inferSafeClaimExpressions(query: string, productType: string): string[] {
@@ -197,7 +374,7 @@ function inferSafeClaimExpressions(query: string, productType: string): string[]
     suggestions.add("清晰标注适用人群、食用方法和菌株/原料信息");
   }
   if (/骨|钙|银发|维生素D|乳制品/.test(text)) {
-    suggestions.add("含钙/维生素D等营养成分，具体声称需满足标签标准条件");
+    suggestions.add("含钙/维生素D等营养成分，具体标签声称需满足标准条件");
     suggestions.add("适合作为日常营养补充乳制品");
   }
   if (/美容|胶原|皮肤|透明质酸|小红书|直播/.test(text)) {
@@ -218,9 +395,59 @@ function inferSafeClaimExpressions(query: string, productType: string): string[]
   return [...suggestions].slice(0, 5);
 }
 
+function sanitizePositiveMarketingText(text: string): string {
+  return text
+    .replace(/水光肌|水光感|水光/g, "清爽轻负担")
+    .replace(/内服补水|皮肤喝饱水|补水|锁水/g, "日常饮用")
+    .replace(/美容养颜|改善皮肤|逆龄|抗衰老|抗衰|抗氧化|抗氧/g, "成分故事")
+    .replace(/强健骨骼|骨骼健康|增强骨骼|促进钙吸收|有助于钙吸收|有助于钙的吸收|助力钙质利用|钙质利用/g, "钙蛋白营养")
+    .replace(/预防骨质疏松|改善骨密度/g, "银发营养")
+    .replace(/调节肠道菌群|帮助有益菌生长|有益菌生长|帮助有益菌|改善消化|增强免疫/g, "日常营养")
+    .replace(/夜间舒缓|舒缓|好眠|助眠/g, "日常营养");
+}
+
+export function sanitizeFormulaBriefMarkdown(markdown: string): string {
+  return markdown
+    .replace(/情绪舒缓/g, "风味体验")
+    .replace(/增强放松感/g, "保持温和风味")
+    .replace(/帮助放松/g, "营造夜间仪式感")
+    .replace(/与“放松”的研发目标/g, "与“夜间场景”的研发目标")
+    .replace(/放松感/g, "风味体验")
+    .replace(/搭配维生素D(?:3)?促进钙吸收/g, "搭配维生素D作为营养强化思路")
+    .replace(/维生素D(?:3)?促进钙吸收/g, "维生素D营养强化")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+
+function sanitizeRoutes(routes: FormulaRoute[]): FormulaRoute[] {
+  return routes.map((route, index) => {
+    const fallbackName = `${route.route_type || ROUTE_TYPE_ORDER[index] || "方案"}方案`;
+    const routeName = sanitizePositiveMarketingText(route.route_name)
+      .replace(/^(保守路线|主流路线|创新路线|保守|主流|创新)[：:\s\-—]+/, "")
+      .replace(/(?:保守路线|主流路线|创新路线)/g, "")
+      .replace(/\s{2,}/g, " ")
+      .trim();
+    const summary = sanitizePositiveMarketingText(route.recommendation_reason);
+    return {
+      ...route,
+      route_name: routeName && !hasRiskyClaimTerm(routeName) ? routeName : fallbackName,
+      recommendation_reason: summary,
+    };
+  });
+}
+
 function sanitizeClaimSuggestions(claims: ClaimSuggestion, query: string, productType: string): ClaimSuggestion {
-  const risky = new Set(claims.risky_expressions.filter(Boolean));
-  const allowed = claims.allowed_expressions.filter((expression) => {
+  const risky = new Set([
+    ...cleanExpressionList(claims.risky_expressions),
+    ...inferRiskyClaimExpressions(query, productType),
+  ]);
+  const sleepIntent = isSleepIntent(query, productType);
+  const allowed = cleanExpressionList(claims.allowed_expressions).filter((expression) => {
+    if (!sleepIntent && /睡前|夜间|好眠|助眠|放松|舒缓/.test(expression)) {
+      risky.add(expression);
+      return false;
+    }
     if (!hasRiskyClaimTerm(expression)) return true;
     risky.add(expression);
     return false;
@@ -234,16 +461,16 @@ function sanitizeClaimSuggestions(claims: ClaimSuggestion, query: string, produc
 
   return {
     ...claims,
-    allowed_expressions: allowed.slice(0, 6),
-    risky_expressions: [...risky].slice(0, 10),
+    allowed_expressions: cleanExpressionList(allowed).slice(0, 6),
+    risky_expressions: cleanExpressionList([...risky]).slice(0, 12),
   };
 }
 
 function sanitizeComplianceChecks(checks: ComplianceCheck[], riskyExpressions: string[]): ComplianceCheck[] {
   const risky = riskyExpressions.filter(Boolean);
   return checks.map((check) => {
-    const prohibited = new Set(check.prohibited_expressions.filter(Boolean));
-    const alternative = check.alternative_expressions.filter((expression) => {
+    const prohibited = new Set(cleanExpressionList(check.prohibited_expressions));
+    const alternative = cleanExpressionList(check.alternative_expressions).filter((expression) => {
       if (!hasRiskyClaimTerm(expression)) return true;
       prohibited.add(expression);
       return false;
@@ -255,10 +482,35 @@ function sanitizeComplianceChecks(checks: ComplianceCheck[], riskyExpressions: s
 
     return {
       ...check,
-      prohibited_expressions: [...prohibited].slice(0, 10),
-      alternative_expressions: alternative.slice(0, 6),
+      prohibited_expressions: cleanExpressionList([...prohibited]).slice(0, 10),
+      alternative_expressions: cleanExpressionList(alternative).slice(0, 6),
     };
   });
+}
+
+function ensureClaimComplianceCheck(
+  checks: ComplianceCheck[],
+  riskyExpressions: string[],
+  allowedExpressions: string[]
+): ComplianceCheck[] {
+  const hasClaimCheck = checks.some((check) => /声称|表达|标签|宣称|合规/.test(check.check_item));
+  if (hasClaimCheck || riskyExpressions.length === 0) return checks;
+
+  return [
+    ...checks,
+    {
+      check_item: "普通食品声称与渠道表达",
+      risk_level: "高",
+      general_food_allowed: "普通食品不得明示或暗示保健功能，用户需求中的功能卖点只能作为内部研发目标，不能直接作为对外标签或广告表达。",
+      health_food_note: "如需使用保健功能声称，应评估保健食品注册/备案路径。",
+      novel_food_note: "涉及新食品原料时需核对公告适用范围、用量和标签要求。",
+      nutrient_fortification_note: "涉及维生素、矿物质等营养强化剂时需核对 GB 14880 食品类别和用量。",
+      prohibited_expressions: riskyExpressions.slice(0, 10),
+      alternative_expressions: allowedExpressions.slice(0, 6),
+      references: ["GB 7718", "GB 28050", "GB 14880（如涉及营养强化剂）"],
+      human_review_points: ["上市标签、详情页、小红书/直播话术需由法规人员复核", "确认所有功能性表达是否构成保健功能暗示"],
+    },
+  ];
 }
 
 export function createTrustScore(
@@ -348,9 +600,8 @@ export function normalizeFormulaBrief(
 ): FormulaBrief | null {
   if (!raw || typeof raw !== "object") return null;
   const v = raw as Record<string, unknown>;
-  const routes = Array.isArray(v.formula_routes) ? v.formula_routes.map(normalizeRoute).slice(0, 4) : [];
+  const routes = sanitizeRoutes(normalizeRouteTypes(Array.isArray(v.formula_routes) ? v.formula_routes.map(normalizeRoute).slice(0, 4) : []));
   const checks = Array.isArray(v.compliance_checks) ? v.compliance_checks.map(normalizeCompliance).slice(0, 6) : [];
-  const suppliers = Array.isArray(v.supplier_matches) ? v.supplier_matches.map(normalizeSupplier).slice(0, 8) : [];
 
   if (!v.product_brief && routes.length === 0 && checks.length === 0) return null;
 
@@ -364,8 +615,18 @@ export function normalizeFormulaBrief(
     key_constraints: asStringArray((v.product_brief as Record<string, unknown> | undefined)?.key_constraints),
   };
   const sanitizedClaims = sanitizeClaimSuggestions(normalizeClaims(v.claim_suggestions), query, productBrief.product_type);
-  const sanitizedChecks = sanitizeComplianceChecks(checks, sanitizedClaims.risky_expressions);
-  const fallbackTrust = createTrustScore(verification, suppliers, sanitizedChecks);
+  const sanitizedSuppliers = sanitizeSupplierMatches(
+    Array.isArray(v.supplier_matches) ? v.supplier_matches.map(normalizeSupplier) : [],
+    routes,
+    query,
+    productBrief.product_type
+  );
+  const sanitizedChecks = ensureClaimComplianceCheck(
+    sanitizeComplianceChecks(checks, sanitizedClaims.risky_expressions),
+    sanitizedClaims.risky_expressions,
+    sanitizedClaims.allowed_expressions
+  );
+  const fallbackTrust = createTrustScore(verification, sanitizedSuppliers, sanitizedChecks);
 
   return {
     schema_version: "formula_brief_v1",
@@ -375,10 +636,10 @@ export function normalizeFormulaBrief(
     product_brief: productBrief,
     formula_routes: routes,
     compliance_checks: sanitizedChecks,
-    supplier_matches: suppliers,
+    supplier_matches: sanitizedSuppliers,
     claim_suggestions: sanitizedClaims,
     trust_score: normalizeTrustScore(v.trust_score, fallbackTrust),
     next_steps: asStringArray(v.next_steps).slice(0, 6),
-    markdown_summary: asString(v.markdown_summary, markdownSummary.slice(0, 1200)),
+    markdown_summary: sanitizePositiveMarketingText(asString(v.markdown_summary, markdownSummary.slice(0, 1200))),
   };
 }

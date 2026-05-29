@@ -3,7 +3,7 @@ import { getAllIngredients } from "@/lib/data";
 import { appendLog, getRequestAuth } from "@/lib/logger";
 import { buildPrompt } from "./prompt";
 import { verifyAIOutput, type VerificationResult } from "@/lib/verify-output";
-import { extractFormulaBriefJson, normalizeFormulaBrief, stripFormulaBriefJson } from "@/lib/formula-brief";
+import { extractFormulaBriefJson, normalizeFormulaBrief, sanitizeFormulaBriefMarkdown, stripFormulaBriefJson } from "@/lib/formula-brief";
 
 const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
 const DEEPSEEK_BASE_URL = "https://api.deepseek.com";
@@ -47,6 +47,78 @@ const FOOD_KEYWORDS = [
   "知料", "原料库", "供应商",
 ];
 
+function productText(product: any): string {
+  return [
+    product.generic_name,
+    product.product_name,
+    product.category,
+    product.source,
+    product.function,
+    product.mechanism,
+    product.supplier_name,
+    product.supplier,
+    product.manufacturer,
+    ...(product.functional_tags || []),
+    ...(product.applications || []),
+    ...(product.certifications || []),
+  ].filter(Boolean).join(" ").toLowerCase();
+}
+
+const INTENT_KEYWORDS: Record<string, string[]> = {
+  sleep: ["睡", "眠", "夜", "助眠", "放松", "gaba", "酸枣仁", "茶氨酸"],
+  protein: ["蛋白", "运动", "健身", "恢复", "乳清", "饮料", "增肌"],
+  probiotic: ["益生菌", "儿童", "孩子", "肠道", "菌株", "固体饮料"],
+  bone: ["骨", "钙", "银发", "乳制品", "维生素d", "乳矿物盐"],
+  beauty: ["美容", "胶原", "皮肤", "光泽", "透明质酸", "小红书", "直播"],
+  omega: ["omega", "鱼油", "藻油", "dha", "epa", "血脂"],
+  weight: ["控糖", "低gi", "代餐", "体重", "饱腹", "低糖", "减肥"],
+};
+
+function selectRelevantProducts(products: any[], query: string, limit = 34): any[] {
+  const q = query.toLowerCase();
+  const queryTerms = Array.from(new Set(q.match(/[一-龥a-zA-Z0-9]+/g) || []));
+  const activeIntentTerms = Object.values(INTENT_KEYWORDS)
+    .filter((terms) => terms.some((term) => q.includes(term.toLowerCase())))
+    .flat();
+  const terms = Array.from(new Set([...queryTerms, ...activeIntentTerms.map((t) => t.toLowerCase())]))
+    .filter((term) => term.length >= 2);
+
+  const scored = products.map((product) => {
+    const text = productText(product);
+    let score = 0;
+    for (const term of terms) {
+      if (text.includes(term)) score += term.length >= 4 ? 4 : 2;
+    }
+    if ((product.confidence || "") === "high") score += 1;
+    if (product.supplier_name || product.supplier || product.manufacturer) score += 1;
+    return { product, score };
+  });
+
+  const selected = scored
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => item.product);
+
+  if (selected.length >= 12) return selected;
+
+  const fallbackCategories = ["蛋白质类", "益生菌", "膳食纤维", "营养强化剂", "新食品原料", "脂质营养"];
+  const fallback = products.filter((product) => fallbackCategories.some((cat) => String(product.category || "").includes(cat))).slice(0, limit - selected.length);
+  const seen = new Set(selected.map((product) => product.id || product.product_name));
+  for (const product of fallback) {
+    const key = product.id || product.product_name;
+    if (!seen.has(key)) selected.push(product);
+    if (selected.length >= limit) break;
+  }
+  return selected;
+}
+
+function summarizeProducts(products: any[]): string {
+  return products
+    .map((p) => `${p.generic_name || p.product_name} | 产品名: ${p.product_name} | 供应商: ${p.supplier_name || p.supplier || p.manufacturer || "待确认"} | 类别: ${p.category} | 来源: ${p.source} | 功能: ${(p.functional_tags || []).join(",")} | 应用: ${(p.applications || []).join(",")}`)
+    .join("\n");
+}
+
 function isFoodRelated(query: string): boolean {
   const lowerQuery = query.toLowerCase();
   if (FOOD_KEYWORDS.some((kw) => lowerQuery.includes(kw.toLowerCase()))) return true;
@@ -76,9 +148,8 @@ export async function POST(request: NextRequest) {
   }
 
   const products = getAllIngredients();
-  const productSummary = products
-    .map((p) => `${p.generic_name || p.product_name} | 类别: ${p.category} | 来源: ${p.source} | 功能: ${(p.functional_tags || []).join(",")} | 应用: ${(p.applications || []).join(",")}`)
-    .join("\n");
+  const relevantProducts = selectRelevantProducts(products, query);
+  const productSummary = summarizeProducts(relevantProducts);
   const systemPrompt = buildPrompt(query, productSummary);
 
   const encoder = new TextEncoder();
@@ -115,6 +186,7 @@ export async function POST(request: NextRequest) {
           }
           outgoingTail = "";
           suppressFormulaJson = true;
+          sendEvent({ status: "正在整理结构化方案卡片…" });
           return;
         }
 
@@ -131,8 +203,11 @@ export async function POST(request: NextRequest) {
       };
 
       try {
+        const aiAbort = new AbortController();
+        const aiTimeout = setTimeout(() => aiAbort.abort(), 80_000);
         const res = await fetch(`${DEEPSEEK_BASE_URL}/v1/chat/completions`, {
           method: "POST",
+          signal: aiAbort.signal,
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
@@ -144,11 +219,11 @@ export async function POST(request: NextRequest) {
               ...(history || []).map((m: any) => ({ role: m.role, content: m.content })),
               { role: "user", content: query },
             ],
-            temperature: 0.3,
-            max_tokens: 6500,
+            temperature: 0.2,
+            max_tokens: 4800,
             stream: true,
           }),
-        });
+        }).finally(() => clearTimeout(aiTimeout));
 
         if (!res.ok) {
           const errText = await res.text();
@@ -195,7 +270,7 @@ export async function POST(request: NextRequest) {
           outgoingTail = "";
         }
 
-        const cleanContent = stripFormulaBriefJson(fullContent);
+        const cleanContent = sanitizeFormulaBriefMarkdown(stripFormulaBriefJson(fullContent));
         const rawBrief = extractFormulaBriefJson(fullContent);
 
         if (cleanContent !== visibleContent) {
@@ -205,6 +280,7 @@ export async function POST(request: NextRequest) {
         // ═══ 运行 AI 输出验证 ═══
         const verification: VerificationResult = verifyAIOutput(cleanContent || fullContent);
         const formulaBrief = normalizeFormulaBrief(rawBrief, query, cleanContent || fullContent, verification);
+        sendEvent({ status: "结构化方案卡片已生成" });
         sendEvent({ verification });
         if (formulaBrief) {
           sendEvent({ formula_brief: formulaBrief });
