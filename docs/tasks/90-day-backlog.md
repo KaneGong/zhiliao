@@ -23,6 +23,14 @@
 - 已配置展示运行命令：`npm run dev:demo`、`npm run smoke:local`、`npm run check`、`npm run verify`。
 - 03-商业验证会话只保留材料，不继续扩写；需要 Kane 筛选真实联系人和时机后再重启。
 
+## 2026-05-30 Demo E2E 验收更新
+
+- 已补显性入口：导航和首页均可直接进入 AI 配方工作台、法规证据工作台、我的配方、供应商入口和管理后台。
+- 已完成本地端到端演示验收：注册/登录、AI 推荐 SSE、法规 SSE、保存配方、读取配方、管理后台鉴权均通过。
+- 验收记录：`docs/tasks/demo-e2e-acceptance-2026-05-30.md`。
+- 当前产品边界确认：目前只有 `/recommend` 和 `/regulations` 是对话型页面；其他页面是工作台/管理页。全站 AI 助手属于后续产品决策。
+- 下一步最优先修复：法规查询的自然语言原料抽取，例如先从“DHA 能不能用于普通食品？”中抽取 `DHA` 再匹配法规库。
+
 ## Week 1 — Formula Brief v1
 
 ### P0
@@ -171,8 +179,8 @@
 
 ## 当前最优先任务
 
-1. Demo-ready 运行配置与本地 smoke
-2. Formula Brief v1 展示体验巡检
-3. Trust Score / 供应商真实性稳定性
+1. 法规查询自然语言原料抽取
+2. 线上部署前 checklist 与服务器 smoke
+3. Formula Brief v1 演示路径视觉巡检
 4. 真实供应商资料补库准备
 5. 100 条配方案例库
