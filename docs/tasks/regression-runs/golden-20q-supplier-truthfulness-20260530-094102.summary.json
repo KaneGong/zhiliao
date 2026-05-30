@@ -1,0 +1,120 @@
+{
+  "logPath": "docs/tasks/regression-runs/golden-20q-supplier-truthfulness-20260530-094102.log",
+  "total": 20,
+  "passed": 20,
+  "hasBrief": 20,
+  "sawDoneCount": 20,
+  "verificationCount": 20,
+  "jsonLeaks": 0,
+  "riskyAllowedCount": 0,
+  "attemptsGt1": [
+    {
+      "id": "GQ-018",
+      "title": "膳食纤维气泡水 / 饱腹与体重管理边界",
+      "attempts": 2,
+      "errors": [
+        "未检测到结构化方案包，已保留 Markdown 输出"
+      ]
+    }
+  ],
+  "unknownIngredients": [
+    {
+      "id": "GQ-005",
+      "title": "女性美容胶原饮",
+      "unknownIngredients": [
+        "高吸收率的鱼胶原蛋白肽"
+      ]
+    }
+  ],
+  "zeroAvailable": [
+    {
+      "id": "GQ-003",
+      "title": "儿童益生菌 / 家长可理解但不踩线",
+      "suppliers": 4,
+      "availableSuppliers": 0,
+      "trust": 70,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-007",
+      "title": "植物基蛋白饮",
+      "suppliers": 3,
+      "availableSuppliers": 0,
+      "trust": 74,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-009",
+      "title": "银发营养粉",
+      "suppliers": 1,
+      "availableSuppliers": 0,
+      "trust": 78,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-010",
+      "title": "免疫方向饮品",
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "trust": 74,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-013",
+      "title": "运动电解质果冻 / 补水场景但不医疗化",
+      "suppliers": 1,
+      "availableSuppliers": 0,
+      "trust": 52,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-014",
+      "title": "咖啡因能量饮 / 提神场景与疲劳声称边界",
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "trust": 76,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-015",
+      "title": "饮酒场景软糖 / 解酒护肝高风险表达",
+      "suppliers": 3,
+      "availableSuppliers": 0,
+      "trust": 78,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-016",
+      "title": "更年期女性营养粉 / 情绪睡眠骨骼多风险叠加",
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "trust": 74,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-017",
+      "title": "低钠调味粉 / 健康厨房但不疾病化",
+      "suppliers": 3,
+      "availableSuppliers": 0,
+      "trust": 52,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-018",
+      "title": "膳食纤维气泡水 / 饱腹与体重管理边界",
+      "suppliers": 4,
+      "availableSuppliers": 0,
+      "trust": 74,
+      "hasUnavailablePlaceholder": true
+    },
+    {
+      "id": "GQ-019",
+      "title": "植物甾醇酸奶 / 普通食品与保健路径分流",
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "trust": 70,
+      "hasUnavailablePlaceholder": true
+    }
+  ],
+  "avgTrust": 78.85
+}

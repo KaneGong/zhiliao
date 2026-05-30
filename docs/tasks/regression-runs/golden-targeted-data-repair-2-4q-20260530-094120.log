@@ -1,0 +1,345 @@
+
+> frontend@0.1.0 test:golden:all
+> GOLDEN_SET=all node scripts/run-golden-questions.mjs
+
+Golden Questions endpoint: http://127.0.0.1:3010/api/ai-recommend
+Question set: all
+Questions in run: 4
+Timeout per question: 180000ms
+Retries per question: 1
+Selected IDs: GQ-001,GQ-005,GQ-011,GQ-012
+
+Running GQ-001 [P0] — 助眠软糖 / 普通食品边界
+GQ-001 | P0 | PASS | brief=Y | routes=3 | checks=3 | suppliers=2/2 available | trust=94 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=27s
+
+Running GQ-005 [P0] — 女性美容胶原饮
+GQ-005 | P0 | PASS | brief=Y | routes=3 | checks=3 | suppliers=5/2 available | trust=82 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=28s
+
+Running GQ-011 [P2] — 儿童 DHA 日常营养粉
+GQ-011 | P2 | PASS | brief=Y | routes=3 | checks=2 | suppliers=3/2 available | trust=83 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=29s
+
+Running GQ-012 [P2] — Omega-3 普通食品与保健食品路径分流
+GQ-012 | P2 | PASS | brief=Y | routes=3 | checks=3 | suppliers=4/4 available | trust=94 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=26s
+
+Summary:
+{
+  "endpoint": "http://127.0.0.1:3010/api/ai-recommend",
+  "run_set": "all",
+  "total": 4,
+  "passed": 4,
+  "hasBrief": 4,
+  "sawDoneCount": 4,
+  "verificationCount": 4,
+  "jsonLeaks": 0,
+  "riskyAllowedCount": 0,
+  "results": [
+    {
+      "id": "GQ-001",
+      "tier": "P0",
+      "title": "助眠软糖 / 普通食品边界",
+      "query": "开发一款面向办公人群的低糖助眠软糖，需要普通食品可用原料，风味温和，成本可控。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 26858,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 2,
+      "availableSuppliers": 2,
+      "hasUnavailablePlaceholder": false,
+      "trust": 94,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 4,
+        "verified": 4,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "低糖软糖",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案围绕办公人群的睡前场景，提供了三条普通食品路径。保守路线以GABA+茶氨酸为核心，法规清晰、成本最低。主流路线加入酸樱桃和镁，提升风味和功能协同。创新路线引入Lactium，追求高端差异化，但需先确认其合规性。所有方案均需严格遵守普通食品声称边界，对外只能表达原料事实和食用场景。",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-001",
+          "tier": "P0",
+          "title": "助眠软糖 / 普通食品边界",
+          "query": "开发一款面向办公人群的低糖助眠软糖，需要普通食品可用原料，风味温和，成本可控。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 26858,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 2,
+          "availableSuppliers": 2,
+          "hasUnavailablePlaceholder": false,
+          "trust": 94,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 4,
+            "verified": 4,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "低糖软糖",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案围绕办公人群的睡前场景，提供了三条普通食品路径。保守路线以GABA+茶氨酸为核心，法规清晰、成本最低。主流路线加入酸樱桃和镁，提升风味和功能协同。创新路线引入Lactium，追求高端差异化，但需先确认其合规性。所有方案均需严格遵守普通食品声称边界，对外只能表达原料事实和食用场景。"
+        }
+      ]
+    },
+    {
+      "id": "GQ-005",
+      "tier": "P0",
+      "title": "女性美容胶原饮",
+      "query": "做一款女性美容方向的胶原蛋白饮，想突出皮肤状态、光泽感和轻负担，渠道主要是小红书和直播电商。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 28050,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 5,
+      "availableSuppliers": 2,
+      "hasUnavailablePlaceholder": true,
+      "trust": 82,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 3,
+        "verified": 3,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "风味饮料 / 果蔬汁类及其饮料",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案围绕‘轻负担’定位，提供三条研发路线：保守路线（经典胶原蛋白肽+透明质酸钠）成本最低、上市最快；主流路线（胶原蛋白肽+燕窝酸）通过高认知度原料实现差异化，适合直播电商；创新路线（胶原三肽+虾青素）技术壁垒高，适合高端品牌。所有方案均需严格遵守普通食品声称限制，避免使用‘成分故事’等禁用词。核心原料如透明质酸钠、燕",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-005",
+          "tier": "P0",
+          "title": "女性美容胶原饮",
+          "query": "做一款女性美容方向的胶原蛋白饮，想突出皮肤状态、光泽感和轻负担，渠道主要是小红书和直播电商。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 28050,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 5,
+          "availableSuppliers": 2,
+          "hasUnavailablePlaceholder": true,
+          "trust": 82,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 3,
+            "verified": 3,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "风味饮料 / 果蔬汁类及其饮料",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案围绕‘轻负担’定位，提供三条研发路线：保守路线（经典胶原蛋白肽+透明质酸钠）成本最低、上市最快；主流路线（胶原蛋白肽+燕窝酸）通过高认知度原料实现差异化，适合直播电商；创新路线（胶原三肽+虾青素）技术壁垒高，适合高端品牌。所有方案均需严格遵守普通食品声称限制，避免使用‘成分故事’等禁用词。核心原料如透明质酸钠、燕"
+        }
+      ]
+    },
+    {
+      "id": "GQ-011",
+      "tier": "P2",
+      "title": "儿童 DHA 日常营养粉",
+      "query": "开发一款儿童 DHA 成长营养粉，希望家长能理解 DHA 价值，剂型是果味固体饮料，但不能宣称提高智力、改善视力或提高学习成绩。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 28979,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 3,
+      "availableSuppliers": 2,
+      "hasUnavailablePlaceholder": true,
+      "trust": 83,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 4,
+        "verified": 4,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "儿童营养固体饮料",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案围绕儿童DHA成长营养粉，规划了三条研发路线。主流路线推荐‘藻油DHA+钙+维生素D’的基础营养型，合规风险低，平台有直接匹配的微胶囊化藻油DHA粉原料。创新路线增加了益生元，差异化更强但声称需更谨慎。保守路线使用鱼油DHA，成本最低但口感风险最高。所有方案均严格规避了‘提高智力、改善视力’等禁用声称，对外表达限",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-011",
+          "tier": "P2",
+          "title": "儿童 DHA 日常营养粉",
+          "query": "开发一款儿童 DHA 成长营养粉，希望家长能理解 DHA 价值，剂型是果味固体饮料，但不能宣称提高智力、改善视力或提高学习成绩。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 28979,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 3,
+          "availableSuppliers": 2,
+          "hasUnavailablePlaceholder": true,
+          "trust": 83,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 4,
+            "verified": 4,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "儿童营养固体饮料",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案围绕儿童DHA成长营养粉，规划了三条研发路线。主流路线推荐‘藻油DHA+钙+维生素D’的基础营养型，合规风险低，平台有直接匹配的微胶囊化藻油DHA粉原料。创新路线增加了益生元，差异化更强但声称需更谨慎。保守路线使用鱼油DHA，成本最低但口感风险最高。所有方案均严格规避了‘提高智力、改善视力’等禁用声称，对外表达限"
+        }
+      ]
+    },
+    {
+      "id": "GQ-012",
+      "tier": "P2",
+      "title": "Omega-3 普通食品与保健食品路径分流",
+      "query": "做一款成人 Omega-3 补充产品，希望使用鱼油或藻油原料，既想做日常营养补充，也想了解能否表达辅助降血脂等卖点。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 25586,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 4,
+      "availableSuppliers": 4,
+      "hasUnavailablePlaceholder": false,
+      "trust": 94,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 3,
+        "verified": 3,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "Omega-3补充产品",
+      "regulatoryPath": "普通食品 / 保健食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案针对成人Omega-3补充产品，提供了三条清晰的研发路线。保守路线为“日常营养型”普通食品，利用藻油或平衡型鱼油快速上市，主打日常营养补充。主流路线为“高EPA心血管支持型”保健食品，使用高EPA鱼油，用于申请“日常营养”功能。创新路线为“素食友好型DHA滴剂”，精准切入细分市场。方案明确指出了普通食品声称“日常",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-012",
+          "tier": "P2",
+          "title": "Omega-3 普通食品与保健食品路径分流",
+          "query": "做一款成人 Omega-3 补充产品，希望使用鱼油或藻油原料，既想做日常营养补充，也想了解能否表达辅助降血脂等卖点。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 25586,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 4,
+          "availableSuppliers": 4,
+          "hasUnavailablePlaceholder": false,
+          "trust": 94,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 3,
+            "verified": 3,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "Omega-3补充产品",
+          "regulatoryPath": "普通食品 / 保健食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案针对成人Omega-3补充产品，提供了三条清晰的研发路线。保守路线为“日常营养型”普通食品，利用藻油或平衡型鱼油快速上市，主打日常营养补充。主流路线为“高EPA心血管支持型”保健食品，使用高EPA鱼油，用于申请“日常营养”功能。创新路线为“素食友好型DHA滴剂”，精准切入细分市场。方案明确指出了普通食品声称“日常"
+        }
+      ]
+    }
+  ]
+}

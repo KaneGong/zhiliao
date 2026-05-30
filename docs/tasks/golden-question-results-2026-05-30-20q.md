@@ -1,5 +1,7 @@
 # Golden Questions 回归记录 — Formula Brief v1（20Q 首轮）
 
+> 最新改进后复跑结果见：`docs/tasks/golden-question-results-2026-05-30-20q-rerun.md`。
+
 > 日期：2026-05-30
 > 范围：`/api/ai-recommend` Formula Brief v1 20 条评测闭环
 > 版本：本地开发环境 `http://127.0.0.1:3010`

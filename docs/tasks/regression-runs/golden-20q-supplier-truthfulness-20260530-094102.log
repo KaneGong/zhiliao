@@ -1,0 +1,1668 @@
+
+> frontend@0.1.0 test:golden:all
+> GOLDEN_SET=all node scripts/run-golden-questions.mjs
+
+Golden Questions endpoint: http://127.0.0.1:3010/api/ai-recommend
+Question set: all
+Questions in run: 20
+Timeout per question: 180000ms
+Retries per question: 1
+
+Running GQ-001 [P0] — 助眠软糖 / 普通食品边界
+GQ-001 | P0 | PASS | brief=Y | routes=3 | checks=2 | suppliers=1/1 available | trust=90 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=29s
+
+Running GQ-002 [P0] — 运动蛋白饮 / 成本与口感
+GQ-002 | P0 | PASS | brief=Y | routes=3 | checks=3 | suppliers=7/7 available | trust=98 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=30s
+
+Running GQ-003 [P0] — 儿童益生菌 / 家长可理解但不踩线
+GQ-003 | P0 | PASS | brief=Y | routes=3 | checks=2 | suppliers=4/0 available | trust=70 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=25s
+
+Running GQ-004 [P0] — 银发骨骼健康乳制品
+GQ-004 | P0 | PASS | brief=Y | routes=3 | checks=2 | suppliers=3/3 available | trust=94 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=29s
+
+Running GQ-005 [P0] — 女性美容胶原饮
+GQ-005 | P0 | PASS | brief=Y | routes=3 | checks=2 | suppliers=4/4 available | trust=73 | done=Y | verify=Y | unknown=1 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=25s
+
+Running GQ-006 [P1] — 控糖代餐奶昔
+GQ-006 | P1 | PASS | brief=Y | routes=3 | checks=3 | suppliers=5/3 available | trust=86 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=29s
+
+Running GQ-007 [P1] — 植物基蛋白饮
+GQ-007 | P1 | PASS | brief=Y | routes=3 | checks=2 | suppliers=3/0 available | trust=74 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=26s
+
+Running GQ-008 [P1] — 高蛋白零食棒
+GQ-008 | P1 | PASS | brief=Y | routes=3 | checks=2 | suppliers=4/4 available | trust=90 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=24s
+
+Running GQ-009 [P1] — 银发营养粉
+GQ-009 | P1 | PASS | brief=Y | routes=3 | checks=3 | suppliers=1/0 available | trust=78 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=26s
+
+Running GQ-010 [P1] — 免疫方向饮品
+GQ-010 | P1 | PASS | brief=Y | routes=3 | checks=2 | suppliers=2/0 available | trust=74 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=24s
+
+Running GQ-011 [P2] — 儿童 DHA 日常营养粉
+GQ-011 | P2 | PASS | brief=Y | routes=3 | checks=2 | suppliers=3/3 available | trust=86 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=27s
+
+Running GQ-012 [P2] — Omega-3 普通食品与保健食品路径分流
+GQ-012 | P2 | PASS | brief=Y | routes=3 | checks=2 | suppliers=3/3 available | trust=90 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=23s
+
+Running GQ-013 [P2] — 运动电解质果冻 / 补水场景但不医疗化
+GQ-013 | P2 | PASS | brief=Y | routes=3 | checks=2 | suppliers=1/0 available | trust=52 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=30s
+
+Running GQ-014 [P2] — 咖啡因能量饮 / 提神场景与疲劳声称边界
+GQ-014 | P2 | PASS | brief=Y | routes=3 | checks=4 | suppliers=2/0 available | trust=76 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=27s
+
+Running GQ-015 [P2] — 饮酒场景软糖 / 解酒护肝高风险表达
+GQ-015 | P2 | PASS | brief=Y | routes=3 | checks=3 | suppliers=3/0 available | trust=78 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=29s
+
+Running GQ-016 [P2] — 更年期女性营养粉 / 情绪睡眠骨骼多风险叠加
+GQ-016 | P2 | PASS | brief=Y | routes=3 | checks=2 | suppliers=2/0 available | trust=74 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=31s
+
+Running GQ-017 [P2] — 低钠调味粉 / 健康厨房但不疾病化
+GQ-017 | P2 | PASS | brief=Y | routes=3 | checks=2 | suppliers=3/0 available | trust=52 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=26s
+
+Running GQ-018 [P2] — 膳食纤维气泡水 / 饱腹与体重管理边界
+  retrying GQ-018 after attempt 1 failed: 未检测到结构化方案包，已保留 Markdown 输出
+GQ-018 | P2 | PASS | brief=Y | routes=3 | checks=3 | suppliers=4/0 available | trust=74 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=2 | time=28s
+
+Running GQ-019 [P2] — 植物甾醇酸奶 / 普通食品与保健路径分流
+GQ-019 | P2 | PASS | brief=Y | routes=3 | checks=2 | suppliers=2/0 available | trust=70 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=30s
+
+Running GQ-020 [P2] — 烘焙友好蛋白早餐饼 / 高蛋白但不健身药效化
+GQ-020 | P2 | PASS | brief=Y | routes=3 | checks=3 | suppliers=3/3 available | trust=98 | done=Y | verify=Y | unknown=0 | jsonFence=N | riskyAllowed=- | errors=- | attempts=1 | time=28s
+
+Summary:
+{
+  "endpoint": "http://127.0.0.1:3010/api/ai-recommend",
+  "run_set": "all",
+  "total": 20,
+  "passed": 20,
+  "hasBrief": 20,
+  "sawDoneCount": 20,
+  "verificationCount": 20,
+  "jsonLeaks": 0,
+  "riskyAllowedCount": 0,
+  "results": [
+    {
+      "id": "GQ-001",
+      "tier": "P0",
+      "title": "助眠软糖 / 普通食品边界",
+      "query": "开发一款面向办公人群的低糖助眠软糖，需要普通食品可用原料，风味温和，成本可控。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 29468,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 1,
+      "availableSuppliers": 1,
+      "hasUnavailablePlaceholder": false,
+      "trust": 90,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 6,
+        "verified": 6,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "低糖软糖",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案针对办公人群的低糖日常营养软糖需求，提供了三条普通食品路径。保守路线推荐GABA+酸枣仁，法规明确、成本可控；主流路线推荐茶氨酸+酸枣仁，风味更佳、价值感更高；创新路线推荐Lactium，差异化强但合规性待确认。所有方案均需严格规避“日常营养”等功效声称，建议使用“睡前场景”、“夜间轻负担”等中性描述。核心风险在",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-001",
+          "tier": "P0",
+          "title": "助眠软糖 / 普通食品边界",
+          "query": "开发一款面向办公人群的低糖助眠软糖，需要普通食品可用原料，风味温和，成本可控。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 29468,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 1,
+          "availableSuppliers": 1,
+          "hasUnavailablePlaceholder": false,
+          "trust": 90,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 6,
+            "verified": 6,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "低糖软糖",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案针对办公人群的低糖日常营养软糖需求，提供了三条普通食品路径。保守路线推荐GABA+酸枣仁，法规明确、成本可控；主流路线推荐茶氨酸+酸枣仁，风味更佳、价值感更高；创新路线推荐Lactium，差异化强但合规性待确认。所有方案均需严格规避“日常营养”等功效声称，建议使用“睡前场景”、“夜间轻负担”等中性描述。核心风险在"
+        }
+      ]
+    },
+    {
+      "id": "GQ-002",
+      "tier": "P0",
+      "title": "运动蛋白饮 / 成本与口感",
+      "query": "做一款运动后恢复用的高蛋白饮料，目标人群是健身男性，希望口感清爽，蛋白含量有卖点，但成本不能太高。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 29890,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 7,
+      "availableSuppliers": 7,
+      "hasUnavailablePlaceholder": false,
+      "trust": 98,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 1,
+        "verified": 1,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "高蛋白饮料",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "针对健身男性运动后恢复的高蛋白饮料需求，我们规划了三条路线：1）成本优先型，以WPC80为核心，适合走量；2）清爽口感型，复配WPI90，平衡成本与口感，是主流推荐；3）极致清爽型，全WPI+水解蛋白，定位高端。所有方案均符合普通食品法规，核心风险在于口感实现和标签声称。平台已匹配Glanbia和Wheyco的乳清蛋白",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-002",
+          "tier": "P0",
+          "title": "运动蛋白饮 / 成本与口感",
+          "query": "做一款运动后恢复用的高蛋白饮料，目标人群是健身男性，希望口感清爽，蛋白含量有卖点，但成本不能太高。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 29890,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 7,
+          "availableSuppliers": 7,
+          "hasUnavailablePlaceholder": false,
+          "trust": 98,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 1,
+            "verified": 1,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "高蛋白饮料",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "针对健身男性运动后恢复的高蛋白饮料需求，我们规划了三条路线：1）成本优先型，以WPC80为核心，适合走量；2）清爽口感型，复配WPI90，平衡成本与口感，是主流推荐；3）极致清爽型，全WPI+水解蛋白，定位高端。所有方案均符合普通食品法规，核心风险在于口感实现和标签声称。平台已匹配Glanbia和Wheyco的乳清蛋白"
+        }
+      ]
+    },
+    {
+      "id": "GQ-003",
+      "tier": "P0",
+      "title": "儿童益生菌 / 家长可理解但不踩线",
+      "query": "开发一款儿童益生菌固体饮料，希望家长容易理解，主打肠道健康和日常营养支持，但不能踩保健食品声称风险。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 24505,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 4,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 70,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 2,
+        "verified": 2,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "儿童益生菌固体饮料",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕儿童益生菌固体饮料，提供了三条研发路线。保守路线以基础益生菌+益生元为主，成本低、风险小。主流路线推荐‘动物双歧杆菌Bb-12+低聚半乳糖+维生素D’的均衡组合，通过‘添加维生素D’合法支撑‘日常营养补充’定位，是当前市场最稳妥的选择。创新路线引入后生元概念，但法规身份待确认。所有方案均需严格规避‘肠道健康’",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-003",
+          "tier": "P0",
+          "title": "儿童益生菌 / 家长可理解但不踩线",
+          "query": "开发一款儿童益生菌固体饮料，希望家长容易理解，主打肠道健康和日常营养支持，但不能踩保健食品声称风险。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 24505,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 4,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 70,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 2,
+            "verified": 2,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "儿童益生菌固体饮料",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕儿童益生菌固体饮料，提供了三条研发路线。保守路线以基础益生菌+益生元为主，成本低、风险小。主流路线推荐‘动物双歧杆菌Bb-12+低聚半乳糖+维生素D’的均衡组合，通过‘添加维生素D’合法支撑‘日常营养补充’定位，是当前市场最稳妥的选择。创新路线引入后生元概念，但法规身份待确认。所有方案均需严格规避‘肠道健康’"
+        }
+      ]
+    },
+    {
+      "id": "GQ-004",
+      "tier": "P0",
+      "title": "银发骨骼健康乳制品",
+      "query": "做一款面向银发人群的骨骼健康乳制品，希望结合乳矿物盐、维生素D、蛋白质等原料，适合日常饮用。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 28926,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 3,
+      "availableSuppliers": 3,
+      "hasUnavailablePlaceholder": false,
+      "trust": 94,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 2,
+        "verified": 2,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "调制乳或含乳饮料",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案围绕银发人群钙蛋白营养需求，设计了三条普通食品路径下的乳制品配方路线。首选“均衡营养型”，以生牛乳为基底，通过添加乳矿物盐、维生素D和浓缩乳清蛋白，实现高钙高蛋白的日常营养补充，法规风险低，市场接受度高。备选“高蛋白强化型”和“低糖轻负担型”分别针对肌肉衰减和控糖需求。所有方案均需严格规避“钙蛋白营养”等功效声称",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-004",
+          "tier": "P0",
+          "title": "银发骨骼健康乳制品",
+          "query": "做一款面向银发人群的骨骼健康乳制品，希望结合乳矿物盐、维生素D、蛋白质等原料，适合日常饮用。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 28926,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 3,
+          "availableSuppliers": 3,
+          "hasUnavailablePlaceholder": false,
+          "trust": 94,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 2,
+            "verified": 2,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "调制乳或含乳饮料",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案围绕银发人群钙蛋白营养需求，设计了三条普通食品路径下的乳制品配方路线。首选“均衡营养型”，以生牛乳为基底，通过添加乳矿物盐、维生素D和浓缩乳清蛋白，实现高钙高蛋白的日常营养补充，法规风险低，市场接受度高。备选“高蛋白强化型”和“低糖轻负担型”分别针对肌肉衰减和控糖需求。所有方案均需严格规避“钙蛋白营养”等功效声称"
+        }
+      ]
+    },
+    {
+      "id": "GQ-005",
+      "tier": "P0",
+      "title": "女性美容胶原饮",
+      "query": "做一款女性美容方向的胶原蛋白饮，想突出皮肤状态、光泽感和轻负担，渠道主要是小红书和直播电商。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 24814,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 4,
+      "availableSuppliers": 4,
+      "hasUnavailablePlaceholder": false,
+      "trust": 73,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 5,
+        "verified": 4,
+        "notFound": 1,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [
+        "高吸收率的鱼胶原蛋白肽"
+      ],
+      "productType": "风味饮料/胶原蛋白肽饮品",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案围绕‘轻负担·日常营养型’、‘夜间仪式感·营养补充型’和‘高蛋白·轻食代餐型’三条路线展开。核心推荐‘轻负担·日常营养型’，以鱼胶原蛋白肽和透明质酸钠为核心，搭配0糖低卡配方，法规风险最低，市场接受度最高。所有原料均合规，供应商匹配度高。主要风险在于宣传话术，需严格避免功效声称。下一步建议立即启动打样和法务审核。",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-005",
+          "tier": "P0",
+          "title": "女性美容胶原饮",
+          "query": "做一款女性美容方向的胶原蛋白饮，想突出皮肤状态、光泽感和轻负担，渠道主要是小红书和直播电商。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 24814,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 4,
+          "availableSuppliers": 4,
+          "hasUnavailablePlaceholder": false,
+          "trust": 73,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 5,
+            "verified": 4,
+            "notFound": 1,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [
+            "高吸收率的鱼胶原蛋白肽"
+          ],
+          "productType": "风味饮料/胶原蛋白肽饮品",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案围绕‘轻负担·日常营养型’、‘夜间仪式感·营养补充型’和‘高蛋白·轻食代餐型’三条路线展开。核心推荐‘轻负担·日常营养型’，以鱼胶原蛋白肽和透明质酸钠为核心，搭配0糖低卡配方，法规风险最低，市场接受度最高。所有原料均合规，供应商匹配度高。主要风险在于宣传话术，需严格避免功效声称。下一步建议立即启动打样和法务审核。"
+        }
+      ]
+    },
+    {
+      "id": "GQ-006",
+      "tier": "P1",
+      "title": "控糖代餐奶昔",
+      "query": "开发一款体重管理方向的控糖代餐奶昔，希望高饱腹、低GI、适合早餐代餐，但不希望被认定为减肥功效宣传。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 28744,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 5,
+      "availableSuppliers": 3,
+      "hasUnavailablePlaceholder": true,
+      "trust": 86,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 5,
+        "verified": 5,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "代餐奶昔（固体饮料）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕“高蛋白+可溶性膳食纤维”的主流路线展开，以分离牛奶蛋白或浓缩乳清蛋白为基底，复配菊粉和抗性糊精，实现高饱腹和低GI目标。同时提供了保守的“高蛋白+慢碳水”路线和创新的“高蛋白+植物甾醇酯”路线作为备选。核心风险在于低GI声称需检测支持，以及膳食纤维的添加量需符合法规。平台可匹配Ingredia和Glanbi",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-006",
+          "tier": "P1",
+          "title": "控糖代餐奶昔",
+          "query": "开发一款体重管理方向的控糖代餐奶昔，希望高饱腹、低GI、适合早餐代餐，但不希望被认定为减肥功效宣传。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 28744,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 5,
+          "availableSuppliers": 3,
+          "hasUnavailablePlaceholder": true,
+          "trust": 86,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 5,
+            "verified": 5,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "代餐奶昔（固体饮料）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕“高蛋白+可溶性膳食纤维”的主流路线展开，以分离牛奶蛋白或浓缩乳清蛋白为基底，复配菊粉和抗性糊精，实现高饱腹和低GI目标。同时提供了保守的“高蛋白+慢碳水”路线和创新的“高蛋白+植物甾醇酯”路线作为备选。核心风险在于低GI声称需检测支持，以及膳食纤维的添加量需符合法规。平台可匹配Ingredia和Glanbi"
+        }
+      ]
+    },
+    {
+      "id": "GQ-007",
+      "tier": "P1",
+      "title": "植物基蛋白饮",
+      "query": "开发一款植物基蛋白饮，目标人群是轻健身和素食用户，希望口感顺滑、蛋白质量高、配方干净。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 25875,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 3,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 74,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 4,
+        "verified": 4,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "植物基蛋白饮料（RTD）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "针对植物基蛋白饮需求，推荐豌豆蛋白+大米蛋白复配路线，通过氨基酸互补实现高质量蛋白，配合菊粉和向日葵卵磷脂改善口感。方案分为保守、主流、创新三条路线，核心风险在于植物蛋白的风味和稳定性。平台当前缺少植物蛋白原料供应商，需自行寻源。",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-007",
+          "tier": "P1",
+          "title": "植物基蛋白饮",
+          "query": "开发一款植物基蛋白饮，目标人群是轻健身和素食用户，希望口感顺滑、蛋白质量高、配方干净。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 25875,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 3,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 74,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 4,
+            "verified": 4,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "植物基蛋白饮料（RTD）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "针对植物基蛋白饮需求，推荐豌豆蛋白+大米蛋白复配路线，通过氨基酸互补实现高质量蛋白，配合菊粉和向日葵卵磷脂改善口感。方案分为保守、主流、创新三条路线，核心风险在于植物蛋白的风味和稳定性。平台当前缺少植物蛋白原料供应商，需自行寻源。"
+        }
+      ]
+    },
+    {
+      "id": "GQ-008",
+      "tier": "P1",
+      "title": "高蛋白零食棒",
+      "query": "做一款高蛋白零食棒，适合办公室和运动后补充，希望甜度低、饱腹感强、口感不粉。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 23740,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 4,
+      "availableSuppliers": 4,
+      "hasUnavailablePlaceholder": false,
+      "trust": 90,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 6,
+        "verified": 6,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "高蛋白零食棒",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕用户‘低甜、饱腹、不粉’的核心需求，提供了三条研发路线。主流路线推荐乳清蛋白与酪蛋白复配，兼顾口感与饱腹感，且原料在平台有成熟供应商匹配。保守路线通过引入大豆蛋白和聚葡萄糖降低成本，但口感挑战较大。创新路线采用水解蛋白和胶原蛋白肽，口感潜力最高，但成本和风味控制是难点。所有方案均符合普通食品法规，需注意‘高蛋",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-008",
+          "tier": "P1",
+          "title": "高蛋白零食棒",
+          "query": "做一款高蛋白零食棒，适合办公室和运动后补充，希望甜度低、饱腹感强、口感不粉。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 23740,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 4,
+          "availableSuppliers": 4,
+          "hasUnavailablePlaceholder": false,
+          "trust": 90,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 6,
+            "verified": 6,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "高蛋白零食棒",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕用户‘低甜、饱腹、不粉’的核心需求，提供了三条研发路线。主流路线推荐乳清蛋白与酪蛋白复配，兼顾口感与饱腹感，且原料在平台有成熟供应商匹配。保守路线通过引入大豆蛋白和聚葡萄糖降低成本，但口感挑战较大。创新路线采用水解蛋白和胶原蛋白肽，口感潜力最高，但成本和风味控制是难点。所有方案均符合普通食品法规，需注意‘高蛋"
+        }
+      ]
+    },
+    {
+      "id": "GQ-009",
+      "tier": "P1",
+      "title": "银发营养粉",
+      "query": "做一款银发人群日常营养粉，希望支持蛋白补充、骨骼营养和肠道友好，要求冲调方便。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 25733,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 1,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 78,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 4,
+        "verified": 4,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "固体饮料（蛋白型营养粉）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "针对银发人群日常营养粉需求，推荐三条路线：保守型（浓缩乳清蛋白+乳矿物盐+菊粉）成本可控、工艺成熟；主流型（分离乳清蛋白+低聚果糖+CPP）品质升级、乳糖友好；创新型（牛奶蛋白+酵母β-葡聚糖+低聚半乳糖）差异化明显。所有方案均严格遵循普通食品合规边界，核心原料可在平台匹配供应商。建议优先从保守路线打样验证，再根据市场",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-009",
+          "tier": "P1",
+          "title": "银发营养粉",
+          "query": "做一款银发人群日常营养粉，希望支持蛋白补充、骨骼营养和肠道友好，要求冲调方便。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 25733,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 1,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 78,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 4,
+            "verified": 4,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "固体饮料（蛋白型营养粉）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "针对银发人群日常营养粉需求，推荐三条路线：保守型（浓缩乳清蛋白+乳矿物盐+菊粉）成本可控、工艺成熟；主流型（分离乳清蛋白+低聚果糖+CPP）品质升级、乳糖友好；创新型（牛奶蛋白+酵母β-葡聚糖+低聚半乳糖）差异化明显。所有方案均严格遵循普通食品合规边界，核心原料可在平台匹配供应商。建议优先从保守路线打样验证，再根据市场"
+        }
+      ]
+    },
+    {
+      "id": "GQ-010",
+      "tier": "P1",
+      "title": "免疫方向饮品",
+      "query": "开发一款日常防护场景的营养饮品，希望围绕维生素C、锌、益生菌等做卖点，但不能说增强免疫。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 24287,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 74,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 1,
+        "verified": 1,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "风味饮料 / 固体饮料",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕维生素C、锌和后生元/益生元，为‘日常防护’场景提供了三条合规的普通食品研发路线。保守路线以维生素C+锌+低聚半乳糖为核心，成本最低、风险最小；主流路线引入后生元EpiCor，在合规框架内实现差异化；创新路线则采用酵母β-葡聚糖Wellmune，打造高端营养定位。所有方案均严格规避‘日常营养’等声称，转而使用",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-010",
+          "tier": "P1",
+          "title": "免疫方向饮品",
+          "query": "开发一款日常防护场景的营养饮品，希望围绕维生素C、锌、益生菌等做卖点，但不能说增强免疫。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 24287,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 2,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 74,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 1,
+            "verified": 1,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "风味饮料 / 固体饮料",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕维生素C、锌和后生元/益生元，为‘日常防护’场景提供了三条合规的普通食品研发路线。保守路线以维生素C+锌+低聚半乳糖为核心，成本最低、风险最小；主流路线引入后生元EpiCor，在合规框架内实现差异化；创新路线则采用酵母β-葡聚糖Wellmune，打造高端营养定位。所有方案均严格规避‘日常营养’等声称，转而使用"
+        }
+      ]
+    },
+    {
+      "id": "GQ-011",
+      "tier": "P2",
+      "title": "儿童 DHA 日常营养粉",
+      "query": "开发一款儿童 DHA 成长营养粉，希望家长能理解 DHA 价值，剂型是果味固体饮料，但不能宣称提高智力、改善视力或提高学习成绩。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 27015,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 3,
+      "availableSuppliers": 3,
+      "hasUnavailablePlaceholder": false,
+      "trust": 86,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 6,
+        "verified": 6,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 2
+      },
+      "unknownIngredients": [],
+      "productType": "儿童营养固体饮料",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案围绕儿童DHA成长营养粉，提供了三条合规且可落地的配方路线。主流路线推荐‘藻油DHA+钙+维生素D’组合，以纯净、营养全面为核心卖点，规避了所有高风险声称。保守路线采用鱼油DHA+乳清蛋白，成本更低但风味挑战更大。创新路线引入益生元，打造‘脑-肠轴’差异化概念。所有方案均明确了合规边界、关键风险和平台可匹配的供应",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-011",
+          "tier": "P2",
+          "title": "儿童 DHA 日常营养粉",
+          "query": "开发一款儿童 DHA 成长营养粉，希望家长能理解 DHA 价值，剂型是果味固体饮料，但不能宣称提高智力、改善视力或提高学习成绩。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 27015,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 3,
+          "availableSuppliers": 3,
+          "hasUnavailablePlaceholder": false,
+          "trust": 86,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 6,
+            "verified": 6,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 2
+          },
+          "unknownIngredients": [],
+          "productType": "儿童营养固体饮料",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案围绕儿童DHA成长营养粉，提供了三条合规且可落地的配方路线。主流路线推荐‘藻油DHA+钙+维生素D’组合，以纯净、营养全面为核心卖点，规避了所有高风险声称。保守路线采用鱼油DHA+乳清蛋白，成本更低但风味挑战更大。创新路线引入益生元，打造‘脑-肠轴’差异化概念。所有方案均明确了合规边界、关键风险和平台可匹配的供应"
+        }
+      ]
+    },
+    {
+      "id": "GQ-012",
+      "tier": "P2",
+      "title": "Omega-3 普通食品与保健食品路径分流",
+      "query": "做一款成人 Omega-3 补充产品，希望使用鱼油或藻油原料，既想做日常营养补充，也想了解能否表达辅助降血脂等卖点。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 23090,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 3,
+      "availableSuppliers": 3,
+      "hasUnavailablePlaceholder": false,
+      "trust": 90,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 4,
+        "verified": 4,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "Omega-3补充产品",
+      "regulatoryPath": "普通食品 / 保健食品",
+      "nextStepsCount": 5,
+      "summaryExcerpt": "本方案围绕成人Omega-3补充产品，提供了三条研发路线：高EPA鱼油软胶囊（保守/日常营养型）、藻油DHA软胶囊（主流/素食营养型）、微胶囊化鱼油粉固体饮料（创新/便携型）。核心合规要点是：普通食品绝对禁止声称“日常营养”，只能描述原料本身。推荐优先考虑高EPA鱼油软胶囊路线，利用平台EPAX挪威的4030 TGN原",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-012",
+          "tier": "P2",
+          "title": "Omega-3 普通食品与保健食品路径分流",
+          "query": "做一款成人 Omega-3 补充产品，希望使用鱼油或藻油原料，既想做日常营养补充，也想了解能否表达辅助降血脂等卖点。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 23090,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 3,
+          "availableSuppliers": 3,
+          "hasUnavailablePlaceholder": false,
+          "trust": 90,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 4,
+            "verified": 4,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "Omega-3补充产品",
+          "regulatoryPath": "普通食品 / 保健食品",
+          "nextStepsCount": 5,
+          "summaryExcerpt": "本方案围绕成人Omega-3补充产品，提供了三条研发路线：高EPA鱼油软胶囊（保守/日常营养型）、藻油DHA软胶囊（主流/素食营养型）、微胶囊化鱼油粉固体饮料（创新/便携型）。核心合规要点是：普通食品绝对禁止声称“日常营养”，只能描述原料本身。推荐优先考虑高EPA鱼油软胶囊路线，利用平台EPAX挪威的4030 TGN原"
+        }
+      ]
+    },
+    {
+      "id": "GQ-013",
+      "tier": "P2",
+      "title": "运动电解质果冻 / 补水场景但不医疗化",
+      "query": "开发一款运动后食用的电解质果冻，目标用户是跑步和户外运动人群，希望主打清爽补给、低糖、便携，但不能宣称治疗脱水或快速恢复体能。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 30065,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 1,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 52,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 0,
+        "verified": 0,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "果冻（凝胶糖果/可吸果冻）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "针对运动后电解质果冻需求，提供了三条研发路线。主流路线（清爽电解质补给型）以柠檬酸钾和海盐风味为核心，口感最佳，最符合“清爽补给”定位，是打造爆品的首选。保守路线成本最低，适合快速验证。创新路线加入水解乳清蛋白，差异化强但挑战大。核心风险在于GB 14880对营养强化剂的限制，需优先复核。",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-013",
+          "tier": "P2",
+          "title": "运动电解质果冻 / 补水场景但不医疗化",
+          "query": "开发一款运动后食用的电解质果冻，目标用户是跑步和户外运动人群，希望主打清爽补给、低糖、便携，但不能宣称治疗脱水或快速恢复体能。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 30065,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 1,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 52,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 0,
+            "verified": 0,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "果冻（凝胶糖果/可吸果冻）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "针对运动后电解质果冻需求，提供了三条研发路线。主流路线（清爽电解质补给型）以柠檬酸钾和海盐风味为核心，口感最佳，最符合“清爽补给”定位，是打造爆品的首选。保守路线成本最低，适合快速验证。创新路线加入水解乳清蛋白，差异化强但挑战大。核心风险在于GB 14880对营养强化剂的限制，需优先复核。"
+        }
+      ]
+    },
+    {
+      "id": "GQ-014",
+      "tier": "P2",
+      "title": "咖啡因能量饮 / 提神场景与疲劳声称边界",
+      "query": "做一款面向加班和电竞人群的咖啡因能量饮，希望比传统能量饮更轻负担，口感不甜腻，但不能踩缓解疲劳等保健功能风险。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 26734,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 4,
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 76,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 3,
+        "verified": 3,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "风味饮料（气泡型）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕“轻负担、不甜腻”的核心需求，规划了三条普通食品路径。保守路线为经典气泡能量饮，成本低、风险可控；主流路线为代糖气泡饮，精准切中低糖痛点；创新路线引入茶氨酸平衡咖啡因刺激，差异化最强。所有方案均需严格遵守普通食品声称禁区，重点复核咖啡因警示和B族维生素的GB 14880合规性。平台目前暂无咖啡因和茶氨酸原料匹",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-014",
+          "tier": "P2",
+          "title": "咖啡因能量饮 / 提神场景与疲劳声称边界",
+          "query": "做一款面向加班和电竞人群的咖啡因能量饮，希望比传统能量饮更轻负担，口感不甜腻，但不能踩缓解疲劳等保健功能风险。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 26734,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 4,
+          "suppliers": 2,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 76,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 3,
+            "verified": 3,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "风味饮料（气泡型）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕“轻负担、不甜腻”的核心需求，规划了三条普通食品路径。保守路线为经典气泡能量饮，成本低、风险可控；主流路线为代糖气泡饮，精准切中低糖痛点；创新路线引入茶氨酸平衡咖啡因刺激，差异化最强。所有方案均需严格遵守普通食品声称禁区，重点复核咖啡因警示和B族维生素的GB 14880合规性。平台目前暂无咖啡因和茶氨酸原料匹"
+        }
+      ]
+    },
+    {
+      "id": "GQ-015",
+      "tier": "P2",
+      "title": "饮酒场景软糖 / 解酒护肝高风险表达",
+      "query": "开发一款聚餐饮酒场景的软糖，希望使用葛根、枳椇子、维生素等原料，想做成轻社交产品，但不能说解酒、护肝或保护肝脏。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 29398,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 3,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 78,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 1,
+        "verified": 1,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "凝胶糖果（软糖）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕聚餐饮酒场景，提供了三条普通食品路径的软糖配方思路。核心策略是放弃功能声称，将产品定位为“社交小食”，通过风味和口感创新来满足场景需求。保守路线（清爽果味型）最安全、上市最快；主流路线（微气泡型）口感差异化强；创新路线（高纤饱腹型）则切入健康零食赛道。所有方案均需严格规避“聚会场景、聚会场景”等高风险声称，并",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-015",
+          "tier": "P2",
+          "title": "饮酒场景软糖 / 解酒护肝高风险表达",
+          "query": "开发一款聚餐饮酒场景的软糖，希望使用葛根、枳椇子、维生素等原料，想做成轻社交产品，但不能说解酒、护肝或保护肝脏。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 29398,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 3,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 78,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 1,
+            "verified": 1,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "凝胶糖果（软糖）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕聚餐饮酒场景，提供了三条普通食品路径的软糖配方思路。核心策略是放弃功能声称，将产品定位为“社交小食”，通过风味和口感创新来满足场景需求。保守路线（清爽果味型）最安全、上市最快；主流路线（微气泡型）口感差异化强；创新路线（高纤饱腹型）则切入健康零食赛道。所有方案均需严格规避“聚会场景、聚会场景”等高风险声称，并"
+        }
+      ]
+    },
+    {
+      "id": "GQ-016",
+      "tier": "P2",
+      "title": "更年期女性营养粉 / 情绪睡眠骨骼多风险叠加",
+      "query": "做一款面向 45 岁以上女性的日常营养粉，希望关注骨骼营养、轻负担和日常状态管理，但不能宣称调节激素、改善睡眠或缓解更年期症状。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 31089,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 74,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 5,
+        "verified": 5,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "固体饮料/蛋白粉",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕45+女性日常营养粉，提供了三条从保守到创新的研发路线。核心思路是以乳清蛋白和乳矿物盐为基础，满足‘骨骼营养’和‘日常状态管理’需求。保守路线法规风险最低，主流路线通过Pep2Dia和菊粉强化‘轻负担’卖点，创新路线则引入初乳碱性蛋白和MFGM打造高端差异化。所有方案均严格规避了激素、睡眠、更年期等高风险声称",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-016",
+          "tier": "P2",
+          "title": "更年期女性营养粉 / 情绪睡眠骨骼多风险叠加",
+          "query": "做一款面向 45 岁以上女性的日常营养粉，希望关注骨骼营养、轻负担和日常状态管理，但不能宣称调节激素、改善睡眠或缓解更年期症状。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 31089,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 2,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 74,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 5,
+            "verified": 5,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "固体饮料/蛋白粉",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕45+女性日常营养粉，提供了三条从保守到创新的研发路线。核心思路是以乳清蛋白和乳矿物盐为基础，满足‘骨骼营养’和‘日常状态管理’需求。保守路线法规风险最低，主流路线通过Pep2Dia和菊粉强化‘轻负担’卖点，创新路线则引入初乳碱性蛋白和MFGM打造高端差异化。所有方案均严格规避了激素、睡眠、更年期等高风险声称"
+        }
+      ]
+    },
+    {
+      "id": "GQ-017",
+      "tier": "P2",
+      "title": "低钠调味粉 / 健康厨房但不疾病化",
+      "query": "开发一款家庭厨房用低钠调味粉，希望减少钠摄入，同时保留鲜味，目标是中老年家庭，但不能宣称降血压或预防心血管疾病。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 26170,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 3,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 52,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 0,
+        "verified": 0,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "复合调味粉（固态复合调味料）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕‘减盐不减鲜’核心，推荐‘鲜味协同型’路线，通过氯化钾替代部分食盐，并利用酵母抽提物和菌菇粉的鲜味协同效应，有效掩蔽苦味，提升风味厚度。方案明确了低钠声称的法规边界和禁用词，并指出了平台当前在调味基料供应商匹配上的缺口。下一步建议优先进行打样验证和供应商寻源。",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-017",
+          "tier": "P2",
+          "title": "低钠调味粉 / 健康厨房但不疾病化",
+          "query": "开发一款家庭厨房用低钠调味粉，希望减少钠摄入，同时保留鲜味，目标是中老年家庭，但不能宣称降血压或预防心血管疾病。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 26170,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 3,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 52,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 0,
+            "verified": 0,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "复合调味粉（固态复合调味料）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕‘减盐不减鲜’核心，推荐‘鲜味协同型’路线，通过氯化钾替代部分食盐，并利用酵母抽提物和菌菇粉的鲜味协同效应，有效掩蔽苦味，提升风味厚度。方案明确了低钠声称的法规边界和禁用词，并指出了平台当前在调味基料供应商匹配上的缺口。下一步建议优先进行打样验证和供应商寻源。"
+        }
+      ]
+    },
+    {
+      "id": "GQ-018",
+      "tier": "P2",
+      "title": "膳食纤维气泡水 / 饱腹与体重管理边界",
+      "query": "做一款含膳食纤维的低糖气泡水，希望有轻饱腹感，适合下午茶和控糖人群，但不能说减肥、燃脂或降血糖。",
+      "attempt": 2,
+      "ok": true,
+      "duration_ms": 28200,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 4,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 74,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 3,
+        "verified": 3,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "气泡水（碳酸饮料）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕‘含膳食纤维的低糖气泡水’需求，提供了三条研发路线。保守路线采用聚葡萄糖+赤藓糖醇，成本低、工艺成熟。主流路线推荐抗性糊精+柑橘纤维，口感清爽、稳定性好，是当前市场最优解。创新路线使用菊粉+魔芋胶，饱腹感强但口感挑战大。所有方案均严格规避了减肥、降血糖等违规声称，并提供了合规的标签和宣传建议。",
+      "attempts": 2,
+      "attemptResults": [
+        {
+          "id": "GQ-018",
+          "tier": "P2",
+          "title": "膳食纤维气泡水 / 饱腹与体重管理边界",
+          "query": "做一款含膳食纤维的低糖气泡水，希望有轻饱腹感，适合下午茶和控糖人群，但不能说减肥、燃脂或降血糖。",
+          "attempt": 1,
+          "ok": false,
+          "duration_ms": 29663,
+          "hasBrief": false,
+          "routes": 0,
+          "checks": 0,
+          "suppliers": 0,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": false,
+          "trust": null,
+          "riskyAllowed": [],
+          "errors": [
+            "未检测到结构化方案包，已保留 Markdown 输出"
+          ],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 5,
+            "verified": 5,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": null,
+          "regulatoryPath": null,
+          "nextStepsCount": 0,
+          "summaryExcerpt": ""
+        },
+        {
+          "id": "GQ-018",
+          "tier": "P2",
+          "title": "膳食纤维气泡水 / 饱腹与体重管理边界",
+          "query": "做一款含膳食纤维的低糖气泡水，希望有轻饱腹感，适合下午茶和控糖人群，但不能说减肥、燃脂或降血糖。",
+          "attempt": 2,
+          "ok": true,
+          "duration_ms": 28200,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 4,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 74,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 3,
+            "verified": 3,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "气泡水（碳酸饮料）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕‘含膳食纤维的低糖气泡水’需求，提供了三条研发路线。保守路线采用聚葡萄糖+赤藓糖醇，成本低、工艺成熟。主流路线推荐抗性糊精+柑橘纤维，口感清爽、稳定性好，是当前市场最优解。创新路线使用菊粉+魔芋胶，饱腹感强但口感挑战大。所有方案均严格规避了减肥、降血糖等违规声称，并提供了合规的标签和宣传建议。"
+        }
+      ]
+    },
+    {
+      "id": "GQ-019",
+      "tier": "P2",
+      "title": "植物甾醇酸奶 / 普通食品与保健路径分流",
+      "query": "开发一款添加植物甾醇酯的酸奶，希望面向关注血脂和心血管健康的成年人，但想先按普通食品路径评估能怎么表达。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 30178,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "hasUnavailablePlaceholder": true,
+      "trust": 70,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 2,
+        "verified": 2,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 1
+      },
+      "unknownIngredients": [],
+      "productType": "风味发酵乳 / 酸奶",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "本方案围绕‘植物甾醇酯酸奶’在普通食品路径下的合规表达展开，核心结论是必须放弃所有与血脂、心血管相关的声称。我们推荐了三条路线：保守的‘低脂轻负担型’、主流的‘高蛋白营养型’和创新的‘微囊化技术型’。主要风险在于声称红线、原料合规性复核以及脂溶性原料在酸奶体系中的工艺稳定性。平台目前暂无植物甾醇酯供应商匹配，需外部寻源",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-019",
+          "tier": "P2",
+          "title": "植物甾醇酸奶 / 普通食品与保健路径分流",
+          "query": "开发一款添加植物甾醇酯的酸奶，希望面向关注血脂和心血管健康的成年人，但想先按普通食品路径评估能怎么表达。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 30178,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 2,
+          "suppliers": 2,
+          "availableSuppliers": 0,
+          "hasUnavailablePlaceholder": true,
+          "trust": 70,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 2,
+            "verified": 2,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 1
+          },
+          "unknownIngredients": [],
+          "productType": "风味发酵乳 / 酸奶",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "本方案围绕‘植物甾醇酯酸奶’在普通食品路径下的合规表达展开，核心结论是必须放弃所有与血脂、心血管相关的声称。我们推荐了三条路线：保守的‘低脂轻负担型’、主流的‘高蛋白营养型’和创新的‘微囊化技术型’。主要风险在于声称红线、原料合规性复核以及脂溶性原料在酸奶体系中的工艺稳定性。平台目前暂无植物甾醇酯供应商匹配，需外部寻源"
+        }
+      ]
+    },
+    {
+      "id": "GQ-020",
+      "tier": "P2",
+      "title": "烘焙友好蛋白早餐饼 / 高蛋白但不健身药效化",
+      "query": "做一款适合早餐和办公室场景的高蛋白烘焙饼，想兼顾口感、饱腹和低糖，希望不粉不硬，适合女性和轻健身人群。",
+      "attempt": 1,
+      "ok": true,
+      "duration_ms": 27798,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 3,
+      "availableSuppliers": 3,
+      "hasUnavailablePlaceholder": false,
+      "trust": 98,
+      "riskyAllowed": [],
+      "errors": [],
+      "sawDone": true,
+      "markdownHasJsonFence": false,
+      "statuses": [
+        "正在整理结构化方案卡片…",
+        "结构化方案卡片已生成"
+      ],
+      "verificationPresent": true,
+      "verificationSummary": {
+        "total": 1,
+        "verified": 1,
+        "notFound": 0,
+        "healthFoodOnly": 0,
+        "caution": 0
+      },
+      "unknownIngredients": [],
+      "productType": "高蛋白烘焙饼（软曲奇形态）",
+      "regulatoryPath": "普通食品",
+      "nextStepsCount": 6,
+      "summaryExcerpt": "针对早餐和办公室场景的高蛋白烘焙饼，推荐采用“高蛋白软曲奇”路线，利用Glanbia的BarFlex 181蛋白棒专用原料解决干硬问题，配合燕麦纤维和甘油实现湿润、饱腹、低糖的目标。同时提供了保守的脆饼路线和创新的谷物能量饼路线作为备选。方案重点提示了高蛋白和低糖声称的法规条件，以及质构老化和原料合规性等关键风险。",
+      "attempts": 1,
+      "attemptResults": [
+        {
+          "id": "GQ-020",
+          "tier": "P2",
+          "title": "烘焙友好蛋白早餐饼 / 高蛋白但不健身药效化",
+          "query": "做一款适合早餐和办公室场景的高蛋白烘焙饼，想兼顾口感、饱腹和低糖，希望不粉不硬，适合女性和轻健身人群。",
+          "attempt": 1,
+          "ok": true,
+          "duration_ms": 27798,
+          "hasBrief": true,
+          "routes": 3,
+          "checks": 3,
+          "suppliers": 3,
+          "availableSuppliers": 3,
+          "hasUnavailablePlaceholder": false,
+          "trust": 98,
+          "riskyAllowed": [],
+          "errors": [],
+          "sawDone": true,
+          "markdownHasJsonFence": false,
+          "statuses": [
+            "正在整理结构化方案卡片…",
+            "结构化方案卡片已生成"
+          ],
+          "verificationPresent": true,
+          "verificationSummary": {
+            "total": 1,
+            "verified": 1,
+            "notFound": 0,
+            "healthFoodOnly": 0,
+            "caution": 0
+          },
+          "unknownIngredients": [],
+          "productType": "高蛋白烘焙饼（软曲奇形态）",
+          "regulatoryPath": "普通食品",
+          "nextStepsCount": 6,
+          "summaryExcerpt": "针对早餐和办公室场景的高蛋白烘焙饼，推荐采用“高蛋白软曲奇”路线，利用Glanbia的BarFlex 181蛋白棒专用原料解决干硬问题，配合燕麦纤维和甘油实现湿润、饱腹、低糖的目标。同时提供了保守的脆饼路线和创新的谷物能量饼路线作为备选。方案重点提示了高蛋白和低糖声称的法规条件，以及质构老化和原料合规性等关键风险。"
+        }
+      ]
+    }
+  ]
+}

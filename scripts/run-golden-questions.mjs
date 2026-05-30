@@ -5,6 +5,10 @@ const ENDPOINT = `${BASE_URL}/api/ai-recommend`;
 const TIMEOUT_MS = Number(process.env.GOLDEN_TIMEOUT_MS || 120_000);
 const MAX_RETRIES = Number(process.env.GOLDEN_RETRIES ?? 1);
 const RUN_SET = process.env.GOLDEN_SET === "all" || process.argv.includes("--all") ? "all" : "p0";
+const SELECTED_IDS = (process.env.GOLDEN_IDS || "")
+  .split(",")
+  .map((id) => id.trim().toUpperCase())
+  .filter(Boolean);
 
 const ALL_GOLDEN_QUESTIONS = [
   {
@@ -129,9 +133,15 @@ const ALL_GOLDEN_QUESTIONS = [
   },
 ];
 
-const GOLDEN_QUESTIONS = RUN_SET === "all"
+const BASE_GOLDEN_QUESTIONS = RUN_SET === "all"
   ? ALL_GOLDEN_QUESTIONS
   : ALL_GOLDEN_QUESTIONS.filter((question) => question.tier === "P0");
+
+const GOLDEN_QUESTIONS = SELECTED_IDS.length
+  ? BASE_GOLDEN_QUESTIONS.filter((question) => SELECTED_IDS.includes(question.id))
+  : BASE_GOLDEN_QUESTIONS;
+
+const UNKNOWN_SELECTED_IDS = SELECTED_IDS.filter((id) => !ALL_GOLDEN_QUESTIONS.some((question) => question.id === id));
 
 const RISK_TERMS = [
   "改善睡眠", "助眠", "增强免疫", "提高免疫", "调节肠道菌群", "改善消化", "肠道健康",
@@ -355,7 +365,14 @@ async function main() {
   console.log(`Questions in run: ${GOLDEN_QUESTIONS.length}`);
   console.log(`Timeout per question: ${TIMEOUT_MS}ms`);
   console.log(`Retries per question: ${MAX_RETRIES}`);
+  if (SELECTED_IDS.length) console.log(`Selected IDs: ${SELECTED_IDS.join(",")}`);
+  if (UNKNOWN_SELECTED_IDS.length) console.log(`Unknown selected IDs: ${UNKNOWN_SELECTED_IDS.join(",")}`);
   console.log("");
+
+  if (UNKNOWN_SELECTED_IDS.length) {
+    process.exitCode = 1;
+    return;
+  }
 
   const results = [];
   for (const question of GOLDEN_QUESTIONS) {
