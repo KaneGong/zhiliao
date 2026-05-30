@@ -153,7 +153,7 @@ export function buildPublicEvidenceIngredientPromptBlock(query: string, limit = 
   lines.push("普通食品可讨论原料事实、营养事实、配方属性、食用场景和感官体验；高风险功效词必须放入 prohibited/risky 或人工复核点。官方来源未覆盖的点必须写‘待复核’。confidence 为 reference_only 或 supplier_public、或 manual_review_required=true 的卡片，不得表述为“法规清晰/法规明确/已验证”。");
 
   if (cards.length === 0) {
-    lines.push("未命中证据卡：当前 Public Evidence v1 未收录完整原料卡。你必须保守处理，提示‘当前证据库未收录完整卡片，需人工复核/待复核’，不得给确定性合规结论，不得把未知原料说成已验证。");
+    lines.push("未命中证据卡：当前 Public Evidence v1 未收录完整原料卡。你必须保守处理，提示‘当前证据库未收录完整卡片，需人工复核/待复核’，不得给确定性合规结论，不得把未知原料说成已验证。但不要因此停止给研发方案；可以继续给产品形态、风味、工艺、成本和替代原料路线，只要把法规身份、用量和对外声称标为待复核。");
     return lines.join("\n");
   }
 

@@ -147,3 +147,9 @@ dig +short zhiliao-ai.cn
 - 新增 `src/lib/public-evidence.ts` loader，将命中证据卡注入 `/recommend`，将法规路径地图和未收录处理规则注入 `/regulations`。
 - 约束 AI：Public Evidence 不等于 Supplier Verified；非官方/供应商公开资料不得当成确定性法规结论；未知原料走“未收录/待复核”。
 - 本地 `npm run verify`、页面 smoke、Golden 子集和法规专项查询均通过。
+
+### 2026-05-30 晚 — Public Evidence v1 第二批扩展与表达硬化
+- Public Evidence 原料证据卡从 20 张扩展到 30 张，新增咖啡因、牛磺酸、维生素 B6、镁、钾盐、聚葡萄糖、抗性糊精、赤藓糖醇、葛根、枳椇子。
+- 新增上线状态说明：`docs/tasks/public-evidence-v1-status-2026-05-30.md`。
+- Formula Brief 增加“证据不足也要给可打样研发路线，但把法规/用量/标签/供应商标为待复核”的风格约束。
+- 修复输出清洗副作用：负面风险语境中的“解酒/护肝”等禁词不再被替换成奇怪表达；只清洗过度确定和正向功效暗示。

@@ -2,7 +2,7 @@
 
 > Last checked: 2026-05-30
 
-首批 20 个高频/高风险原料证据卡。卡片用于降低 AI 幻觉和声称越界风险；不等于供应商已索资或产品最终合规结论。
+当前 30 个高频/高风险原料证据卡（首批 20 个 + 第二批 10 个）。卡片用于降低 AI 幻觉和声称越界风险；不等于供应商已索资或产品最终合规结论。
 
 ## GABA（γ-氨基丁酸）
 
@@ -668,4 +668,346 @@
   - `SRC-NHC-PROBIOTIC-2025-INTERP` — D-阿洛酮糖等20种“三新食品”公告解读：婴幼儿食品菌种相关条目
   - `SRC-NOVONESIS-BB12` — Novonesis B. lactis BB-12
   - `SRC-IFF-HOWARU` — IFF HOWARU Probiotics
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+
+---
+
+## 第二批扩展（2026-05-30）
+
+## 咖啡因 / 茶咖啡因
+
+- ID: `PE-CAFFEINE`
+- Aliases: 咖啡因, 茶咖啡因, Caffeine, 咖啡提取物, 茶提取物
+- Regulatory identity: 需区分天然含咖啡因原料、食品添加剂/香料路径和特殊用途；具体使用范围需按现行 GB 2760、产品类别和标签要求复核
+- Applicable paths: `food_additive`, `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 咖啡/茶饮料
+  - 能量场景饮品
+  - 低糖提神场景产品
+- Prohibited / risky expressions:
+  - 提神醒脑
+  - 增强精力
+  - 缓解疲劳
+  - 提高专注力
+  - 抗疲劳
+  - 熬夜神器
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 儿童、孕妇、哺乳期、咖啡因敏感人群标签提示需人工复核；实际咖啡因含量和每日摄入提醒需按品类法规/标准确认。
+- Manual review points:
+  - 确认咖啡因来源是天然原料还是添加剂/香料路径
+  - 确认目标食品类别和最大使用量
+  - 确认是否触碰保健食品缓解疲劳声称
+  - 复核儿童、孕妇等敏感人群提示
+- Sources:
+  - `SRC-OPENSTD-GB2760` — GB 2760 食品安全国家标准 食品添加剂使用标准（标准公开系统入口）
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 牛磺酸
+
+- ID: `PE-TAURINE`
+- Aliases: 牛磺酸, Taurine
+- Regulatory identity: 营养强化剂路径常见原料，需按 GB 14880 核对允许食品类别、化合物来源和用量；不自动等于功能声称
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 运动/能量场景饮品
+  - 营养强化饮料
+  - 固体饮料
+- Prohibited / risky expressions:
+  - 抗疲劳
+  - 增强体力
+  - 提高精力
+  - 保护心脏
+  - 改善视力
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 儿童、孕妇、特殊人群使用需人工复核；营养强化剂用量和标签条件需按产品类别确认。
+- Manual review points:
+  - 核对 GB 14880 允许食品类别和用量
+  - 确认是否属于特殊膳食或运动营养食品路径
+  - 不得把牛磺酸推导为缓解疲劳或增强体力
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 维生素 B6
+
+- ID: `PE-VITAMIN-B6`
+- Aliases: 维生素B6, Vitamin B6, 吡哆醇, 盐酸吡哆醇
+- Regulatory identity: 营养强化剂，需按 GB 14880 核对食品类别、化合物来源、添加量和营养标签条件
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 营养强化饮品
+  - 固体饮料
+  - 代餐/运动营养配方
+  - 聚会场景营养软糖
+- Prohibited / risky expressions:
+  - 解酒
+  - 护肝
+  - 缓解疲劳
+  - 改善睡眠
+  - 调节情绪
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 营养素含量、NRV% 和声称条件需按 GB 28050 复核；不得用 B6 承接疾病或保健功能表达。
+- Manual review points:
+  - 核对食品类别是否允许强化
+  - 核对化合物来源和添加量范围
+  - 核对营养声称条件
+  - 聚会/饮酒场景不得引申为解酒护肝
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 镁
+
+- ID: `PE-MAGNESIUM`
+- Aliases: 镁, Magnesium, 氧化镁, 柠檬酸镁, 乳酸镁
+- Regulatory identity: 矿物质营养强化剂，需按 GB 14880 核对食品类别、化合物来源和用量；不同镁盐适用性需复核
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 运动电解质产品
+  - 营养粉
+  - 固体饮料
+  - 银发/女性营养配方
+- Prohibited / risky expressions:
+  - 改善睡眠
+  - 放松神经
+  - 缓解焦虑
+  - 改善抽筋
+  - 治疗缺镁
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 不同镁源的允许使用范围、胃肠耐受性和标签声称条件需复核。
+- Manual review points:
+  - 核对食品类别和镁源是否列入 GB 14880
+  - 核对添加量、NRV 和营养声称条件
+  - 不得将镁直接表达为助眠/放松/治疗抽筋
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 钾 / 氯化钾 / 柠檬酸钾
+
+- ID: `PE-POTASSIUM-SALTS`
+- Aliases: 钾, 氯化钾, 柠檬酸钾, Potassium, Potassium chloride
+- Regulatory identity: 需区分营养强化剂、电解质盐、食品添加剂/配料路径；低钠调味或运动补给场景需按具体食品类别和标准复核
+- Applicable paths: `nutrient_fortifier`, `food_additive`, `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 低钠调味粉
+  - 运动电解质果冻/饮料
+  - 营养强化饮品
+- Prohibited / risky expressions:
+  - 降血压
+  - 保护心血管
+  - 治疗脱水
+  - 快速恢复体能
+  - 预防抽筋
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 肾病、限钾人群相关标签和风险提示需人工复核；低钠/减盐声称需满足标签标准。
+- Manual review points:
+  - 确认钾盐使用路径和食品类别
+  - 确认低钠/减盐标签条件
+  - 确认目标人群是否涉及限钾风险
+  - 不得表达降血压或治疗脱水
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-OPENSTD-GB2760` — GB 2760 食品安全国家标准 食品添加剂使用标准（标准公开系统入口）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 聚葡萄糖
+
+- ID: `PE-POLYDEXTROSE`
+- Aliases: 聚葡萄糖, Polydextrose
+- Regulatory identity: 常见膳食纤维/食品添加剂路径原料，需按现行标准核对食品类别、使用目的、添加量和标签声称条件
+- Applicable paths: `food_additive`, `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 膳食纤维气泡水
+  - 代餐奶昔
+  - 低糖零食
+  - 烘焙产品
+- Prohibited / risky expressions:
+  - 减肥
+  - 降糖
+  - 控血糖
+  - 改善肠道菌群
+  - 润肠通便
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 膳食纤维声称、含量标示和胃肠耐受提示需按 GB 28050 和产品标准复核。
+- Manual review points:
+  - 确认是否作为食品添加剂或配料使用
+  - 核对食品类别与使用量
+  - 核对膳食纤维声称条件
+  - 不得表达减肥/降糖/改善肠道菌群
+- Sources:
+  - `SRC-OPENSTD-GB2760` — GB 2760 食品安全国家标准 食品添加剂使用标准（标准公开系统入口）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 抗性糊精
+
+- ID: `PE-RESISTANT-DEXTRIN`
+- Aliases: 抗性糊精, Resistant dextrin, 难消化糊精
+- Regulatory identity: 常见可溶性膳食纤维原料，具体普通食品适用性、指标和标签声称需按标准/公告与产品类别人工复核
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 膳食纤维饮料
+  - 气泡水
+  - 代餐粉
+  - 低糖零食
+- Prohibited / risky expressions:
+  - 减肥
+  - 降血糖
+  - 控血糖
+  - 改善便秘
+  - 调节肠道菌群
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 高添加量可能影响口感和胃肠耐受；膳食纤维声称需满足 GB 28050 条件。
+- Manual review points:
+  - 确认抗性糊精食品属性和执行标准
+  - 确认目标品类能否添加及添加量
+  - 核对膳食纤维声称条件
+  - 不得直接表达减肥/降糖/改善肠道功能
+- Sources:
+  - `SRC-NHC-NEWFOOD-CATALOG-2023` — 三新食品目录及适用的食品安全标准公告解读 / 目录 PDF
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 赤藓糖醇
+
+- ID: `PE-ERYTHRITOL`
+- Aliases: 赤藓糖醇, Erythritol
+- Regulatory identity: 甜味剂/糖醇类原料，需按食品添加剂标准核对食品类别、使用原则和标签标示；不得由低糖推导功能效果
+- Applicable paths: `food_additive`, `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 低糖饮料
+  - 无糖软糖
+  - 代餐/零食
+  - 气泡水
+- Prohibited / risky expressions:
+  - 减肥
+  - 控血糖
+  - 降糖
+  - 适合糖尿病
+  - 不升糖
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 糖醇添加量较高时可能涉及胃肠耐受提示；低糖/无糖声称需满足 GB 28050 条件。
+- Manual review points:
+  - 核对 GB 2760 食品类别与使用规定
+  - 核对低糖/无糖标签条件
+  - 确认是否需要糖醇耐受提示
+  - 不得表达降糖或糖尿病适用
+- Sources:
+  - `SRC-OPENSTD-GB2760` — GB 2760 食品安全国家标准 食品添加剂使用标准（标准公开系统入口）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 葛根 / 葛根提取物
+
+- ID: `PE-PUERARIA`
+- Aliases: 葛根, 葛根粉, 葛根提取物, Pueraria
+- Regulatory identity: 可能涉及食药物质/传统食用物质路径；提取物与普通葛根粉不能直接等同，具体使用部位、加工方式和产品类别需人工复核
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 聚会场景软糖
+  - 草本风味饮品
+  - 固体饮料
+- Prohibited / risky expressions:
+  - 解酒
+  - 醒酒
+  - 护肝
+  - 保护肝脏
+  - 降低酒精伤害
+  - 降血压
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 葛根提取物与葛根粉法规身份可能不同；使用部位、提取工艺、添加量和地方监管口径需人工复核。
+- Manual review points:
+  - 确认是否列入食药物质目录及允许部位
+  - 确认提取物是否仍可按普通食品处理
+  - 饮酒场景不得表达解酒/护肝
+  - 核对标签是否暗示保健功能
+- Sources:
+  - `SRC-NHC-FOOD-MEDICINE-CATALOG-ENTRY` — 按照传统既是食品又是中药材的物质目录管理入口
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 枳椇子 / 枳椇子提取物
+
+- ID: `PE-HOVENIA-DULCIS`
+- Aliases: 枳椇子, 枳椇子提取物, Hovenia dulcis
+- Regulatory identity: 可能涉及食药物质/地方传统食用路径；提取物、浓缩物和普通原料不能直接等同，需人工确认食品属性
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 聚会场景软糖
+  - 草本饮品
+  - 固体饮料
+- Prohibited / risky expressions:
+  - 解酒
+  - 醒酒
+  - 护肝
+  - 保护肝脏
+  - 促进酒精代谢
+  - 降低酒精伤害
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 食药物质目录、使用部位、提取工艺、目标食品类别及地方监管口径均需复核。
+- Manual review points:
+  - 确认是否列入可食用目录及允许部位
+  - 确认提取物/浓缩粉食品属性
+  - 不得表达解酒护肝或酒精代谢
+  - 复核渠道话术和直播表达
+- Sources:
+  - `SRC-NHC-FOOD-MEDICINE-CATALOG-ENTRY` — 按照传统既是食品又是中药材的物质目录管理入口
   - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答

@@ -118,5 +118,21 @@
     "publisher": "BENEO",
     "url": "https://www.beneo.com/Ingredients/Human-Nutrition/Prebiotic-Fibers/Orafti-Inulin",
     "notes": "供应商公开页面，用于菊粉/低聚果糖应用方向参考。"
+  },
+  {
+    "id": "SRC-OPENSTD-GB2760",
+    "title": "GB 2760 食品安全国家标准 食品添加剂使用标准（标准公开系统入口）",
+    "type": "official_standard_index",
+    "publisher": "国家标准全文公开系统 / 国家市场监督管理总局、国家卫生健康委",
+    "url": "https://openstd.samr.gov.cn/",
+    "notes": "用于食品添加剂路径入口；具体食品类别、功能类别和最大使用量必须回到现行有效标准正文人工复核。"
+  },
+  {
+    "id": "SRC-NHC-FOOD-MEDICINE-CATALOG-ENTRY",
+    "title": "按照传统既是食品又是中药材的物质目录管理入口",
+    "type": "official_catalog_index",
+    "publisher": "国家卫生健康委 / 国家市场监督管理总局",
+    "url": "https://www.nhc.gov.cn/sps/",
+    "notes": "用于食药物质/药食同源路径入口；具体物质是否列入目录、使用部位、使用方式和地方口径需人工复核。"
   }
 ]

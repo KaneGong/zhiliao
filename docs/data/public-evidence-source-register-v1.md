@@ -108,3 +108,22 @@ Public Evidence v1 只把官方法规/国家标准/供应商官网或官方资�
 - Publisher: BENEO
 - URL: https://www.beneo.com/Ingredients/Human-Nutrition/Prebiotic-Fibers/Orafti-Inulin
 - Notes: 供应商公开页面，用于菊粉/低聚果糖应用方向参考。
+
+
+---
+
+## 第二批扩展来源（2026-05-30）
+
+## SRC-OPENSTD-GB2760 — GB 2760 食品安全国家标准 食品添加剂使用标准（标准公开系统入口）
+
+- Type: `official_standard_index`
+- Publisher: 国家标准全文公开系统 / 国家市场监督管理总局、国家卫生健康委
+- URL: https://openstd.samr.gov.cn/
+- Notes: 用于食品添加剂路径入口；具体食品类别、功能类别和最大使用量必须回到现行有效标准正文人工复核。
+
+## SRC-NHC-FOOD-MEDICINE-CATALOG-ENTRY — 按照传统既是食品又是中药材的物质目录管理入口
+
+- Type: `official_catalog_index`
+- Publisher: 国家卫生健康委 / 国家市场监督管理总局
+- URL: https://www.nhc.gov.cn/sps/
+- Notes: 用于食药物质/药食同源路径入口；具体物质是否列入目录、使用部位、使用方式和地方口径需人工复核。

@@ -569,6 +569,9 @@ function inferSafeClaimExpressions(query: string, productType: string): string[]
 
 function sanitizePositiveMarketingText(text: string): string {
   return text
+    .replace(/原料合规性明确|合规性明确|合规性清晰|合规清晰|法规最清晰|法规清晰|法规明确|法规路径清晰|合规路径清晰|合规无忧|完全合规|已验证/g, "法规边界需按目标食品类别复核")
+    .replace(/体感明确|体感好|体感模糊|体感|功效明确|效果明显|功效感/g, "体验定位需打样验证")
+    .replace(/脑力营养|益智营养|聪明成长|学习力|专注力|视力改善|成长发育/g, "日常营养")
     .replace(/水光肌|水光感|水光/g, "清爽轻负担")
     .replace(/内服补水|皮肤喝饱水|补水|锁水/g, "日常饮用")
     .replace(/美容养颜|改善皮肤|逆龄|抗衰老|抗衰|抗氧化|抗氧/g, "成分故事")
@@ -584,6 +587,9 @@ function sanitizePositiveMarketingText(text: string): string {
 
 export function sanitizeFormulaBriefMarkdown(markdown: string): string {
   return markdown
+    .replace(/原料合规性明确|合规性明确|合规性清晰|合规清晰|法规最清晰|法规清晰|法规明确|法规路径清晰|合规路径清晰|合规无忧|完全合规|已验证/g, "法规边界需按目标食品类别复核")
+    .replace(/体感明确|体感好|体感模糊|体感|功效明确|效果明显|功效感/g, "体验定位需打样验证")
+    .replace(/脑力营养|益智营养|聪明成长|学习力|专注力|视力改善|成长发育/g, "日常营养")
     .replace(/情绪舒缓/g, "风味体验")
     .replace(/增强放松感/g, "保持温和风味")
     .replace(/帮助放松/g, "营造夜间仪式感")
