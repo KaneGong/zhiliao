@@ -66,32 +66,54 @@ export default function Home() {
           <div className="live-panel">
             <div className="window-head">
               <span className="dot amber" /><span className="dot green" /><span className="dot red" />
-              <b>LIVE FORMULA ENGINE</b>
+              <b>OUTPUT PREVIEW</b>
             </div>
             <div className="engine-card">
-              <div className="engine-row top">
-                <div>
-                  <h3>核心原料建议</h3>
-                  <p>GABA · 放松情绪</p>
-                  <p>酸枣仁提取物 · 中式心智</p>
-                  <p>镁元素 · 睡眠支持</p>
-                </div>
-                <span className="pill amber">AI 生成中</span>
+              <div className="preview-intro">
+                <p className="eyebrow accent">示例输出预览</p>
+                <h3>输入一个产品想法后，知料会这样拆解。</h3>
+                <p>下面是动画演示，不是固定结论。真实结果会根据你的需求、原料库和法规信息重新生成。</p>
               </div>
-              <div className="engine-row">
-                <div>
-                  <h3>方案可信度</h3>
+
+              <div className="demo-flow" aria-label="知料 AI 输出内容示例">
+                <div className="demo-step step-one">
+                  <span className="step-index">01</span>
+                  <div>
+                    <b>理解需求</b>
+                    <p>儿童益生菌 · 普通食品路径 · 低糖剂型</p>
+                  </div>
+                </div>
+                <div className="demo-step step-two">
+                  <span className="step-index">02</span>
+                  <div>
+                    <b>推荐原料组合</b>
+                    <p>鼠李糖乳杆菌 HN001 · 低聚半乳糖 · 果胶</p>
+                  </div>
+                </div>
+                <div className="demo-step step-three">
+                  <span className="step-index">03</span>
+                  <div>
+                    <b>检查合规与风险</b>
+                    <p>菌株适用范围、声称边界、稳定性验证</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="engine-row confidence-card">
+                <div className="min-w-0">
+                  <h3>方案可信度会同步给出</h3>
                   <Metric label="法规匹配" value="78%" />
                   <Metric label="供应商可得性" value="64%" />
                   <Metric label="证据完整度" value="71%" />
                 </div>
-                <span className="pill green">可继续</span>
+                <span className="pill green">示例</span>
               </div>
+
               <div className="engine-row compact">
-                <h3>下一步追问</h3>
+                <h3>还能继续追问和收敛方案</h3>
                 <div className="prompt-row">
                   <span>目标单粒成本？</span>
-                  <span>是否允许保健食品路径？</span>
+                  <span>是否允许新食品原料？</span>
                   <span>要不要低糖配方？</span>
                 </div>
               </div>
@@ -295,7 +317,79 @@ export default function Home() {
         .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
         .dot.amber { background: #f0a550; } .dot.green { background: #64b987; } .dot.red { background: #e07373; }
         .engine-card { padding: 18px; display: grid; gap: 14px; }
+        .preview-intro {
+          border: 1px solid rgba(240,165,80,.13);
+          border-radius: 14px;
+          padding: 16px;
+          background:
+            linear-gradient(135deg, rgba(240,165,80,.10), transparent 54%),
+            rgba(255,255,255,.025);
+        }
+        .preview-intro h3 { margin: 0; color: #f2ede4; font-size: 17px; line-height: 1.35; }
+        .preview-intro p:not(.eyebrow) { margin: 9px 0 0; color: #9f9483; font-size: 12px; line-height: 1.65; }
+        .demo-flow {
+          position: relative;
+          display: grid;
+          gap: 10px;
+          padding: 4px 0;
+        }
+        .demo-flow::before {
+          content: "";
+          position: absolute;
+          left: 17px;
+          top: 16px;
+          bottom: 16px;
+          width: 1px;
+          background: linear-gradient(180deg, rgba(240,165,80,.55), rgba(100,185,135,.42), rgba(255,255,255,.05));
+          opacity: .75;
+        }
+        .demo-step {
+          position: relative;
+          display: grid;
+          grid-template-columns: 34px minmax(0, 1fr);
+          gap: 12px;
+          align-items: start;
+          border: 1px solid rgba(242,237,228,.09);
+          border-radius: 14px;
+          background: rgba(255,255,255,.026);
+          padding: 13px;
+          overflow: hidden;
+          animation: previewPulse 6.6s ease-in-out infinite;
+        }
+        .demo-step::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(90deg, transparent, rgba(240,165,80,.10), transparent);
+          transform: translateX(-110%);
+          animation: previewScan 6.6s ease-in-out infinite;
+        }
+        .demo-step.step-two { animation-delay: .55s; }
+        .demo-step.step-three { animation-delay: 1.1s; }
+        .demo-step.step-two::after { animation-delay: .55s; }
+        .demo-step.step-three::after { animation-delay: 1.1s; }
+        .step-index {
+          position: relative;
+          z-index: 1;
+          width: 34px;
+          height: 34px;
+          border-radius: 11px;
+          display: grid;
+          place-items: center;
+          color: #171109;
+          background: linear-gradient(135deg, #f7c94a, #ef7e42);
+          font: 900 11px/1 var(--font-mono);
+          box-shadow: 0 0 22px rgba(240,165,80,.15);
+        }
+        .demo-step b, .demo-step p { position: relative; z-index: 1; }
+        .demo-step b { color: #f2ede4; font-size: 14px; }
+        .demo-step p { margin: 6px 0 0; color: #a9bfd7; font-size: 12px; line-height: 1.55; }
         .engine-row { border: 1px solid rgba(242,237,228,.09); border-radius: 12px; background: rgba(255,255,255,.03); padding: 16px; display: flex; justify-content: space-between; gap: 14px; }
+        .engine-row.confidence-card {
+          background:
+            radial-gradient(circle at 90% 0%, rgba(100,185,135,.11), transparent 42%),
+            rgba(255,255,255,.03);
+        }
         .engine-row h3 { margin: 0 0 11px; font-size: 15px; color: #f2ede4; }
         .engine-row p { margin: 8px 0 0; color: #b8ad9a; font-size: 13px; }
         .engine-row.compact { display: block; }
@@ -305,9 +399,22 @@ export default function Home() {
         .metric { margin-top: 9px; }
         .metric-head { display: flex; justify-content: space-between; color: #b8ad9a; font-size: 12px; margin-bottom: 5px; }
         .metric-bar { height: 6px; border-radius: 999px; background: rgba(255,255,255,.07); overflow: hidden; }
-        .metric-bar i { display: block; height: 100%; background: linear-gradient(90deg, #f0a550, #64b987); }
+        .metric-bar i { display: block; height: 100%; background: linear-gradient(90deg, #f0a550, #64b987); transform-origin: 0 50%; animation: metricGrow 6.6s ease-in-out infinite; }
         .prompt-row { display: flex; flex-wrap: wrap; gap: 8px; }
         .prompt-row span { color: #b8ad9a; border: 1px solid rgba(242,237,228,.09); border-radius: 999px; padding: 7px 10px; font-size: 12px; }
+        @keyframes previewPulse {
+          0%, 15%, 100% { border-color: rgba(242,237,228,.09); background: rgba(255,255,255,.026); transform: translateY(0); }
+          26%, 42% { border-color: rgba(240,165,80,.28); background: rgba(240,165,80,.055); transform: translateY(-1px); }
+        }
+        @keyframes previewScan {
+          0%, 18% { transform: translateX(-110%); opacity: 0; }
+          30% { opacity: 1; }
+          48%, 100% { transform: translateX(110%); opacity: 0; }
+        }
+        @keyframes metricGrow {
+          0%, 14% { transform: scaleX(.18); opacity: .5; }
+          35%, 100% { transform: scaleX(1); opacity: 1; }
+        }
         .entry-section, .capability-section, .trust-section, .cta-section { max-width: 1120px; margin: 0 auto; padding: 84px 24px; }
         .section-title { text-align: center; margin-bottom: 28px; }
         .section-title h2, .trust-card h2, .cta-section h2 { margin: 0; color: #f2ede4; font: 900 34px/1.2 "Noto Serif SC", serif; }
