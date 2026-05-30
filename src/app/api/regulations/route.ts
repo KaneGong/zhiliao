@@ -26,6 +26,124 @@ interface RegulationEntry {
 
 const regulations = regulationsJson as RegulationEntry[];
 
+const SINGLE_CHAR_INGREDIENTS = new Set(["钙", "铁", "锌", "硒", "镁", "锰"]);
+const GENERIC_LOOKUP_TOKENS = new Set(["普通食品", "generalfood"]);
+
+function normalizeLookupText(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[（）]/g, (m) => (m === "（" ? "(" : ")"))
+    .replace(/\s+/g, "")
+    .trim();
+}
+
+function addLookupToken(tokens: Set<string>, token: string) {
+  const cleaned = token.trim();
+  if (!cleaned) return;
+  if (GENERIC_LOOKUP_TOKENS.has(normalizeLookupText(cleaned))) return;
+  if (cleaned.length === 1 && !SINGLE_CHAR_INGREDIENTS.has(cleaned)) return;
+  tokens.add(cleaned);
+}
+
+function splitAliasText(value: string): string[] {
+  return value
+    .split(/[、,，/／;；]/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function getRegulationLookupTokens(entry: RegulationEntry): string[] {
+  const tokens = new Set<string>();
+  addLookupToken(tokens, entry.ingredient);
+
+  const parenMatch = entry.ingredient.match(/^(.+?)[（(](.+)[）)]$/);
+  if (parenMatch) {
+    addLookupToken(tokens, parenMatch[1]);
+    for (const alias of splitAliasText(parenMatch[2])) addLookupToken(tokens, alias);
+  }
+
+  const leadingLatin = entry.ingredient.match(/^[A-Za-z][A-Za-z0-9-]*/)?.[0];
+  if (leadingLatin) addLookupToken(tokens, leadingLatin);
+
+  if (entry.ingredient_en) {
+    addLookupToken(tokens, entry.ingredient_en);
+    const enParenMatch = entry.ingredient_en.match(/^(.+?)[(（](.+)[)）]$/);
+    if (enParenMatch) {
+      addLookupToken(tokens, enParenMatch[1]);
+      for (const alias of splitAliasText(enParenMatch[2])) addLookupToken(tokens, alias);
+    }
+  }
+
+  return [...tokens];
+}
+
+function scanKnownRegulations(segment: string): RegulationEntry[] {
+  const normalizedSegment = normalizeLookupText(segment);
+  const matches: Array<{ entry: RegulationEntry; token: string; score: number }> = [];
+
+  for (const entry of regulations) {
+    for (const token of getRegulationLookupTokens(entry)) {
+      const normalizedToken = normalizeLookupText(token);
+      if (!normalizedToken || !normalizedSegment.includes(normalizedToken)) continue;
+      if (GENERIC_LOOKUP_TOKENS.has(normalizedToken)) continue;
+      if (normalizedToken.length === 1 && normalizedSegment !== normalizedToken) continue;
+      if (normalizedToken.length <= 2 && normalizedSegment.length > normalizedToken.length + 2) continue;
+
+      let score = normalizedToken.length;
+      if (normalizedSegment === normalizedToken) score += 100;
+      if (normalizeLookupText(entry.ingredient) === normalizedToken) score += 60;
+      if (entry.ingredient.startsWith(token)) score += 20;
+      if (segment.includes(entry.ingredient)) score += 40;
+      matches.push({ entry, token: normalizedToken, score });
+    }
+  }
+
+  matches.sort((a, b) => b.score - a.score);
+
+  const seenEntries = new Set<string>();
+  const seenTokens = new Set<string>();
+  const found: RegulationEntry[] = [];
+
+  for (const match of matches) {
+    if (seenEntries.has(match.entry.ingredient)) continue;
+    if (seenTokens.has(match.token) && match.token.length <= 4) continue;
+    if (found.some((entry) => normalizeLookupText(entry.ingredient).includes(match.token))) continue;
+    seenEntries.add(match.entry.ingredient);
+    seenTokens.add(match.token);
+    found.push(match.entry);
+  }
+
+  return found;
+}
+
+function cleanupUnknownIngredient(raw: string): string {
+  const trimmed = raw.trim();
+  const phraseMatch = trimmed.match(/^(.+?)(能不能|可不可以|能否|是否|可以|可否|适合|用于|用在|添加到|加到|怎么|如何|吗|呢|？|\?)/);
+  const candidate = phraseMatch?.[1]?.trim();
+  if (candidate && candidate.length >= 2) return candidate;
+  return trimmed;
+}
+
+function extractRegulationIngredients(rawQuery: string): string[] {
+  const segments = rawQuery
+    .split(/[,，、;；\n]/)
+    .map((segment) => segment.trim())
+    .filter(Boolean);
+  const sourceSegments = segments.length > 0 ? segments : [rawQuery.trim()];
+  const ingredients: string[] = [];
+
+  for (const segment of sourceSegments) {
+    const known = scanKnownRegulations(segment);
+    if (known.length > 0) {
+      ingredients.push(...known.map((entry) => entry.ingredient));
+    } else {
+      ingredients.push(cleanupUnknownIngredient(segment));
+    }
+  }
+
+  return [...new Set(ingredients.filter(Boolean))];
+}
+
 function findRegulation(ingredient: string) {
   const trimmed = ingredient.trim();
   if (!trimmed) return null;
@@ -69,7 +187,7 @@ export async function POST(request: NextRequest) {
   const isFollowUp = isFollowUpQuery(rawQuery, history || []);
   const ingredients = isFollowUp
     ? []
-    : rawQuery.split(/[,，、]/).map((s: string) => s.trim()).filter(Boolean);
+    : extractRegulationIngredients(rawQuery);
   const results: any[] = [];
 
   for (const ingredient of ingredients) {

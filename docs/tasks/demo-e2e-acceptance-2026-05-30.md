@@ -32,6 +32,7 @@ This acceptance run checks whether ZhiLiao is ready for a basic live product dem
 | AI formula API | `/api/ai-recommend` streams SSE chunks | PASS | Stream returned formula content for high-protein sports drink query |
 | Regulation | `/regulations` renders chat input and evidence workbench | PASS | Textarea and send action present |
 | Regulation API | `/api/regulations` streams database result + AI chunks | PASS | Natural-language query produced db result and streamed explanation |
+| Regulation extraction | known ingredients are extracted from natural-language questions | PASS | `DHA 能不能用于普通食品？` now matches `DHA（二十二碳六烯酸）`; `乳铁蛋白可以用于儿童食品吗？` no longer also matches `铁` |
 | User auth | register + `/api/auth/me` | PASS | Temporary E2E user was created and then local data was restored |
 | Saved recipes | POST + GET `/api/recipes` with user cookie | PASS | Temporary saved recipe was readable and then local data was restored |
 | Admin | `/admin` renders auth screen | PASS | Admin auth endpoint returned success with local configured credential |
@@ -40,22 +41,17 @@ This acceptance run checks whether ZhiLiao is ready for a basic live product dem
 
 ## 4. Residual Issues
 
-1. Regulation natural-language extraction is still shallow.
-   - Example: `DHA 能不能用于普通食品？` first matched the whole sentence as an ingredient.
-   - The answer still streams, but the retrieval layer should extract `DHA` before database matching.
-
-2. Not every section has a chat assistant.
+1. Not every section has a chat assistant.
    - Current chat surfaces are `/recommend` and `/regulations`.
    - Product pages, search, recipes, supplier dashboard, and admin are workbench pages, not conversational modules.
    - A full-site assistant should be treated as a product decision, not a bug fix.
 
-3. Browser visual QA remains manual.
+2. Browser visual QA remains manual.
    - Static and API checks passed.
    - A future pass should include desktop/mobile visual screenshots for the home entry grid and chat workbench.
 
 ## 5. Next Actions
 
-1. Add regulation query extraction for common natural-language questions.
-2. Decide whether to add a lightweight full-site assistant shell or keep chat limited to formula/regulation workbenches.
-3. Prepare deployment checklist and run server-side smoke after deploy.
-4. Continue data work on real supplier/spec coverage for demo-priority cases.
+1. Decide whether to add a lightweight full-site assistant shell or keep chat limited to formula/regulation workbenches.
+2. Prepare deployment checklist and run server-side smoke after deploy.
+3. Continue data work on real supplier/spec coverage for demo-priority cases.
