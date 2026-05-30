@@ -18,6 +18,39 @@ function MiniList({ items, empty = "暂无" }: { items?: string[]; empty?: strin
   return <ul className="space-y-1.5">{shown.map((item, idx) => <li key={idx} className="flex gap-2 text-xs leading-relaxed text-slate-400"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400/70" />{item}</li>)}</ul>;
 }
 
+function IngredientTile({
+  ingredient,
+  routeName,
+}: {
+  ingredient: { name?: string; suggested_dosage?: string; role?: string; regulatory_note?: string };
+  routeName: string;
+}) {
+  return (
+    <div key={`${routeName}-${ingredient.name}`} className="rounded-2xl border border-white/[0.045] bg-[#090f16]/70 px-3.5 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,.025)]">
+      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-3">
+        <b className="min-w-0 text-[13px] leading-snug text-slate-100">{ingredient.name || "待定原料"}</b>
+        <span className="rounded-full border border-sky-300/10 bg-sky-400/[0.065] px-2 py-0.5 text-right text-[10px] font-semibold leading-relaxed text-sky-200/80">
+          {ingredient.suggested_dosage || "剂量待定"}
+        </span>
+      </div>
+      <div className="mt-2 grid gap-1.5 text-[11px] leading-relaxed">
+        {ingredient.role && (
+          <p className="m-0 flex gap-2 text-slate-400">
+            <span className="shrink-0 font-bold text-amber-300/85">作用</span>
+            <span>{ingredient.role}</span>
+          </p>
+        )}
+        {ingredient.regulatory_note && (
+          <p className="m-0 flex gap-2 text-slate-500">
+            <span className="shrink-0 font-bold text-emerald-300/75">合规</span>
+            <span>{ingredient.regulatory_note}</span>
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function FormulaBriefView({ brief }: { brief: FormulaBrief }) {
   const pb = brief.product_brief;
   const score = brief.trust_score?.total_score ?? 0;
@@ -47,21 +80,24 @@ export default function FormulaBriefView({ brief }: { brief: FormulaBrief }) {
       <div className="grid gap-3 p-4 sm:p-5">
         <div>
           <div className="mb-2 flex items-center justify-between"><p className="text-xs font-black text-slate-200">三条配方路线</p><span className="text-[10px] text-slate-500">可比较 · 可追问 · 可保存</span></div>
-          <div className="grid gap-3 lg:grid-cols-3">
+          <div className="grid gap-3 xl:grid-cols-3">
             {routes.map((route, idx) => (
-              <div key={`${route.route_name}-${idx}`} className="rounded-2xl border border-white/[0.06] bg-white/[0.025] p-3.5">
-                <div className="flex items-center justify-between gap-2"><p className="text-[11px] font-bold text-amber-300">{route.route_type}</p><span className="rounded-full border border-white/[0.06] px-2 py-0.5 text-[10px] text-slate-500">成本 {route.cost_level}</span></div>
-                <h4 className="mt-2 text-sm font-black text-slate-200">{route.route_name}</h4>
-                <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{route.functional_logic}</p>
-                <div className="mt-3 space-y-2">
+              <div key={`${route.route_name}-${idx}`} className="rounded-3xl border border-white/[0.07] bg-[linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.018))] p-4 shadow-[0_18px_42px_rgba(0,0,0,.16)]">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="rounded-full bg-amber-400/[0.08] px-2.5 py-1 text-[11px] font-black text-amber-300">{route.route_type}</p>
+                  <span className="rounded-full border border-white/[0.07] bg-black/10 px-2.5 py-1 text-[10px] font-semibold text-slate-400">成本 {route.cost_level || "待评估"}</span>
+                </div>
+                <h4 className="mt-3 text-[17px] font-black leading-snug text-slate-100">{route.route_name}</h4>
+                <p className="mt-2 text-[13px] leading-relaxed text-slate-400">{route.functional_logic}</p>
+                <div className="mt-4 space-y-2.5">
                   {[...(route.core_ingredients || []), ...(route.supporting_ingredients || [])].slice(0, 4).map((ing) => (
-                    <div key={`${route.route_name}-${ing.name}`} className="rounded-xl bg-black/18 px-3 py-2">
-                      <div className="flex items-center justify-between gap-2"><b className="text-xs text-slate-300">{ing.name}</b><span className="text-[10px] text-slate-500">{ing.suggested_dosage}</span></div>
-                      <p className="mt-1 text-[11px] leading-relaxed text-slate-500">{ing.role} · {ing.regulatory_note}</p>
-                    </div>
+                    <IngredientTile key={`${route.route_name}-${ing.name}`} ingredient={ing} routeName={route.route_name} />
                   ))}
                 </div>
-                <MiniList items={route.main_risks} empty="暂无主要风险" />
+                <div className="mt-4 rounded-2xl border border-amber-400/10 bg-amber-400/[0.035] p-3">
+                  <p className="mb-2 text-[11px] font-black text-amber-200/90">主要注意点</p>
+                  <MiniList items={route.main_risks} empty="暂无主要风险" />
+                </div>
               </div>
             ))}
           </div>

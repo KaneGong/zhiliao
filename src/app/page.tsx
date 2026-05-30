@@ -43,9 +43,12 @@ export default function Home() {
 
             <form action="/recommend" method="get" className="hero-input-card">
               <div className="input-row">
-                <Search className="w-5 h-5" />
-                <input
+                <div className="search-mark" aria-hidden="true">
+                  <Search className="w-5 h-5" />
+                </div>
+                <textarea
                   name="q"
+                  rows={3}
                   placeholder="描述你的产品需求，例如：开发一款面向办公人群的低糖助眠软糖，需要普通食品可用原料，风味温和，成本可控。"
                 />
               </div>
@@ -226,9 +229,39 @@ export default function Home() {
           overflow: hidden;
           box-shadow: 0 24px 80px rgba(0,0,0,.22);
         }
-        .input-row { display: flex; gap: 12px; align-items: flex-start; padding: 20px; color: #7e7464; min-height: 106px; }
-        .input-row input { flex: 1; border: 0; outline: 0; background: transparent; color: #f2ede4; font-size: 15px; line-height: 1.7; padding-top: 1px; }
-        .input-row input::placeholder { color: #8d8170; }
+        .input-row {
+          display: grid;
+          grid-template-columns: 42px minmax(0, 1fr);
+          gap: 16px;
+          align-items: start;
+          padding: 20px 22px 18px;
+          color: #7e7464;
+          min-height: 122px;
+        }
+        .search-mark {
+          width: 42px;
+          height: 42px;
+          border-radius: 13px;
+          display: grid;
+          place-items: center;
+          color: #f0a550;
+          background: rgba(240,165,80,.08);
+          border: 1px solid rgba(240,165,80,.14);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+        }
+        .input-row textarea {
+          width: 100%;
+          min-height: 82px;
+          border: 0;
+          outline: 0;
+          resize: none;
+          background: transparent;
+          color: #f2ede4;
+          font-size: 17px;
+          line-height: 1.65;
+          padding: 4px 2px 0;
+        }
+        .input-row textarea::placeholder { color: #9a8d7a; opacity: .92; }
         .input-footer { border-top: 1px solid rgba(242,237,228,.09); padding: 12px; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
         .quick-tags { display: flex; gap: 8px; flex-wrap: wrap; }
         .quick-tags a { border: 1px solid rgba(242,237,228,.09); border-radius: 999px; background: rgba(255,255,255,.03); color: #b8ad9a; padding: 7px 11px; font-size: 12px; text-decoration: none; transition: .18s ease; }
@@ -340,8 +373,9 @@ export default function Home() {
           }
           .lead { font-size: 14px; line-height: 1.75; max-width: calc(100vw - 32px); overflow-wrap: anywhere; word-break: break-word; }
           .hero-input-card { width: 100%; max-width: calc(100vw - 32px); }
-          .input-row { min-height: 86px; min-width: 0; padding: 16px; align-items: center; }
-          .input-row input { min-width: 0; font-size: 13px; text-overflow: ellipsis; }
+          .input-row { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; min-height: 116px; min-width: 0; padding: 16px; }
+          .search-mark { width: 36px; height: 36px; border-radius: 11px; }
+          .input-row textarea { min-width: 0; min-height: 78px; font-size: 14px; line-height: 1.55; }
           .input-footer { align-items: stretch; flex-direction: column; }
           .quick-tags { width: 100%; display: grid; grid-template-columns: 1fr; }
           .quick-tags a { width: 100%; text-align: center; }

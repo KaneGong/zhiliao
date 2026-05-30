@@ -199,6 +199,17 @@ function PageContent() {
     </div>
   );
 
+  const StructuringStatus = ({ text }: { text: string }) => (
+    <div className="structuring-status" role="status" aria-live="polite">
+      <div className="structuring-orb"><Sparkles className="w-3.5 h-3.5" strokeWidth={2} /></div>
+      <div className="min-w-0">
+        <p>{text}</p>
+        <span>正在生成可比较的配方卡片，请稍候…</span>
+      </div>
+      <div className="structuring-bars" aria-hidden="true"><i /><i /><i /></div>
+    </div>
+  );
+
   return (
     <div className="zl-workbench-page">
       <div className="zl-workbench-shell">
@@ -273,7 +284,7 @@ function PageContent() {
                     return (
                       <div key={i} className={`flex gap-3 ${m.role === "user" ? "justify-end" : ""}`}>
                         {m.role === "assistant" && <AiAvatar />}
-                        <div className={`max-w-[85%] group relative ${m.role === "user" ? "" : "min-w-0"}`}>
+                        <div className={`group relative ${m.role === "user" ? "max-w-[85%]" : "w-full min-w-0"}`}>
                           <div className={m.role === "user" ? "bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-2xl rounded-tr-md px-4 py-2.5 shadow-[0_2px_8px_rgba(240,165,80,0.12)]" : "rounded-2xl rounded-tl-md px-4 py-3 border border-white/[0.06] bg-white/[0.02]"}>
                             {m.role === "user" ? <p className="text-sm leading-relaxed">{m.content}</p> : (
                               <div className={`zhiliao-answer text-sm ${isStreaming && !isStructuring ? "streaming-cursor" : ""}`}>
@@ -290,11 +301,7 @@ function PageContent() {
                                   li: ({children}) => <li className="text-slate-400">{children}</li>,
                                   hr: () => <hr className="my-3 border-white/[0.06]" />,
                                 }}>{m.content}</Markdown>
-                                {isStreaming && m.status && (
-                                  <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-amber-400/10 bg-amber-400/[0.05] px-3 py-1.5 text-[11px] font-medium text-amber-200">
-                                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-300" />{m.status}
-                                  </div>
-                                )}
+                                {isStreaming && m.status && <StructuringStatus text={m.status} />}
                                 {m.formulaBrief && <FormulaBriefView brief={m.formulaBrief} />}
                                 {!m.formulaBrief && m.briefError && <div className="mt-3 rounded-xl border border-amber-400/10 bg-amber-400/[0.04] px-3 py-2 text-xs text-amber-200">{m.briefError}</div>}
                               </div>
