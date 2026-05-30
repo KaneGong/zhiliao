@@ -123,15 +123,27 @@
 - [x] P0 回归：5/5 通过、JSON 泄露 0、高风险声称 0
 - [x] 全量 20Q 回归：20/20 技术通过
 
-### 当前主线（先做可展示网站）
+### 当前主线（Demo-ready v0.1 稳定展示）
 
 - [x] **代码集成优化**：供应商/合规状态已在 post-processing 层做诚实标准化
 - [x] **低分题目修复验证**：P0 与 20Q 回归已通过，低闭环题不再伪造可用供应商
 - [x] **Demo-ready 运行配置**：固定本地启动、smoke、check、verify 命令
 - [x] **展示体验巡检**：本地跑通 `/`、`/recommend`、`/search`、`/recipes`、`/regulations`，并完成 Demo E2E 验收
+- [x] **线上 Demo-ready UI 收口**：首页示例输出预览、推荐页等待态、Formula Brief 卡片、配方页 CTA、后台退出已上线
+- [ ] **上线后稳定性检查**：观察线上 AI 推荐、法规查询、保存配方、后台登录退出和移动端显示
+- [ ] **演示问题集**：准备 8-10 个 Demo-ready 问题，输出到 `docs/data/demo-question-set-v1.md`
 - [ ] **案例库扩展**：从 20 条草稿扩展到 50+ 条结构化案例
 - [ ] **供应商数据补充**：只补真实供应商资料；商业联系人筛选暂缓
 - [ ] **商业验证**：暂缓到网站进入稳定展示阶段后再启动
+
+### 2026-05-30 晚 Demo-ready v0.1 上线
+
+- 线上地址：<https://zhiliao-ai.cn>。
+- 已完成首页输入框间距修复、首页示例输出动效预览、推荐页结构化等待态、Formula Brief 卡片排版、配方页 CTA、后台退出。
+- 2026-05-30 19:13-19:15 CST 使用 SSH/SFTP + standalone + PM2 delete/start 成功部署。
+- 服务器备份：`/opt/zhiliao_backup_20260530_191335`。
+- smoke：`/`、`/recommend`、`/regulations`、`/recipes`、`/admin`、`/search` 公网均返回 200。
+- 状态文档：`docs/tasks/demo-ready-status-2026-05-30.md`。
 
 ### 2026-05-30 Demo E2E 结论
 
