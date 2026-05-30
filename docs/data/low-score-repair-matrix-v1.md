@@ -78,3 +78,32 @@
 1. 把这 3 组 seed 转成结构化 JSON 数据文件
 2. 再考虑让 Formula Brief 读取这些数据
 3. 回跑 `GQ-003 / GQ-007 / GQ-015` 做第二轮对比评测
+
+---
+
+## 2026-05-30 扩展：7 题商业闭环修复矩阵
+
+20Q 改进后复跑中，供应商可用匹配为 0 的题共有 7 个：`GQ-003`、`GQ-007`、`GQ-010`、`GQ-013`、`GQ-015`、`GQ-017`、`GQ-019`。这些问题不一定都是“模型低分”，但都属于“商业闭环低分”：Formula Brief 能生成方案，但采购、询样或供应商资料链路不够强。
+
+| GQ | 当前低分/低闭环原因 | 原料记录 | 供应商记录 | 法规规则 | 下一步动作 |
+|---|---|---|---|---|---|
+| GQ-003 | 儿童益生菌核心菌株供应商闭环不足，儿童适用边界需更严谨 | `ING-PROBIOTIC-CHILD-001` | `SUP-PROBIOTIC-CHILD-SEED-001` | `REG-CLAIM-CHILD-PROBIOTIC-001` | 补儿童适用菌株、活菌数、稳定性、食品类别声明和标签边界 |
+| GQ-007 | 植物基蛋白路线可写，但平台暂无核心植物蛋白供应商匹配 | `ING-PLANT-PROTEIN-BLEND-001` | `SUP-PLANT-PROTEIN-SEED-001` | `REG-CLAIM-PLANT-PROTEIN-001` | 补豌豆/大米/大豆蛋白规格、溶解性、遮蔽、过敏原和饮料应用案例 |
+| GQ-010 | 免疫方向表达边界合规，但维 C/锌/益生菌/后生元供应商链路弱 | `ING-IMMUNE-NUTRITION-001` | `SUP-IMMUNE-NUTRITION-SEED-001` | `REG-CLAIM-IMMUNE-NUTRITION-001` | 补 VC、锌、后生元/益生菌资料，并固化“不能说增强免疫”的表达模板 |
+| GQ-013 | 电解质果冻场景成立，但电解质盐和果冻胶体供应商均不可用 | `ING-ELECTROLYTE-JELLY-001` | `SUP-ELECTROLYTE-JELLY-SEED-001` | `REG-CLAIM-ELECTROLYTE-JELLY-001` | 补钠/钾/镁盐、胶体体系、低糖条件、渗透压体验和便携果冻工艺资料 |
+| GQ-015 | 饮酒场景高风险，原料食品属性、供应商可用性和平台审核风险都偏弱 | `ING-SOCIAL-GUMMY-HERBAL-001` | `SUP-SOCIAL-GUMMY-SEED-001` | `REG-CLAIM-SOCIAL-DRINKING-001` | 先确认葛根/枳椇子/B 族维生素适用边界，再决定是否进入推荐体系 |
+| GQ-017 | 低钠调味粉路线可讨论，但低钠/鲜味关键供应商可用为 0 | `ING-LOW-SODIUM-SEASONING-001` | `SUP-LOW-SODIUM-SEASONING-SEED-001` | `REG-CLAIM-LOW-SODIUM-001` | 补氯化钾、酵母抽提物、鲜味肽、低钠标签条件和调味基料资料 |
+| GQ-019 | 植物甾醇酸奶路径分流正确，但植物甾醇酯供应商和酸奶应用资料缺失 | `ING-PLANT-STEROL-YOGURT-001` | `SUP-PLANT-STEROL-YOGURT-SEED-001` | `REG-CLAIM-PLANT-STEROL-001` | 补植物甾醇酯公告范围、供应商规格、酸奶体系应用和保健食品路径说明 |
+
+### 补充监控项
+
+| GQ | 问题 | 已新增记录 | 下一步 |
+|---|---|---|---|
+| GQ-014 | `B族维生素` 未收录；咖啡因警示和人群限制资料不足 | `ING-CAFFEINE-BVITAMIN-001` / `SUP-CAFFEINE-BVITAMIN-SEED-001` / `REG-CLAIM-CAFFEINE-ENERGY-001` | 补 B 族维生素原料库、咖啡因限量、警示和渠道话术 |
+| GQ-020 | `燕麦纤维` 未收录；高蛋白烘焙质构和货架期资料不足 | `ING-OAT-FIBER-BAKERY-001` / `SUP-OAT-FIBER-BAKERY-SEED-001` / `REG-CLAIM-OAT-FIBER-BAKERY-001` | 补燕麦纤维规格、吸水性、粒径和烘焙应用案例 |
+
+### 当前修复标准
+
+1. 先让 Formula Brief 诚实展示“暂无平台匹配 / 资料不完整 / 需人工复核”，不要为了好看而乱匹配供应商。
+2. 再用真实供应商资料把 `data_completeness=low` 的 seed 逐步提升到 `reviewed`。
+3. 每次改 seed、prompt 或 sanitizer 后，先跑 7 题定向回归，再跑 20Q 全量回归。

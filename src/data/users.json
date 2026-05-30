@@ -7,5 +7,13 @@
     "role": "admin",
     "company": "知料 ZhiLiao",
     "created_at": "2026-05-15T00:00:00Z"
+  },
+  {
+    "id": "user-1780026387989",
+    "email": "kane@hotmail.com",
+    "name": "Kane",
+    "password_hash": "$2a$10$SUceCwnFG/HbQXvEQ9e79Oewr9SkBZc1xoTdKR6YbZcrcFyw27Z/u",
+    "role": "user",
+    "created_at": "2026-05-29T03:46:27.989Z"
   }
 ]
