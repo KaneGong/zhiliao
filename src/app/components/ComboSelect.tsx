@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const inputClass = "w-full px-3 py-2.5 border border-slate-300 rounded-lg text-sm bg-[var(--bg-surface)] focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-400 transition-colors";
+const inputClass = "w-full px-3 py-2.5 border border-white/[0.08] rounded-[12px] text-sm bg-[#131a25] text-slate-200 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500/30 transition-colors";
 
 export function ComboSelect({ value, onChange, options, placeholder = "选择...", className = "" }: {
   value: string; onChange: (v: string) => void; options: string[]; placeholder?: string; className?: string;
@@ -25,7 +25,7 @@ export function ComboSelect({ value, onChange, options, placeholder = "选择...
           autoFocus
         />
         <button type="button" onClick={() => { setCustom(false); setCustomVal(""); }}
-          className="px-2 py-2.5 text-slate-400 hover:text-slate-500 text-sm">✕</button>
+          className="px-2 py-2.5 text-slate-500 hover:text-amber-300 text-sm transition-colors">✕</button>
       </div>
     );
   }
@@ -41,7 +41,7 @@ export function ComboSelect({ value, onChange, options, placeholder = "选择...
     >
       <option value="">{placeholder}</option>
       {options.map(o => <option key={o} value={o}>{o}</option>)}
-      <option value="__custom__" className="text-blue-600 font-medium">➕ 添加新的...</option>
+      <option value="__custom__">＋ 添加新的...</option>
     </select>
   );
 }

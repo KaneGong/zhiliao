@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Mail } from "lucide-react";
 import { Badge } from "../../components/ui";
 
 interface ProductDetail {
@@ -31,120 +32,87 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   if (!product) notFound();
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 fade-in">
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-xs text-slate-400 mb-6">
-        <Link href="/" className="hover:text-slate-400">首页</Link><span>/</span>
-        <Link href="/search" className="hover:text-slate-400">原料库</Link><span>/</span>
-        <span className="text-slate-300 font-medium">{product.generic_name || product.product_name}</span>
-      </nav>
+    <div className="product-page">
+      <div className="product-inner">
+        <nav className="breadcrumb"><Link href="/">首页</Link><span>/</span><Link href="/search">原料库</Link><span>/</span><b>{product.generic_name || product.product_name}</b></nav>
 
-      {/* Header Card */}
-      <div className="bg-[var(--bg-surface)] rounded-2xl border border-white/[0.06] p-6 sm:p-8 mb-6 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-2 flex-wrap">
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-200">{product.generic_name || product.product_name}</h1>
-              <span className="text-xs text-slate-400 font-mono bg-white/[0.05] px-2 py-0.5 rounded">{product.product_name}</span>
-            </div>
-            <div className="flex flex-wrap gap-1.5 mb-3">
-              <Badge variant="blue">{product.category}</Badge>
-              <Badge variant="gray">{product.origin}</Badge>
-              {product.confidence === "high" && <Badge variant="green">高可信度</Badge>}
-              {product.confidence === "medium" && <Badge variant="amber">中可信度</Badge>}
-            </div>
-            <p className="text-slate-400 text-sm leading-relaxed">{product.function}</p>
+        <header className="product-hero">
+          <div>
+            <p className="eyebrow">INGREDIENT PROFILE</p>
+            <div className="title-row"><h1>{product.generic_name || product.product_name}</h1><span>{product.product_name}</span></div>
+            <div className="badge-row"><Badge variant="blue">{product.category}</Badge><Badge variant="gray">{product.origin}</Badge>{product.confidence === "high" && <Badge variant="green">高可信度</Badge>}{product.confidence === "medium" && <Badge variant="amber">中可信度</Badge>}</div>
+            <p className="hero-desc">{product.function}</p>
           </div>
-          <div className="sm:text-right shrink-0">
-            <div className="text-lg font-bold text-amber-400">{product.price ? `¥${product.price}` : product.price_range || "待询价"}</div>
-            <div className="text-xs text-slate-400">{product.price_unit || ""}</div>
-            <a href={`mailto:info@ang-ingredients.com?subject=咨询：${product.product_name}`}
-              className="mt-3 inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-200 text-sm font-medium rounded-xl hover:from-amber-400 hover:to-orange-400 transition-colors">✉️ 联系供应商</a>
+          <div className="quote-card">
+            <span>参考价格</span>
+            <b>{product.price ? `¥${product.price}` : product.price_range || "待询价"}</b>
+            <small>{product.price_unit || "联系供应商确认"}</small>
+            <a href={`mailto:info@ang-ingredients.com?subject=咨询：${product.product_name}`}><Mail className="w-4 h-4" /> 联系供应商</a>
           </div>
+        </header>
+
+        <div className="detail-grid">
+          <main className="detail-main">
+            {product.mechanism && <Section title="作用机制"><p>{product.mechanism}</p></Section>}
+            {product.key_specs && Object.keys(product.key_specs).length > 0 && (
+              <Section title="关键规格"><div className="spec-grid">{Object.entries(product.key_specs).map(([k, v]) => v ? <div key={k} className="spec-card"><span>{k.replace(/_/g, " ")}</span><b>{v}</b></div> : null)}</div></Section>
+            )}
+            <Section title="应用场景"><div className="badge-row">{product.applications.map((a) => <Badge key={a} variant="blue">{a}</Badge>)}</div></Section>
+            {product.clinical_evidence && <Section title="临床证据"><p>{product.clinical_evidence}</p></Section>}
+            {product.functional_tags.length > 0 && <Section title="功能标签"><div className="badge-row">{product.functional_tags.map((t) => <Badge key={t} variant="purple">{t}</Badge>)}</div></Section>}
+            {product.certifications.length > 0 && <Section title="认证"><div className="badge-row">{product.certifications.map((c) => <Badge key={c} variant="green">{c}</Badge>)}</div></Section>}
+          </main>
+
+          <aside className="detail-side">
+            {product.dosage_range && <SideCard title="建议用量">{product.dosage_range}</SideCard>}
+            <SideCard title="厂家与供应商"><Info label="厂家" value={product.manufacturer || product.supplier_name} />{product.supplier && product.supplier !== product.manufacturer && <Info label="供应商" value={product.supplier} />}</SideCard>
+            {product.regulatory_status && Object.keys(product.regulatory_status).length > 0 && <SideCard title="法规状态">{Object.entries(product.regulatory_status).map(([k, v]) => <div key={k} className="reg-row"><span>{k}</span><b>{Array.isArray(v) ? v.join("、") : String(v)}</b></div>)}</SideCard>}
+            <div className="source-card"><span>数据来源</span><p>{product.data_source}</p><small>可信度：{product.confidence === "high" ? "高" : "中"}</small></div>
+          </aside>
         </div>
+
+        <div className="disclaimer">以上产品信息仅供参考，不构成购买建议。价格为参考价，请向供应商确认最新信息。</div>
       </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 space-y-6">
-          {/* Mechanism */}
-          {product.mechanism && <Section title="作用机制" icon="🔬"><p className="text-slate-400 text-sm">{product.mechanism}</p></Section>}
-
-          {/* Key Specs */}
-          {product.key_specs && Object.keys(product.key_specs).length > 0 && (
-            <Section title="关键规格" icon="📊">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                {Object.entries(product.key_specs).map(([k, v]) => v ? (
-                  <div key={k} className="bg-white/[0.03] rounded-lg p-3">
-                    <div className="text-xs text-slate-400 mb-0.5 uppercase tracking-wide">{k.replace(/_/g, " ")}</div>
-                    <div className="text-sm font-semibold text-slate-300">{v}</div>
-                  </div>
-                ) : null)}
-              </div>
-            </Section>
-          )}
-
-          {/* Applications */}
-          <Section title="应用场景" icon="🎯">
-            <div className="flex flex-wrap gap-1.5">{product.applications.map(a => <Badge key={a} variant="blue">{a}</Badge>)}</div>
-          </Section>
-
-          {/* Clinical */}
-          {product.clinical_evidence && <Section title="临床证据" icon="📚"><p className="text-slate-400 text-sm">{product.clinical_evidence}</p></Section>}
-
-          {/* Functional Tags */}
-          {product.functional_tags.length > 0 && <Section title="功能标签" icon="🏷️"><div className="flex flex-wrap gap-1.5">{product.functional_tags.map(t => <Badge key={t} variant="purple">{t}</Badge>)}</div></Section>}
-
-          {/* Certifications */}
-          {product.certifications.length > 0 && <Section title="认证" icon="✅"><div className="flex flex-wrap gap-1.5">{product.certifications.map(c => <Badge key={c} variant="green">{c}</Badge>)}</div></Section>}
-        </div>
-
-        <div className="space-y-6">
-          {/* Dosage */}
-          {product.dosage_range && <SideCard title="建议用量" icon="📏">{product.dosage_range}</SideCard>}
-
-          {/* Manufacturer & Supplier */}
-          <SideCard title="厂家与供应商" icon="🏢">
-            <div className="space-y-2 text-sm">
-              <div><span className="text-slate-400">厂家：</span><span className="text-slate-300">{product.manufacturer || product.supplier_name}</span></div>
-              {product.supplier && product.supplier !== product.manufacturer && <div><span className="text-slate-400">供应商：</span><span className="text-slate-300">{product.supplier}</span></div>}
-            </div>
-          </SideCard>
-
-          {/* Regulatory */}
-          {product.regulatory_status && Object.keys(product.regulatory_status).length > 0 && (
-            <div className="bg-[var(--bg-surface)] rounded-xl border border-white/[0.06] p-5">
-              <h3 className="font-semibold text-slate-200 mb-3 text-sm">📜 法规状态</h3>
-              <div className="space-y-2">
-                {Object.entries(product.regulatory_status).map(([k, v]) => (
-                  <div key={k}>
-                    <div className="text-xs text-slate-400">{k}</div>
-                    <div className="text-sm text-slate-300">
-                      {Array.isArray(v) ? v.map((c, i) => <Badge key={i} variant="green">{String(c)}</Badge>) : String(v)}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Data Source */}
-          <div className="bg-white/[0.03] rounded-xl p-4">
-            <h4 className="text-xs font-medium text-slate-400 mb-1">数据来源</h4>
-            <p className="text-xs text-slate-400">{product.data_source}</p>
-            <p className="text-xs text-slate-400 mt-1">可信度：<span className={product.confidence === "high" ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>{product.confidence === "high" ? "高" : "中"}</span></p>
-          </div>
-        </div>
-      </div>
-
-      {/* Disclaimer */}
-      <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-700">⚠️ 以上产品信息仅供参考，不构成购买建议。价格为参考价。请向供应商确认最新信息。</div>
+      <style>{`
+        .product-page { min-height:calc(100vh - 56px); background:linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(180deg,rgba(255,255,255,.015) 1px,transparent 1px),radial-gradient(circle at 18% 6%,rgba(240,165,80,.12),transparent 30%),#0e1217; background-size:64px 64px,64px 64px,auto,auto; }
+        .product-inner { max-width:1120px; margin:0 auto; padding:32px 24px 72px; }
+        .breadcrumb { display:flex; gap:9px; align-items:center; color:#7e7464; font-size:13px; margin-bottom:24px; }
+        .breadcrumb a { color:#7e7464; text-decoration:none; } .breadcrumb a:hover { color:#b8ad9a; } .breadcrumb b { color:#f2ede4; }
+        .eyebrow { margin:0 0 8px; color:#7e7464; font:700 10px/1 var(--font-mono); letter-spacing:.16em; text-transform:uppercase; }
+        .product-hero { display:grid; grid-template-columns:1fr 280px; gap:24px; border:1px solid rgba(242,237,228,.09); border-radius:16px; background:rgba(25,34,44,.72); padding:28px; box-shadow:0 24px 80px rgba(0,0,0,.18); margin-bottom:18px; }
+        .title-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+        h1 { margin:0; color:#f2ede4; font:900 34px/1.15 "Noto Serif SC",serif; }
+        .title-row span { color:#7e7464; border:1px solid rgba(242,237,228,.09); background:rgba(255,255,255,.035); border-radius:7px; padding:4px 8px; font:700 11px/1 var(--font-mono); }
+        .badge-row { display:flex; flex-wrap:wrap; gap:7px; margin:14px 0; }
+        .hero-desc, .detail-main p { color:#b8ad9a; line-height:1.85; margin:0; }
+        .quote-card { border:1px solid rgba(240,165,80,.18); background:rgba(240,165,80,.06); border-radius:14px; padding:18px; align-self:start; }
+        .quote-card span { color:#7e7464; font-size:12px; } .quote-card b { display:block; color:#f0a550; font:900 26px/1.2 var(--font-mono); margin:8px 0 2px; } .quote-card small { color:#7e7464; display:block; }
+        .quote-card a { margin-top:16px; display:flex; align-items:center; justify-content:center; gap:7px; height:40px; border-radius:10px; background:linear-gradient(135deg,#f0a550,#ef7e42); color:white; text-decoration:none; font-weight:800; }
+        .detail-grid { display:grid; grid-template-columns:1fr 320px; gap:18px; }
+        .detail-main { display:grid; gap:14px; }
+        .section,.side-card,.source-card { border:1px solid rgba(242,237,228,.09); border-radius:14px; background:rgba(25,34,44,.72); padding:18px; }
+        .section h2,.side-card h3 { margin:0 0 12px; color:#f2ede4; font:800 18px/1.2 "Noto Serif SC",serif; }
+        .spec-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+        .spec-card { border:1px solid rgba(242,237,228,.08); border-radius:10px; background:rgba(255,255,255,.025); padding:12px; }
+        .spec-card span { display:block; color:#7e7464; font:700 10px/1.2 var(--font-mono); letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; } .spec-card b { color:#f2ede4; }
+        .detail-side { display:grid; gap:14px; align-content:start; }
+        .side-card { color:#b8ad9a; font-size:14px; line-height:1.7; }
+        .info-row,.reg-row { display:grid; gap:3px; margin-bottom:10px; } .info-row span,.reg-row span,.source-card span { color:#7e7464; font-size:12px; } .info-row b,.reg-row b { color:#f2ede4; font-weight:600; }
+        .source-card p { color:#b8ad9a; font-size:13px; line-height:1.7; margin:6px 0; } .source-card small { color:#f0a550; }
+        .disclaimer { margin-top:18px; border:1px solid rgba(240,165,80,.18); border-radius:13px; background:rgba(240,165,80,.08); color:#f0a550; padding:15px; font-size:13px; }
+        @media (max-width:900px) { .product-hero,.detail-grid { grid-template-columns:1fr; } .spec-grid { grid-template-columns:1fr 1fr; } h1 { font-size:30px; } }
+        @media (max-width:560px) { .spec-grid { grid-template-columns:1fr; } }
+      `}</style>
     </div>
   );
 }
 
-function Section({ title, icon, children }: { title: string; icon?: string; children: React.ReactNode }) {
-  return <div className="bg-[var(--bg-surface)] rounded-xl border border-white/[0.06] p-5"><h2 className="font-semibold text-slate-200 mb-3 text-sm flex items-center gap-2">{icon}{title}</h2>{children}</div>;
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return <section className="section"><h2>{title}</h2>{children}</section>;
 }
-function SideCard({ title, icon, children }: { title: string; icon?: string; children: React.ReactNode }) {
-  return <div className="bg-[var(--bg-surface)] rounded-xl border border-white/[0.06] p-5"><h3 className="font-semibold text-slate-200 mb-2 text-sm flex items-center gap-2">{icon}{title}</h3><div className="text-slate-400 text-sm">{children}</div></div>;
+function SideCard({ title, children }: { title: string; children: React.ReactNode }) {
+  return <div className="side-card"><h3>{title}</h3>{children}</div>;
+}
+function Info({ label, value }: { label: string; value: string }) {
+  return <div className="info-row"><span>{label}</span><b>{value}</b></div>;
 }

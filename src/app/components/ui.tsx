@@ -20,7 +20,7 @@ const badgeColors: Record<string, string> = {
   amber: "bg-amber-500/10 text-amber-400 border-amber-500/15",
   red: "bg-red-500/10 text-red-400 border-red-500/15",
   purple: "bg-purple-500/10 text-purple-400 border-purple-500/15",
-  gray: "bg-[var(--bg-surface)]/[0.04] text-slate-500 border-white/[0.06]",
+  gray: "bg-white/[0.04] text-slate-500 border-white/[0.06]",
 };
 export function Badge({ children, variant = "gray", className = "" }: {
   children: React.ReactNode; variant?: string; className?: string;
@@ -49,7 +49,7 @@ export function Modal({ open, onClose, title, children, footer }: {
   if (!open) return null;
   return <div className="fixed inset-0 z-50 flex items-start justify-center pt-10 pb-10 overflow-y-auto" onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}>
     <div className="fixed inset-0  bg-black/60 backdrop-blur-sm" />
-    <div className="relative bg-[var(--bg-surface)] rounded-2xl shadow-2xl w-full max-w-3xl mx-4 slide-up">
+    <div className="relative bg-[#141f2d] border border-white/[0.08] rounded-2xl shadow-2xl shadow-black/30 w-full max-w-3xl mx-4 slide-up">
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.05]">
         <h2 className="text-lg font-bold text-slate-200">{title}</h2>
         <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/[0.04] text-slate-500 hover:text-slate-500">✕</button>
@@ -61,7 +61,7 @@ export function Modal({ open, onClose, title, children, footer }: {
 }
 
 // ── Input / Select / Textarea helpers ──
-const inputClass = "w-full px-3 py-2.5 border border-white/[0.08] rounded-lg text-sm bg-[var(--bg-surface)] focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500/30 transition-colors disabled:bg-white/[0.02] disabled:text-slate-500";
+const inputClass = "w-full px-3 py-2.5 border border-white/[0.08] rounded-[12px] text-sm bg-[#131a25] text-slate-200 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500/30 transition-colors disabled:bg-white/[0.02] disabled:text-slate-500";
 export function Input({ className = "", ...props }: React.InputHTMLAttributes<HTMLInputElement>) {
   return <input className={`${inputClass} ${className}`} {...props} />;
 }
@@ -77,8 +77,8 @@ export function Button({ variant = "primary", size = "md", className = "", child
   const base = "inline-flex items-center justify-center gap-2 font-medium rounded-xl transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed";
   const sizes: Record<string, string> = { sm: "px-3 py-1.5 text-xs", md: "px-5 py-2.5 text-sm", lg: "px-7 py-3 text-base" };
   const styles: Record<string, string> = {
-    primary: "bg-gradient-to-r from-amber-500 to-orange-500 text-slate-200 hover:from-amber-400 hover:to-orange-400 shadow-[0_0_12px_rgba(34,211,238,0.12)]",
-    secondary: "bg-[var(--bg-surface)] text-slate-300 border border-white/[0.08] hover:bg-white/[0.02]",
+    primary: "bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-400 hover:to-orange-400 shadow-[0_0_12px_rgba(240,165,80,0.14)]",
+    secondary: "bg-[#131a25] text-slate-300 border border-white/[0.08] hover:bg-white/[0.04]",
     ghost: "text-slate-500 hover:text-slate-200 hover:bg-white/[0.04]",
     danger: "bg-red-500/80 text-white hover:bg-red-500",
   };

@@ -3,7 +3,7 @@ import SearchContent from "./SearchContent";
 
 export default function SearchPage() {
   return (
-    <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-8"><div className="text-center py-16 text-slate-400">加载中...</div></div>}>
+    <Suspense fallback={<div className="zl-workbench-page"><div className="min-h-[50vh] grid place-items-center text-slate-500">加载原料工作台...</div></div>}>
       <SearchContent />
     </Suspense>
   );
