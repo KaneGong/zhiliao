@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Sparkles, Search, ScrollText, ClipboardList, Settings, LayoutDashboard, LogOut, Menu, X, ChevronDown } from "lucide-react";
+import { Sparkles, Search, ScrollText, ClipboardList, Settings, LayoutDashboard, LogOut, Menu, X, ChevronDown, Building2 } from "lucide-react";
 
 interface UserInfo { id: string; email: string; name: string; role: string; }
 
@@ -30,6 +30,12 @@ export default function Navbar() {
     { href: "/recommend", label: "AI 推荐", Icon: Sparkles },
     { href: "/search", label: "原料库", Icon: Search },
     { href: "/regulations", label: "法规", Icon: ScrollText },
+    { href: "/recipes", label: "我的配方", Icon: ClipboardList },
+  ];
+
+  const consoleLinks = [
+    { href: "/supplier/register", label: "供应商入口", Icon: Building2 },
+    { href: "/admin", label: "管理入口", Icon: Settings },
   ];
 
   const linkClass = (href: string) =>
@@ -58,6 +64,13 @@ export default function Navbar() {
 
         {/* Right: User */}
         <div className="flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-1">
+            {consoleLinks.map(l => (
+              <Link key={l.href} href={l.href} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-300 hover:bg-white/[0.04] transition-colors">
+                <l.Icon className="w-3.5 h-3.5" strokeWidth={1.5} /> {l.label}
+              </Link>
+            ))}
+          </div>
           {loading ? (
             <div className="h-4 w-14 rounded bg-white/[0.04] animate-pulse hidden sm:block" />
           ) : user ? (
@@ -107,6 +120,12 @@ export default function Navbar() {
           <div className="fixed inset-0 top-14 z-40 bg-black/50 md:hidden" onClick={() => setMobileOpen(false)} />
           <div className="absolute top-full left-0 right-0 z-50 border-b border-white/[0.06] bg-[#131a25] shadow-2xl md:hidden px-4 py-3 space-y-1">
             {navLinks.map(l => (
+              <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:bg-white/[0.04] hover:text-slate-300">
+                <l.Icon className="w-4 h-4" strokeWidth={1.5} /> {l.label}
+              </Link>
+            ))}
+            {consoleLinks.map(l => (
               <Link key={l.href} href={l.href} onClick={() => setMobileOpen(false)}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-400 hover:bg-white/[0.04] hover:text-slate-300">
                 <l.Icon className="w-4 h-4" strokeWidth={1.5} /> {l.label}

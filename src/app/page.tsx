@@ -2,13 +2,17 @@ import Link from "next/link";
 import {
   ArrowRight,
   Beaker,
+  Building2,
   Database,
   FileText,
   FlaskConical,
+  LockKeyhole,
+  MessageSquareText,
   Package,
   Search,
   ShieldCheck,
   Sparkles,
+  UserCircle,
 } from "lucide-react";
 
 export default function Home() {
@@ -47,9 +51,9 @@ export default function Home() {
               </div>
               <div className="input-footer">
                 <div className="quick-tags">
-                  <button type="button">助眠软糖</button>
-                  <button type="button">运动蛋白粉</button>
-                  <button type="button">儿童益生菌</button>
+                  <Link href={{ pathname: "/recommend", query: { q: "开发一款助眠功能软糖，需要安全的原料" } }}>助眠软糖</Link>
+                  <Link href={{ pathname: "/recommend", query: { q: "做一款清爽高蛋白运动饮，普通食品路径，控制成本" } }}>运动蛋白粉</Link>
+                  <Link href={{ pathname: "/recommend", query: { q: "开发一款儿童益生菌产品，关注合规和剂型" } }}>儿童益生菌</Link>
                 </div>
                 <button type="submit" className="primary-btn">生成方案</button>
               </div>
@@ -91,6 +95,20 @@ export default function Home() {
             </div>
           </div>
         </main>
+      </section>
+
+      <section className="entry-section">
+        <div className="section-title">
+          <p className="eyebrow">CORE ENTRY</p>
+          <h2>主流程入口</h2>
+        </div>
+        <div className="entry-grid">
+          <EntryCard href="/recommend" icon={<MessageSquareText className="w-5 h-5" />} label="AI 对话" title="AI 配方工作台" desc="输入产品需求，生成可追问、可保存的研发方案。" />
+          <EntryCard href="/regulations" icon={<ShieldCheck className="w-5 h-5" />} label="法规对话" title="法规证据工作台" desc="查询原料合规状态，并获得 AI 法规解读。" />
+          <EntryCard href="/recipes" icon={<UserCircle className="w-5 h-5" />} label="用户后台" title="我的配方" desc="查看已保存方案与 Formula Brief 结构化结果。" />
+          <EntryCard href="/supplier/register" icon={<Building2 className="w-5 h-5" />} label="供应商" title="供应商入口" desc="供应商注册、产品上架与企业资料管理入口。" />
+          <EntryCard href="/admin" icon={<LockKeyhole className="w-5 h-5" />} label="平台" title="管理后台" desc="平台产品、供应商、标签与数据导入控制台。" />
+        </div>
       </section>
 
       <section className="capability-section">
@@ -213,7 +231,8 @@ export default function Home() {
         .input-row input::placeholder { color: #8d8170; }
         .input-footer { border-top: 1px solid rgba(242,237,228,.09); padding: 12px; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
         .quick-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-        .quick-tags button { border: 1px solid rgba(242,237,228,.09); border-radius: 999px; background: rgba(255,255,255,.03); color: #b8ad9a; padding: 7px 11px; font-size: 12px; }
+        .quick-tags a { border: 1px solid rgba(242,237,228,.09); border-radius: 999px; background: rgba(255,255,255,.03); color: #b8ad9a; padding: 7px 11px; font-size: 12px; text-decoration: none; transition: .18s ease; }
+        .quick-tags a:hover { border-color: rgba(240,165,80,.26); color: #f0a550; background: rgba(240,165,80,.07); }
         .primary-btn, .primary-link {
           display: inline-flex;
           align-items: center;
@@ -256,9 +275,31 @@ export default function Home() {
         .metric-bar i { display: block; height: 100%; background: linear-gradient(90deg, #f0a550, #64b987); }
         .prompt-row { display: flex; flex-wrap: wrap; gap: 8px; }
         .prompt-row span { color: #b8ad9a; border: 1px solid rgba(242,237,228,.09); border-radius: 999px; padding: 7px 10px; font-size: 12px; }
-        .capability-section, .trust-section, .cta-section { max-width: 1120px; margin: 0 auto; padding: 84px 24px; }
+        .entry-section, .capability-section, .trust-section, .cta-section { max-width: 1120px; margin: 0 auto; padding: 84px 24px; }
         .section-title { text-align: center; margin-bottom: 28px; }
         .section-title h2, .trust-card h2, .cta-section h2 { margin: 0; color: #f2ede4; font: 900 34px/1.2 "Noto Serif SC", serif; }
+        .entry-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+        .entry-card {
+          min-height: 176px;
+          border: 1px solid rgba(242,237,228,.09);
+          border-radius: 16px;
+          background: rgba(25,34,44,.72);
+          padding: 16px;
+          color: inherit;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          box-shadow: 0 24px 80px rgba(0,0,0,.12);
+          transition: transform .18s ease, border-color .18s ease, background .18s ease;
+        }
+        .entry-card:hover { transform: translateY(-2px); border-color: rgba(240,165,80,.24); background: rgba(31,42,54,.78); }
+        .entry-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .entry-icon { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; color: #f0a550; background: rgba(240,165,80,.1); }
+        .entry-label { color: #7e7464; font: 700 10px/1 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
+        .entry-card h3 { margin: 4px 0 0; color: #f2ede4; font-size: 16px; line-height: 1.25; }
+        .entry-card p { margin: 0; color: #b8ad9a; font-size: 13px; line-height: 1.65; }
+        .entry-arrow { margin-top: auto; color: #7e7464; align-self: flex-end; }
         .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
         .capability-card, .trust-card {
           border: 1px solid rgba(242,237,228,.09);
@@ -303,15 +344,18 @@ export default function Home() {
           .input-row input { min-width: 0; font-size: 13px; text-overflow: ellipsis; }
           .input-footer { align-items: stretch; flex-direction: column; }
           .quick-tags { width: 100%; display: grid; grid-template-columns: 1fr; }
-          .quick-tags button { width: 100%; }
+          .quick-tags a { width: 100%; text-align: center; }
           .primary-btn { width: 100%; }
           .live-panel { max-width: calc(100vw - 32px); overflow: hidden; }
           .window-head b { display: none; }
           .engine-card { padding: 14px; }
           .engine-row { display: block; padding: 14px; }
           .engine-row .pill { margin-top: 12px; }
-          .capability-grid, .trust-card { grid-template-columns: 1fr; }
+          .entry-grid, .capability-grid, .trust-card { grid-template-columns: 1fr; }
           .section-title h2, .trust-card h2, .cta-section h2 { font-size: 28px; }
+        }
+        @media (min-width: 761px) and (max-width: 1120px) {
+          .entry-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
       `}</style>
     </div>
@@ -334,6 +378,20 @@ function Capability({ icon, title, desc }: { icon: React.ReactNode; title: strin
       <h3>{title}</h3>
       <p>{desc}</p>
     </article>
+  );
+}
+
+function EntryCard({ href, icon, label, title, desc }: { href: string; icon: React.ReactNode; label: string; title: string; desc: string }) {
+  return (
+    <Link href={href} className="entry-card">
+      <div className="entry-head">
+        <div className="entry-icon">{icon}</div>
+        <span className="entry-label">{label}</span>
+      </div>
+      <h3>{title}</h3>
+      <p>{desc}</p>
+      <ArrowRight className="entry-arrow w-4 h-4" />
+    </Link>
   );
 }
 
