@@ -90,6 +90,26 @@ export interface FormulaBrief {
   markdown_summary: string;
 }
 
+export interface FormulaBriefSupplierCatalogEntry {
+  generic_name?: string | null;
+  generic_name_en?: string | null;
+  product_name?: string | null;
+  supplier_name?: string | null;
+  supplier?: string | null;
+  manufacturer?: string | null;
+  source?: string | null;
+  id?: string | null;
+}
+
+export interface NormalizeFormulaBriefOptions {
+  /**
+   * Current platform ingredient catalog shown to the model. When present,
+   * any supplier_match marked platform_available=true must be verified
+   * against this catalog before it can remain available.
+   */
+  supplierCatalog?: FormulaBriefSupplierCatalogEntry[];
+}
+
 function asString(value: unknown, fallback = "待确认"): string {
   if (typeof value === "string" && value.trim()) return value.trim();
   if (typeof value === "number") return String(value);
@@ -100,6 +120,19 @@ function asStringArray(value: unknown): string[] {
   if (Array.isArray(value)) return value.map((v) => asString(v, "")).filter(Boolean);
   if (typeof value === "string" && value.trim()) return [value.trim()];
   return [];
+}
+
+function asPlatformAvailable(value: unknown): boolean {
+  if (value === true) return true;
+  if (value === false || value == null) return false;
+  if (typeof value === "number") return value === 1;
+  if (typeof value !== "string") return false;
+
+  const normalized = value.trim().toLowerCase();
+  if (!normalized || ["false", "0", "no", "n", "none", "null", "暂无", "待补充", "待确认", "不可用"].includes(normalized)) {
+    return false;
+  }
+  return ["true", "1", "yes", "y", "available", "平台已有", "平台可用", "已匹配", "可用"].includes(normalized);
 }
 
 function clampScore(value: unknown, fallback: number): number {
@@ -172,7 +205,7 @@ function normalizeSupplier(value: unknown): SupplierMatch {
     ingredient: asString(v.ingredient, "待匹配原料"),
     supplier_name: asString(v.supplier_name || v.supplier, "暂无匹配供应商"),
     product_name: asString(v.product_name || v.product, "暂无匹配产品"),
-    platform_available: Boolean(v.platform_available),
+    platform_available: asPlatformAvailable(v.platform_available),
     match_reason: asString(v.match_reason || v.reason, "需补充供应商资料后确认"),
     next_action: asString(v.next_action, "建议询样并索取规格书/COA"),
   };
@@ -184,6 +217,52 @@ function normalizeMatchText(value: string): string {
     .replace(/[（(][^）)]*[）)]/g, "")
     .replace(/[\s·•,，、/\|：:;；\-—_]+/g, "")
     .trim();
+}
+
+function catalogValues(entry: FormulaBriefSupplierCatalogEntry, keys: Array<keyof FormulaBriefSupplierCatalogEntry>): string[] {
+  return keys
+    .map((key) => normalizeMatchText(String(entry[key] ?? "")))
+    .filter((value) => value.length >= 2);
+}
+
+function matchesCatalogValue(input: string, values: string[]): boolean {
+  const normalized = normalizeMatchText(input);
+  if (!normalized) return false;
+  return values.some((value) => {
+    if (!value) return false;
+    if (normalized === value) return true;
+    if (value.length >= 4 && normalized.includes(value)) return true;
+    if (normalized.length >= 4 && value.includes(normalized)) return true;
+    return false;
+  });
+}
+
+function hasVerifiedCatalogSupplierMatch(
+  supplier: SupplierMatch,
+  supplierCatalog: FormulaBriefSupplierCatalogEntry[]
+): boolean {
+  if (!supplier.platform_available) return false;
+  if (supplierCatalog.length === 0) return true;
+
+  return supplierCatalog.some((entry) => {
+    const supplierNames = catalogValues(entry, ["supplier_name", "supplier", "manufacturer"]);
+    const productNames = catalogValues(entry, ["product_name", "id"]);
+    const ingredientNames = catalogValues(entry, ["generic_name", "generic_name_en", "source", "product_name"]);
+
+    return (
+      matchesCatalogValue(supplier.supplier_name, supplierNames) &&
+      matchesCatalogValue(supplier.product_name, productNames) &&
+      (matchesCatalogValue(supplier.ingredient, ingredientNames) || matchesCatalogValue(supplier.product_name, ingredientNames))
+    );
+  });
+}
+
+function createUnverifiedSupplierDowngrade(supplier: SupplierMatch): SupplierMatch {
+  return createUnavailableSupplierMatch(
+    supplier.ingredient,
+    "该供应商/产品未在当前平台原料目录核验，不能标记为平台可用。",
+    "请先补充供应商规格书、COA、适用食品类别和平台目录记录后再询样。"
+  );
 }
 
 const SUPPLIER_CORE_TERMS = [
@@ -291,11 +370,13 @@ function sanitizeSupplierMatches(
   routes: FormulaRoute[],
   query: string,
   productType: string,
-  seedContext: FormulaBriefSeedContext
+  seedContext: FormulaBriefSeedContext,
+  supplierCatalog: FormulaBriefSupplierCatalogEntry[] = []
 ): SupplierMatch[] {
   const coreIngredients = routes.flatMap((route) => route.core_ingredients || []);
   const probioticIntent = isProbioticIntent(query, productType);
   const sleepIntent = isSleepIntent(query, productType);
+  const requiresCatalogVerification = supplierCatalog.length > 0;
   const seen = new Set<string>();
   const sanitized: SupplierMatch[] = [];
 
@@ -313,6 +394,19 @@ function sanitizeSupplierMatches(
           product_name: supplier.product_name || "暂无平台匹配",
           platform_available: false,
         };
+    if (
+      requiresCatalogVerification &&
+      normalizedSupplier.platform_available &&
+      !hasVerifiedCatalogSupplierMatch(normalizedSupplier, supplierCatalog)
+    ) {
+      const downgraded = createUnverifiedSupplierDowngrade(normalizedSupplier);
+      const key = normalizeMatchText(`${downgraded.ingredient}|${downgraded.supplier_name}|${downgraded.product_name}`);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      sanitized.push(downgraded);
+      continue;
+    }
+
     const key = normalizeMatchText(`${normalizedSupplier.ingredient}|${normalizedSupplier.supplier_name}|${normalizedSupplier.product_name}`);
     if (seen.has(key)) continue;
     seen.add(key);
@@ -343,8 +437,11 @@ function normalizeClaims(value: unknown): ClaimSuggestion {
 const CLAIM_RISK_TERMS = [
   "改善", "调节", "增强", "提高", "促进", "保护", "缓解", "预防", "治疗", "修复",
   "抗炎", "抗氧", "抗氧化", "锁水", "补水", "水光", "水光感", "水光肌", "内服补水", "助眠", "促进睡眠", "深度睡眠", "睡眠质量", "好眠", "安神", "失眠", "放松身心", "舒缓压力", "舒缓",
-  "免疫", "增强免疫", "提高免疫", "美容养颜", "美容", "逆龄", "抗衰", "皮肤状态", "改善皮肤", "皮肤喝饱水",
-  "减肥", "瘦身", "燃脂", "控血糖", "降血脂", "降血糖", "降血压", "心血管",
+  "免疫", "增强免疫", "提高免疫", "抗病毒", "预防感冒", "抵抗力", "防护力", "美容养颜", "美容", "逆龄", "抗衰", "皮肤状态", "改善皮肤", "皮肤喝饱水",
+  "减肥", "瘦身", "燃脂", "控血糖", "降血脂", "降血糖", "辅助降血脂", "降血压", "心血管", "保护心血管", "三高", "预防三高",
+  "治疗脱水", "快速恢复", "快速恢复体能", "医疗补液", "缓解疲劳",
+  "解酒", "醒酒", "护肝", "保肝", "肝脏", "降低酒精伤害", "酒精代谢",
+  "抵抗病毒", "快速增肌", "代谢提升", "塑形效果", "高血压治疗",
   "骨质疏松", "骨密度", "骨骼健康", "增强骨骼", "强健骨骼", "促进钙吸收", "有助于钙吸收", "有助于钙的吸收", "助力钙质利用", "钙质利用", "钙的吸收", "骨骼和牙齿", "骨骼发育", "关节健康", "肠道菌群", "肠道健康", "有益菌生长", "帮助有益菌", "改善消化",
   "消化功能", "视力", "智力", "学习成绩", "疲劳", "排毒",
 ];
@@ -440,6 +537,31 @@ function inferSafeClaimExpressions(query: string, productType: string): string[]
     suggestions.add("日常营养补充场景");
   }
   if (/低糖|控糖/.test(text)) suggestions.add("低糖配方，具体声称需满足 GB 28050 条件");
+  if (/膳食纤维|可溶性纤维|菊粉|聚葡萄糖|抗性糊精|饱腹/.test(text)) {
+    suggestions.add("含膳食纤维");
+    suggestions.add("低糖轻负担");
+  }
+
+  if (/饮酒|聚餐|聚会|酒前|社交|葛根|枳椇子/.test(text)) {
+    suggestions.add("聚会场景小食");
+    suggestions.add("清爽口味软糖");
+  }
+  if (/免疫|防护|抵抗|维生素C|VC|锌|后生元|益生元/.test(text)) {
+    suggestions.add("日常营养补充");
+    suggestions.add("添加维生素C和锌");
+  }
+  if (/电解质|补水|运动后|果冻|凝胶|钠|钾|镁/.test(text)) {
+    suggestions.add("运动后清爽补给");
+    suggestions.add("便携果冻小食");
+  }
+  if (/低钠|减盐|少盐|调味|氯化钾|酵母抽提物/.test(text)) {
+    suggestions.add("低钠调味粉");
+    suggestions.add("减盐不减鲜");
+  }
+  if (/植物甾醇|甾醇|血脂|胆固醇|酸奶|发酵乳/.test(text)) {
+    suggestions.add("添加植物甾醇酯");
+    suggestions.add("日常营养酸奶");
+  }
 
   suggestions.add("以原料事实、食用场景和感官体验为主");
   return [...suggestions].slice(0, 5);
@@ -452,7 +574,11 @@ function sanitizePositiveMarketingText(text: string): string {
     .replace(/美容养颜|改善皮肤|逆龄|抗衰老|抗衰|抗氧化|抗氧/g, "成分故事")
     .replace(/强健骨骼|骨骼健康|增强骨骼|促进钙吸收|有助于钙吸收|有助于钙的吸收|助力钙质利用|钙质利用/g, "钙蛋白营养")
     .replace(/预防骨质疏松|改善骨密度/g, "银发营养")
-    .replace(/调节肠道菌群|帮助有益菌生长|有益菌生长|帮助有益菌|改善消化|增强免疫/g, "日常营养")
+    .replace(/调节肠道菌群|帮助有益菌生长|有益菌生长|帮助有益菌|改善消化|增强免疫|提高免疫|抵抗病毒|抗病毒|预防感冒/g, "日常营养")
+    .replace(/辅助降血脂|降血脂|保护心血管|预防三高|降血压|高血压治疗/g, "日常营养")
+    .replace(/治疗脱水|医疗补液|快速恢复体能|快速恢复|缓解疲劳/g, "运动补给场景")
+    .replace(/解酒|醒酒|护肝|保肝|保护肝脏|降低酒精伤害|酒精代谢/g, "聚会场景")
+    .replace(/快速增肌|代谢提升|塑形效果|燃脂/g, "运动营养场景")
     .replace(/夜间舒缓|舒缓|好眠|助眠/g, "日常营养");
 }
 
@@ -670,7 +796,7 @@ export function createTrustScore(
   const ingredientCoverage = regulatoryCoverage;
   const supplierMatchScore = supplierMatches.length > 0
     ? Math.min(100, Math.round((supplierMatches.filter((s) => s.platform_available).length / supplierMatches.length) * 100))
-    : 30;
+    : 0;
   const riskPromptCompleteness = Math.min(100, 45 + complianceChecks.length * 15);
   const riskPenalty = unknown * 6 + caution * 4 + healthOnly * 8;
   const totalScore = clampScore(
@@ -739,7 +865,8 @@ export function normalizeFormulaBrief(
   raw: unknown,
   query: string,
   markdownSummary: string,
-  verification?: VerificationResult | null
+  verification?: VerificationResult | null,
+  options: NormalizeFormulaBriefOptions = {}
 ): FormulaBrief | null {
   if (!raw || typeof raw !== "object") return null;
   const v = raw as Record<string, unknown>;
@@ -764,7 +891,8 @@ export function normalizeFormulaBrief(
     routes,
     query,
     productBrief.product_type,
-    seedContext
+    seedContext,
+    options.supplierCatalog || []
   );
   const sanitizedChecks = applySeedComplianceGuidance(
     ensureClaimComplianceCheck(
@@ -786,7 +914,7 @@ export function normalizeFormulaBrief(
     compliance_checks: sanitizedChecks,
     supplier_matches: sanitizedSuppliers,
     claim_suggestions: sanitizedClaims,
-    trust_score: normalizeTrustScore(v.trust_score, fallbackTrust),
+    trust_score: fallbackTrust,
     next_steps: buildSeedNextSteps(asStringArray(v.next_steps).slice(0, 6), seedContext),
     markdown_summary: sanitizePositiveMarketingText(asString(v.markdown_summary, markdownSummary.slice(0, 1200))),
   };

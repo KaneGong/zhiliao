@@ -12,7 +12,7 @@ import { validateContent, fromServerVerification, type TrustResult, type ServerV
 import type { FormulaBrief } from "@/lib/formula-brief";
 import FormulaBriefView from "./components/FormulaBriefView";
 
-interface Message { role: "user" | "assistant"; content: string; trustResult?: TrustResult; serverVerify?: ServerVerification; formulaBrief?: FormulaBrief; briefError?: string; }
+interface Message { role: "user" | "assistant"; content: string; trustResult?: TrustResult; serverVerify?: ServerVerification; formulaBrief?: FormulaBrief; briefError?: string; status?: string; }
 
 const examples = [
   { text: "做一款针对办公人群的减重代餐奶昔", Icon: Dumbbell },
@@ -107,6 +107,7 @@ function PageContent() {
       let assistantContent = "";
       let formulaBriefData: FormulaBrief | undefined;
       let briefError: string | undefined;
+      let statusText: string | undefined;
       let sseBuffer = "";
       setMessages([...newMsgs, { role: "assistant" as const, content: "" }]);
       setStreaming(true);
@@ -120,17 +121,21 @@ function PageContent() {
             setMessages([...newMsgs, { role: "assistant", content: assistantContent }]);
           } else if (parsed.replace_content !== undefined) {
             assistantContent = parsed.replace_content || "";
-            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError }]);
+            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError, status: statusText }]);
           } else if (parsed.verification) {
             serverVerifyData = parsed.verification;
+          } else if (parsed.status) {
+            statusText = parsed.status;
+            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError, status: statusText }]);
           } else if (parsed.formula_brief) {
             formulaBriefData = parsed.formula_brief;
-            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError }]);
+            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError, status: statusText }]);
           } else if (parsed.formula_brief_error) {
             briefError = parsed.formula_brief_error;
+            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError, status: statusText }]);
           } else if (!parsed.done && parsed.content) {
             assistantContent += parsed.content;
-            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError }]);
+            setMessages([...newMsgs, { role: "assistant", content: assistantContent, formulaBrief: formulaBriefData, briefError, status: statusText }]);
           }
         } catch {}
       };
@@ -158,7 +163,7 @@ function PageContent() {
       }
       const finalContent = assistantContent || "（AI 未返回内容）";
       const trustResult = serverVerifyData ? fromServerVerification(serverVerifyData) : validateContent(finalContent);
-      setMessages([...newMsgs, { role: "assistant" as const, content: finalContent, trustResult, serverVerify: serverVerifyData, formulaBrief: formulaBriefData, briefError }]);
+      setMessages([...newMsgs, { role: "assistant" as const, content: finalContent, trustResult, serverVerify: serverVerifyData, formulaBrief: formulaBriefData, briefError, status: undefined }]);
     } catch (e: any) {
       if (e.name !== "AbortError") setMessages([...newMsgs, { role: "assistant", content: `❌ ${e.message}` }]);
     } finally { setLoading(false); setStreaming(false); abortRef.current = null; }
@@ -264,13 +269,14 @@ function PageContent() {
                   {messages.map((m, i) => {
                     const isLast = i === messages.length - 1;
                     const isStreaming = isLast && streaming && m.role === "assistant";
+                    const isStructuring = isStreaming && Boolean(m.status);
                     return (
                       <div key={i} className={`flex gap-3 ${m.role === "user" ? "justify-end" : ""}`}>
                         {m.role === "assistant" && <AiAvatar />}
                         <div className={`max-w-[85%] group relative ${m.role === "user" ? "" : "min-w-0"}`}>
                           <div className={m.role === "user" ? "bg-gradient-to-br from-amber-500 to-orange-500 text-white rounded-2xl rounded-tr-md px-4 py-2.5 shadow-[0_2px_8px_rgba(240,165,80,0.12)]" : "rounded-2xl rounded-tl-md px-4 py-3 border border-white/[0.06] bg-white/[0.02]"}>
                             {m.role === "user" ? <p className="text-sm leading-relaxed">{m.content}</p> : (
-                              <div className={`zhiliao-answer text-sm ${isStreaming ? "streaming-cursor" : ""}`}>
+                              <div className={`zhiliao-answer text-sm ${isStreaming && !isStructuring ? "streaming-cursor" : ""}`}>
                                 <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{
                                   table: ({children}) => <div className="overflow-x-auto my-3 rounded-lg border border-white/[0.06]"><table className="w-full text-sm border-collapse">{children}</table></div>,
                                   thead: ({children}) => <thead className="bg-white/[0.03]">{children}</thead>,
@@ -284,6 +290,11 @@ function PageContent() {
                                   li: ({children}) => <li className="text-slate-400">{children}</li>,
                                   hr: () => <hr className="my-3 border-white/[0.06]" />,
                                 }}>{m.content}</Markdown>
+                                {isStreaming && m.status && (
+                                  <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-amber-400/10 bg-amber-400/[0.05] px-3 py-1.5 text-[11px] font-medium text-amber-200">
+                                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-300" />{m.status}
+                                  </div>
+                                )}
                                 {m.formulaBrief && <FormulaBriefView brief={m.formulaBrief} />}
                                 {!m.formulaBrief && m.briefError && <div className="mt-3 rounded-xl border border-amber-400/10 bg-amber-400/[0.04] px-3 py-2 text-xs text-amber-200">{m.briefError}</div>}
                               </div>
@@ -311,7 +322,7 @@ function PageContent() {
             <div className="zl-chat-input-zone">
               <div className="glass-strong rounded-2xl p-[1px] focus-within:shadow-[0_0_20px_rgba(240,165,80,0.06)] transition-shadow">
                 <div className="bg-[#131a25] rounded-2xl p-2.5 flex gap-2 items-end">
-                  <textarea ref={textareaRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={handleKeyDown} rows={1} placeholder={msgCount > 0 ? "追问或调整方案…" : "描述产品需求，例如：开发一款助眠功能软糖…"} className="flex-1 bg-transparent text-slate-300 placeholder:text-slate-500 text-sm py-2 px-1 focus:outline-none resize-none max-h-[160px]" />
+                  <textarea ref={textareaRef} value={input} onChange={e => setInput(e.target.value)} onKeyDown={handleKeyDown} rows={1} placeholder={msgCount > 0 ? "追问或调整方案…" : "描述产品需求，例如：开发一款助眠功能软糖…"} className="flex-1 !bg-transparent !rounded-[14px] text-slate-300 placeholder:text-slate-500 text-sm py-2 px-3 focus:outline-none focus:shadow-none resize-none max-h-[160px]" />
                   <div className="flex items-center gap-1.5 shrink-0">
                     {loading && <button onClick={stopGeneration} className="flex items-center gap-1 px-3 py-2 rounded-xl text-xs font-medium text-red-400 hover:bg-red-500/10 transition-colors border border-red-500/15"><Square className="w-3 h-3" strokeWidth={2} /> 停止</button>}
                     <button type="button" onClick={() => doSearch(input)} disabled={loading || !input.trim()} className="p-2.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl hover:from-amber-400 hover:to-orange-400 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-[0_0_12px_rgba(240,165,80,0.1)]"><Send className="w-4 h-4" strokeWidth={2} /></button>

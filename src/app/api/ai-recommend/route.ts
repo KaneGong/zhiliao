@@ -279,7 +279,9 @@ export async function POST(request: NextRequest) {
 
         // ═══ 运行 AI 输出验证 ═══
         const verification: VerificationResult = verifyAIOutput(cleanContent || fullContent);
-        const formulaBrief = normalizeFormulaBrief(rawBrief, query, cleanContent || fullContent, verification);
+        const formulaBrief = normalizeFormulaBrief(rawBrief, query, cleanContent || fullContent, verification, {
+          supplierCatalog: relevantProducts,
+        });
         sendEvent({ status: "结构化方案卡片已生成" });
         sendEvent({ verification });
         if (formulaBrief) {

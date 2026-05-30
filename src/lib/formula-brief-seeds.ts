@@ -41,7 +41,7 @@ export interface RegulatoryRuleSeed {
   linked_ingredient_ids?: string[];
 }
 
-export type FormulaBriefSeedScenarioId = "child_probiotic" | "plant_protein" | "social_gummy";
+export type FormulaBriefSeedScenarioId = "child_probiotic" | "plant_protein" | "social_gummy" | "immune_nutrition" | "electrolyte_jelly" | "low_sodium_seasoning" | "plant_sterol_yogurt" | "caffeine_energy" | "oat_fiber_bakery" | "soluble_fiber_light";
 
 export interface SeedScenarioConfig {
   id: FormulaBriefSeedScenarioId;
@@ -95,6 +95,76 @@ const SEED_SCENARIOS: SeedScenarioConfig[] = [
     regulatoryId: "REG-CLAIM-SOCIAL-DRINKING-001",
     supplierKeywords: ["葛根", "枳椇子", "草本", "维生素b", "b族", "维生素B"],
     placeholderIngredient: "聚会场景草本原料",
+  },
+  {
+    id: "immune_nutrition",
+    title: "日常防护营养饮",
+    matchGroups: [["免疫", "防护", "抵抗", "维生素C", "锌", "日常营养"], ["饮品", "饮料", "固体饮料", "营养饮"]],
+    ingredientId: "ING-IMMUNE-NUTRITION-001",
+    supplierId: "SUP-IMMUNE-NUTRITION-SEED-001",
+    regulatoryId: "REG-CLAIM-IMMUNE-NUTRITION-001",
+    supplierKeywords: ["维生素C", "维生素 C", "锌", "益生元", "后生元", "营养强化", "VC", "zinc"],
+    placeholderIngredient: "日常防护场景营养组合",
+  },
+  {
+    id: "electrolyte_jelly",
+    title: "运动电解质果冻",
+    matchGroups: [["电解质", "钠", "钾", "镁", "补水", "运动后"], ["果冻", "凝胶", "补给", "低糖"]],
+    ingredientId: "ING-ELECTROLYTE-JELLY-001",
+    supplierId: "SUP-ELECTROLYTE-JELLY-SEED-001",
+    regulatoryId: "REG-CLAIM-ELECTROLYTE-JELLY-001",
+    supplierKeywords: ["电解质", "钠", "钾", "镁", "果冻", "凝胶", "海盐"],
+    placeholderIngredient: "运动电解质果冻体系",
+  },
+  {
+    id: "low_sodium_seasoning",
+    title: "低钠鲜味调味粉",
+    matchGroups: [["低钠", "减盐", "减少钠", "钠摄入"], ["调味", "调味粉", "厨房", "鲜味"]],
+    ingredientId: "ING-LOW-SODIUM-SEASONING-001",
+    supplierId: "SUP-LOW-SODIUM-SEASONING-SEED-001",
+    regulatoryId: "REG-CLAIM-LOW-SODIUM-001",
+    supplierKeywords: ["低钠", "氯化钾", "酵母抽提物", "鲜味", "调味", "减盐", "钠"],
+    placeholderIngredient: "低钠鲜味调味体系",
+  },
+  {
+    id: "plant_sterol_yogurt",
+    title: "植物甾醇酸奶",
+    matchGroups: [["植物甾醇", "甾醇", "血脂", "心血管"], ["酸奶", "发酵乳", "乳制品", "乳饮"]],
+    ingredientId: "ING-PLANT-STEROL-YOGURT-001",
+    supplierId: "SUP-PLANT-STEROL-YOGURT-SEED-001",
+    regulatoryId: "REG-CLAIM-PLANT-STEROL-001",
+    supplierKeywords: ["植物甾醇", "甾醇", "酸奶", "发酵乳", "乳品"],
+    placeholderIngredient: "植物甾醇酯酸奶应用方向",
+  },
+  {
+    id: "caffeine_energy",
+    title: "咖啡因能量饮",
+    matchGroups: [["咖啡因", "能量", "提神", "电竞", "加班", "B族", "维生素B"], ["饮", "饮料", "气泡", "低糖"]],
+    ingredientId: "ING-CAFFEINE-BVITAMIN-001",
+    supplierId: "SUP-CAFFEINE-BVITAMIN-SEED-001",
+    regulatoryId: "REG-CLAIM-CAFFEINE-ENERGY-001",
+    supplierKeywords: ["咖啡因", "维生素B", "B族", "牛磺酸", "能量", "低糖", "气泡"],
+    placeholderIngredient: "咖啡因能量饮营养组合",
+  },
+  {
+    id: "oat_fiber_bakery",
+    title: "高蛋白烘焙燕麦纤维",
+    matchGroups: [["烘焙", "早餐饼", "饼", "办公室", "软曲奇"], ["高蛋白", "蛋白", "低糖", "饱腹"]],
+    ingredientId: "ING-OAT-FIBER-BAKERY-001",
+    supplierId: "SUP-OAT-FIBER-BAKERY-SEED-001",
+    regulatoryId: "REG-CLAIM-OAT-FIBER-BAKERY-001",
+    supplierKeywords: ["蛋白", "乳清", "牛奶蛋白", "燕麦", "纤维", "烘焙", "低糖"],
+    placeholderIngredient: "烘焙燕麦纤维 / 高蛋白饼质构体系",
+  },
+  {
+    id: "soluble_fiber_light",
+    title: "可溶性膳食纤维轻负担体系",
+    matchGroups: [["膳食纤维", "可溶性纤维", "菊粉", "聚葡萄糖", "抗性糊精", "饱腹"], ["代餐", "奶昔", "气泡水", "低糖", "下午茶", "控糖"]],
+    ingredientId: "ING-SOLUBLE-FIBER-LIGHT-001",
+    supplierId: "SUP-SOLUBLE-FIBER-LIGHT-SEED-001",
+    regulatoryId: "REG-CLAIM-SOLUBLE-FIBER-LIGHT-001",
+    supplierKeywords: ["膳食纤维", "纤维", "菊粉", "聚葡萄糖", "抗性糊精", "低聚果糖", "低聚糖", "GOS", "Bimuno", "益生元", "蛋白", "酪蛋白", "乳清", "水解牛奶蛋白", "Pep2Dia", "Ingredia", "Glanbia", "代餐", "气泡水", "低糖"],
+    placeholderIngredient: "可溶性膳食纤维轻负担体系",
   },
 ];
 
