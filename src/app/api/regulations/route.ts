@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import regulationsJson from "@/data/regulations.json";
 import { appendLog, getRequestAuth } from "@/lib/logger";
+import { verifyAIOutput, type VerificationResult } from "@/lib/verify-output";
+import { buildRegulationPrompt, REGULATION_SYSTEM } from "./prompt";
+
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
 
 interface RegulationStandard {
   code: string;
@@ -33,16 +37,39 @@ function findRegulation(ingredient: string) {
   return fuzzy || null;
 }
 
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const startTime = Date.now();
-  const rawQuery = searchParams.get("q");
+function isFollowUpQuery(rawQuery: string, history: any[]): boolean {
+  if (!history || history.length === 0) return false;
 
-  if (!rawQuery) {
+  // Follow-up patterns: check FIRST — they win over ingredient detection
+  if (/^(那|那么|如果|那如果|还有|另外|补充|那在|那这|那这个|那具体|那怎么|那如何)/.test(rawQuery)) return true;
+  if (rawQuery.length < 15) return true;
+  if (/[吗呢]$/.test(rawQuery)) return true;
+
+  // Check if query mentions a known ingredient (likely a new lookup, not a follow-up)
+  const hasIngredientKeyword = regulations.some(
+    (r) =>
+      rawQuery.includes(r.ingredient) ||
+      (r.ingredient_en && rawQuery.toLowerCase().includes(r.ingredient_en.toLowerCase()))
+  );
+  if (hasIngredientKeyword) return false;
+
+  // No ingredient match + has history → treat as follow-up
+  return true;
+}
+
+export async function POST(request: NextRequest) {
+  const { query, history } = await request.json();
+  const startTime = Date.now();
+  const rawQuery = query || "";
+
+  if (!rawQuery.trim()) {
     return NextResponse.json({ error: "请输入原料名称" }, { status: 400 });
   }
 
-  const ingredients = rawQuery.split(/[,，、]/).map((s) => s.trim()).filter(Boolean);
+  const isFollowUp = isFollowUpQuery(rawQuery, history || []);
+  const ingredients = isFollowUp
+    ? []
+    : rawQuery.split(/[,，、]/).map((s: string) => s.trim()).filter(Boolean);
   const results: any[] = [];
 
   for (const ingredient of ingredients) {
@@ -65,74 +92,64 @@ export async function GET(request: NextRequest) {
         ingredient,
         standard: "未纳入标准数据库",
         status: "not_found",
-        detail: `目前尚无"${ingredient}"的明确法规规范，建议向供应商确认或咨询专业法规顾问。`,
+        detail: `目前尚无"${ingredient}"的明确法规规范`,
         source: "知料法规数据库",
         data_confidence: "reference_only",
       });
     }
   }
 
-  const hasDbResults = results.some(r => r.status !== "not_found");
-  const hasNoResults = results.every(r => r.status === "not_found");
+  const hasDbResults = results.some((r) => r.status !== "not_found");
+  const hasNoResults = results.every((r) => r.status === "not_found");
 
-  // Streaming SSE response with DB results first, then AI stream
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
-      // Send DB results first
-      controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "db_results", checks: results })}\n\n`));
+      // ── 1. 发送 DB 结果（追问时跳过）──
+      if (results.length > 0) {
+        controller.enqueue(
+          encoder.encode(
+            `data: ${JSON.stringify({ type: "db_results", checks: results })}\n\n`
+          )
+        );
+      }
 
-      const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
       let fullAiContent = "";
 
-      if (hasDbResults || hasNoResults) {
+      // ── 2. AI 增强分析 ──
+      if (hasDbResults || hasNoResults || isFollowUp) {
         try {
           const dbContext = hasDbResults
-            ? results.map(r => `【${r.ingredient}】合规状态：${r.status}，适用标准：${r.standard}，细则：${r.detail}。特殊说明：${(r.special_notes || []).join("；")}`).join("\n")
+            ? results
+                .map(
+                  (r) =>
+                    `【${r.ingredient}】合规状态：${r.status}，适用标准：${r.standard}，细则：${r.detail}。特殊说明：${(r.special_notes || []).join("；")}`
+                )
+                .join("\n")
             : "";
 
-          const aiPrompt = hasDbResults
-            ? `用户查询原料法规："${rawQuery}"。数据库查到的法规基本信息如下：\n${dbContext}\n\n请基于以上数据库信息和你的法规知识，提供更详细的法规分析和建议。格式要求：\n1. 详细解读每个标准的适用范围和限制\n2. 具体的使用量和添加要求（如有）\n3. 申报路径建议（普通食品/保健食品/特殊膳食等）\n4. 实际应用中需要注意的合规要点\n5. 与类似原料的法规对比（如适用）\n末尾标注"⚠️ AI增强分析，仅供参考，不构成法律建议。"`
-            : `用户查询原料法规："${rawQuery}"。该原料在我们的法规数据库中暂未收录。请按以下思路帮用户分析：
-
-1. 该原料是否有直接法规依据？（如实说明）
-2. 【关键】是否存在间接使用路径？是否可作为已批准原料的天然组分带入？是否可通过配方注册制间接使用？在国际上是否有FDA GRAS、EU Novel Food等批准？
-3. 如要在中国主动使用，最可行的申报路径是什么？
-4. 给用户具体的下一步操作建议
-
-注意：不确定的地方明确标注"建议向监管部门确认"。末尾标注"⚠️ AI生成，仅供参考，不构成法律建议。"`;
+          const userPrompt = buildRegulationPrompt(dbContext, rawQuery, hasDbResults, isFollowUp);
 
           const aiRes = await fetch("https://api.deepseek.com/v1/chat/completions", {
             method: "POST",
-            headers: { "Content-Type": "application/json", Authorization: `Bearer ${DEEPSEEK_API_KEY}` },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${DEEPSEEK_API_KEY}`,
+            },
             body: JSON.stringify({
               model: "deepseek-chat",
               messages: [
-                { role: "system", content: `你是资深食品法规顾问，专精中国食品安全法规体系。你的价值不在于背诵法规清单，而在于帮用户找到合规使用原料的路径。
-
-【核心使命】
-用户问"这个原料能用吗"，你要回答的不是简单的"能/不能"，而是：
-- 如果能用 → 用在什么食品类别？有什么限制？需要什么资质？
-- 如果不能直接用 → 有没有间接路径？作为组分带入？走配方注册？申报新食品原料？
-- 如果完全空白 → 最接近的参考案例是什么？下一步怎么走？
-
-【铁律 — 不可违反】
-1. 只引用100%确定存在的标准编号，不确定的宁可不写
-2. 具体限量数值必须是标准原文规定，不知道时说"查阅原文确认"
-3. 明确标注信息来源：数据库事实 / 法规推断 / 推测需验证
-4. 绝对禁止编造标准编号和法规文件名称
-5. 提到"组分带入""配方注册"等间接路径时，要具体解释原理
-
-【回答结构】
-- 先说明原料在数据库中的收录状态
-- 逐一分析可能的法规路径（直接使用 → 间接使用 → 申报路径）
-- 每种路径都给出具体标准编号或法规依据
-- 末段给出可操作的下一步建议
-- 结尾标注"⚠️ AI增强分析，仅供参考，不构成法律建议。"` },
-                { role: "user", content: aiPrompt }
+                { role: "system", content: REGULATION_SYSTEM },
+                ...(history || []).map((m: any) => ({
+                  role: m.role,
+                  content: m.content,
+                })),
+                { role: "user", content: userPrompt },
               ],
-              temperature: 0.3, max_tokens: 2000, stream: true,
-            })
+              temperature: 0.3,
+              max_tokens: 2000,
+              stream: true,
+            }),
           });
 
           if (aiRes.ok) {
@@ -155,7 +172,11 @@ export async function GET(request: NextRequest) {
                     const delta = parsed.choices?.[0]?.delta?.content;
                     if (delta) {
                       fullAiContent += delta;
-                      controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "ai_chunk", content: delta })}\n\n`));
+                      controller.enqueue(
+                        encoder.encode(
+                          `data: ${JSON.stringify({ type: "ai_chunk", content: delta })}\n\n`
+                        )
+                      );
                     }
                   } catch {}
                 }
@@ -165,20 +186,56 @@ export async function GET(request: NextRequest) {
         } catch {}
       }
 
-      controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "ai_done", disclaimer: "法规数据库信息 + AI增强分析，仅供参考，不构成法律建议。" })}\n\n`));
+      // ── 3. 验证 + pending 队列 ──
+      if (fullAiContent) {
+        const verification: VerificationResult = verifyAIOutput(fullAiContent);
+        controller.enqueue(
+          encoder.encode(
+            `data: ${JSON.stringify({ type: "verification", data: verification })}\n\n`
+          )
+        );
+
+        const unknowns = verification.ingredients.filter(
+          (i) => i.status === "not_found"
+        );
+        if (unknowns.length > 0) {
+          try {
+            const fs = require("fs");
+            const pendingPath = "/opt/zhiliao/data/pending-ingredients.json";
+            fs.mkdirSync("/opt/zhiliao/data", { recursive: true });
+            let pending: any[] = [];
+            try { pending = JSON.parse(fs.readFileSync(pendingPath, "utf-8")); } catch {}
+            const today = new Date().toISOString().split("T")[0];
+            const pattern = /^[\u4e00-\u9fa5a-zA-Z]{2,12}(?:钙|镁|铁|锌|硒|钾|钠|蛋白|肽|提取物|油|粉|糖|酸|醇|酯|酶|菌|藻|胶|纤维|维生素|维他命|乳|蜜|汁|茶|叶|花|果|根|参|芝|精|素|剂|盐|碱)$/;
+            const validNames = [...new Set(unknowns.map((u: any) => u.name))].filter((n: string) => pattern.test(n));
+            for (const name of validNames) {
+              const existing = pending.find((p: any) => p.name === name);
+              if (existing) { existing.count++; existing.lastSeen = today; }
+              else { pending.push({ name, count: 1, firstSeen: today, lastSeen: today, sourceQueries: [rawQuery] }); }
+            }
+            fs.writeFileSync(pendingPath, JSON.stringify(pending, null, 2));
+          } catch (e) { console.warn("[reg pending] Failed:", e); }
+        }
+      }
+
+      controller.enqueue(
+        encoder.encode(
+          `data: ${JSON.stringify({ type: "ai_done", disclaimer: "法规数据库 + AI 分析，仅供参考，不构成法律建议。" })}\n\n`
+        )
+      );
       controller.enqueue(encoder.encode(`data: [DONE]\n\n`));
       controller.close();
 
       const auth = await getRequestAuth();
-      appendLog({ user_id: auth.user_id, api: "regulation", query: rawQuery, response_length: fullAiContent.length, response_snippet: fullAiContent.slice(0, 200), status_code: 200, duration_ms: Date.now() - startTime, error_type: auth.error_type });
+      appendLog({
+        user_id: auth.user_id, api: "regulation", query: rawQuery,
+        response_length: fullAiContent.length, response_snippet: fullAiContent.slice(0, 200),
+        status_code: 200, duration_ms: Date.now() - startTime, error_type: auth.error_type,
+      });
     },
   });
 
   return new Response(stream, {
-    headers: {
-      "Content-Type": "text/event-stream",
-      "Cache-Control": "no-cache",
-      Connection: "keep-alive",
-    },
+    headers: { "Content-Type": "text/event-stream", "Cache-Control": "no-cache", Connection: "keep-alive" },
   });
 }
