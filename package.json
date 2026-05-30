@@ -4,9 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:demo": "PORT=3010 next dev",
     "build": "next build",
     "start": "next start",
+    "check": "tsc --noEmit --pretty false",
     "lint": "eslint",
+    "smoke:local": "node scripts/smoke-local.mjs",
+    "verify": "npm run test:formula-brief && npm run check && npm run build",
+    "test:formula-brief": "node scripts/test-formula-brief.mjs",
     "test:golden": "node scripts/run-golden-questions.mjs",
     "test:golden:all": "GOLDEN_SET=all node scripts/run-golden-questions.mjs"
   },
