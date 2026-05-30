@@ -21,7 +21,8 @@ export function buildRegulationPrompt(
   dbContext: string,
   userQuery: string,
   hasResults: boolean,
-  isFollowUp: boolean
+  isFollowUp: boolean,
+  publicEvidenceContext = ""
 ): string {
   if (isFollowUp) {
     return `用户追问："${userQuery}"。
@@ -34,12 +35,17 @@ export function buildRegulationPrompt(
 
 数据库已查到（已在上方卡片展示）：${dbContext}
 
-请简短补充解读。不要重复卡片已有内容。`;
+${publicEvidenceContext}
+
+请结合 Public Evidence 的路径地图和命中证据卡做简短补充解读。不要重复卡片已有内容；不得把公开证据说成平台供应商已索资/已核验。`;
   }
 
   return `用户查询原料法规："${userQuery}"。
 
 该原料在平台法规数据库中暂未收录。
-请简短回答：是否有已知法规依据（如实说）？有无间接使用路径？下一步建议？
+
+${publicEvidenceContext}
+
+请简短回答：当前证据库是否命中 Public Evidence 卡片？如果未命中，必须明确说“当前证据库未收录完整卡片，需人工复核/待复核”，不得给确定性合规结论。若命中，也只能按证据卡范围说明路径和复核点。
 不确定的事说"建议向监管部门确认"。末尾标注"⚠️ 仅供参考，不构成法律建议。"`;
 }

@@ -79,6 +79,13 @@ zhiliao/
 - 前端：`src/app/regulations/page.tsx`
 - SSE 相关问题优先检查 Nginx `proxy_buffering off` / `proxy_cache off`。
 
+### Public Evidence v1
+- 文档：`docs/data/public-evidence-regulatory-map-v1.md`、`docs/data/public-evidence-ingredient-cards-v1.md`、`docs/data/public-evidence-source-register-v1.md`
+- 数据：`src/data/public_evidence/regulatory_map.v1.json`、`src/data/public_evidence/ingredient_cards.v1.json`、`src/data/public_evidence/sources.v1.json`
+- Loader：`src/lib/public-evidence.ts`
+- 集成：`/recommend` Formula Brief prompt 注入命中原料证据卡；`/regulations` prompt 注入法规路径地图与未收录处理规则。
+- 质量原则：Public Evidence 只代表公开法规/公开资料边界，不等于 Supplier Verified；未收录或证据不足必须提示“待复核/未收录”，不得给确定性合规结论。
+
 ### 流式滚动
 - 避免在高频 token 输出中使用 `scrollIntoView({ behavior: "smooth" })`。
 - 推荐直接设置 `scrollTop = scrollHeight`，并用约 120px 阈值判断用户是否仍在底部。
@@ -134,3 +141,9 @@ dig +short zhiliao-ai.cn
 - 清理项目文档中的明文敏感信息。
 - 将部署文档改为当前可靠的 SSH/SFTP standalone 流程。
 - 将冗余本地 memory 快照收敛为说明文件；长期记忆以 `~/.codex/memories/` 为准。
+
+### 2026-05-30 晚 — Public Evidence v1 数据资产与最小集成
+- 建立法规路径地图 v1、20 个高频/高风险原料证据卡、来源登记表，并同步 JSON 数据资产。
+- 新增 `src/lib/public-evidence.ts` loader，将命中证据卡注入 `/recommend`，将法规路径地图和未收录处理规则注入 `/regulations`。
+- 约束 AI：Public Evidence 不等于 Supplier Verified；非官方/供应商公开资料不得当成确定性法规结论；未知原料走“未收录/待复核”。
+- 本地 `npm run verify`、页面 smoke、Golden 子集和法规专项查询均通过。

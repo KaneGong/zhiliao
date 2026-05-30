@@ -1,0 +1,671 @@
+# Public Evidence Ingredient Cards v1
+
+> Last checked: 2026-05-30
+
+首批 20 个高频/高风险原料证据卡。卡片用于降低 AI 幻觉和声称越界风险；不等于供应商已索资或产品最终合规结论。
+
+## GABA（γ-氨基丁酸）
+
+- ID: `PE-GABA`
+- Aliases: γ-氨基丁酸, 氨基丁酸, GABA
+- Regulatory identity: 新食品原料/目录项需按批准公告和适用标准复核
+- Applicable paths: `novel_food`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 夜间场景产品
+  - 软糖
+  - 饮料
+  - 固体饮料
+- Prohibited / risky expressions:
+  - 助眠
+  - 改善睡眠
+  - 安神
+  - 治疗失眠
+  - 舒缓压力
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 具体食品类别、食用量、不适宜人群需按公告复核。
+- Manual review points:
+  - 确认公告原文使用范围和推荐食用量
+  - 确认目标剂型是否在允许范围内
+  - 标签不得把 GABA 推导为睡眠功效
+- Sources:
+  - `SRC-NHC-NEWFOOD-CATALOG-2023` — 三新食品目录及适用的食品安全标准公告解读 / 目录 PDF
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 茶叶茶氨酸
+
+- ID: `PE-THEANINE`
+- Aliases: L-茶氨酸, 茶氨酸, Theanine, L-theanine
+- Regulatory identity: 可能涉及新食品原料/食品添加用途，需按公告、标准和食品类别复核
+- Applicable paths: `novel_food`, `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 夜间场景
+  - 茶饮
+  - 软糖
+  - 饮料
+- Prohibited / risky expressions:
+  - 助眠
+  - 放松身心
+  - 舒缓焦虑
+  - 抗压
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 不得仅凭原料常识确定普通食品可用范围。
+- Manual review points:
+  - 确认具体来源和法规身份
+  - 确认是否为茶叶来源或纯品添加
+  - 确认使用量和标签要求
+- Sources:
+  - `SRC-NHC-NEWFOOD-CATALOG-2023` — 三新食品目录及适用的食品安全标准公告解读 / 目录 PDF
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 酸枣仁 / 酸枣仁提取物
+
+- ID: `PE-SUANZAOREN`
+- Aliases: 酸枣仁, 酸枣仁粉, 酸枣仁提取物
+- Regulatory identity: 传统食用/药食同源边界需按具体形态、提取工艺和食品类别复核
+- Applicable paths: `general_food`, `claim_labeling`, `health_food`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 夜间风味方向
+  - 草本风味软糖
+  - 固体饮料
+- Prohibited / risky expressions:
+  - 助眠
+  - 安神
+  - 治疗失眠
+  - 镇静
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 提取物与普通食材形态不能混同；对外声称需极其保守。
+- Manual review points:
+  - 确认是否属于可普通食品使用的形态
+  - 确认提取物法规身份
+  - 确认目标食品类别
+- Sources:
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 透明质酸钠
+
+- ID: `PE-HYALURONAN`
+- Aliases: 玻尿酸, 透明质酸, Sodium hyaluronate
+- Regulatory identity: 新食品原料；使用范围、不适宜人群、推荐食用量需按公告复核
+- Applicable paths: `novel_food`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 饮料
+  - 糖果
+  - 乳制品
+  - 胶原饮
+- Prohibited / risky expressions:
+  - 补水
+  - 锁水
+  - 水光肌
+  - 改善皮肤
+  - 美容养颜
+  - 抗衰
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 婴幼儿、孕妇和哺乳期妇女人群需按公告标注不适宜；推荐食用量需按公告复核。
+- Manual review points:
+  - 确认发酵法/提取法来源
+  - 确认目标食品类别在公告范围内
+  - 确认标签不适宜人群和推荐食用量
+- Sources:
+  - `SRC-NHC-HYALURONAN-2021-INTERP` — 透明质酸钠新食品原料扩大使用范围公告解读
+  - `SRC-NHC-HYALURONAN-2008-12` — 关于批准嗜酸乳杆菌、透明质酸钠等7种新资源食品的公告（2008年第12号）
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## DHA 藻油
+
+- ID: `PE-DHA-ALGAL-OIL`
+- Aliases: 藻油DHA, DHA algae oil, DHA藻油
+- Regulatory identity: 新资源食品/新食品原料路径；具体指标和使用范围需按公告及目录复核
+- Applicable paths: `novel_food`, `general_food`, `nutrient_fortifier`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 儿童营养粉
+  - 成人 Omega-3 补充
+  - 乳制品
+  - 固体饮料
+- Prohibited / risky expressions:
+  - 提高智力
+  - 改善视力
+  - 促进大脑发育
+  - 学习成绩提升
+  - 预防近视
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 儿童和婴幼儿场景需额外法规复核；氧化稳定性和标签表达需审查。
+- Manual review points:
+  - 确认 DHA 来源和公告范围
+  - 确认是否走营养强化剂或新食品原料路径
+  - 确认过氧化值/稳定性资料
+- Sources:
+  - `SRC-NHC-DHA-STEROL-2010-3` — 关于批准 DHA 藻油、植物甾醇、植物甾醇酯等为新资源食品的公告（2010年第3号）
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 鱼油 / Omega-3
+
+- ID: `PE-FISH-OIL-OMEGA3`
+- Aliases: 鱼油, Omega-3, EPA, DHA, EPA/DHA
+- Regulatory identity: 普通食品、营养强化或保健食品路径需按来源、规格、食品类别和声称目标分流
+- Applicable paths: `general_food`, `nutrient_fortifier`, `health_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 成人营养补充
+  - 软胶囊
+  - 饮料/粉剂需谨慎
+  - Omega-3 产品
+- Prohibited / risky expressions:
+  - 辅助降血脂
+  - 保护心血管
+  - 预防三高
+  - 改善血管
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 普通食品只能讲脂肪酸来源/营养事实；血脂和心血管方向应提示保健食品路径。
+- Manual review points:
+  - 确认 EPA/DHA 含量和氧化指标
+  - 确认食品类别和剂型
+  - 确认是否涉及保健功能声称
+- Sources:
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 乳铁蛋白
+
+- ID: `PE-LACTOFERRIN`
+- Aliases: Lactoferrin, 乳鐵蛋白
+- Regulatory identity: 婴幼儿/特殊膳食/营养强化相关路径需按具体标准和产品类别复核
+- Applicable paths: `infant_special_dietary`, `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 婴幼儿配方原料查询
+  - 儿童营养
+  - 银发营养
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 抗菌
+  - 抗病毒
+  - 提高抵抗力
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 婴幼儿配方属于高敏感类别，不直接给最终添加量和标签结论。
+- Manual review points:
+  - 确认目标食品类别
+  - 确认是否有 GB 14880 或特定产品标准依据
+  - 确认纯度、来源和适用人群
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 乳清蛋白
+
+- ID: `PE-WHEY-PROTEIN`
+- Aliases: Whey protein, 分离乳清蛋白, 浓缩乳清蛋白, 水解乳清蛋白
+- Regulatory identity: 常规食品蛋白原料；营养声称和蛋白含量需按标签标准和产品实测复核
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 高蛋白运动饮
+  - 蛋白粉
+  - 蛋白棒
+  - 银发营养粉
+- Prohibited / risky expressions:
+  - 快速增肌
+  - 修复肌肉
+  - 提高运动表现
+  - 治疗营养不良
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 乳过敏原需标签提示；高蛋白声称需满足营养标签条件。
+- Manual review points:
+  - 确认蛋白含量和氨基酸指标
+  - 确认乳过敏原声明
+  - 确认溶解性/热稳定性
+- Sources:
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 豌豆蛋白
+
+- ID: `PE-PEA-PROTEIN`
+- Aliases: Pea protein, 豌豆分离蛋白
+- Regulatory identity: 常规植物蛋白原料；营养声称和应用性能需按产品规格与标签标准复核
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `supplier_public`
+- Manual review required: `true`
+- Application scenarios:
+  - 植物蛋白饮
+  - 高蛋白奶昔
+  - 蛋白棒
+- Prohibited / risky expressions:
+  - 快速增肌
+  - 燃脂
+  - 代谢提升
+  - 治疗乳糖不耐
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 豆腥味、砂感、溶解性和过敏原/交叉污染需索资确认。
+- Manual review points:
+  - 确认蛋白含量和食品级资质
+  - 确认应用剂型
+  - 确认过敏原和非转基因声明
+- Sources:
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+  - `SRC-ROQUETTE-NUTRALYS` — Roquette NUTRALYS plant protein
+  - `SRC-ADM-PEA-PROTEIN` — ADM pea protein
+
+## 大豆分离蛋白
+
+- ID: `PE-SOY-PROTEIN`
+- Aliases: Soy protein isolate, 大豆蛋白, 大豆分离蛋白
+- Regulatory identity: 常规植物蛋白原料；营养声称和过敏原标签需复核
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 植物蛋白饮
+  - 蛋白棒
+  - 烘焙
+- Prohibited / risky expressions:
+  - 调节激素
+  - 改善更年期
+  - 快速增肌
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 大豆为常见致敏物质；非转基因声明需供应商文件支持。
+- Manual review points:
+  - 确认蛋白含量
+  - 确认过敏原标签
+  - 确认目标剂型口感和稳定性
+- Sources:
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 胶原蛋白肽
+
+- ID: `PE-COLLAGEN-PEPTIDE`
+- Aliases: Collagen peptides, 胶原肽, 水解胶原蛋白
+- Regulatory identity: 常规食品蛋白/肽类原料；美容相关声称需严格降级为原料事实和口感场景
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 胶原饮
+  - 软糖
+  - 粉剂
+- Prohibited / risky expressions:
+  - 美容养颜
+  - 抗衰
+  - 改善皮肤
+  - 紧致皮肤
+  - 锁水
+  - 补水
+  - 水光肌
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 动物来源、过敏原、分子量、腥味和溶解性需索资；美容功效不得作为普通食品表达。
+- Manual review points:
+  - 确认来源和规格
+  - 确认分子量和感官资料
+  - 确认标签表达只写原料事实
+- Sources:
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 维生素 C
+
+- ID: `PE-VITAMIN-C`
+- Aliases: 抗坏血酸, Vitamin C, VC
+- Regulatory identity: 营养强化剂/营养素补充相关路径，需按 GB 14880 食品类别和用量复核
+- Applicable paths: `nutrient_fortifier`, `general_food`, `health_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 饮料
+  - 固体饮料
+  - 胶原饮
+  - 营养补充
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 抗氧化治疗
+  - 美白
+  - 预防感冒
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 营养声称和营养成分功能声称需满足标签标准条件。
+- Manual review points:
+  - 确认食品类别允许强化
+  - 确认化合物来源和用量
+  - 确认营养标签条件
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 维生素 D
+
+- ID: `PE-VITAMIN-D`
+- Aliases: Vitamin D, VD, 胆钙化醇
+- Regulatory identity: 营养强化剂/营养素补充相关路径，需按 GB 14880 食品类别和用量复核
+- Applicable paths: `nutrient_fortifier`, `general_food`, `health_food`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 乳制品
+  - 银发营养粉
+  - 儿童营养
+- Prohibited / risky expressions:
+  - 促进钙吸收
+  - 强健骨骼
+  - 预防骨质疏松
+  - 改善骨密度
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 骨骼相关功能表达默认需人工复核；婴幼儿/特膳场景更高敏。
+- Manual review points:
+  - 确认食品类别允许强化
+  - 确认单位和 NRV 标示
+  - 确认声称条件
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 钙
+
+- ID: `PE-CALCIUM`
+- Aliases: Calcium, 碳酸钙, 乳钙, 柠檬酸钙
+- Regulatory identity: 营养强化剂/营养素补充相关路径，需按 GB 14880 食品类别和用量复核
+- Applicable paths: `nutrient_fortifier`, `general_food`, `health_food`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 乳制品
+  - 银发营养粉
+  - 儿童营养
+  - 烘焙
+- Prohibited / risky expressions:
+  - 促进钙吸收
+  - 骨骼健康
+  - 强健骨骼
+  - 预防骨质疏松
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 具体钙源、食品类别、用量和标签声称需复核。
+- Manual review points:
+  - 确认钙源是否允许
+  - 确认目标食品类别
+  - 确认营养声称条件
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 锌
+
+- ID: `PE-ZINC`
+- Aliases: Zinc, 葡萄糖酸锌, 硫酸锌
+- Regulatory identity: 营养强化剂/营养素补充相关路径，需按 GB 14880 食品类别和用量复核
+- Applicable paths: `nutrient_fortifier`, `general_food`, `health_food`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 儿童营养
+  - 免疫方向产品
+  - 固体饮料
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 提高抵抗力
+  - 治疗缺锌
+  - 促进生长发育
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 儿童产品和免疫相关表达需人工复核。
+- Manual review points:
+  - 确认锌化合物来源
+  - 确认食品类别和用量
+  - 确认标签声称条件
+- Sources:
+  - `SRC-NHC-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 低聚果糖 FOS
+
+- ID: `PE-FOS`
+- Aliases: Fructo-oligosaccharides, FOS, 低聚果糖
+- Regulatory identity: 普通食品/膳食纤维或益生元方向；具体法规身份、标签和用量需按产品来源复核
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `supplier_public`
+- Manual review required: `true`
+- Application scenarios:
+  - 益生菌搭配
+  - 低糖饮料
+  - 儿童固体饮料
+  - 代餐
+- Prohibited / risky expressions:
+  - 调节肠道菌群
+  - 改善便秘
+  - 促进消化
+  - 增强免疫
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - “益生元”或膳食纤维声称需审查具体法规和标签条件。
+- Manual review points:
+  - 确认来源和纯度
+  - 确认膳食纤维检测和标签条件
+  - 确认儿童适用资料
+- Sources:
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+  - `SRC-BENEO-INULIN` — BENEO Orafti inulin and oligofructose
+
+## 低聚半乳糖 GOS
+
+- ID: `PE-GOS`
+- Aliases: Galacto-oligosaccharides, GOS, 低聚半乳糖
+- Regulatory identity: 普通食品/益生元方向；婴幼儿或儿童场景需额外复核
+- Applicable paths: `general_food`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 儿童益生菌
+  - 固体饮料
+  - 乳制品
+- Prohibited / risky expressions:
+  - 调节肠道菌群
+  - 改善消化
+  - 增强免疫
+  - 促进吸收
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 婴幼儿/儿童场景需确认食品类别、规格和适用人群。
+- Manual review points:
+  - 确认来源和纯度
+  - 确认食品类别
+  - 确认标签表达不承诺肠道功能
+- Sources:
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 菊粉
+
+- ID: `PE-INULIN`
+- Aliases: Inulin, 菊苣纤维
+- Regulatory identity: 普通食品/膳食纤维方向；标签和肠道功能表达需复核
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `supplier_public`
+- Manual review required: `true`
+- Application scenarios:
+  - 低糖饮料
+  - 代餐
+  - 烘焙
+  - 益生元搭配
+- Prohibited / risky expressions:
+  - 改善便秘
+  - 调节肠道菌群
+  - 减肥
+  - 控糖
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 膳食纤维和低糖等营养声称需满足检测和标签条件。
+- Manual review points:
+  - 确认来源和膳食纤维含量
+  - 确认食品类别和耐受性
+  - 确认标签声称条件
+- Sources:
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+  - `SRC-BENEO-INULIN` — BENEO Orafti inulin and oligofructose
+
+## 植物甾醇 / 植物甾醇酯
+
+- ID: `PE-PLANT-STEROL`
+- Aliases: 植物甾醇, 植物甾醇酯, Phytosterols, Plant sterols
+- Regulatory identity: 新资源食品/新食品原料路径；普通食品和保健食品路径需按公告和声称目标分流
+- Applicable paths: `novel_food`, `general_food`, `health_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 酸奶
+  - 乳饮
+  - 营养棒
+  - 成人营养
+- Prohibited / risky expressions:
+  - 辅助降血脂
+  - 降低胆固醇
+  - 心血管保护
+  - 预防三高
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 血脂/胆固醇方向为高风险声称；普通食品表达需极度保守。
+- Manual review points:
+  - 确认公告范围和使用量
+  - 确认目标食品类别
+  - 确认是否涉及保健功能声称
+- Sources:
+  - `SRC-NHC-DHA-STEROL-2010-3` — 关于批准 DHA 藻油、植物甾醇、植物甾醇酯等为新资源食品的公告（2010年第3号）
+  - `SRC-CARGILL-COROWISE` — Cargill CoroWise Plant Sterols
+  - `SRC-BASF-VEGAPURE` — BASF Vegapure Plant Sterols
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+## 儿童益生菌菌株通用边界
+
+- ID: `PE-CHILD-PROBIOTIC`
+- Aliases: 儿童益生菌, 益生菌菌株, BB-12, LGG, HOWARU
+- Regulatory identity: 菌株级管理；是否可用于儿童或婴幼儿食品必须逐株、逐公告/名单复核
+- Applicable paths: `general_food`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 儿童固体饮料
+  - 条包粉
+  - 乳制品
+  - 益生菌搭配
+- Prohibited / risky expressions:
+  - 调节肠道菌群
+  - 增强免疫
+  - 改善消化
+  - 治疗便秘
+  - 提高抵抗力
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 增强免疫
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 儿童/婴幼儿场景必须确认菌株身份、活菌数、适用年龄和食品类别；供应商公开页面不等于中国合规结论。
+- Manual review points:
+  - 确认菌株编号和保藏/身份资料
+  - 确认是否在对应名单或公告中
+  - 确认稳定性和标签表达
+- Sources:
+  - `SRC-NHC-PROBIOTIC-2025-INTERP` — D-阿洛酮糖等20种“三新食品”公告解读：婴幼儿食品菌种相关条目
+  - `SRC-NOVONESIS-BB12` — Novonesis B. lactis BB-12
+  - `SRC-IFF-HOWARU` — IFF HOWARU Probiotics
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答

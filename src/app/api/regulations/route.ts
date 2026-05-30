@@ -3,6 +3,7 @@ import regulationsJson from "@/data/regulations.json";
 import { appendLog, getRequestAuth } from "@/lib/logger";
 import { verifyAIOutput, type VerificationResult } from "@/lib/verify-output";
 import { buildRegulationPrompt, REGULATION_SYSTEM } from "./prompt";
+import { buildPublicEvidencePromptBlock } from "@/lib/public-evidence";
 
 const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || "";
 
@@ -246,7 +247,8 @@ export async function POST(request: NextRequest) {
                 .join("\n")
             : "";
 
-          const userPrompt = buildRegulationPrompt(dbContext, rawQuery, hasDbResults, isFollowUp);
+          const publicEvidenceContext = isFollowUp ? "" : buildPublicEvidencePromptBlock(rawQuery, 5);
+          const userPrompt = buildRegulationPrompt(dbContext, rawQuery, hasDbResults, isFollowUp, publicEvidenceContext);
 
           const aiRes = await fetch("https://api.deepseek.com/v1/chat/completions", {
             method: "POST",

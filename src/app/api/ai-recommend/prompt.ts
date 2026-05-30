@@ -6,6 +6,7 @@
 
 import regulations from "@/data/regulations.json";
 import { buildFormulaBriefSeedBlock, resolveFormulaBriefSeedContext } from "@/lib/formula-brief-seeds";
+import { buildPublicEvidencePromptBlock } from "@/lib/public-evidence";
 
 interface RegulationEntry {
   ingredient: string;
@@ -249,8 +250,9 @@ export const FORMULA_BRIEF_OUTPUT = [
 
 export function buildPrompt(query: string, productSummary: string): string {
   const regulationBlock = generateRegulationBlock();
+  const publicEvidenceBlock = buildPublicEvidencePromptBlock(query, 5);
   const seedBlock = buildFormulaBriefSeedBlock(resolveFormulaBriefSeedContext(query));
-  const parts = [CORE_SYSTEM, regulationBlock, FORMULA_BRIEF_OUTPUT];
+  const parts = [CORE_SYSTEM, regulationBlock, publicEvidenceBlock, FORMULA_BRIEF_OUTPUT];
   if (seedBlock) parts.push(seedBlock);
   parts.push(`## 当前用户需求
 

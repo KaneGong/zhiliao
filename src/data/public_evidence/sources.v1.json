@@ -1,0 +1,122 @@
+[
+  {
+    "id": "SRC-NHC-GB14880-2012",
+    "title": "GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准",
+    "type": "official_standard",
+    "publisher": "原卫生部 / 国家卫生健康委",
+    "url": "https://www.nhc.gov.cn/ewebeditor/uploadfile/2013/06/20130605103746593.pdf",
+    "notes": "用于维生素、矿物质等营养强化剂路径判断；具体食品类别和用量需查标准正文。"
+  },
+  {
+    "id": "SRC-NHC-GB28050-2025-QA",
+    "title": "GB 28050-2025 预包装食品营养标签通则问答",
+    "type": "official_interpretation",
+    "publisher": "国家卫生健康委",
+    "url": "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml",
+    "notes": "用于营养标签、营养声称和营养成分功能声称边界；执行日期和过渡期需按正式标准/公告复核。"
+  },
+  {
+    "id": "SRC-NHC-GB7718-2025-QA",
+    "title": "GB 7718-2025 预包装食品标签通则问答",
+    "type": "official_interpretation",
+    "publisher": "国家卫生健康委",
+    "url": "https://www.nhc.gov.cn/sps/c100087/202509/bc824a504ec34c27883da73f14c20d44.shtml",
+    "notes": "用于预包装食品标签、非保健食品不得明示或暗示保健功能等边界。"
+  },
+  {
+    "id": "SRC-NHC-NEWFOOD-CATALOG-2023",
+    "title": "三新食品目录及适用的食品安全标准公告解读 / 目录 PDF",
+    "type": "official_catalog",
+    "publisher": "国家卫生健康委",
+    "url": "https://www.nhc.gov.cn/sps/c100088/202305/91dc62ee88a54bdc8931b4e246e6a2c5.shtml",
+    "notes": "用于新食品原料目录、公告号与食品安全指标索引；食用量、使用范围仍需回到原公告。"
+  },
+  {
+    "id": "SRC-NHC-DHA-STEROL-2010-3",
+    "title": "关于批准 DHA 藻油、植物甾醇、植物甾醇酯等为新资源食品的公告（2010年第3号）",
+    "type": "official_notice",
+    "publisher": "原卫生部",
+    "url": "https://www.nhc.gov.cn/sps/c100088/201003/e062ff20925d4f49875ea74739eb584f.shtml",
+    "notes": "用于 DHA 藻油、植物甾醇、植物甾醇酯新资源食品身份初步确认；具体指标以附件和后续目录为准。"
+  },
+  {
+    "id": "SRC-NHC-HYALURONAN-2021-INTERP",
+    "title": "透明质酸钠新食品原料扩大使用范围公告解读",
+    "type": "official_interpretation",
+    "publisher": "国家卫生健康委",
+    "url": "https://www.nhc.gov.cn/sps/c100088/202101/1093675bbd9742c6b3702e44ec2049b9.shtml",
+    "notes": "用于透明质酸钠使用范围、不适宜人群和推荐食用量提示。"
+  },
+  {
+    "id": "SRC-NHC-PROBIOTIC-2025-INTERP",
+    "title": "D-阿洛酮糖等20种“三新食品”公告解读：婴幼儿食品菌种相关条目",
+    "type": "official_interpretation",
+    "publisher": "国家卫生健康委",
+    "url": "https://www.nhc.gov.cn/sps/c100087/202507/f7de435b03e049d3a5b3acd8f6eabd72.shtml",
+    "notes": "用于可用于婴幼儿食品菌种名单和菌株级管理提醒；具体菌株需逐条核对公告。"
+  },
+  {
+    "id": "SRC-NHC-HYALURONAN-2008-12",
+    "title": "关于批准嗜酸乳杆菌、透明质酸钠等7种新资源食品的公告（2008年第12号）",
+    "type": "official_notice",
+    "publisher": "原卫生部",
+    "url": "https://www.nhc.gov.cn/bgt/pw10807/200805/bdd55e249ebe427ea11ede5ff6bcfa67.shtml",
+    "notes": "透明质酸钠早期新资源食品公告；后续使用范围以更新公告为准。"
+  },
+  {
+    "id": "SRC-CARGILL-COROWISE",
+    "title": "Cargill CoroWise Plant Sterols",
+    "type": "supplier_public",
+    "publisher": "Cargill",
+    "url": "https://www.cargill.com/food-bev/na/corowise-plant-sterols",
+    "notes": "供应商公开页面，仅用于候选供应商/应用形态参考；不等于中国法规结论或平台已索资。"
+  },
+  {
+    "id": "SRC-BASF-VEGAPURE",
+    "title": "BASF Vegapure Plant Sterols",
+    "type": "supplier_public",
+    "publisher": "BASF",
+    "url": "https://nutrition.basf.com/global/en/human-nutrition/portfolio/plant-sterols",
+    "notes": "供应商公开页面，仅用于植物甾醇应用形态参考。"
+  },
+  {
+    "id": "SRC-NOVONESIS-BB12",
+    "title": "Novonesis B. lactis BB-12",
+    "type": "supplier_public",
+    "publisher": "Novonesis",
+    "url": "https://www.novonesis.com/en/biosolutions/human-health/b-lactis-bb-12",
+    "notes": "供应商公开页面，仅用于菌株公开资料和候选索资参考；不等于平台已核验。"
+  },
+  {
+    "id": "SRC-IFF-HOWARU",
+    "title": "IFF HOWARU Probiotics",
+    "type": "supplier_public",
+    "publisher": "IFF",
+    "url": "https://www.iff.com/health-sciences/product-categories/howaru/",
+    "notes": "供应商公开页面，仅用于 HOWARU 益生菌候选索资参考。"
+  },
+  {
+    "id": "SRC-ROQUETTE-NUTRALYS",
+    "title": "Roquette NUTRALYS plant protein",
+    "type": "supplier_public",
+    "publisher": "Roquette",
+    "url": "https://info.roquette.com/nutralys-product",
+    "notes": "供应商公开页面，用于植物蛋白候选供应商和应用方向参考。"
+  },
+  {
+    "id": "SRC-ADM-PEA-PROTEIN",
+    "title": "ADM pea protein",
+    "type": "supplier_public",
+    "publisher": "ADM",
+    "url": "https://www.adm.com/en-us/products-services/human-nutrition/products/plant-proteins/pea-protein/",
+    "notes": "供应商公开页面，用于豌豆蛋白候选供应商参考。"
+  },
+  {
+    "id": "SRC-BENEO-INULIN",
+    "title": "BENEO Orafti inulin and oligofructose",
+    "type": "supplier_public",
+    "publisher": "BENEO",
+    "url": "https://www.beneo.com/Ingredients/Human-Nutrition/Prebiotic-Fibers/Orafti-Inulin",
+    "notes": "供应商公开页面，用于菊粉/低聚果糖应用方向参考。"
+  }
+]
