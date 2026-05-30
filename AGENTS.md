@@ -1,112 +1,136 @@
-# 知料 ZhiLiao — AI Agent 协作指南
+# 知料 ZhiLiao — Agent 协作指南
 
-## 项目概要
-知料是一个面向 B 端食品行业的 AI 配方研发平台。
-- **域名**：zhiliao-ai.cn
-- **服务器**：8.153.99.9 (阿里云 Ubuntu 22.04)
-- **部署**：PM2 standalone，webhook 端口 9000
+最后整理：2026-05-28
 
-## 技术栈
-- Next.js 16 (App Router) + React 19 + TypeScript
-- Tailwind CSS 4 (Warm Lab v4 暖色主题)
-- DeepSeek API (deepseek-chat, SSE 流式)
-- 数据存储：`src/data/*.json`（内嵌 JSON 文件）
+## 0. 快速启动
+新 Agent 开工先读本文件。如需要多会话分工，参考 [SESSION-SETUP.md](SESSION-SETUP.md)，内有每个会话的启动提示词，直接粘贴即可。
 
-## 目录结构
-```
+## 1. 项目定位
+知料是面向食品行业 B 端用户的 AI 配方研发与合规信息平台，核心能力包括：
+- AI 配方推荐与配方工作台
+- 原料库 / 产品详情 / 供应商资料
+- 法规查询与证据卡片
+- 普通用户、供应商用户、平台管理员相关页面
+
+线上地址：<https://zhiliao-ai.cn>
+
+## 2. 本地路径与技术栈
+- 项目路径：`/Users/kgong/Work/AI Work/AI Projects/知料/zhiliao/`
+- 服务器路径：`/opt/zhiliao`
+- 框架：Next.js 16 App Router + React 19 + TypeScript
+- 样式：Tailwind CSS 4，当前视觉为 Warm Lab / Food AI Bench 风格
+- AI：DeepSeek API，SSE 流式输出
+- 数据：`src/data/*.json` 为主，少量服务端文件队列/日志在服务器 `/opt/zhiliao/`
+- 运行：`next.config.ts` 使用 `output: "standalone"`
+
+敏感信息不写入文档；API Key、管理员口令、SSH 凭据只从 `.env.local`、服务器环境或安全凭据库读取。
+
+## 3. 当前页面状态
+截至 2026-05-28，全站 UI/UX 已按新版 Warm Lab 工作台风格统一，已覆盖：
+- `/` 首页
+- `/recommend` AI 推荐
+- `/search` 原料库
+- `/product/[id]` 产品详情
+- `/regulations` 法规查询
+- `/recipes` 配方库
+- `/login`、`/register`、`/settings`
+- `/supplier/register`、`/supplier/ang`
+- `/supplier/dashboard`、`/supplier/dashboard/products`、`/supplier/dashboard/profile`
+- `/admin` 平台管理员后台
+
+已统一清理的旧风格组件：`TagPicker`、`ComboSelect`、`MobileNav`、`src/app/components/ui.tsx`、`TrustBar`、搜索 loading fallback。
+
+## 4. 关键目录
+```text
 zhiliao/
+├── AGENTS.md                         # 本文件：Agent 开工入口
+├── docs/
+│   ├── deploy.md                     # 当前部署指南
+│   ├── SETUP.md                      # 本地启动/新环境恢复
+│   ├── server-config.md              # 服务器配置清单
+│   ├── archive/                      # 历史文档归档
+│   └── memory/README.md              # 本地记忆说明；主记忆以 Codex Memory 为准
+├── scripts/
+│   ├── deploy.sh                     # 旧 webhook 部署脚本，仅作 fallback/legacy
+│   ├── auto-research.ts
+│   └── test-full.sh
 ├── src/
-│   ├── app/                    # Next.js App Router 页面
-│   │   ├── page.tsx            # 首页
-│   │   ├── recommend/          # AI 推荐页
-│   │   ├── regulations/        # 法规查询页
-│   │   ├── search/             # 原料搜索页
-│   │   ├── product/[id]/       # 产品详情
-│   │   ├── recipes/            # 配方页
-│   │   ├── login/register/     # 用户认证
-│   │   ├── settings/           # 用户设置
-│   │   ├── supplier/           # 供应商门户
-│   │   ├── admin/              # 平台管理员后台
-│   │   ├── api/                # API 路由
-│   │   │   ├── ai-recommend/   # AI 推荐 API（主）
-│   │   │   ├── recommend/      # 推荐 API
-│   │   │   ├── regulations/    # 法规 API
-│   │   │   ├── ingredients/    # 原料 CRUD
-│   │   │   ├── products/       # 产品 CRUD
-│   │   │   ├── suppliers/      # 供应商 CRUD
-│   │   │   ├── auth/           # 用户认证
-│   │   │   └── admin/auth/     # 管理员认证
-│   │   ├── components/         # 页面级组件
-│   │   └── globals.css         # 全局样式 (Warm Lab v4)
-│   ├── components/Navbar.tsx   # 全局导航栏
-│   ├── lib/                    # 工具库
-│   │   ├── auth.ts             # JWT 认证
-│   │   ├── data.ts             # JSON 数据读写
-│   │   ├── filestore.ts        # 文件存储抽象
-│   │   ├── logger.ts           # 服务端日志
-│   │   └── users.ts            # 用户管理
-│   ├── data/                   # JSON 数据文件（构建时嵌入）
-│   │   ├── ingredients.json    # 原料库
-│   │   ├── products.json       # 产品库
-│   │   ├── recipes.json        # 配方库
-│   │   ├── regulations.json    # 法规库
-│   │   ├── suppliers.json      # 供应商库
-│   │   ├── tags.json           # 标签
-│   │   ├── users.json          # 用户
-│   │   └── pricing.json        # 定价
-│   └── types/index.ts          # TypeScript 类型
-├── docs/                       # 项目文档（★ SETUP.md 是搭建入口）
-│   ├── SETUP.md               # ★ 完整搭建指南（新机必读）
-│   ├── DEPLOY-v2.md            # 旧版部署指南
-│   ├── deploy.md               # 当前部署指南
-│   ├── server-config.md        # 服务器配置清单
-│   ├── README.md               # 项目说明
-│   └── archive/                # 历史分析报告
-├── scripts/                    # 工具脚本
-│   └── gen_products.py         # 产品数据生成
-├── public/                     # 静态资源
-├── next.config.ts              # Next.js 配置 (standalone 输出)
-├── package.json
-└── AGENTS.md                   # 本文件
+│   ├── app/                          # 页面与 API Routes
+│   ├── components/                   # 共享组件
+│   ├── data/                         # JSON 数据
+│   ├── lib/                          # auth/data/logger/trust/verify 等工具
+│   └── types/
+├── public/                           # logo / mascot / 静态资源
+└── next.config.ts                    # standalone 输出
 ```
 
-## 关键约定
-- **AI 后端**：使用 DeepSeek API，非 OpenAI。流式 SSE。
-- **部署**：PM2 + standalone 模式。`pm2 delete` 再 `pm2 start`（restart 会保留旧命令）。
-- **配色**：Warm Lab v4 — 底色 #0f1318，强调色 #f0a550（琥珀金），暖色调暗色系。
-- **B2B 定位**：用户是食品公司研发和产品经理。AI 可信度优先，每个推理步骤可溯源。
-- **数据真实性**：原料数据以供应商手册和国标为准，不编造。不确定的信息明确标注。
+## 5. 核心实现备忘
+### AI 推荐
+- API：`src/app/api/ai-recommend/route.ts`
+- Prompt：`src/app/api/ai-recommend/prompt.ts`
+- 输出验证：`src/lib/verify-output.ts`
+- 前端：`src/app/recommend/page.tsx`
+- Markdown 表格依赖 `remark-gfm`；如涉及原始 HTML 换行依赖 `rehype-raw`。
 
-## 用户偏好
-- 喜欢暖色 Warm Lab 主题（非冷色）
-- 追求高级感、平衡感、协调性（Apple 风格）
-- 倾向于让 Agent 主动执行而非讨论方案
-- 项目路径默认 `/Users/kgong/Work/AI Work/AI Projects/知料/zhiliao/`
-- 部署：tar → curl POST 到 8.153.99.9:9000 即可
+### 法规查询
+- API：`src/app/api/regulations/route.ts`
+- Prompt：`src/app/api/regulations/prompt.ts`
+- 数据：`src/data/regulations.json`
+- 前端：`src/app/regulations/page.tsx`
+- SSE 相关问题优先检查 Nginx `proxy_buffering off` / `proxy_cache off`。
 
-## 管理员
-- 路径：`/admin`
-- 密码：`zhiliao2026`（硬编码在 `src/app/api/admin/auth/route.ts`）
+### 流式滚动
+- 避免在高频 token 输出中使用 `scrollIntoView({ behavior: "smooth" })`。
+- 推荐直接设置 `scrollTop = scrollHeight`，并用约 120px 阈值判断用户是否仍在底部。
 
-## 当前状态（2026-05-25）
-- ✅ 首页视觉节奏优化完成（3 场景循环动图）
-- ✅ 法规页改造为对话式 AI 界面
-- ✅ 域名备案完成（zhiliao-ai.cn）
-- ✅ HTTPS 证书配置完成
-- 🔜 AI 推荐内容深化
-- 🔜 法规功能完善
+## 6. 当前部署真相
+当前可靠部署方式：SSH/SFTP 上传 tar 包，然后在服务器执行 standalone 构建与 PM2 重建。详见 `docs/deploy.md`。
 
-## 记忆备份
-所有 Codex 记忆系统文件已备份到 `docs/memory/`：
-- `docs/memory/RESTORE.md` — **恢复指南**（Codex 重装/崩溃后如何恢复上下文）
-- `docs/memory/MEMORY.md` — Codex MEMORY.md 完整副本
-- `docs/memory/2026-*.md` — 各轮 rollout 摘要
+核心原则：
+- `npm run build` 后必须补齐 standalone 运行目录：
+  - `.next/static` → `.next/standalone/.next/static`
+  - `public` → `.next/standalone/public`
+  - `.env.local` → `.next/standalone/.env.local`
+- PM2 改启动命令时不要只 `restart`，必须 `pm2 delete zhiliao` 后重新 `pm2 start node -- /opt/zhiliao/.next/standalone/server.js`。
+- 9000 webhook 曾出现 TCP 可连但 HTTP 挂起；只作为 legacy/fallback，不作为首选。
 
-恢复时只需告诉 Agent：**读 AGENTS.md + docs/memory/ 下所有文件**。
+## 7. 验证命令
+本地改动后至少运行：
+```bash
+cd "/Users/kgong/Work/AI Work/AI Projects/知料/zhiliao"
+npx tsc --noEmit
+npm run build
+```
 
-## 用户偏好（补充）
-- 提供阶段性进度更新，避免长时间沉默
-- 优先执行方案而非反复讨论选项
-- 每次对话结束后记录记忆
-- 首页内容尽量利用首屏空间，避免动图被截断
-- SSE 流式滚动平滑性至关重要，一次修彻底
+服务器 smoke test：
+```bash
+pm2 status zhiliao
+curl -sS -o /tmp/z.html -w "%{http_code} %{size_download}\n" http://127.0.0.1:3000/recommend
+curl -k -sS -o /tmp/z.html -w "%{http_code} %{size_download}\n" https://127.0.0.1/recommend
+```
+
+外网访问异常时先排查 VPN / 代理 fake-ip：
+```bash
+dig +short zhiliao-ai.cn
+```
+正确解析应指向 `8.153.99.9`；如果出现 `198.18.x.x`，通常是本机 VPN/代理 fake-ip，不是服务器故障。
+
+## 8. 协作规则
+- 开始知料相关任务时，默认使用本项目路径，不要反复询问。
+- 用户偏好：直接执行最佳方案，少讲选项；长任务要阶段性报进度。
+- 重大变更完成后更新本文件或 `docs/` 中对应文档，并写入 Codex Memory ad-hoc note。
+- 不要把口令、API Key、token 写入仓库文档或聊天输出。
+- 不要修改 AiMaMi 本地代理配置。
+
+## 9. 最近状态记录
+### 2026-05-28 晚 — 全站 UI/UX 重设计与部署
+- 已完成新版 Food AI Bench / Warm Lab 风格全站落地。
+- `npx tsc --noEmit` 与 `npm run build` 在部署前通过。
+- 已使用 SSH/SFTP + standalone + PM2 delete/start 成功部署。
+- 服务器本机 `/recommend` smoke test 返回 200，PM2 online。
+- 用户浏览器无法访问的问题最终判断为 VPN/代理 fake-ip DNS；关闭 VPN 后恢复。
+
+### 2026-05-28 晚 — 文档/记忆清理
+- 清理项目文档中的明文敏感信息。
+- 将部署文档改为当前可靠的 SSH/SFTP standalone 流程。
+- 将冗余本地 memory 快照收敛为说明文件；长期记忆以 `~/.codex/memories/` 为准。

@@ -1,153 +1,118 @@
 # 知料服务器配置清单
 
-> 服务器：阿里云 Ubuntu 22.04，IP: 8.153.99.9
+最后更新：2026-05-28
 
----
+## 1. 基本信息
+- 服务器：阿里云 Ubuntu 22.04
+- 公网 IP：`8.153.99.9`
+- 域名：`zhiliao-ai.cn`、`www.zhiliao-ai.cn`
+- App 目录：`/opt/zhiliao`
+- PM2 进程：`zhiliao`
+- Node 服务端口：`3000`
+- 对外访问：Nginx 80/443 反代到 `127.0.0.1:3000`
 
-## 一、目录结构
-
-```
+## 2. 目录结构
+```text
 /opt/zhiliao/
-├── .next/standalone/server.js   # PM2 入口
-├── .next/static/                # 静态资源
-├── .env.local                   # 环境变量
-├── src/data/                    # JSON 数据（构建后嵌入 standalone）
-├── public/                      # 公共资源
-└── logs/                        # AI 调用日志
-    └── ai-YYYY-MM-DD.jsonl
+├── .next/standalone/server.js        # PM2 入口
+├── .next/standalone/.next/static/    # standalone 运行所需静态资源
+├── .next/standalone/public/          # standalone 运行所需 public 资源
+├── .next/standalone/.env.local       # standalone 环境变量副本
+├── .env.local                        # 服务器环境变量源文件
+├── public/                           # 源 public 资源
+├── src/data/                         # JSON 数据源
+└── logs/                             # AI 调用日志
 ```
 
-## 二、PM2 配置
+敏感文件只留在服务器，不输出、不写入仓库文档。
 
-### 当前进程
-```
-name:     zhiliao
-script:   /usr/bin/node
-args:     /opt/zhiliao/.next/standalone/server.js
-mode:     fork
-env:      production
+## 3. PM2
+当前应使用 standalone server：
+```text
+name:   zhiliao
+script: node
+args:   /opt/zhiliao/.next/standalone/server.js
+env:    NODE_ENV=production
 ```
 
-### 常用命令
+常用命令：
 ```bash
-pm2 status                    # 查看状态
-pm2 logs zhiliao --lines 20   # 查看日志
-pm2 restart zhiliao           # 重启
-pm2 delete zhiliao            # 删除（改启动命令时必须先 delete）
-pm2 save                      # 保存进程列表
-```
-
-### ⚠️ 重要：修改启动命令
-```bash
-# 错误：pm2 restart 会保留旧命令
-# 正确做法：
+pm2 status zhiliao
+pm2 logs zhiliao --lines 50
+pm2 restart zhiliao
 pm2 delete zhiliao
-pm2 start /usr/bin/node --name zhiliao -- /opt/zhiliao/.next/standalone/server.js
 pm2 save
 ```
 
-## 三、Nginx 配置
-
-### SSL 证书
+改启动命令时必须 delete 后 start：
 ```bash
-# 初次安装 certbot
-snap install --classic certbot
-ln -sf /snap/bin/certbot /usr/bin/certbot
+pm2 delete zhiliao 2>/dev/null || true
+NODE_ENV=production pm2 start node --name zhiliao -- /opt/zhiliao/.next/standalone/server.js
+pm2 save
+```
 
-# 申请证书
-certbot --nginx -d zhiliao-ai.cn -d www.zhiliao-ai.cn
+## 4. Next.js standalone 部署要点
+每次 `npm run build` 后执行：
+```bash
+cd /opt/zhiliao
+mkdir -p .next/standalone/.next
+rm -rf .next/standalone/.next/static
+cp -r .next/static .next/standalone/.next/static
+rm -rf .next/standalone/public
+cp -r public .next/standalone/public
+cp .env.local .next/standalone/.env.local
+```
 
-# 自动续期（已配置定时任务）
+缺少 `public` 会导致 logo/mascot 等静态资源丢失；缺少 `.next/static` 会导致 Next 静态 chunk 404。
+
+## 5. Nginx / HTTPS
+预期行为：
+- HTTP 80 跳转到 HTTPS 443
+- HTTPS 443 反向代理到 `127.0.0.1:3000`
+- SSE 接口建议关闭代理缓冲：
+```nginx
+proxy_buffering off;
+proxy_cache off;
+```
+
+证书由 certbot/Let's Encrypt 管理。续期检查：
+```bash
 certbot renew --dry-run
 ```
 
-### Nginx 站点配置（推测）
-```
-/etc/nginx/sites-available/zhiliao-ai.cn
-```
-- HTTP (80) → 301 重定向到 HTTPS
-- HTTPS (443) → 反向代理到 localhost:3000
-- SSL 证书路径由 certbot 自动管理
+## 6. 日志
+- PM2 stdout：`/root/.pm2/logs/zhiliao-out.log`
+- PM2 stderr：`/root/.pm2/logs/zhiliao-error.log`
+- AI 日志：`/opt/zhiliao/logs/ai-YYYY-MM-DD.jsonl`
 
-## 四、自动部署 Webhook
-
-### 服务
-- 端口：9000
-- 语言：Python 3
-- 启动：nohup 后台运行
-
-### 脚本位置
-`/opt/deploy-webhook.py`
-
-### 功能
-- `POST /` — 接收 tar.gz，解压到 /opt/zhiliao
-- `GET /` — 触发构建流程（npm install → build → 复制 static/env → pm2 restart）
-
-### 构建流程（GET 触发）
+查看：
 ```bash
-cd /opt/zhiliao
-npm install >> /opt/deploy.log 2>&1
-npm run build >> /opt/deploy.log 2>&1
-cp -r .next/static .next/standalone/.next/static
-cp .env.local .next/standalone/.env.local
-pm2 restart zhiliao
-pm2 save
+pm2 logs zhiliao --lines 50
 ```
 
-### 重启 webhook
+## 7. 安全组 / 防火墙
+需要对外开放：
+- 80 HTTP
+- 443 HTTPS
+- 22 SSH（按安全策略限制来源更好）
+
+9000 webhook 端口为历史部署方案使用；若不再维护，应限制或关闭。
+
+## 8. 新服务器初始化简版
 ```bash
-# 如果 webhook 挂了
-nohup python3 /opt/deploy-webhook.py > /dev/null 2>&1 &
-```
-
-## 五、阿里云安全组
-
-需确保以下端口在安全组中开放：
-| 端口 | 用途 | 方向 |
-|------|------|------|
-| 80 | HTTP（重定向到 HTTPS） | 入方向 |
-| 443 | HTTPS | 入方向 |
-| 22 | SSH | 入方向 |
-| 9000 | 部署 Webhook | 入方向 |
-
-## 六、日志
-
-### AI 调用日志
-- 路径：`/opt/zhiliao/logs/ai-YYYY-MM-DD.jsonl`
-- 格式：JSONL，每行一条
-- 记录：用户ID、API、查询、响应长度、状态码、耗时
-
-### PM2 日志
-- 路径：`/root/.pm2/logs/zhiliao-out.log`
-- 路径：`/root/.pm2/logs/zhiliao-error.log`
-
-## 七、新服务器搭建步骤
-
-如果需要在全新服务器上搭建：
-
-```bash
-# 1. 安装 Node.js 20+
+# Node.js 20+
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-apt-get install -y nodejs
-
-# 2. 安装 PM2
+apt-get install -y nodejs nginx
 npm install -g pm2
 
-# 3. 安装 Nginx
-apt-get install -y nginx
-
-# 4. 安装 certbot（SSL）
-snap install --classic certbot
-
-# 5. 创建目录
+# App 目录
 mkdir -p /opt/zhiliao/logs
 
-# 6. 部署 webhook（复制 deploy-webhook.py 到 /opt/）
-
-# 7. 配置 Nginx（反向代理 localhost:3000）
-
-# 8. 配置 SSL 证书
-certbot --nginx -d your-domain.com
-
-# 9. 部署应用（通过 tar+curl 或 git clone + build）
+# Nginx 配置反代 127.0.0.1:3000
+# certbot 配置 HTTPS
+snap install --classic certbot
+ln -sf /snap/bin/certbot /usr/bin/certbot
+certbot --nginx -d zhiliao-ai.cn -d www.zhiliao-ai.cn
 ```
+
+完整发布步骤见 `docs/deploy.md`。

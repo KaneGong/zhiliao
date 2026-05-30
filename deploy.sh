@@ -22,7 +22,7 @@ rsync -avz --delete \
   --exclude='.DS_Store' \
   --exclude='deploy.sh' \
   --exclude='ingredients_old_backup.json' \
-  --exclude='ingredients_new.json' \
+  --exclude='src/data/_archive' \
   --exclude='gen_products.py' \
   --exclude='scripts' \
   --exclude='logs' \
