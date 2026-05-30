@@ -31,3 +31,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "请求格式错误" }, { status: 400 });
   }
 }
+
+export async function DELETE() {
+  const response = NextResponse.json({ success: true });
+  response.cookies.set("zhiliao_admin", "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 0,
+    path: "/",
+  });
+  return response;
+}

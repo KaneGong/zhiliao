@@ -7,6 +7,7 @@ import {
   Database,
   Home,
   Lock,
+  LogOut,
   Package,
   Pencil,
   Plus,
@@ -52,6 +53,13 @@ export default function AdminPage() {
       setAuthed(true);
       setErr("");
     } else setErr("密码错误");
+  };
+
+  const logoutAdmin = async () => {
+    await fetch("/api/admin/auth", { method: "DELETE" });
+    setAuthed(false);
+    setPw("");
+    setErr("");
   };
 
   if (!authed) {
@@ -118,7 +126,10 @@ export default function AdminPage() {
           <div className="breadcrumb">
             <span>知料后台</span><span>/</span><b>{active.label}</b>
           </div>
-          <Link href="/" className="top-link"><Home className="w-4 h-4" /> 返回首页</Link>
+          <div className="top-actions">
+            <button onClick={logoutAdmin} className="top-link top-button"><LogOut className="w-4 h-4" /> 退出后台</button>
+            <Link href="/" className="top-link"><Home className="w-4 h-4" /> 返回首页</Link>
+          </div>
         </header>
 
         <section className="admin-content">
@@ -352,7 +363,9 @@ function AdminStyles() {
     .admin-topbar { height:72px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; border-bottom:1px solid var(--line); background:rgba(14,18,23,.44); backdrop-filter:blur(18px); }
     .breadcrumb { display:flex; gap:10px; color:var(--dim); font-size:14px; }
     .breadcrumb b { color:var(--text); }
+    .top-actions { display:flex; align-items:center; gap:10px; }
     .top-link { display:flex; align-items:center; gap:7px; color:var(--muted); font-size:13px; text-decoration:none; border:1px solid var(--line); border-radius:10px; padding:9px 12px; }
+    .top-button { background:rgba(255,255,255,.03); cursor:pointer; }
     .top-link:hover { color:var(--text); background:rgba(255,255,255,.04); }
     .admin-content { padding:28px; max-width:1360px; }
     .page-title-row { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:22px; }

@@ -194,7 +194,7 @@ export default function RecipesPage() {
             <h1>我的配方</h1>
             <p>保存的 AI 推荐方案、法规判断和原料路径。</p>
           </div>
-          <Link href="/recommend" className="new-btn hero-action" aria-label="新建配方方案">
+          <Link href="/recommend" className="recipes-primary-action hero-action" aria-label="新建配方方案">
             <Plus className="w-4 h-4" />
             <span>新建方案</span>
           </Link>
@@ -206,7 +206,7 @@ export default function RecipesPage() {
             <div className="empty-icon"><ClipboardList className="w-9 h-9" /></div>
             <h2>还没有保存的配方</h2>
             <p>使用 AI 推荐生成配方方案，然后点击保存。</p>
-            <Link href="/recommend" className="new-btn empty-action" aria-label="去 AI 推荐新建配方方案">
+            <Link href="/recommend" className="recipes-primary-action empty-action" aria-label="去 AI 推荐新建配方方案">
               <Plus className="w-4 h-4" />
               <span>去新建</span>
             </Link>
@@ -251,33 +251,36 @@ export default function RecipesPage() {
         .eyebrow { margin:0 0 8px; color:#7e7464; font:700 10px/1 var(--font-mono); letter-spacing:.16em; text-transform:uppercase; }
         h1 { margin:0 0 10px; color:#f2ede4; font:900 36px/1.12 "Noto Serif SC",serif; }
         .recipes-hero p { margin:0; color:#b8ad9a; line-height:1.8; }
-        .new-btn {
+        :global(.recipes-primary-action) {
           display:inline-flex;
           align-items:center;
           justify-content:center;
           gap:8px;
-          min-height:42px;
-          padding:0 16px;
-          border-radius:10px;
-          border:1px solid rgba(240,165,80,.22);
-          background:linear-gradient(135deg,#f0a550,#ef7e42);
-          color:white;
+          min-height:46px;
+          padding:0 18px;
+          border-radius:12px;
+          border:1px solid rgba(240,165,80,.34);
+          background:linear-gradient(135deg,#f0a550,#ef7e42)!important;
+          color:white!important;
           text-decoration:none;
-          font-weight:800;
+          font-weight:900;
+          font-size:15px;
           line-height:1;
-          box-shadow:0 0 22px rgba(240,165,80,.16);
+          box-shadow:0 14px 34px rgba(240,126,66,.18), inset 0 1px 0 rgba(255,255,255,.18);
           white-space:nowrap;
-          transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+          transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, filter .18s ease;
         }
-        .new-btn:hover { transform:translateY(-1px); border-color:rgba(240,165,80,.42); box-shadow:0 0 30px rgba(240,165,80,.24); }
-        .new-btn:focus-visible { outline:2px solid rgba(240,165,80,.45); outline-offset:3px; }
-        .hero-action { min-width:132px; }
+        :global(.recipes-primary-action:hover) { transform:translateY(-1px); border-color:rgba(240,165,80,.52); box-shadow:0 18px 42px rgba(240,126,66,.26), inset 0 1px 0 rgba(255,255,255,.22); filter:saturate(1.05); }
+        :global(.recipes-primary-action:focus-visible) { outline:2px solid rgba(240,165,80,.5); outline-offset:4px; }
+        :global(.recipes-primary-action svg) { flex:0 0 auto; }
+        :global(.recipes-primary-action span) { display:inline-block; }
+        .hero-action { min-width:136px; }
         .empty-card,.recipe-card { border:1px solid rgba(242,237,228,.09); border-radius:15px; background:rgba(25,34,44,.72); box-shadow:0 24px 80px rgba(0,0,0,.18); }
         .empty-card { min-height:360px; display:grid; place-items:center; text-align:center; padding:44px; }
         .empty-icon { width:64px;height:64px;border-radius:18px;display:grid;place-items:center;color:#f0a550;background:rgba(240,165,80,.1); margin:auto; }
         .empty-card h2 { color:#f2ede4; font:800 22px/1.2 "Noto Serif SC",serif; margin:18px 0 8px; }
         .empty-card p { color:#b8ad9a; margin:0 0 22px; }
-        .empty-action { min-width:148px; min-height:46px; }
+        .empty-action { min-width:154px; min-height:48px; }
         .recipe-list { display:grid; gap:12px; }
         .recipe-card { overflow:hidden; }
         .recipe-head { display:flex; justify-content:space-between; gap:18px; padding:18px; cursor:pointer; }
