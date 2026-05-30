@@ -20,6 +20,14 @@
 敏感信息不要写进文档；SSH 凭据、API Key、管理员口令从安全凭据库、`.env.local` 或服务器现有配置读取。
 
 ## 3. 本地打包
+部署前先跑当前 checklist：`docs/tasks/deploy-readiness-checklist-2026-05-30.md`。至少确认：
+
+```bash
+npm run verify
+npm run smoke:local
+git diff --check
+```
+
 ```bash
 cd "/Users/kgong/Work/AI Work/AI Projects/知料/zhiliao"
 tar -czf /tmp/zhiliao-deploy.tar.gz \
@@ -74,6 +82,8 @@ pm2 save
 pm2 status zhiliao
 curl -sS -o /tmp/z-home.html -w "%{http_code} %{size_download}\n" http://127.0.0.1:3000/
 curl -sS -o /tmp/z-recommend.html -w "%{http_code} %{size_download}\n" http://127.0.0.1:3000/recommend
+curl -sS -o /tmp/z-regulations.html -w "%{http_code} %{size_download}\n" http://127.0.0.1:3000/regulations
+curl -sS -o /tmp/z-admin.html -w "%{http_code} %{size_download}\n" http://127.0.0.1:3000/admin
 curl -k -sS -o /tmp/z-https.html -w "%{http_code} %{size_download}\n" https://127.0.0.1/recommend
 ```
 
@@ -81,6 +91,7 @@ curl -k -sS -o /tmp/z-https.html -w "%{http_code} %{size_download}\n" https://12
 ```bash
 curl -I https://zhiliao-ai.cn/
 curl -I https://zhiliao-ai.cn/recommend
+curl -I https://zhiliao-ai.cn/regulations
 ```
 
 本机浏览器打不开但服务器验证正常时，先查 DNS/VPN：
