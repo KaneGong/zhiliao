@@ -128,6 +128,7 @@ cats = {}
 for p in P: cats[p["category"]] = cats.get(p["category"],0)+1
 for c,n in sorted(cats.items(),key=lambda x:-x[1]): print(f"  {c}: {n}")
 
-out = "/sessions/zealous-adoring-maxwell/mnt/知料/zhiliao/src/data/ingredients_new.json"
+from pathlib import Path
+out = str((Path(__file__).resolve().parents[1] / "src/data/_archive/ingredients_new.json"))
 with open(out,"w") as f: json.dump(P,f,ensure_ascii=False,indent=2)
 print(f"Saved to ingredients_new.json ({len(P)} products)")

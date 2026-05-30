@@ -30,6 +30,11 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# local regression scratch logs; keep selected final artifacts tracked explicitly
+docs/tasks/regression-runs/*.log
+!docs/tasks/regression-runs/golden-20q-supplier-truthfulness-20260530-094102.log
+!docs/tasks/regression-runs/golden-targeted-data-repair-2-4q-20260530-094120.log
+
 # env files (can opt-in for committing if needed)
 .env*
 
