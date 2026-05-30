@@ -62,15 +62,18 @@ export default function AdminPage() {
           <p className="eyebrow">ZHILIAO ADMIN</p>
           <h1>管理后台</h1>
           <p className="auth-desc">输入管理密码，进入食品研发数据控制台。</p>
-          <Input
-            type="password"
-            value={pw}
-            onChange={(e) => setPw(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && login()}
-            placeholder="输入管理密码"
-          />
-          {err && <p className="auth-error">{err}</p>}
-          <button onClick={login} className="admin-primary-btn">进入后台</button>
+          <div className="auth-form">
+            <Input
+              className="admin-auth-input"
+              type="password"
+              value={pw}
+              onChange={(e) => setPw(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && login()}
+              placeholder="输入管理密码"
+            />
+            {err && <p className="auth-error">{err}</p>}
+            <button onClick={login} className="admin-primary-btn auth-submit">进入后台</button>
+          </div>
         </div>
         <AdminStyles />
       </div>
@@ -321,7 +324,15 @@ function AdminStyles() {
     .eyebrow { margin:0 0 8px; color:var(--dim); font:600 10px/1 var(--font-mono); letter-spacing:.15em; text-transform:uppercase; }
     .admin-auth-card h1 { margin:0 0 8px; color:var(--text); font:800 26px/1.2 "Noto Serif SC", serif; }
     .auth-desc { color:var(--muted); font-size:14px; line-height:1.7; margin:0 0 22px; }
-    .auth-error { color:var(--red); font-size:13px; margin:10px 0 0; }
+    .auth-form { display:grid; gap:12px; }
+    .admin-auth-input {
+      min-height:48px;
+      border-color:rgba(242,237,228,.11)!important;
+      background:rgba(19,26,37,.9)!important;
+      font-size:15px!important;
+    }
+    .auth-error { color:var(--red); font-size:13px; margin:0; }
+    .auth-submit { width:100%; min-height:46px!important; font-size:15px!important; }
     .admin-shell { min-height:100vh; display:grid; grid-template-columns:248px 1fr; color:var(--text); background: linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px), linear-gradient(180deg, rgba(255,255,255,.015) 1px, transparent 1px), radial-gradient(circle at 16% 4%, rgba(240,165,80,.12), transparent 30%), var(--bg); background-size:64px 64px,64px 64px,auto,auto; }
     .admin-rail { position:sticky; top:0; height:100vh; padding:22px 16px; border-right:1px solid var(--line); background:rgba(14,18,23,.76); backdrop-filter:blur(24px); display:flex; flex-direction:column; gap:22px; }
     .admin-brand { display:flex; gap:12px; align-items:center; padding:4px 6px 14px; border-bottom:1px solid var(--line); }
