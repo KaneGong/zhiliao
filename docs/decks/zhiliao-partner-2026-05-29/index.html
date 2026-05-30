@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<title>知料 · 食品研发 AI 工作台</title>
+<script>
+window.DECK_MANIFEST = [
+  { file: "slides/01-cover.html", label: "Cover" },
+  { file: "slides/02-thesis.html", label: "Thesis" },
+  { file: "slides/03-market-pain.html", label: "Market Pain" },
+  { file: "slides/04-positioning.html", label: "Positioning" },
+  { file: "slides/05-workflow.html", label: "Workflow" },
+  { file: "slides/06-product-system.html", label: "Product System" },
+  { file: "slides/07-trust-layer.html", label: "Trust Layer" },
+  { file: "slides/08-moat.html", label: "Moat" },
+  { file: "slides/09-business.html", label: "Business" },
+  { file: "slides/10-90-days.html", label: "90 Days" },
+  { file: "slides/11-partner-fit.html", label: "Partner Fit" },
+  { file: "slides/12-closing.html", label: "Closing" }
+];
+window.DECK_WIDTH = 1280;
+window.DECK_HEIGHT = 720;
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;background:#080b0f;overflow:hidden;font-family:-apple-system,"PingFang SC",sans-serif}#stage{position:fixed;top:0;left:0;transform-origin:top left;background:#0e1217;box-shadow:0 10px 60px rgba(0,0,0,.45)}iframe{width:100%;height:100%;border:0;display:block;background:#0e1217}.counter{position:fixed;right:20px;bottom:18px;background:rgba(0,0,0,.62);color:#fff;border:1px solid rgba(255,255,255,.12);padding:6px 13px;border-radius:999px;font-size:12px;font-family:ui-monospace,Menlo,monospace;z-index:10;opacity:.72}.counter .label{color:rgba(255,255,255,.58);margin-left:8px}.nav-zone{position:fixed;top:0;bottom:0;width:15%;z-index:5;cursor:pointer}.nav-zone.left{left:0}.nav-zone.right{right:0}.hint{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:999px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:rgba(255,255,255,.62);font-size:28px;opacity:0;transition:.18s}.nav-zone:hover .hint{opacity:1}.nav-zone.left .hint{left:18px}.nav-zone.right .hint{right:18px}@media print{@page{size:1280px 720px;margin:0}html,body{background:#fff;overflow:visible;height:auto}#stage{position:static;transform:none!important;box-shadow:none}.counter,.nav-zone{display:none!important}.print-stack{display:block!important}.print-stack iframe{width:1280px;height:720px;page-break-after:always;display:block}}
+</style>
+</head>
+<body>
+<div id="stage"><iframe id="frame" src="about:blank"></iframe></div>
+<div class="nav-zone left" id="prev"><div class="hint">‹</div></div>
+<div class="nav-zone right" id="next"><div class="hint">›</div></div>
+<div class="counter" id="counter">1 / 1</div>
+<div class="print-stack" id="printStack" style="display:none"></div>
+<script>
+(function(){const W=window.DECK_WIDTH,H=window.DECK_HEIGHT,deck=window.DECK_MANIFEST,stage=document.getElementById('stage'),frame=document.getElementById('frame'),counter=document.getElementById('counter'),printStack=document.getElementById('printStack');let current=0;stage.style.width=W+'px';stage.style.height=H+'px';function fit(){const s=Math.min(innerWidth/W,innerHeight/H),x=(innerWidth-W*s)/2,y=(innerHeight-H*s)/2;stage.style.transform=`translate(${x}px,${y}px) scale(${s})`}function show(i){if(i<0||i>=deck.length)return;current=i;frame.src=deck[i].file;counter.innerHTML=`${i+1} / ${deck.length}<span class="label">${deck[i].label}</span>`;history.replaceState(null,'','#'+(i+1))}function n(){show(Math.min(current+1,deck.length-1))}function p(){show(Math.max(current-1,0))}addEventListener('resize',fit);document.getElementById('next').onclick=n;document.getElementById('prev').onclick=p;document.addEventListener('keydown',e=>{if(['ArrowRight',' ','PageDown'].includes(e.key)){e.preventDefault();n()} if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();p()} if(e.key==='Home'){show(0)} if(e.key==='End'){show(deck.length-1)} if(e.key==='p'||e.key==='P'){print()}});addEventListener('beforeprint',()=>{printStack.innerHTML='';deck.forEach(d=>{const f=document.createElement('iframe');f.src=d.file;printStack.appendChild(f)});stage.style.display='none';printStack.style.display='block'});addEventListener('afterprint',()=>{stage.style.display='block';printStack.style.display='none';printStack.innerHTML=''});const m=location.hash.match(/^#(\d+)$/);if(m)current=Math.max(0,Math.min(deck.length-1,parseInt(m[1])-1));fit();show(current)})();
+</script>
+</body>
+</html>
