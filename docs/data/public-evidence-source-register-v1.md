@@ -109,11 +109,6 @@ Public Evidence v1 只把官方法规/国家标准/供应商官网或官方资�
 - URL: https://www.beneo.com/Ingredients/Human-Nutrition/Prebiotic-Fibers/Orafti-Inulin
 - Notes: 供应商公开页面，用于菊粉/低聚果糖应用方向参考。
 
-
----
-
-## 第二批扩展来源（2026-05-30）
-
 ## SRC-OPENSTD-GB2760 — GB 2760 食品安全国家标准 食品添加剂使用标准（标准公开系统入口）
 
 - Type: `official_standard_index`
@@ -127,3 +122,31 @@ Public Evidence v1 只把官方法规/国家标准/供应商官网或官方资�
 - Publisher: 国家卫生健康委 / 国家市场监督管理总局
 - URL: https://www.nhc.gov.cn/sps/
 - Notes: 用于食药物质/药食同源路径入口；具体物质是否列入目录、使用部位、使用方式和地方口径需人工复核。
+
+## SRC-CFSA-GB2760-2024 — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=6CA1489A-9570-4906-8CE8-CC86FBFB1941
+- Notes: 现行 GB 2760-2024 详情页，含 PDF 附件下载（file_guid: 43C9B75E-3D84-4577-80FC-0F7D77D36407）；用于咖啡因、聚葡萄糖、赤藓糖醇、氯化钾、柠檬酸钾等食品添加剂路径复核。
+
+## SRC-CFSA-GB14880-2012 — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 原卫生部
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=002D3B53-DE13-42C1-B099-C57EC501138A
+- Notes: GB 14880-2012 详情页，含 PDF 附件下载（file_guid: C56AC022-3D4B-4C06-A4E4-F9F4ECA370F7）；用于牛磺酸、维生素 B6、镁、钾、聚葡萄糖特殊膳食路径复核。
+
+## SRC-CFSA-GB28050-2025 — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26
+- Notes: GB 28050-2025 详情页，含 PDF 附件下载（file_guid: BDCADC64-8B8A-44BC-B143-76341F2E33F7）；用于营养标签、低糖/无糖、营养声称和营养成分功能声称边界复核。
+
+## SRC-CFSA-GB7718-2025 — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=63F005D7-BA6F-428C-8098-826735B6C13E
+- Notes: GB 7718-2025 详情页，含 PDF 附件下载（file_guid: 406A8D4B-459E-4560-A32A-8F001971A027）；用于预包装食品标签、配料标示和非保健食品不得明示或暗示保健功能等边界复核。

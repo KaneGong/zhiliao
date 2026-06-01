@@ -97,3 +97,21 @@
 1. 对第二批 10 张卡逐条补官方公告原文深链和适用食品类别。
 2. 针对 20Q 中供应商缺口较大的场景补真实供应商候选。
 3. 后续供应商入驻后，再把 Supplier Verified 和 Public Evidence 分层接起来。
+
+## 8. 2026-06-02 第二批深度复核验收
+
+02 会话对第二批 10 张卡补充了更细的官方标准深链和类别/用量边界；主控已完成验收。
+
+验收结果：
+
+- Public Evidence JSON：30 cards / 7 paths / 21 sources，通过
+- 第二批卡仍保持 `manual_review_required: true`
+- 未发现占位供应商或 Supplier Verified 过度声明
+- `npm run verify`：通过
+- 目标回归子集 7/7 PASS：GQ-003、GQ-011、GQ-013、GQ-014、GQ-015、GQ-017、GQ-018
+
+补充说明：
+
+- 本轮新增 CFSA 标准文本详情页深链：GB 2760-2024、GB 14880-2012、GB 28050-2025、GB 7718-2025。
+- 为避免 prompt 过长导致 AI 响应卡住，运行时注入的 Public Evidence 摘要做了压缩；完整证据仍保留在文档和 JSON 数据资产中。
+- 本地回归初次超时是旧 `next dev` 进程卡住导致，重启 dev server 后恢复。

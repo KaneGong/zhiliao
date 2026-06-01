@@ -121,11 +121,16 @@ export function resolvePublicEvidenceCards(query: string, limit = 5): PublicEvid
 function sourceLabel(sourceId: string): string {
   const source = sourceById.get(sourceId);
   if (!source) return sourceId;
-  return `${sourceId}（${source.type}：${source.title}）`;
+  return `${sourceId}（${source.type}）`;
 }
 
-function compactList(values: string[], max = 4): string {
-  const cleaned = values.filter(Boolean);
+function compactText(value: string, max = 120): string {
+  const cleaned = value.replace(/\s+/g, " ").trim();
+  return cleaned.length > max ? `${cleaned.slice(0, max)}…` : cleaned;
+}
+
+function compactList(values: string[], max = 4, itemMax = 60): string {
+  const cleaned = values.filter(Boolean).map((value) => compactText(value, itemMax));
   if (cleaned.length <= max) return cleaned.join("；");
   return `${cleaned.slice(0, max).join("；")}；等`;
 }
@@ -139,7 +144,7 @@ export function buildRegulatoryPathMapPromptBlock(): string {
   lines.push("");
 
   for (const path of regulatoryMap) {
-    lines.push(`- ${path.title}（${path.path_id}）：${path.scope} AI 处理：${path.ai_policy} 触发人工复核：${compactList(path.manual_review_triggers, 3)}。来源：${path.primary_source_ids.map(sourceLabel).join("；") || "待补充"}。`);
+    lines.push(`- ${path.title}（${path.path_id}）：${compactText(path.ai_policy, 90)} 复核触发：${compactList(path.manual_review_triggers, 2, 40)}。`);
   }
 
   return lines.join("\n");
@@ -160,14 +165,13 @@ export function buildPublicEvidenceIngredientPromptBlock(query: string, limit = 
   lines.push(`命中 ${cards.length} 张卡（最多注入 ${limit} 张）：`);
   for (const card of cards) {
     lines.push(`\n### ${card.name_cn}（${card.id}）`);
-    lines.push(`- 法规身份：${card.regulatory_identity}`);
-    lines.push(`- 适用路径：${card.applicable_paths.join(" / ")}`);
-    lines.push(`- 可讨论应用：${compactList(card.application_scenarios, 5) || "待复核"}`);
-    lines.push(`- 禁止/高风险表达：${compactList(card.prohibited_or_risky_expressions, 8) || "待复核"}`);
-    lines.push(`- 不适宜人群/标签注意：${compactList(card.unsuitable_groups_or_label_notes, 4) || "待复核"}`);
-    lines.push(`- 人工复核点：${compactList(card.manual_review_points, 5) || "待复核"}`);
-    lines.push(`- 证据等级：${card.confidence}；last_checked_at：${card.last_checked_at}；manual_review_required：${card.manual_review_required ? "true" : "false"}`);
-    lines.push(`- 来源：${card.source_ids.map(sourceLabel).join("；") || "待补充官方来源"}`);
+    lines.push(`- 法规身份：${compactText(card.regulatory_identity, 150)}`);
+    lines.push(`- 路径：${card.applicable_paths.join("/")}；证据：${card.confidence}；需人工复核：${card.manual_review_required ? "是" : "否"}`);
+    lines.push(`- 可讨论：${compactList(card.application_scenarios, 4, 36) || "待复核"}`);
+    lines.push(`- 禁止/高风险：${compactList(card.prohibited_or_risky_expressions, 6, 24) || "待复核"}`);
+    lines.push(`- 标签/人群：${compactList(card.unsuitable_groups_or_label_notes, 2, 90) || "待复核"}`);
+    lines.push(`- 复核点：${compactList(card.manual_review_points, 3, 80) || "待复核"}`);
+    lines.push(`- 来源：${card.source_ids.slice(0, 3).map(sourceLabel).join("；") || "待补充官方来源"}`);
   }
 
   return lines.join("\n");

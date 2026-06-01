@@ -153,3 +153,9 @@ dig +short zhiliao-ai.cn
 - 新增上线状态说明：`docs/tasks/public-evidence-v1-status-2026-05-30.md`。
 - Formula Brief 增加“证据不足也要给可打样研发路线，但把法规/用量/标签/供应商标为待复核”的风格约束。
 - 修复输出清洗副作用：负面风险语境中的“解酒/护肝”等禁词不再被替换成奇怪表达；只清洗过度确定和正向功效暗示。
+
+### 2026-06-02 — Public Evidence v1 第二批深度复核验收
+- 02 会话已将第二批 10 张卡补充到更细的官方标准深链与类别/用量边界；主控验收通过。
+- Public Evidence 当前为 30 cards / 7 paths / 21 sources。
+- 运行时 Evidence prompt 摘要已压缩，避免深度卡片过长拖慢 `/recommend`；完整证据仍保留在 docs/data 与 JSON。
+- 目标回归 GQ-003、GQ-011、GQ-013、GQ-014、GQ-015、GQ-017、GQ-018 通过。

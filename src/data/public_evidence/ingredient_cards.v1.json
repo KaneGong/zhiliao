@@ -1043,16 +1043,17 @@
       "咖啡提取物",
       "茶提取物"
     ],
-    "regulatory_identity": "需区分天然含咖啡因原料、食品添加剂/香料路径和特殊用途；具体使用范围需按现行 GB 2760、产品类别和标签要求复核",
+    "regulatory_identity": "GB 2760-2024 表 A.1 将咖啡因列为食品添加剂（CNS 00.007，功能“其他”），适用食品类别为 14.04.01 可乐型碳酸饮料，最大使用量 0.15 g/kg（以即饮状态计）；天然咖啡/茶原料、咖啡/茶提取物与添加剂咖啡因不能混同，其他能量/提神场景需逐品类复核。",
     "applicable_paths": [
       "food_additive",
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "咖啡/茶饮料",
-      "能量场景饮品",
-      "低糖提神场景产品"
+      "可乐型碳酸饮料（GB 2760-2024 明确路径）",
+      "咖啡/茶饮料（天然原料路径，需按产品标准和标签复核）",
+      "能量/提神场景饮品（需人工复核是否可用及声称边界）",
+      "低糖饮料中的咖啡因风味/感官路线（不得承接功能声称）"
     ],
     "prohibited_or_risky_expressions": [
       "提神醒脑",
@@ -1067,23 +1068,29 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "儿童、孕妇、哺乳期、咖啡因敏感人群标签提示需人工复核；实际咖啡因含量和每日摄入提醒需按品类法规/标准确认。"
+      "GB 2760-2024 明确添加剂咖啡因仅限可乐型碳酸饮料 0.15 g/kg（以即饮状态计）；其他食品类别不得据此外推。",
+      "天然含咖啡因原料与外加咖啡因、咖啡/茶提取物需分别确认法规身份、实际咖啡因含量、执行标准和标签。",
+      "儿童、孕妇、哺乳期、咖啡因敏感人群、每日摄入提醒等标签提示暂无本卡官方统一结论，需按目标品类和地方监管人工复核。",
+      "不得用“提神醒脑/抗疲劳/提高专注力”等表达承接保健功能或药理效果。"
     ],
     "manual_review_points": [
-      "确认咖啡因来源是天然原料还是添加剂/香料路径",
-      "确认目标食品类别和最大使用量",
-      "确认是否触碰保健食品缓解疲劳声称",
-      "复核儿童、孕妇等敏感人群提示"
+      "核对目标产品是否确属 14.04.01 可乐型碳酸饮料；若不是，不得直接使用 GB 2760 咖啡因条目外推。",
+      "确认咖啡因来源是天然咖啡/茶原料、提取物，还是食品添加剂咖啡因。",
+      "复核成品咖啡因检测值、每日摄入提示和敏感人群标签。",
+      "确认是否触碰保健食品“缓解体力疲劳”等功能声称边界。",
+      "如使用“茶咖啡因/植物提取物”商品名，需索取原料规格、执行标准、咖啡因含量和合规说明；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-OPENSTD-GB2760",
+      "SRC-CFSA-GB2760-2024",
+      "SRC-CFSA-GB7718-2025",
       "SRC-NHC-GB7718-2025-QA"
     ],
     "official_source_urls": [
-      "https://openstd.samr.gov.cn/",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=6CA1489A-9570-4906-8CE8-CC86FBFB1941",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=63F005D7-BA6F-428C-8098-826735B6C13E",
       "https://www.nhc.gov.cn/sps/c100087/202509/bc824a504ec34c27883da73f14c20d44.shtml"
     ],
-    "confidence": "reference_only",
+    "confidence": "official_reference",
     "last_checked_at": "2026-05-30",
     "manual_review_required": true
   },
@@ -1094,16 +1101,18 @@
       "牛磺酸",
       "Taurine"
     ],
-    "regulatory_identity": "营养强化剂路径常见原料，需按 GB 14880 核对允许食品类别、化合物来源和用量；不自动等于功能声称",
+    "regulatory_identity": "GB 14880-2012 表 A.1 将牛磺酸作为营养强化剂列出，允许食品类别包括调制乳粉、豆粉/豆浆粉、豆浆、含乳饮料、特殊用途饮料、风味饮料、固体饮料类、果冻等，并给出对应使用量；营养强化不等于可作抗疲劳、增强体力等功能声称。",
     "applicable_paths": [
       "nutrient_fortifier",
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "运动/能量场景饮品",
-      "营养强化饮料",
-      "固体饮料"
+      "调制乳粉（需按儿童/孕产妇等子类复核）",
+      "豆粉、豆浆粉、豆浆",
+      "含乳饮料、特殊用途饮料、风味饮料",
+      "固体饮料类",
+      "果冻"
     ],
     "prohibited_or_risky_expressions": [
       "抗疲劳",
@@ -1117,19 +1126,26 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "儿童、孕妇、特殊人群使用需人工复核；营养强化剂用量和标签条件需按产品类别确认。"
+      "GB 14880-2012 表 A.1：牛磺酸用于 01.03.02 调制乳粉、04.04.01.07 豆粉/豆浆粉、04.04.01.08 豆浆、14.03.01 含乳饮料、14.04.02.01 特殊用途饮料、14.04.02.02 风味饮料、14.06 固体饮料类、16.01 果冻等；具体使用量按对应类别执行。",
+      "GB 14880-2012 表 B.1：牛磺酸来源为牛磺酸（氨基乙基磺酸）。",
+      "儿童、孕妇、特殊膳食或运动营养场景需同时复核对应产品标准；不得把营养强化剂身份外推为功能声称。",
+      "营养标签、营养声称和营养成分功能声称需按 GB 28050-2025 及过渡期复核。"
     ],
     "manual_review_points": [
-      "核对 GB 14880 允许食品类别和用量",
-      "确认是否属于特殊膳食或运动营养食品路径",
-      "不得把牛磺酸推导为缓解疲劳或增强体力"
+      "逐项核对目标食品分类号与 GB 14880-2012 表 A.1 使用量。",
+      "确认牛磺酸来源符合 GB 14880-2012 表 B.1。",
+      "确认是否落入特殊膳食、运动营养食品或饮料子分类，必要时复核相应产品标准。",
+      "不得把牛磺酸推导为缓解疲劳、增强体力、保护心脏或改善视力。",
+      "索取供应商 COA、执行标准、含量和杂质指标；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-NHC-GB14880-2012",
+      "SRC-CFSA-GB14880-2012",
+      "SRC-CFSA-GB28050-2025",
       "SRC-NHC-GB28050-2025-QA"
     ],
     "official_source_urls": [
-      "https://www.nhc.gov.cn/ewebeditor/uploadfile/2013/06/20130605103746593.pdf",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=002D3B53-DE13-42C1-B099-C57EC501138A",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26",
       "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml"
     ],
     "confidence": "official_reference",
@@ -1145,17 +1161,19 @@
       "吡哆醇",
       "盐酸吡哆醇"
     ],
-    "regulatory_identity": "营养强化剂，需按 GB 14880 核对食品类别、化合物来源、添加量和营养标签条件",
+    "regulatory_identity": "GB 14880-2012 表 A.1 将维生素 B6 作为营养强化剂，适用食品类别包括调制乳粉、即食谷物、饼干、其他焙烤食品、饮料类（14.01、14.06 涉及品种除外）、固体饮料类、果冻等；表 B.1 允许来源包括盐酸吡哆醇、5'-磷酸吡哆醛。",
     "applicable_paths": [
       "nutrient_fortifier",
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "营养强化饮品",
-      "固体饮料",
-      "代餐/运动营养配方",
-      "聚会场景营养软糖"
+      "调制乳粉（需按儿童/孕产妇等子类复核）",
+      "即食谷物、饼干、其他焙烤食品",
+      "饮料类（14.01、14.06 涉及品种除外）",
+      "固体饮料类",
+      "果冻",
+      "聚会场景营养软糖（需先确认是否属于允许食品类别）"
     ],
     "prohibited_or_risky_expressions": [
       "解酒",
@@ -1169,20 +1187,26 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "营养素含量、NRV% 和声称条件需按 GB 28050 复核；不得用 B6 承接疾病或保健功能表达。"
+      "GB 14880-2012 表 A.1 对维生素 B6 按食品类别给出使用量范围；固体饮料类、饮料类、果冻、焙烤等不能互相外推。",
+      "GB 14880-2012 表 B.1 允许化合物来源包括盐酸吡哆醇、5'-磷酸吡哆醛。",
+      "GB 28050-2025 附录列有维生素 B6 营养成分功能声称标准用语，但使用需满足营养标签和声称条件；不得改写为“解酒/护肝/改善睡眠/调节情绪”。",
+      "饮酒/聚会场景下，B6 只能作为营养强化/营养事实方向，不能承接酒精代谢或肝脏保护。"
     ],
     "manual_review_points": [
-      "核对食品类别是否允许强化",
-      "核对化合物来源和添加量范围",
-      "核对营养声称条件",
-      "聚会/饮酒场景不得引申为解酒护肝"
+      "核对目标食品分类是否在 GB 14880-2012 表 A.1 维生素 B6 允许范围内。",
+      "核对化合物来源、折算方式、添加量和成品标示值。",
+      "按 GB 28050-2025 复核 NRV%、营养声称和营养成分功能声称条件。",
+      "聚会/饮酒场景不得引申为解酒护肝；营销文案需单独审查。",
+      "索取供应商规格、含量、稳定性和 COA；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-NHC-GB14880-2012",
+      "SRC-CFSA-GB14880-2012",
+      "SRC-CFSA-GB28050-2025",
       "SRC-NHC-GB28050-2025-QA"
     ],
     "official_source_urls": [
-      "https://www.nhc.gov.cn/ewebeditor/uploadfile/2013/06/20130605103746593.pdf",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=002D3B53-DE13-42C1-B099-C57EC501138A",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26",
       "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml"
     ],
     "confidence": "official_reference",
@@ -1199,17 +1223,18 @@
       "柠檬酸镁",
       "乳酸镁"
     ],
-    "regulatory_identity": "矿物质营养强化剂，需按 GB 14880 核对食品类别、化合物来源和用量；不同镁盐适用性需复核",
+    "regulatory_identity": "GB 14880-2012 表 A.1 将镁作为矿物质营养强化剂，适用调制乳粉、饮料类（14.01 及 14.06 涉及品种除外）、固体饮料类等；表 B.1 列明硫酸镁、氯化镁、氧化镁、碳酸镁、磷酸氢镁、葡萄糖酸镁等来源。不同镁盐若走添加剂/加工助剂/营养强化剂路径需分开复核。",
     "applicable_paths": [
       "nutrient_fortifier",
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "运动电解质产品",
-      "营养粉",
-      "固体饮料",
-      "银发/女性营养配方"
+      "调制乳粉（儿童/孕产妇等子类需复核）",
+      "饮料类（14.01 及 14.06 涉及品种除外）",
+      "固体饮料类",
+      "运动电解质产品（需确认食品类别和声称边界）",
+      "营养粉/女性或银发营养配方（需按产品类别复核）"
     ],
     "prohibited_or_risky_expressions": [
       "改善睡眠",
@@ -1223,19 +1248,26 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "不同镁源的允许使用范围、胃肠耐受性和标签声称条件需复核。"
+      "GB 14880-2012 表 A.1：镁用于 01.03.02 调制乳粉、14.0 饮料类（14.01 及 14.06 涉及品种除外）、14.06 固体饮料类等，使用量按对应类别执行。",
+      "GB 14880-2012 表 B.1：镁来源包括硫酸镁、氯化镁、氧化镁、碳酸镁、磷酸氢镁、葡萄糖酸镁。",
+      "GB 28050-2025 附录列有镁营养成分功能声称标准用语，但不得改写为助眠、放松、治疗抽筋或焦虑。",
+      "不同镁盐口感、溶解性、胃肠耐受性和法规路径不同，需结合配方量复核。"
     ],
     "manual_review_points": [
-      "核对食品类别和镁源是否列入 GB 14880",
-      "核对添加量、NRV 和营养声称条件",
-      "不得将镁直接表达为助眠/放松/治疗抽筋"
+      "核对食品分类号和镁添加量是否符合 GB 14880-2012 表 A.1。",
+      "核对镁源是否属于 GB 14880-2012 表 B.1 列明来源；柠檬酸镁等未在当前摘录中确认，须单独复核。",
+      "按 GB 28050-2025 复核 NRV%、营养声称和营养成分功能声称条件。",
+      "不得将镁表达为改善睡眠、放松神经、缓解焦虑或治疗抽筋。",
+      "索取供应商重金属、粒径/溶解性、含量和 COA；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-NHC-GB14880-2012",
+      "SRC-CFSA-GB14880-2012",
+      "SRC-CFSA-GB28050-2025",
       "SRC-NHC-GB28050-2025-QA"
     ],
     "official_source_urls": [
-      "https://www.nhc.gov.cn/ewebeditor/uploadfile/2013/06/20130605103746593.pdf",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=002D3B53-DE13-42C1-B099-C57EC501138A",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26",
       "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml"
     ],
     "confidence": "official_reference",
@@ -1252,7 +1284,7 @@
       "Potassium",
       "Potassium chloride"
     ],
-    "regulatory_identity": "需区分营养强化剂、电解质盐、食品添加剂/配料路径；低钠调味或运动补给场景需按具体食品类别和标准复核",
+    "regulatory_identity": "需按具体物质和用途分流：GB 14880-2012 中钾可作营养强化剂（表 A.1 主要见调制乳粉等，表 B.1 来源含葡萄糖酸钾、柠檬酸钾、磷酸二氢钾、磷酸氢二钾、氯化钾）；GB 2760-2024 中氯化钾、柠檬酸钾等可作食品添加剂，适用类别和最大使用量不同；低钠/电解质/营养声称还需按 GB 28050 复核。",
     "applicable_paths": [
       "nutrient_fortifier",
       "food_additive",
@@ -1260,9 +1292,10 @@
       "claim_labeling"
     ],
     "application_scenarios": [
-      "低钠调味粉",
-      "运动电解质果冻/饮料",
-      "营养强化饮品"
+      "低钠调味/盐及代盐制品（氯化钾添加剂路径，需按 GB 2760 复核）",
+      "运动电解质饮料/果冻（需区分营养强化剂、食品添加剂和普通配料路径）",
+      "营养强化饮品或固体饮料（需确认 GB 14880 是否允许）",
+      "调制乳粉等营养强化场景（按 GB 14880 子类复核）"
     ],
     "prohibited_or_risky_expressions": [
       "降血压",
@@ -1276,25 +1309,32 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "肾病、限钾人群相关标签和风险提示需人工复核；低钠/减盐声称需满足标签标准。"
+      "GB 2760-2024：氯化钾（CNS 00.008，功能“其他”）除自然来源类饮用水不能使用外，在表 A.2 中编号为 1~60、62~68 的食品类别除外的各类食品按生产需要适量使用；盐及代盐制品最大使用量 350 g/kg。",
+      "GB 2760-2024：柠檬酸钾（CNS 01.304，功能酸度调节剂）在表 A.2 中编号为 1~53、59~62、64~68 的食品类别除外的各类食品按生产需要适量使用。",
+      "GB 14880-2012：钾作为营养强化剂的允许类别和用量有限，不能把添加剂路径等同营养强化剂路径。",
+      "GB 28050-2025 列有钾营养成分功能声称标准用语，但低钠/减盐/钾营养声称必须满足营养标签条件；不得表达降血压、治疗脱水、预防抽筋。",
+      "肾病、限钾人群等不适宜/风险提示没有统一可套用结论，需按目标产品和监管口径人工复核。"
     ],
     "manual_review_points": [
-      "确认钾盐使用路径和食品类别",
-      "确认低钠/减盐标签条件",
-      "确认目标人群是否涉及限钾风险",
-      "不得表达降血压或治疗脱水"
+      "逐一确认物质：氯化钾、柠檬酸钾、葡萄糖酸钾或其他钾盐；不要用“钾”笼统替代。",
+      "确认使用目的：营养强化剂、酸度调节剂/添加剂、代盐配料、电解质配料或普通原料。",
+      "核对 GB 2760-2024 食品类别排除项、最大使用量和备注；核对 GB 14880-2012 营养强化类别和来源。",
+      "核对低钠、减盐、富含钾等营养声称是否满足 GB 28050；不得表达降血压、心血管保护或治疗脱水。",
+      "索取供应商规格、纯度、钠/钾含量、重金属和 COA；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-NHC-GB14880-2012",
-      "SRC-OPENSTD-GB2760",
+      "SRC-CFSA-GB14880-2012",
+      "SRC-CFSA-GB2760-2024",
+      "SRC-CFSA-GB28050-2025",
       "SRC-NHC-GB28050-2025-QA"
     ],
     "official_source_urls": [
-      "https://www.nhc.gov.cn/ewebeditor/uploadfile/2013/06/20130605103746593.pdf",
-      "https://openstd.samr.gov.cn/",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=002D3B53-DE13-42C1-B099-C57EC501138A",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=6CA1489A-9570-4906-8CE8-CC86FBFB1941",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26",
       "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml"
     ],
-    "confidence": "reference_only",
+    "confidence": "official_reference",
     "last_checked_at": "2026-05-30",
     "manual_review_required": true
   },
@@ -1305,17 +1345,19 @@
       "聚葡萄糖",
       "Polydextrose"
     ],
-    "regulatory_identity": "常见膳食纤维/食品添加剂路径原料，需按现行标准核对食品类别、使用目的、添加量和标签声称条件",
+    "regulatory_identity": "聚葡萄糖存在双路径：GB 2760-2024 表 A.1 将聚葡萄糖列为食品添加剂（CNS 20.022，INS 1200，功能为增稠剂、膨松剂、水分保持剂、稳定剂），允许调制乳、风味发酵乳、冷冻饮品、糖果、焙烤食品等按生产需要适量使用；GB 14880-2012 表 C.2 另列聚葡萄糖仅允许用于部分特殊膳食用食品（如婴幼儿配方食品）并给出用量。普通膳食纤维配料/添加剂/特殊膳食路径不能混同。",
     "applicable_paths": [
       "food_additive",
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "膳食纤维气泡水",
-      "代餐奶昔",
-      "低糖零食",
-      "烘焙产品"
+      "调制乳、风味发酵乳",
+      "冷冻饮品（食用冰除外）",
+      "糖果、巧克力及制品",
+      "焙烤食品",
+      "婴幼儿配方食品等特殊膳食用食品（GB 14880 表 C.2，需严审）",
+      "膳食纤维饮料/代餐/低糖零食（需确认食品类别与使用路径）"
     ],
     "prohibited_or_risky_expressions": [
       "减肥",
@@ -1329,23 +1371,31 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "膳食纤维声称、含量标示和胃肠耐受提示需按 GB 28050 和产品标准复核。"
+      "GB 2760-2024 表 A.1：聚葡萄糖作为增稠剂、膨松剂、水分保持剂、稳定剂，部分食品类别按生产需要适量使用；饮料、果冻、调味料等还需核对表中具体类别和备注。",
+      "GB 14880-2012 表 C.2：聚葡萄糖仅允许用于部分特殊膳食用食品，婴幼儿配方食品使用量 15.6 g/kg ~ 31.25 g/kg；该路径不能外推到普通食品。",
+      "如作为膳食纤维来源或进行“膳食纤维”营养声称，需按 GB 28050-2025 标示和声称条件复核。",
+      "不得表达减肥、降糖、控血糖、润肠通便或改善肠道菌群。"
     ],
     "manual_review_points": [
-      "确认是否作为食品添加剂或配料使用",
-      "核对食品类别与使用量",
-      "核对膳食纤维声称条件",
-      "不得表达减肥/降糖/改善肠道菌群"
+      "确认聚葡萄糖在目标产品中是食品添加剂、营养强化/特殊膳食成分，还是普通配料/膳食纤维来源。",
+      "核对 GB 2760-2024 对目标食品类别的功能类别、最大使用量和备注。",
+      "若用于婴幼儿或特殊膳食食品，按 GB 14880-2012 表 C.2 和对应产品标准复核。",
+      "核对膳食纤维检测方法、标示值、NRV/声称条件和胃肠耐受提示。",
+      "索取供应商分子量、膳食纤维含量、糖/山梨醇残留、COA 和执行标准；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-OPENSTD-GB2760",
+      "SRC-CFSA-GB2760-2024",
+      "SRC-CFSA-GB14880-2012",
+      "SRC-CFSA-GB28050-2025",
       "SRC-NHC-GB28050-2025-QA"
     ],
     "official_source_urls": [
-      "https://openstd.samr.gov.cn/",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=6CA1489A-9570-4906-8CE8-CC86FBFB1941",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=002D3B53-DE13-42C1-B099-C57EC501138A",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26",
       "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml"
     ],
-    "confidence": "reference_only",
+    "confidence": "official_reference",
     "last_checked_at": "2026-05-30",
     "manual_review_required": true
   },
@@ -1357,16 +1407,16 @@
       "Resistant dextrin",
       "难消化糊精"
     ],
-    "regulatory_identity": "常见可溶性膳食纤维原料，具体普通食品适用性、指标和标签声称需按标准/公告与产品类别人工复核",
+    "regulatory_identity": "本轮未找到可直接落到抗性糊精/难消化糊精的官方标准原文深链或 NHC 原公告深链；当前仅可作为常见可溶性膳食纤维/普通配料方向的参考卡，具体食品属性、执行标准、适用类别、添加量和标签声称必须人工复核。",
     "applicable_paths": [
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "膳食纤维饮料",
-      "气泡水",
-      "代餐粉",
-      "低糖零食"
+      "膳食纤维饮料（reference_only，需人工复核）",
+      "气泡水/固体饮料（reference_only，需人工复核）",
+      "代餐粉/营养粉（reference_only，需人工复核）",
+      "低糖零食/软糖（reference_only，需人工复核）"
     ],
     "prohibited_or_risky_expressions": [
       "减肥",
@@ -1380,21 +1430,27 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "高添加量可能影响口感和胃肠耐受；膳食纤维声称需满足 GB 28050 条件。"
+      "未找到抗性糊精官方原文深链前，不得给出确定性普通食品可用范围或添加量。",
+      "如作为膳食纤维来源，只能在检测、标示值和 GB 28050-2025 声称条件满足后进行营养标签表达。",
+      "抗性糊精、难消化糊精、抗性麦芽糊精等商品名/工艺/指标可能不同，不能混同。",
+      "高添加量可能涉及胃肠耐受和口感问题，但具体提示需按配方量和品类人工复核。"
     ],
     "manual_review_points": [
-      "确认抗性糊精食品属性和执行标准",
-      "确认目标品类能否添加及添加量",
-      "核对膳食纤维声称条件",
-      "不得直接表达减肥/降糖/改善肠道功能"
+      "查找并确认抗性糊精/难消化糊精的官方公告、食品安全标准或产品执行标准。",
+      "确认原料来源、生产工艺、膳食纤维含量、DE 值、分子量分布和检测方法。",
+      "确认目标品类能否添加及最大添加量；未确认前所有用量标为待复核。",
+      "核对膳食纤维声称条件；不得直接表达减肥、降糖、改善便秘或调节肠道菌群。",
+      "索取供应商法规说明、COA、规格书、检测方法和稳定性资料；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-NHC-NEWFOOD-CATALOG-2023",
-      "SRC-NHC-GB28050-2025-QA"
+      "SRC-CFSA-GB28050-2025",
+      "SRC-NHC-GB28050-2025-QA",
+      "SRC-NHC-NEWFOOD-CATALOG-2023"
     ],
     "official_source_urls": [
-      "https://www.nhc.gov.cn/sps/c100088/202305/91dc62ee88a54bdc8931b4e246e6a2c5.shtml",
-      "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml"
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26",
+      "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml",
+      "https://www.nhc.gov.cn/sps/c100088/202305/91dc62ee88a54bdc8931b4e246e6a2c5.shtml"
     ],
     "confidence": "reference_only",
     "last_checked_at": "2026-05-30",
@@ -1407,17 +1463,17 @@
       "赤藓糖醇",
       "Erythritol"
     ],
-    "regulatory_identity": "甜味剂/糖醇类原料，需按食品添加剂标准核对食品类别、使用原则和标签标示；不得由低糖推导功能效果",
+    "regulatory_identity": "GB 2760-2024 表 A.1 将赤藓糖醇列为食品添加剂（CNS 19.018，INS 968，功能甜味剂），适用“各类食品，表 A.2 中编号为 1~68 的食品类别除外”，按生产需要适量使用；低糖/无糖和糖醇相关标签需另按 GB 28050/GB 7718 复核。",
     "applicable_paths": [
       "food_additive",
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "低糖饮料",
-      "无糖软糖",
-      "代餐/零食",
-      "气泡水"
+      "低糖/无糖饮料（需确认不属于排除食品类别并满足营养声称条件）",
+      "无糖软糖/糖果（需核对食品分类）",
+      "代餐/零食（需核对食品分类和营养声称）",
+      "气泡水/风味饮料（需核对分类、添加量和标签）"
     ],
     "prohibited_or_risky_expressions": [
       "减肥",
@@ -1431,23 +1487,31 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "糖醇添加量较高时可能涉及胃肠耐受提示；低糖/无糖声称需满足 GB 28050 条件。"
+      "GB 2760-2024 表 A.1：赤藓糖醇作为甜味剂按生产需要适量使用，但排除表 A.2 编号为 1~68 的食品类别；目标产品必须先确认食品分类。",
+      "低糖、无糖、能量等营养声称需按 GB 28050-2025 复核；不得由赤藓糖醇推导“适合糖尿病/不升糖/控血糖/减肥”。",
+      "糖醇添加量较高时可能涉及胃肠耐受提示；是否需要提示和提示方式需按配方量、目标人群和标签法规人工复核。",
+      "赤藓糖醇作为甜味剂路径、发酵来源普通配料路径或复配甜味系统的标签标示需分别复核。"
     ],
     "manual_review_points": [
-      "核对 GB 2760 食品类别与使用规定",
-      "核对低糖/无糖标签条件",
-      "确认是否需要糖醇耐受提示",
-      "不得表达降糖或糖尿病适用"
+      "核对目标食品分类是否属于 GB 2760-2024 赤藓糖醇允许范围或排除类别。",
+      "核对低糖/无糖/能量相关营养声称是否满足 GB 28050-2025。",
+      "确认糖醇耐受提示、配料表标示和复配甜味剂标示方式。",
+      "不得表达降糖、控血糖、糖尿病适用、不升糖或减肥。",
+      "索取供应商发酵来源、纯度、残留、粒径/溶解性、COA 和执行标准；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
-      "SRC-OPENSTD-GB2760",
+      "SRC-CFSA-GB2760-2024",
+      "SRC-CFSA-GB28050-2025",
+      "SRC-CFSA-GB7718-2025",
       "SRC-NHC-GB28050-2025-QA"
     ],
     "official_source_urls": [
-      "https://openstd.samr.gov.cn/",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=6CA1489A-9570-4906-8CE8-CC86FBFB1941",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=01848F78-13AB-4F40-9DF8-DE1158E7BC26",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=63F005D7-BA6F-428C-8098-826735B6C13E",
       "https://www.nhc.gov.cn/sps/c100087/202509/470fa4ff5de14dd38619223cce9da4e7.shtml"
     ],
-    "confidence": "reference_only",
+    "confidence": "official_reference",
     "last_checked_at": "2026-05-30",
     "manual_review_required": true
   },
@@ -1460,15 +1524,16 @@
       "葛根提取物",
       "Pueraria"
     ],
-    "regulatory_identity": "可能涉及食药物质/传统食用物质路径；提取物与普通葛根粉不能直接等同，具体使用部位、加工方式和产品类别需人工复核",
+    "regulatory_identity": "葛根可能涉及传统食用/食药物质目录路径，但本轮未拿到可直接确认“葛根/葛根提取物”适用部位、加工方式、食品类别和用量的官方原文深链；普通葛根粉、葛根提取物、浓缩粉、标准化提取物不能混同，当前保持 reference_only。",
     "applicable_paths": [
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "聚会场景软糖",
-      "草本风味饮品",
-      "固体饮料"
+      "草本风味饮品（reference_only，需人工复核）",
+      "聚会场景软糖（reference_only，尤其需审查解酒/护肝声称）",
+      "固体饮料（reference_only，需确认食品属性和执行标准）",
+      "传统食材风味方向（仅可作研发假设，非合规结论）"
     ],
     "prohibited_or_risky_expressions": [
       "解酒",
@@ -1483,20 +1548,26 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "葛根提取物与葛根粉法规身份可能不同；使用部位、提取工艺、添加量和地方监管口径需人工复核。"
+      "未找到可直接引用的官方原文深链前，不得给出葛根或葛根提取物普通食品可用范围、添加量或不适宜人群确定结论。",
+      "普通葛根、葛根粉、葛根提取物、浓缩物、标准化异黄酮提取物法规身份可能不同；提取物不得自动按普通食品处理。",
+      "饮酒/聚会场景不得出现解酒、醒酒、护肝、降低酒精伤害、促进酒精代谢等表达。",
+      "如涉及食药物质目录或地方传统食用口径，需核对允许部位、加工方式、食用历史和地方监管要求。"
     ],
     "manual_review_points": [
-      "确认是否列入食药物质目录及允许部位",
-      "确认提取物是否仍可按普通食品处理",
-      "饮酒场景不得表达解酒/护肝",
-      "核对标签是否暗示保健功能"
+      "继续查找官方食药物质目录/公告原文及附件，确认是否含葛根、允许部位和使用方式。",
+      "确认原料形态：葛根原粉、葛根淀粉、提取物、浓缩粉或标准化提取物。",
+      "确认目标食品类别、添加量、执行标准和不适宜人群标签。",
+      "饮酒场景不得表达解酒/护肝；渠道话术、直播话术需单独审查。",
+      "索取供应商原料来源、工艺、有效成分/指标、农残重金属、COA 和法规说明；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
       "SRC-NHC-FOOD-MEDICINE-CATALOG-ENTRY",
+      "SRC-CFSA-GB7718-2025",
       "SRC-NHC-GB7718-2025-QA"
     ],
     "official_source_urls": [
       "https://www.nhc.gov.cn/sps/",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=63F005D7-BA6F-428C-8098-826735B6C13E",
       "https://www.nhc.gov.cn/sps/c100087/202509/bc824a504ec34c27883da73f14c20d44.shtml"
     ],
     "confidence": "reference_only",
@@ -1511,15 +1582,16 @@
       "枳椇子提取物",
       "Hovenia dulcis"
     ],
-    "regulatory_identity": "可能涉及食药物质/地方传统食用路径；提取物、浓缩物和普通原料不能直接等同，需人工确认食品属性",
+    "regulatory_identity": "枳椇子可能涉及食药物质/地方传统食用路径，但本轮未找到可直接确认“枳椇子/枳椇子提取物”普通食品身份、允许部位、食品类别和用量的官方原文深链；普通原料、提取物、浓缩粉和标准化提取物不能混同，当前保持 reference_only。",
     "applicable_paths": [
       "general_food",
       "claim_labeling"
     ],
     "application_scenarios": [
-      "聚会场景软糖",
-      "草本饮品",
-      "固体饮料"
+      "草本风味饮品（reference_only，需人工复核）",
+      "聚会场景软糖（reference_only，高风险声称场景）",
+      "固体饮料（reference_only，需确认食品属性）",
+      "传统食材/地方食用风味方向（仅可作研发假设，非合规结论）"
     ],
     "prohibited_or_risky_expressions": [
       "解酒",
@@ -1534,20 +1606,26 @@
       "调节机体功能"
     ],
     "unsuitable_groups_or_label_notes": [
-      "食药物质目录、使用部位、提取工艺、目标食品类别及地方监管口径均需复核。"
+      "未找到可直接引用的官方原文深链前，不得给出枳椇子或枳椇子提取物普通食品可用范围、添加量或不适宜人群确定结论。",
+      "枳椇子原料、提取物、浓缩物和标准化提取物法规身份可能不同；不得自动按普通食品处理。",
+      "饮酒/聚会场景不得出现解酒、醒酒、护肝、保护肝脏、促进酒精代谢、降低酒精伤害等表达。",
+      "如走地方传统食用或食药物质目录路径，需核对允许部位、加工方式、食用历史和地方监管口径。"
     ],
     "manual_review_points": [
-      "确认是否列入可食用目录及允许部位",
-      "确认提取物/浓缩粉食品属性",
-      "不得表达解酒护肝或酒精代谢",
-      "复核渠道话术和直播表达"
+      "继续查找官方食药物质目录/公告原文及附件，确认是否含枳椇子、允许部位和使用方式。",
+      "确认原料形态：枳椇子、枳椇子粉、提取物、浓缩粉或标准化提取物。",
+      "确认目标食品类别、添加量、执行标准和不适宜人群标签。",
+      "饮酒场景不得表达解酒/护肝/酒精代谢；渠道和直播话术需单独审查。",
+      "索取供应商原料来源、工艺、指标成分、农残重金属、COA 和法规说明；Public Evidence 不等于 Supplier Verified。"
     ],
     "source_ids": [
       "SRC-NHC-FOOD-MEDICINE-CATALOG-ENTRY",
+      "SRC-CFSA-GB7718-2025",
       "SRC-NHC-GB7718-2025-QA"
     ],
     "official_source_urls": [
       "https://www.nhc.gov.cn/sps/",
+      "https://sppt.cfsa.net.cn:8086/db?type=2&guid=63F005D7-BA6F-428C-8098-826735B6C13E",
       "https://www.nhc.gov.cn/sps/c100087/202509/bc824a504ec34c27883da73f14c20d44.shtml"
     ],
     "confidence": "reference_only",
