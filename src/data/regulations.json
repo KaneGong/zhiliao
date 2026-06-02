@@ -531,18 +531,24 @@
         "name": "食品安全国家标准 食品营养强化剂使用标准",
         "clause": "附录B 表B.1",
         "effective_date": "2013-01-01",
-        "status": "compliant",
-        "requirement": "允许用于调制乳粉、饮料、糖果等食品，推荐每日摄入量≤12mg"
+        "status": "caution",
+        "requirement": "叶黄素作为营养强化剂或食品添加剂使用需分别按 GB 14880、GB 2760 核对具体食品类别、化合物来源和用量；不得直接推定儿童软糖或“护眼”产品可用。"
       }
     ],
     "usage_limits": [],
-    "special_notes": [],
-    "last_updated": "2026-05-15",
-    "data_confidence": "verified",
-    "verified_by": "GB 14880-2012",
+    "special_notes": [
+      "儿童产品、糖果/软糖、饮料等具体类别需逐项复核，不得仅凭“叶黄素”条目给确定性结论。",
+      "玉米黄质、万寿菊提取物、叶黄素酯等不能与叶黄素条目混同。",
+      "普通食品不得宣称改善视力、保护视力、预防近视、缓解眼疲劳等功效。"
+    ],
+    "last_updated": "2026-06-03",
+    "data_confidence": "official_reference",
+    "verified_by": "GB 14880-2012 / GB 2760-2024（需按具体类别复核）",
     "food_scopes": [
-      "general_food",
-      "infant_formula"
+      "nutrient_fortifier",
+      "food_additive",
+      "infant_special_dietary",
+      "claim_labeling"
     ]
   },
   {

@@ -1,6 +1,6 @@
 # Public Evidence Source Register v1
 
-> Last checked: 2026-05-30
+> Last checked: 2026-06-03
 
 Public Evidence v1 只把官方法规/国家标准/供应商官网或官方资料作为主来源。供应商公开资料只可用于候选索资和应用形态参考，不等于中国法规结论或平台已核验供应商。
 
@@ -150,3 +150,80 @@ Public Evidence v1 只把官方法规/国家标准/供应商官网或官方资�
 - Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
 - URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=63F005D7-BA6F-428C-8098-826735B6C13E
 - Notes: GB 7718-2025 详情页，含 PDF 附件下载（file_guid: 406A8D4B-459E-4560-A32A-8F001971A027）；用于预包装食品标签、配料标示和非保健食品不得明示或暗示保健功能等边界复核。
+
+## SRC-CFSA-GB24154-2015 — GB 24154-2015 食品安全国家标准 运动营养食品通则（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=B68086BC-CDFC-4A89-B492-DBAD9EFED8BF
+- Notes: 用于运动营养食品路径、适用人群、产品分类和标签边界复核；含 PDF 附件（file_guid: D5E3533B-8F50-4576-ADAB-5F0A067CCEEB）。
+
+## SRC-CFSA-GB24154-2015-AMEND1 — GB 24154-2015《食品安全国家标准 运动营养食品通则》第1号修改单（CFSA 标准文本详情页）
+
+- Type: `official_standard_amendment`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=72FD605B-DA9C-4760-A663-FA2E90E67439
+- Notes: 用于运动营养食品通则修改单复核；运动营养食品相关结论需结合原标准和修改单。
+
+## SRC-CFSA-GB1903-13-2016 — GB 1903.13-2016 食品安全国家标准 食品营养强化剂 左旋肉碱（L-肉碱）（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=C9D69D3D-C3C0-4984-B5D1-C83FE5432A0C
+- Notes: 用于左旋肉碱（L-肉碱）质量规格和营养强化剂身份复核；具体食品类别和用量仍需 GB 14880。
+
+## SRC-CFSA-GB1903-80-2025 — GB 1903.80-2025 食品安全国家标准 食品营养强化剂 酵母β-葡聚糖（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=C2CC46FD-7EC2-438C-BC40-F71A4598BB3D
+- Notes: 用于酵母β-葡聚糖营养强化剂质量规格复核；β-葡聚糖不同来源（燕麦/大麦/酵母等）不能混同。
+
+## SRC-CFSA-GB5009-303-2025 — GB 5009.303-2025 食品安全国家标准 食品中酵母β-葡聚糖的测定（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=8E21DFB8-6424-45D9-BC7E-66F4252B5291
+- Notes: 用于酵母β-葡聚糖检测方法和标示值复核；不等于所有β-葡聚糖来源均可普通食品使用。
+
+## SRC-CFSA-GB31644-2018 — GB 31644-2018 食品安全国家标准 复合调味料（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=06591505-3172-4EC4-918E-C108CED3F383
+- Notes: 用于酵母抽提物等复合调味/鲜味应用场景的产品标准边界参考；具体配料身份、食品类别和标签仍需人工复核。
+
+## SRC-CFSA-GB1886-382-2025 — GB 1886.382-2025 食品安全国家标准 食品添加剂 叶黄素（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=812FDAB3-1775-427E-A609-BEE5D87ECE68
+- Notes: 用于食品添加剂叶黄素质量规格复核；叶黄素作为营养强化剂或添加剂的使用范围仍需分别核对 GB 14880、GB 2760。
+
+## SRC-CFSA-GB5009-248-2016 — GB 5009.248-2016 食品安全国家标准 食品中叶黄素的测定（CFSA 标准文本详情页）
+
+- Type: `official_standard`
+- Publisher: 国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委
+- URL: https://sppt.cfsa.net.cn:8086/db?type=2&guid=FF8A9194-C90B-470D-ABA8-64B3E2D5CF3D
+- Notes: 用于叶黄素检测方法参考；不等于叶黄素在任意食品类别中可用。
+
+## SRC-NHC-NMN-ADDITIVE-ACCEPTANCE-2023 — 2023年01月28日食品添加剂新品种受理情况公告：NMN（β-烟酰胺单核苷酸）
+
+- Type: `official_notice`
+- Publisher: 国家卫生健康委政务服务平台
+- URL: https://zwfw.nhc.gov.cn/kzx/slgs/sptjjxpzsp/202301/t20230129_2446.html
+- Notes: 显示 NMN（β-烟酰胺单核苷酸）作为食品添加剂新品种申请被受理；受理不等于批准，不得据此认定普通食品可用。
+
+## SRC-NHC-NMN-ADDITIVE-REVIEWNOTICE-2023 — 2023年03月15日食品添加剂新品种审查意见告知书信息送达：NMN（β-烟酰胺单核苷酸）
+
+- Type: `official_notice`
+- Publisher: 国家卫生健康委政务服务平台
+- URL: https://zwfw.nhc.gov.cn/kzx/sdxx/sptjjxpzsp_212/202303/t20230316_2479.html
+- Notes: 显示 NMN（β-烟酰胺单核苷酸）相关食品添加剂新品种审查意见告知书送达信息；不等于批准用于普通食品。
+
+## SRC-SAMR-NMN-NPC-REPLY-2021 — 对十三届全国人大四次会议第1067号建议的答复：关于 NMN 新食品原料及保健食品原料目录申报路径
+
+- Type: `official_reply`
+- Publisher: 国家市场监督管理总局
+- URL: https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/tssps/art/2023/art_9da176b2f8244a00a239996f863470e1.html
+- Notes: 用于 NMN 食品属性和保健食品原料目录申报路径的监管公开口径；不能据此认定 NMN 可直接用于普通食品。

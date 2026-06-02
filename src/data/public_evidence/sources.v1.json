@@ -166,5 +166,93 @@
     "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局",
     "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=63F005D7-BA6F-428C-8098-826735B6C13E",
     "notes": "GB 7718-2025 详情页，含 PDF 附件下载（file_guid: 406A8D4B-459E-4560-A32A-8F001971A027）；用于预包装食品标签、配料标示和非保健食品不得明示或暗示保健功能等边界复核。"
+  },
+  {
+    "id": "SRC-CFSA-GB24154-2015",
+    "title": "GB 24154-2015 食品安全国家标准 运动营养食品通则（CFSA 标准文本详情页）",
+    "type": "official_standard",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=B68086BC-CDFC-4A89-B492-DBAD9EFED8BF",
+    "notes": "用于运动营养食品路径、适用人群、产品分类和标签边界复核；含 PDF 附件（file_guid: D5E3533B-8F50-4576-ADAB-5F0A067CCEEB）。"
+  },
+  {
+    "id": "SRC-CFSA-GB24154-2015-AMEND1",
+    "title": "GB 24154-2015《食品安全国家标准 运动营养食品通则》第1号修改单（CFSA 标准文本详情页）",
+    "type": "official_standard_amendment",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=72FD605B-DA9C-4760-A663-FA2E90E67439",
+    "notes": "用于运动营养食品通则修改单复核；运动营养食品相关结论需结合原标准和修改单。"
+  },
+  {
+    "id": "SRC-CFSA-GB1903-13-2016",
+    "title": "GB 1903.13-2016 食品安全国家标准 食品营养强化剂 左旋肉碱（L-肉碱）（CFSA 标准文本详情页）",
+    "type": "official_standard",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=C9D69D3D-C3C0-4984-B5D1-C83FE5432A0C",
+    "notes": "用于左旋肉碱（L-肉碱）质量规格和营养强化剂身份复核；具体食品类别和用量仍需 GB 14880。"
+  },
+  {
+    "id": "SRC-CFSA-GB1903-80-2025",
+    "title": "GB 1903.80-2025 食品安全国家标准 食品营养强化剂 酵母β-葡聚糖（CFSA 标准文本详情页）",
+    "type": "official_standard",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=C2CC46FD-7EC2-438C-BC40-F71A4598BB3D",
+    "notes": "用于酵母β-葡聚糖营养强化剂质量规格复核；β-葡聚糖不同来源（燕麦/大麦/酵母等）不能混同。"
+  },
+  {
+    "id": "SRC-CFSA-GB5009-303-2025",
+    "title": "GB 5009.303-2025 食品安全国家标准 食品中酵母β-葡聚糖的测定（CFSA 标准文本详情页）",
+    "type": "official_standard",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=8E21DFB8-6424-45D9-BC7E-66F4252B5291",
+    "notes": "用于酵母β-葡聚糖检测方法和标示值复核；不等于所有β-葡聚糖来源均可普通食品使用。"
+  },
+  {
+    "id": "SRC-CFSA-GB31644-2018",
+    "title": "GB 31644-2018 食品安全国家标准 复合调味料（CFSA 标准文本详情页）",
+    "type": "official_standard",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=06591505-3172-4EC4-918E-C108CED3F383",
+    "notes": "用于酵母抽提物等复合调味/鲜味应用场景的产品标准边界参考；具体配料身份、食品类别和标签仍需人工复核。"
+  },
+  {
+    "id": "SRC-CFSA-GB1886-382-2025",
+    "title": "GB 1886.382-2025 食品安全国家标准 食品添加剂 叶黄素（CFSA 标准文本详情页）",
+    "type": "official_standard",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委、国家市场监督管理总局",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=812FDAB3-1775-427E-A609-BEE5D87ECE68",
+    "notes": "用于食品添加剂叶黄素质量规格复核；叶黄素作为营养强化剂或添加剂的使用范围仍需分别核对 GB 14880、GB 2760。"
+  },
+  {
+    "id": "SRC-CFSA-GB5009-248-2016",
+    "title": "GB 5009.248-2016 食品安全国家标准 食品中叶黄素的测定（CFSA 标准文本详情页）",
+    "type": "official_standard",
+    "publisher": "国家食品安全风险评估中心食品安全国家标准数据检索平台 / 国家卫生健康委",
+    "url": "https://sppt.cfsa.net.cn:8086/db?type=2&guid=FF8A9194-C90B-470D-ABA8-64B3E2D5CF3D",
+    "notes": "用于叶黄素检测方法参考；不等于叶黄素在任意食品类别中可用。"
+  },
+  {
+    "id": "SRC-NHC-NMN-ADDITIVE-ACCEPTANCE-2023",
+    "title": "2023年01月28日食品添加剂新品种受理情况公告：NMN（β-烟酰胺单核苷酸）",
+    "type": "official_notice",
+    "publisher": "国家卫生健康委政务服务平台",
+    "url": "https://zwfw.nhc.gov.cn/kzx/slgs/sptjjxpzsp/202301/t20230129_2446.html",
+    "notes": "显示 NMN（β-烟酰胺单核苷酸）作为食品添加剂新品种申请被受理；受理不等于批准，不得据此认定普通食品可用。"
+  },
+  {
+    "id": "SRC-NHC-NMN-ADDITIVE-REVIEWNOTICE-2023",
+    "title": "2023年03月15日食品添加剂新品种审查意见告知书信息送达：NMN（β-烟酰胺单核苷酸）",
+    "type": "official_notice",
+    "publisher": "国家卫生健康委政务服务平台",
+    "url": "https://zwfw.nhc.gov.cn/kzx/sdxx/sptjjxpzsp_212/202303/t20230316_2479.html",
+    "notes": "显示 NMN（β-烟酰胺单核苷酸）相关食品添加剂新品种审查意见告知书送达信息；不等于批准用于普通食品。"
+  },
+  {
+    "id": "SRC-SAMR-NMN-NPC-REPLY-2021",
+    "title": "对十三届全国人大四次会议第1067号建议的答复：关于 NMN 新食品原料及保健食品原料目录申报路径",
+    "type": "official_reply",
+    "publisher": "国家市场监督管理总局",
+    "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/tssps/art/2023/art_9da176b2f8244a00a239996f863470e1.html",
+    "notes": "用于 NMN 食品属性和保健食品原料目录申报路径的监管公开口径；不能据此认定 NMN 可直接用于普通食品。"
   }
 ]

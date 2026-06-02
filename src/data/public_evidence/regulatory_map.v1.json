@@ -91,6 +91,23 @@
     "confidence": "official_reference"
   },
   {
+    "path_id": "sports_nutrition",
+    "title": "运动营养食品路径",
+    "scope": "适用于面向运动人群、以补充能量、蛋白质、维生素矿物质或其他特定营养成分为目标的运动营养食品；不等于普通食品可自由承诺运动表现。",
+    "ai_policy": "必须先判断是否符合 GB 24154 运动营养食品通则及其修改单；未确认前只能给研发方向和人工复核点，不给确定用量或运动表现承诺。普通食品不得承接增肌、燃脂、抗疲劳、提升运动表现等表达。",
+    "manual_review_triggers": [
+      "用户要求增肌、燃脂、抗疲劳、提升运动表现或快速恢复",
+      "肌酸、BCAA/EAA、左旋肉碱等运动营养高风险原料",
+      "目标食品类别、适用人群、标签和执行标准不明确"
+    ],
+    "primary_source_ids": [
+      "SRC-CFSA-GB24154-2015",
+      "SRC-CFSA-GB24154-2015-AMEND1",
+      "SRC-CFSA-GB7718-2025"
+    ],
+    "confidence": "official_reference"
+  },
+  {
     "path_id": "claim_labeling",
     "title": "标签与宣传声称边界",
     "scope": "适用于包装标签、电商详情页、直播、小红书等对外表达。",

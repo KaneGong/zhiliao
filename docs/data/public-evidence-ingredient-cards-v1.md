@@ -1,8 +1,8 @@
 # Public Evidence Ingredient Cards v1
 
-> Last checked: 2026-05-30
+> Last checked: 2026-06-03
 
-当前 30 个高频/高风险原料证据卡（首批 20 个 + 第二批 10 个）。卡片用于降低 AI 幻觉和声称越界风险；不等于供应商已索资或产品最终合规结论。
+当前 45 个高频/高风险原料证据卡（首批 20 个 + 第二批 10 个 + 第三批 15 个）。卡片用于降低 AI 幻觉和声称越界风险；不等于供应商已索资或产品最终合规结论。
 
 ## GABA（γ-氨基丁酸）
 
@@ -1077,3 +1077,599 @@
   - `SRC-NHC-FOOD-MEDICINE-CATALOG-ENTRY` — 按照传统既是食品又是中药材的物质目录管理入口
   - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
   - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+---
+
+## 第三批扩展（2026-06-03）
+
+## 叶黄素 / 玉米黄质
+
+- ID: `PE-LUTEIN-ZEAXANTHIN`
+- Aliases: 叶黄素, 玉米黄质, Lutein, Zeaxanthin, 万寿菊叶黄素
+- Regulatory identity: 需区分营养强化剂叶黄素、食品添加剂叶黄素、天然含量原料和玉米黄质/提取物路径。GB 14880-2012 已列叶黄素（万寿菊来源）在部分婴幼儿/儿童相关类别中的使用，GB 2760-2024 亦有叶黄素食品添加剂条目；玉米黄质本轮未找到同等明确官方使用范围，需保持待复核。
+- Applicable paths: `nutrient_fortifier`, `food_additive`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 儿童营养粉/乳粉（需按 GB 14880 和产品标准复核）
+  - 含叶黄素饮料或软糖（需确认食品类别和路径）
+  - 烘焙/糖果/饮料着色或感官应用（如走添加剂路径需按 GB 2760）
+  - 眼部营养概念研发（不得承诺视力效果）
+- Prohibited / risky expressions:
+  - 改善视力
+  - 保护视力
+  - 预防近视
+  - 缓解眼疲劳
+  - 提高视觉发育
+  - 护眼
+  - 治疗眼病
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 叶黄素作为营养强化剂时需按 GB 14880 食品类别、来源和用量复核；作为食品添加剂时需按 GB 2760 食品类别、功能和最大使用量复核。
+  - 玉米黄质、万寿菊提取物、叶黄素酯、复配类胡萝卜素不能与叶黄素条目直接等同。
+  - 儿童、婴幼儿、孕产妇场景必须同时复核对应产品标准和标签要求。
+  - 可讨论“含叶黄素/配方属性/营养事实”，不得写改善视力、保护视力或预防近视。
+- Manual review points:
+  - 确认具体物质是叶黄素、叶黄素酯、玉米黄质还是植物提取物。
+  - 确认使用路径是营养强化剂、食品添加剂还是普通配料。
+  - 核对 GB 14880/GB 2760 对目标食品类别和添加量的要求。
+  - 按 GB 28050 复核营养标签和声称条件；儿童眼健康文案需人工审查。
+  - 索取供应商来源、含量、异构体、溶剂残留、稳定性和 COA；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB2760-2024` — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB1886-382-2025` — GB 1886.382-2025 食品安全国家标准 食品添加剂 叶黄素（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB5009-248-2016` — GB 5009.248-2016 食品安全国家标准 食品中叶黄素的测定（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+## 葡萄籽提取物
+
+- ID: `PE-GRAPE-SEED-EXTRACT`
+- Aliases: 葡萄籽, 葡萄籽提取物, Grape seed extract, 原花青素, OPC
+- Regulatory identity: GB 2760-2024 香料目录中可检索到“葡萄籽提取物”相关条目，但这不等于葡萄籽提取物可作为普通食品功能原料任意添加；若作为植物提取物、原花青素来源或功能卖点，法规身份、食品属性、规格和使用量均需人工复核。
+- Applicable paths: `general_food`, `food_additive`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 风味/香气方向（如确属香料路径）
+  - 植物多酚概念饮品或软糖（reference_only，需复核）
+  - 低糖零食/固体饮料配方设想（reference_only）
+- Prohibited / risky expressions:
+  - 抗氧化
+  - 清除自由基
+  - 美白
+  - 抗衰
+  - 保护血管
+  - 改善循环
+  - 增强免疫
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 香料目录条目不能外推为普通食品功能原料通用许可。
+  - 葡萄籽油、葡萄籽粉、葡萄籽提取物、标准化原花青素提取物法规身份不同。
+  - 不得把原花青素或多酚含量表达为抗氧化、抗衰、美白或血管保护功效。
+  - 食品类别、添加量、提取溶剂和残留要求需人工复核。
+- Manual review points:
+  - 确认使用目的：香料/风味、普通配料还是功能提取物。
+  - 核对 GB 2760 香料路径是否适用于目标食品类别。
+  - 确认原花青素指标、提取溶剂、载体、重金属/农残和执行标准。
+  - 所有抗氧化、美白、抗衰、血管保护话术进入人工复核。
+  - 索取供应商规格书和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB2760-2024` — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+## 接骨木莓 / 接骨木莓提取物
+
+- ID: `PE-ELDERBERRY`
+- Aliases: 接骨木莓, 接骨木莓提取物, Elderberry, Sambucus nigra, 接骨木花提取物
+- Regulatory identity: GB 2760-2024 香料目录可检索到接骨木花净油/接骨木花提取物等香料相关条目；但接骨木莓果实、接骨木莓提取物、花提取物不能混同，且不等于可作为普通食品功能原料任意使用。当前保持 reference_only。
+- Applicable paths: `general_food`, `food_additive`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 莓果风味饮品/软糖（需确认是否仅为风味或真实原料）
+  - 植物风味固体饮料（reference_only）
+  - 季节性风味概念产品（不得承接免疫/抗感染）
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 抗病毒
+  - 抗感染
+  - 预防感冒
+  - 缩短感冒
+  - 抗炎
+  - 治疗咽喉不适
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 接骨木花香料条目不能外推为接骨木莓提取物普通食品功能原料许可。
+  - 接骨木莓果汁/果粉、接骨木莓提取物、接骨木花提取物、香精香料路径需分开复核。
+  - 不得表达增强免疫、抗感染、预防感冒或抗病毒。
+  - 目标食品类别、使用量、不适宜人群和安全性需人工复核。
+- Manual review points:
+  - 确认原料部位：花、果实、莓果粉、提取物或香精香料。
+  - 确认使用路径：风味香料、普通配料或植物提取物。
+  - 核对目标品类、使用量、提取工艺、溶剂残留和安全资料。
+  - 免疫/抗感染/感冒相关话术必须禁止或进入保健/药品路径复核。
+  - 索取供应商规格、法规说明和 COA；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB2760-2024` — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+## 蔓越莓 / 蔓越莓提取物
+
+- ID: `PE-CRANBERRY`
+- Aliases: 蔓越莓, 蔓越莓粉, 蔓越莓提取物, Cranberry, 蔓越橘
+- Regulatory identity: 蔓越莓果干/果汁等可作为普通食品配料方向讨论，但蔓越莓提取物、标准化原花青素提取物或泌尿健康卖点不能据此直接认定合规；本轮未找到蔓越莓提取物官方使用范围深链，保持 reference_only。
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 果味饮料/果汁饮料（需按产品标准和配料身份复核）
+  - 软糖/果干/烘焙风味
+  - 女性场景风味产品（不得承接泌尿治疗）
+  - 固体饮料/果粉应用（需确认粉/提取物身份）
+- Prohibited / risky expressions:
+  - 预防尿路感染
+  - 改善泌尿系统
+  - 抗感染
+  - 抑菌
+  - 调节菌群
+  - 女性私护
+  - 抗氧化
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 普通蔓越莓果实/果汁/果干与蔓越莓提取物、标准化 PACs 提取物不能混同。
+  - 不得把蔓越莓用于尿路感染预防、抗感染、抑菌或治疗表达。
+  - 如进行果汁含量、真实水果、低糖/无糖等标签表达，需按 GB 7718/GB 28050 复核。
+  - 提取物法规身份、添加量和不适宜人群需人工复核。
+- Manual review points:
+  - 确认原料形态：果汁、果粉、果干、浓缩汁、提取物或香精。
+  - 确认目标食品类别和执行标准。
+  - 核对 PACs/原花青素指标、检测方法、溶剂残留和供应商法规说明。
+  - 泌尿、抗感染、抑菌、女性私护等话术需禁止或人工复核。
+  - Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+## NMN / β-烟酰胺单核苷酸
+
+- ID: `PE-NMN`
+- Aliases: NMN, β-烟酰胺单核苷酸, 烟酰胺单核苷酸, Nicotinamide mononucleotide
+- Regulatory identity: 高度敏感原料。官方公开信息显示 NMN（β-烟酰胺单核苷酸）曾作为食品添加剂新品种申请被受理并有审查意见告知书送达信息，但受理/送达不等于批准；不得把 NMN 写成普通食品可直接使用，也不得以烟酸/烟酰胺或维生素 B3 路径替代。当前仅作为风险拦截卡，confidence 为 reference_only，必须人工复核。
+- Applicable paths: `general_food`, `health_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 不建议进入普通食品配方；如用户提出仅能提示法规身份待复核
+  - 法规查询/风险提示场景
+  - 如坚持商业化，应转人工法规评估，不输出用量方案
+- Prohibited / risky expressions:
+  - 抗衰
+  - 逆龄
+  - 延缓衰老
+  - 提升 NAD+
+  - 修复 DNA
+  - 延长寿命
+  - 改善代谢
+  - 增强精力
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 不得给出 NMN 普通食品可直接使用、推荐用量或标签方案。
+  - 不得把 NMN 与烟酸、烟酰胺、维生素 B3、营养强化剂路径混同。
+  - 不得输出抗衰、逆龄、提升 NAD+、修复 DNA、延长寿命等功效表达。
+  - 任何食品属性、进口/生产许可、跨境、电商宣传均需人工法规复核。
+- Manual review points:
+  - 查找最新 NHC/SAMR 关于 NMN 食品属性、保健食品原料、三新食品或地方监管口径。
+  - 确认目标市场：中国普通食品、保健食品、跨境电商或海外市场。
+  - 不得输出配方添加量；仅可提示待复核和替代合规路线。
+  - 审核所有抗衰/逆龄/NAD+相关文案。
+  - Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-NHC-NMN-ADDITIVE-ACCEPTANCE-2023` — 2023年01月28日食品添加剂新品种受理情况公告：NMN（β-烟酰胺单核苷酸）
+  - `SRC-NHC-NMN-ADDITIVE-REVIEWNOTICE-2023` — 2023年03月15日食品添加剂新品种审查意见告知书信息送达：NMN（β-烟酰胺单核苷酸）
+  - `SRC-SAMR-NMN-NPC-REPLY-2021` — 对十三届全国人大四次会议第1067号建议的答复：关于 NMN 新食品原料及保健食品原料目录申报路径
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+## 肌酸
+
+- ID: `PE-CREATINE`
+- Aliases: 肌酸, 肌酸一水合物, Creatine, Creatine monohydrate
+- Regulatory identity: 运动营养场景可讨论研发方向，但本轮未找到肌酸作为普通食品或运动营养食品允许原料/用量的官方深链；不得直接给出普通食品合规添加量。需按 GB 24154 运动营养食品通则、目标产品类别和原料法规身份人工复核。
+- Applicable paths: `general_food`, `sports_nutrition`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 运动营养粉/饮料研发设想（需人工复核是否可用）
+  - 健身人群产品概念（不得承诺增肌/表现提升）
+  - 替代路线：蛋白/碳水/电解质等法规更清晰路径
+- Prohibited / risky expressions:
+  - 增肌
+  - 提升力量
+  - 提升运动表现
+  - 爆发力提升
+  - 抗疲劳
+  - 提高训练容量
+  - 促进恢复
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 未确认官方使用范围前，肌酸在普通食品/饮料/软糖中添加量一律待复核。
+  - 运动营养食品路径需先确认是否符合 GB 24154 分类、适用人群和标签要求。
+  - 不得承诺增肌、提升力量、提升运动表现或抗疲劳。
+  - 儿童、孕妇、肾病等敏感人群风险提示需人工复核。
+- Manual review points:
+  - 继续查找肌酸在中国食品/运动营养食品中的官方允许依据。
+  - 确认目标产品是否可归入运动营养食品及其子类。
+  - 索取肌酸原料执行标准、纯度、杂质、肌酐、重金属和 COA。
+  - 所有训练效果和身体机能表达进入人工复核。
+  - Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB24154-2015` — GB 24154-2015 食品安全国家标准 运动营养食品通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB24154-2015-AMEND1` — GB 24154-2015《食品安全国家标准 运动营养食品通则》第1号修改单（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+## 左旋肉碱
+
+- ID: `PE-L-CARNITINE`
+- Aliases: 左旋肉碱, L-肉碱, L-carnitine, 左旋肉碱酒石酸盐
+- Regulatory identity: GB 14880-2012 表 A.1 将左旋肉碱（L-肉碱）列为营养强化剂并规定调制乳粉、果蔬汁饮料、含乳饮料、特殊用途饮料（仅限运动饮料）、风味饮料等类别和用量；GB 1903.13-2016 为食品营养强化剂左旋肉碱质量规格。营养强化剂身份不等于减脂、燃脂或运动表现声称。
+- Applicable paths: `nutrient_fortifier`, `sports_nutrition`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 运动饮料/特殊用途饮料（需按 GB 14880 和 GB 24154 复核）
+  - 含乳饮料、果蔬汁饮料、风味饮料
+  - 调制乳粉（需按子类和敏感人群复核）
+  - 运动营养产品研发
+- Prohibited / risky expressions:
+  - 燃脂
+  - 减肥
+  - 加速脂肪代谢
+  - 提高运动表现
+  - 抗疲劳
+  - 增强体力
+  - 保护心脏
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - GB 14880 对左旋肉碱允许食品类别和用量有明确限制，不能外推到任意普通食品。
+  - 左旋肉碱、左旋肉碱酒石酸盐、复配运动营养原料需分别核对来源和质量规格。
+  - 运动饮料/运动营养食品还需复核 GB 24154 及标签要求。
+  - 不得表达燃脂、减肥、提升表现或抗疲劳。
+- Manual review points:
+  - 核对 GB 14880 目标食品类别、使用量和化合物来源。
+  - 核对 GB 1903.13 质量规格与供应商 COA。
+  - 确认是否属于运动营养食品或普通饮料；标签不得暗示保健功能。
+  - 复核低糖/能量/营养声称。
+  - Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB1903-13-2016` — GB 1903.13-2016 食品安全国家标准 食品营养强化剂 左旋肉碱（L-肉碱）（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB24154-2015` — GB 24154-2015 食品安全国家标准 运动营养食品通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+## BCAA / EAA
+
+- ID: `PE-BCAA-EAA`
+- Aliases: BCAA, EAA, 支链氨基酸, 必需氨基酸, 亮氨酸, 异亮氨酸, 缬氨酸, Leucine, Isoleucine, Valine
+- Regulatory identity: BCAA/EAA 属运动营养高频原料方向，但本轮未找到其作为普通食品通用添加原料的明确官方用量深链；GB 24154 可作为运动营养食品路径主标准，氨基酸单体/复配使用仍需按目标类别、原料标准和标签人工复核。GB 2760 中部分氨基酸可能出现在香料目录，不等于营养功能添加许可。
+- Applicable paths: `general_food`, `sports_nutrition`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 运动营养粉/饮料研发设想（需按 GB 24154 复核）
+  - 高蛋白产品中蛋白质/氨基酸组成讨论
+  - 普通食品风味或营养事实讨论（不得承诺训练效果）
+- Prohibited / risky expressions:
+  - 增肌
+  - 促进肌肉合成
+  - 提升运动表现
+  - 抗疲劳
+  - 减少肌肉分解
+  - 快速恢复
+  - 提高力量
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - BCAA/EAA、单体氨基酸、蛋白水解物和香料目录中的氨基酸用途不能混同。
+  - 运动营养食品需按 GB 24154 分类、适用人群和标签复核。
+  - 普通食品不得承诺增肌、抗疲劳、恢复或运动表现。
+  - 具体氨基酸来源、纯度、用量和不适宜人群需人工复核。
+- Manual review points:
+  - 确认原料是单体氨基酸、复配 BCAA/EAA、蛋白肽还是蛋白粉。
+  - 确认目标产品是否属于运动营养食品；核对 GB 24154。
+  - 查找并复核对应氨基酸原料标准/公告和食品使用依据。
+  - 训练效果、增肌、抗疲劳话术进入人工复核。
+  - 索取供应商规格、比例、纯度、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB24154-2015` — GB 24154-2015 食品安全国家标准 运动营养食品通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB24154-2015-AMEND1` — GB 24154-2015《食品安全国家标准 运动营养食品通则》第1号修改单（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+## 叶酸
+
+- ID: `PE-FOLIC-ACID`
+- Aliases: 叶酸, Folic acid, 蝶酰谷氨酸, Folate
+- Regulatory identity: GB 14880-2012 将叶酸列为营养强化剂，化合物来源为叶酸（蝶酰谷氨酸）；适用食品类别和用量需逐项按表 A.1 复核。GB 28050-2025 对叶酸营养标签、NRV 和允许的营养成分功能声称有要求；不得把叶酸表达为治疗贫血、备孕保证或胎儿发育承诺。
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 备孕/孕产妇营养食品（高敏感，需人工复核）
+  - 营养强化饮料/固体饮料（需确认类别）
+  - 谷物/乳粉等营养强化场景
+- Prohibited / risky expressions:
+  - 预防胎儿畸形
+  - 保证胎儿发育
+  - 治疗贫血
+  - 提高受孕率
+  - 改善备孕
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - GB 14880 食品类别、添加量和来源必须逐项核对；不得外推到任意普通食品。
+  - GB 28050 可用营养成分功能声称需按标准原文和声称条件执行，不得夸大。
+  - 孕产妇场景需复核特殊膳食/产品标准和标签。
+  - 叶酸、天然叶酸盐、复配维生素预混料不能混同。
+- Manual review points:
+  - 核对 GB 14880 允许食品类别、化合物来源和添加量。
+  - 按 GB 28050 复核营养成分表、NRV%、营养声称和营养成分功能声称条件。
+  - 确认目标人群、产品类别和是否涉及特殊膳食/婴幼儿/孕产妇。
+  - 供应商预混料或单体原料需索取规格、含量、稳定性、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 铁
+
+- ID: `PE-IRON`
+- Aliases: 铁, Iron, 硫酸亚铁, 葡萄糖酸亚铁, 焦磷酸铁, 乙二胺四乙酸铁钠
+- Regulatory identity: GB 14880-2012 将铁列为矿物质营养强化剂，并列明多种化合物来源；适用食品类别、用量和来源限制需按标准复核。GB 28050-2025 对铁营养标签和营养成分功能声称有要求；不得表达补血治疗、治疗贫血或改善疾病。
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 儿童/女性/银发营养粉（需复核人群和类别）
+  - 谷物、饮料、乳粉等营养强化场景
+  - 贫血风险人群产品设想（不得作疾病治疗表达）
+- Prohibited / risky expressions:
+  - 补血
+  - 治疗贫血
+  - 改善贫血
+  - 提高血红蛋白
+  - 治疗缺铁
+  - 改善气色
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 铁强化必须按 GB 14880 食品类别、用量和化合物来源执行。
+  - 不同铁源吸收、口感、氧化和适用范围不同，不能混同。
+  - GB 28050 的铁营养成分功能声称需满足标示和声称条件；不得作疾病治疗。
+  - 儿童、孕妇等人群需额外复核。
+- Manual review points:
+  - 核对 GB 14880 允许食品类别、化合物来源和添加量。
+  - 按 GB 28050 复核营养成分表、NRV%、营养声称和营养成分功能声称条件。
+  - 确认目标人群、产品类别和是否涉及特殊膳食/婴幼儿/孕产妇。
+  - 供应商预混料或单体原料需索取规格、含量、稳定性、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 硒
+
+- ID: `PE-SELENIUM`
+- Aliases: 硒, Selenium, 亚硒酸钠, 硒酸钠, 富硒酵母, 硒蛋白
+- Regulatory identity: GB 14880-2012 将硒列为矿物质营养强化剂，来源包括亚硒酸钠、硒酸钠、硒蛋白、富硒食用菌粉、L-硒-甲基硒代半胱氨酸等，部分来源限定食品类别。GB 28050-2025 对硒营养标签和营养成分功能声称有要求；不得夸大抗氧化或免疫效果。
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 营养强化饮品/固体饮料（需确认类别）
+  - 银发/成人营养粉
+  - 富硒概念产品（需审查来源和声称）
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 抗氧化抗衰
+  - 防癌
+  - 护肝
+  - 排毒
+  - 治疗缺硒
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 硒强化剂来源和食品类别限制复杂，必须按 GB 14880 逐条核对。
+  - 富硒酵母、富硒食用菌粉、无机硒盐等来源不能混同。
+  - GB 28050 可用营养成分功能声称不得扩展为增强免疫、防癌、抗衰或治疗。
+  - 硒用量安全边界敏感，添加量和标示值需人工复核。
+- Manual review points:
+  - 核对 GB 14880 允许食品类别、化合物来源和添加量。
+  - 按 GB 28050 复核营养成分表、NRV%、营养声称和营养成分功能声称条件。
+  - 确认目标人群、产品类别和是否涉及特殊膳食/婴幼儿/孕产妇。
+  - 供应商预混料或单体原料需索取规格、含量、稳定性、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 维生素 E
+
+- ID: `PE-VITAMIN-E`
+- Aliases: 维生素E, 维生素 E, Vitamin E, 生育酚, 醋酸生育酚
+- Regulatory identity: GB 14880-2012 将维生素 E 列为营养强化剂并列明化合物来源；适用食品类别和使用量需按标准复核。GB 28050-2025 对维生素 E 营养标签和营养成分功能声称有要求；不得把“抗氧化作用”扩展为美容、抗衰或疾病预防。
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 营养强化饮品/固体饮料
+  - 坚果/谷物/油脂类营养事实讨论
+  - 女性/美容概念产品（高风险，需审查）
+- Prohibited / risky expressions:
+  - 美容养颜
+  - 抗衰
+  - 淡斑
+  - 保护心血管
+  - 改善皮肤
+  - 增强免疫
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 维生素 E 强化需按 GB 14880 食品类别、来源和用量执行。
+  - 天然生育酚、合成生育酚、醋酸酯、复配维生素预混料需分别复核。
+  - GB 28050 中营养成分功能声称不得改写为美容、抗衰或治疗。
+  - 油脂氧化稳定性、过量风险和标签标示需人工复核。
+- Manual review points:
+  - 核对 GB 14880 允许食品类别、化合物来源和添加量。
+  - 按 GB 28050 复核营养成分表、NRV%、营养声称和营养成分功能声称条件。
+  - 确认目标人群、产品类别和是否涉及特殊膳食/婴幼儿/孕产妇。
+  - 供应商预混料或单体原料需索取规格、含量、稳定性、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## 维生素 B12
+
+- ID: `PE-VITAMIN-B12`
+- Aliases: 维生素B12, 维生素 B12, Vitamin B12, 氰钴胺, 盐酸氰钴胺
+- Regulatory identity: GB 14880-2012 将维生素 B12 列为营养强化剂，来源包括氰钴胺、盐酸氰钴胺、羟钴胺等；适用食品类别、用量和标签需按标准复核。GB 28050-2025 对维生素 B12 营养标签和功能声称有要求；不得表达治疗贫血、改善神经疾病或提神抗疲劳。
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 素食/植物基营养产品（需复核类别）
+  - 营养强化饮品/固体饮料
+  - 银发/成人营养粉
+- Prohibited / risky expressions:
+  - 治疗贫血
+  - 改善神经系统疾病
+  - 提神
+  - 抗疲劳
+  - 改善记忆
+  - 提高精力
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 维生素 B12 强化需按 GB 14880 食品类别、来源和用量执行。
+  - 氰钴胺、羟钴胺、预混料等来源和稳定性需复核。
+  - GB 28050 可用营养成分功能声称不得扩展为治疗贫血、改善神经疾病或抗疲劳。
+  - 素食人群场景可讨论营养事实，不得作疾病风险承诺。
+- Manual review points:
+  - 核对 GB 14880 允许食品类别、化合物来源和添加量。
+  - 按 GB 28050 复核营养成分表、NRV%、营养声称和营养成分功能声称条件。
+  - 确认目标人群、产品类别和是否涉及特殊膳食/婴幼儿/孕产妇。
+  - 供应商预混料或单体原料需索取规格、含量、稳定性、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB14880-2012` — GB 14880-2012 食品安全国家标准 食品营养强化剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+
+## β-葡聚糖
+
+- ID: `PE-BETA-GLUCAN`
+- Aliases: β-葡聚糖, Beta glucan, 酵母β-葡聚糖, 燕麦β-葡聚糖, 大麦β-葡聚糖
+- Regulatory identity: β-葡聚糖需按来源分流：酵母β-葡聚糖已有 GB 1903.80-2025 食品营养强化剂质量规格和 GB 5009.303-2025 测定标准，但燕麦/大麦/酵母等来源、普通食品配料与营养强化剂路径不能混同；具体适用食品类别和用量仍需人工复核。
+- Applicable paths: `nutrient_fortifier`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 膳食纤维饮料/固体饮料（需确认来源和类别）
+  - 谷物/燕麦产品营养事实讨论
+  - 酵母来源营养强化设想（需核对 GB 14880/后续公告）
+  - 代餐/营养粉
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 调节免疫
+  - 改善肠道菌群
+  - 降血脂
+  - 降胆固醇
+  - 控糖
+  - 减肥
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 酵母β-葡聚糖、燕麦β-葡聚糖、大麦β-葡聚糖、菌菇β-葡聚糖法规身份不同，不能混同。
+  - GB 1903.80 是酵母β-葡聚糖营养强化剂质量规格，不等于所有β-葡聚糖普通食品无限制可用。
+  - 如作为膳食纤维或进行营养声称，需按 GB 28050 检测和声称条件复核。
+  - 不得表达增强免疫、降血脂、控糖、减肥或改善肠道功能。
+- Manual review points:
+  - 确认来源和形态：酵母、燕麦、大麦、菌菇、提取物或浓缩物。
+  - 确认路径：普通配料、膳食纤维来源、营养强化剂或新食品原料。
+  - 核对食品类别、添加量、检测方法和标签声称。
+  - 索取供应商纯度、分子量、β-1,3/1,6 或 β-1,3/1,4 结构、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB1903-80-2025` — GB 1903.80-2025 食品安全国家标准 食品营养强化剂 酵母β-葡聚糖（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB5009-303-2025` — GB 5009.303-2025 食品安全国家标准 食品中酵母β-葡聚糖的测定（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+## 酵母抽提物
+
+- ID: `PE-YEAST-EXTRACT`
+- Aliases: 酵母抽提物, 酵母提取物, 酵母抽取物, Yeast extract
+- Regulatory identity: 酵母抽提物更多用于调味、鲜味、咸味增强或复合调味应用；可结合 GB 31644 复合调味料、GB 7718 标签和相关产品标准复核。不得把酵母抽提物写成保健功效原料或免疫营养原料。
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 低钠调味粉/复合调味料
+  - 汤底、酱料、烘焙咸味应用
+  - 植物基/蛋白产品增鲜遮味
+  - 普通食品风味优化
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 补充核苷酸提高抵抗力
+  - 促进生长发育
+  - 护肝
+  - 抗疲劳
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 酵母抽提物、酵母β-葡聚糖、酵母粉、酵母核苷酸不能混同。
+  - 主要按调味/配料/复合调味料方向处理；不得承接保健功能。
+  - 钠含量、谷氨酸/呈味核苷酸、过敏原或敏感人群提示需按配方和标签复核。
+  - 如用于低钠声称，需按 GB 28050 营养声称条件复核。
+- Manual review points:
+  - 确认原料形态和用途：调味配料、复合调味料、酵母粉或提取物。
+  - 核对目标产品是否适用 GB 31644 或其他产品标准。
+  - 复核配料表名称、钠含量、低钠/减盐声称和过敏/敏感提示。
+  - 不得输出免疫、抗疲劳或生长发育功效。
+  - 索取供应商规格、钠/总氮/氨基酸态氮、微生物、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB31644-2018` — GB 31644-2018 食品安全国家标准 复合调味料（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）

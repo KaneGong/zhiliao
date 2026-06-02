@@ -159,3 +159,10 @@ dig +short zhiliao-ai.cn
 - Public Evidence 当前为 30 cards / 7 paths / 21 sources。
 - 运行时 Evidence prompt 摘要已压缩，避免深度卡片过长拖慢 `/recommend`；完整证据仍保留在 docs/data 与 JSON。
 - 目标回归 GQ-003、GQ-011、GQ-013、GQ-014、GQ-015、GQ-017、GQ-018 通过。
+
+### 2026-06-03 — Public Evidence v1 第三批扩展验收
+- 02 会话完成第三批 15 张高频/高风险原料证据卡，Public Evidence 当前为 45 cards / 8 paths / 32 sources。
+- 新增运动营养食品路径 `sports_nutrition`，覆盖肌酸、BCAA/EAA、左旋肉碱等运动营养高风险场景。
+- 第三批重点原料包括叶黄素/玉米黄质、葡萄籽、接骨木莓、蔓越莓、NMN、肌酸、左旋肉碱、BCAA/EAA、叶酸、铁、硒、维生素 E、维生素 B12、β-葡聚糖、酵母抽提物。
+- 主控补修旧 `src/data/regulations.json` 中叶黄素记录，避免把儿童软糖/护眼场景解释得过宽；叶黄素、玉米黄质、护眼表达统一按待复核和高风险声称处理。
+- 本地 `npm run verify`、`npm run smoke:local`、GQ-014/GQ-018 回归、新增 NMN/叶黄素/肌酸专项 API 回归均通过。
