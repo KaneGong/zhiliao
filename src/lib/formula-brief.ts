@@ -504,6 +504,13 @@ function inferRiskyClaimExpressions(query: string, productType: string): string[
     risky.add("减肥");
     risky.add("燃脂");
   }
+  if (/咖啡因|牛磺酸|能量饮|提神|专注|抗疲劳|疲劳|加班|电竞/.test(text)) {
+    risky.add("提神");
+    risky.add("提高专注力");
+    risky.add("抗疲劳");
+    risky.add("增强精力");
+    risky.add("提升工作效率");
+  }
 
   return [...risky];
 }
@@ -540,6 +547,11 @@ function inferSafeClaimExpressions(query: string, productType: string): string[]
   if (/膳食纤维|可溶性纤维|菊粉|聚葡萄糖|抗性糊精|饱腹/.test(text)) {
     suggestions.add("含膳食纤维");
     suggestions.add("低糖轻负担");
+  }
+  if (/咖啡因|牛磺酸|能量饮|提神|专注|抗疲劳|疲劳|加班|电竞/.test(text)) {
+    suggestions.add("含咖啡因、牛磺酸等原料");
+    suggestions.add("低糖清爽饮用体验");
+    suggestions.add("下午茶和加班场景饮用");
   }
 
   if (/饮酒|聚餐|聚会|酒前|社交|葛根|枳椇子/.test(text)) {

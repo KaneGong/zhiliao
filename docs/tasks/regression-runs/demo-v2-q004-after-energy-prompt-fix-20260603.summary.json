@@ -1,0 +1,30 @@
+{
+  "base_url": "http://127.0.0.1:3010",
+  "run_at": "2026-06-02T17:31:34.122Z",
+  "id": "DEMO2-Q-004",
+  "title": "咖啡因能量饮 / 提神与能量声称边界",
+  "query": "做一款年轻白领下午喝的低糖能量饮，希望有咖啡因和牛磺酸，口感清爽，想表达提神、专注和抗疲劳，但要尽量走普通食品路径。",
+  "pass": true,
+  "duration_ms": 32900,
+  "sawDone": true,
+  "hasBrief": true,
+  "routes": 3,
+  "checks": 3,
+  "suppliers": 2,
+  "availableSuppliers": 0,
+  "trust": 56,
+  "riskyAllowed": [],
+  "errors": [],
+  "statuses": [
+    "正在整理结构化方案卡片…",
+    "结构化方案卡片已生成"
+  ],
+  "verificationSummary": {
+    "total": 0,
+    "verified": 0,
+    "notFound": 0,
+    "healthFoodOnly": 0,
+    "caution": 0
+  },
+  "summaryExcerpt": "针对年轻白领下午低糖能量饮需求，提供了三条普通食品路径的配方方案。保守路线为低糖气泡风味饮料，法规路径最接近现有框架；主流路线为茶风味能量饮，天然咖啡因来源风险更低；创新路线为电解质风味饮，差异化定位。所有路线均需严格规避“提神、专注、抗疲劳”等功能声称，核心原料（咖啡因、牛磺酸）在平台暂无匹配供应商。下一步重点是复核咖啡因的合规路径并启动打样测试。"
+}

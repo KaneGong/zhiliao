@@ -1,0 +1,374 @@
+{
+  "base_url": "http://127.0.0.1:3010",
+  "run_at": "2026-06-02T17:22:39.068Z",
+  "total": 12,
+  "pass": 11,
+  "review_or_fail": 1,
+  "results": [
+    {
+      "id": "DEMO2-Q-001",
+      "page": "/recommend",
+      "title": "高蛋白运动饮 / 正向样板",
+      "query": "做一款运动后日常补充用的高蛋白饮料，目标人群是健身男性，希望口感清爽，蛋白含量有卖点，但成本不能太高。",
+      "pass": true,
+      "duration_ms": 30454,
+      "sawDone": true,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 5,
+      "availableSuppliers": 5,
+      "trust": 98,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "未收录"
+      ],
+      "evidenceHits": [
+        "乳清蛋白"
+      ],
+      "publicEvidenceMention": false,
+      "errors": [],
+      "productType": "高蛋白饮料（RTD）",
+      "regulatoryPath": "普通食品",
+      "summaryExcerpt": "本方案针对健身男性运动后高蛋白饮料需求，推荐以浓缩乳清蛋白（WPC80）为主、复配分离乳清蛋白（WPI90）的主流路线，在成本、口感和蛋白含量间取得最佳平衡。方案提供了三条研发路线：保守的纯WPC路线、主流的WPC+WPI路线、以及创新的水解乳清蛋白（WPH）路线。核心风险在于口感打样验证和标签声称的合规性，需避免使用“增肌”、“促恢复”等功效词。平台已匹配Glanbia和Wheyco的WPC80、WPI90及WPH原料，可快速启动打样。"
+    },
+    {
+      "id": "DEMO2-Q-002",
+      "page": "/recommend",
+      "title": "办公人群夜间场景软糖 / 合规纠偏",
+      "query": "开发一款面向办公人群的低糖助眠软糖，需要普通食品可用原料，风味温和，成本可控。",
+      "pass": true,
+      "duration_ms": 29782,
+      "sawDone": true,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 1,
+      "availableSuppliers": 1,
+      "trust": 78,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "未收录",
+        "需复核",
+        "需确认"
+      ],
+      "evidenceHits": [
+        "GABA",
+        "茶氨酸",
+        "酸枣仁"
+      ],
+      "publicEvidenceMention": true,
+      "errors": [],
+      "productType": "功能性软糖",
+      "regulatoryPath": "普通食品",
+      "summaryExcerpt": "本方案围绕办公人群低糖日常营养软糖需求，提供了三条普通食品路径的研发路线。首选“GABA+茶氨酸复配型”保守路线，法规边界需按目标食品类别复核、成本可控、打样风险低。次选“水解乳清蛋白肽型”和“GABA+植物提取物型”作为差异化备选。核心风险在于对外声称和风味遮蔽，需严格遵循普通食品标签法规。平台已匹配Glanbia的PepForm Tryptophan原料，可支持其中一条路线的打样。"
+    },
+    {
+      "id": "DEMO2-Q-003",
+      "page": "/regulations",
+      "title": "GABA 法规查询 / 证据追溯",
+      "query": "GABA（γ-氨基丁酸）能不能用于普通食品？如果做软糖，需要注意哪些边界？",
+      "pass": true,
+      "duration_ms": 3145,
+      "sawDone": true,
+      "checks": 2,
+      "hasDbHit": true,
+      "dbIngredients": [
+        "GABA（γ-氨基丁酸）",
+        "需要注意哪些边界"
+      ],
+      "riskyPositive": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "不构成法律建议",
+        "需要确认"
+      ],
+      "evidenceHits": [
+        "GABA"
+      ],
+      "publicEvidenceMention": true,
+      "verificationPresent": true,
+      "errors": [],
+      "summaryExcerpt": "好的，根据您提供的数据库信息和公共证据，为您补充以下专业解读： 1. **能不能用？** 可以。GABA（γ-氨基丁酸）作为新食品原料，可用于普通食品，但每日食用量不得超过500mg。 2. **做软糖的边界在哪？** 软糖属于普通食品，可以使用GABA。但您需要确认软糖这个具体剂型是否在2009年第12号公告的“使用范围”内。如果公告中未明确列出“软糖”或“糖果”，则需谨慎，最好向卫健委或权威机构确认其适用性。 3. **标签和宣传的雷区。** 这是关键！虽然GABA常与放松、睡眠关联，但在普通食品标签和宣传中，**绝对不能出现**“助眠”、“改善睡眠…"
+    },
+    {
+      "id": "DEMO2-Q-004",
+      "page": "/recommend",
+      "title": "咖啡因能量饮 / 提神与能量声称边界",
+      "query": "做一款年轻白领下午喝的低糖能量饮，希望有咖啡因和牛磺酸，口感清爽，想表达提神、专注和抗疲劳，但要尽量走普通食品路径。",
+      "pass": false,
+      "duration_ms": 35487,
+      "sawDone": true,
+      "hasBrief": false,
+      "routes": 0,
+      "checks": 0,
+      "suppliers": 0,
+      "availableSuppliers": 0,
+      "trust": null,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "需复核"
+      ],
+      "evidenceHits": [
+        "咖啡因",
+        "牛磺酸"
+      ],
+      "publicEvidenceMention": false,
+      "errors": [
+        "未检测到结构化方案包，已保留 Markdown 输出"
+      ],
+      "productType": null,
+      "regulatoryPath": null,
+      "summaryExcerpt": "好的，需求很明确。年轻白领下午场景，低糖、清爽、含咖啡因和牛磺酸，目标是“提神、专注、抗疲劳”，但要走普通食品路径。这个需求在法规上需要非常小心地拆解。 --- **合规边界**：普通食品路径下，**绝对禁止**使用“提神、抗疲劳、增强日常营养”等保健功能声称。咖啡因作为食品添加剂仅限可乐型碳酸饮料（GB 2760），牛磺酸作为营养强化剂可用于风味饮料等品类（GB 14880）。标签只能描述原料本身和营养事实。 **推荐方向**：我更推荐走**“风味饮料/气泡饮料”**的普通食品路线。核心是打造一款**“低糖、清爽、含咖啡因和牛磺酸的风味饮品”**，将卖…"
+    },
+    {
+      "id": "DEMO2-Q-005",
+      "page": "/recommend",
+      "title": "饮酒场景软糖 / 解酒护肝红线",
+      "query": "做一款聚会前后吃的软糖，想加入葛根、枳椇子和维生素 C，用户希望减少第二天不适，但我们不想踩解酒护肝的法规风险。",
+      "pass": true,
+      "duration_ms": 29951,
+      "sawDone": true,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 3,
+      "availableSuppliers": 0,
+      "trust": 78,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "未收录",
+        "人工复核",
+        "需复核",
+        "需确认"
+      ],
+      "evidenceHits": [
+        "葛根",
+        "枳椇子",
+        "维生素 C"
+      ],
+      "publicEvidenceMention": true,
+      "errors": [],
+      "productType": "凝胶糖果（软糖）",
+      "regulatoryPath": "普通食品",
+      "summaryExcerpt": "本方案聚焦于‘聚会场景下的草本风味软糖’，严格规避‘饮酒功效声称饮酒功效声称’声称。推荐‘清爽草本风味型’和‘维生素C营养补充型’两条路线，前者最安全，后者卖点更清晰。核心风险在于葛根和枳椇子的原料合规性及风味遮蔽，需优先解决。平台目前暂无葛根、枳椇子和维生素C的供应商匹配，需自行寻找。"
+    },
+    {
+      "id": "DEMO2-Q-006",
+      "page": "/recommend",
+      "title": "儿童益生菌固体饮料 / 菌株证据缺口",
+      "query": "开发一款儿童益生菌固体饮料，希望家长容易理解，主打日常肠道友好和营养支持，但不能踩保健食品声称风险。",
+      "pass": true,
+      "duration_ms": 31890,
+      "sawDone": true,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 3,
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "trust": 74,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "未收录",
+        "需复核",
+        "需确认"
+      ],
+      "evidenceHits": [
+        "儿童益生菌"
+      ],
+      "publicEvidenceMention": false,
+      "errors": [],
+      "productType": "固体饮料",
+      "regulatoryPath": "普通食品",
+      "summaryExcerpt": "本方案围绕儿童益生菌固体饮料，提供了三条从保守到创新的研发路线。核心建议是走‘菌株信息+乳清蛋白营养型’路线，用家长能理解的‘蛋白质’和‘菌株名’构建产品价值，完全规避保健食品声称风险。方案详细列出了菌株合规性、声称边界和原料选择的关键风险点，并给出了具体的下一步打样和供应商对接动作。当前平台暂无儿童益生菌原料匹配，需用户自行寻找合规供应商。"
+    },
+    {
+      "id": "DEMO2-Q-007",
+      "page": "/recommend",
+      "title": "电解质果冻 / 运动补给但不医疗化",
+      "query": "做一款运动后吃的电解质果冻，含钠、钾、镁和维生素 B6，适合夏天户外运动人群，想强调补水和快速恢复。",
+      "pass": true,
+      "duration_ms": 32582,
+      "sawDone": true,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 1,
+      "availableSuppliers": 0,
+      "trust": 70,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "未收录",
+        "人工复核",
+        "需复核",
+        "需确认",
+        "需要确认"
+      ],
+      "evidenceHits": [
+        "钾",
+        "镁",
+        "维生素 B6"
+      ],
+      "publicEvidenceMention": true,
+      "errors": [],
+      "productType": "运动营养食品 / 普通果冻",
+      "regulatoryPath": "普通食品",
+      "summaryExcerpt": "本方案围绕运动后电解质果冻，提供了三条研发路线：保守路线（成本优先）、主流路线（口感优先）和创新路线（专业运动定位）。核心风险在于GB 14880对果冻类别的适用性需人工复核，以及电解质盐带来的口感挑战。建议优先打样主流路线，验证口感和稳定性，同时完成法规复核。平台当前暂无电解质和维生素原料供应商，需自行采购。"
+    },
+    {
+      "id": "DEMO2-Q-008",
+      "page": "/recommend",
+      "title": "低钠调味粉 / 钾盐替代和标签边界",
+      "query": "开发一款低钠调味粉，想用氯化钾或柠檬酸钾替代部分食盐，面向控盐人群，口感不能有明显苦味。",
+      "pass": true,
+      "duration_ms": 30579,
+      "sawDone": true,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 2,
+      "availableSuppliers": 0,
+      "trust": 70,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "未收录",
+        "需确认"
+      ],
+      "evidenceHits": [
+        "钾",
+        "氯化钾",
+        "柠檬酸钾"
+      ],
+      "publicEvidenceMention": true,
+      "errors": [],
+      "productType": "复合调味粉",
+      "regulatoryPath": "普通食品",
+      "summaryExcerpt": "本方案围绕低钠调味粉的核心痛点——苦味掩蔽，提供了三条研发路线。保守路线（基础替代型）成本最低但口感风险高；主流路线（鲜味协同型）通过酵母抽提物和菌菇粉有效改善风味，是当前最推荐的打样方向；创新路线（鲜味肽升级型）口感潜力最大但法规和成本风险高。所有路线均需注意低钠声称的合规条件，并严禁使用疾病预防类宣传用语。"
+    },
+    {
+      "id": "DEMO2-Q-009",
+      "page": "/recommend",
+      "title": "膳食纤维气泡水 / 低糖和肠道表达边界",
+      "query": "做一款低糖膳食纤维气泡水，想用聚葡萄糖、抗性糊精、赤藓糖醇，口感清爽，希望表达轻负担和肠道友好。",
+      "pass": true,
+      "duration_ms": 29305,
+      "sawDone": true,
+      "hasBrief": true,
+      "routes": 3,
+      "checks": 2,
+      "suppliers": 1,
+      "availableSuppliers": 1,
+      "trust": 90,
+      "riskyAllowed": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "未收录",
+        "人工复核",
+        "需复核",
+        "需确认"
+      ],
+      "evidenceHits": [
+        "聚葡萄糖",
+        "抗性糊精",
+        "赤藓糖醇"
+      ],
+      "publicEvidenceMention": false,
+      "errors": [],
+      "productType": "气泡水（风味饮料）",
+      "regulatoryPath": "普通食品",
+      "summaryExcerpt": "本方案围绕低糖膳食纤维气泡水，提供了三条研发路线。主流路线（清爽型）通过聚葡萄糖和抗性糊精复配，配合赤藓糖醇，旨在平衡口感与合规性，是推荐的首发方向。保守路线（高纤饱腹型）口感挑战大，创新路线（益生元型）成本高且表达边界窄。核心风险在于膳食纤维的标签声称条件和“肠道友好”等高风险表达的禁用。下一步建议优先进行法规复核和打样测试。"
+    },
+    {
+      "id": "DEMO2-Q-010A",
+      "page": "/regulations",
+      "title": "透明质酸钠专项法规查询",
+      "query": "透明质酸钠作为食品原料使用时，有哪些使用范围、不适宜人群和标签注意点？",
+      "pass": true,
+      "duration_ms": 2928,
+      "sawDone": true,
+      "checks": 3,
+      "hasDbHit": true,
+      "dbIngredients": [
+        "透明质酸钠",
+        "有哪些使用范围",
+        "不适宜人群和标签注意点"
+      ],
+      "riskyPositive": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "不构成法律建议"
+      ],
+      "evidenceHits": [
+        "透明质酸钠"
+      ],
+      "publicEvidenceMention": true,
+      "verificationPresent": true,
+      "errors": [],
+      "summaryExcerpt": "根据您查询的数据库结果和公开证据，补充解读如下： 1. **使用范围**：透明质酸钠作为新食品原料，其使用范围严格限定于卫健委2021年第9号公告中批准的食品类别（乳及乳制品、饮料、糖果）。**不能**随意扩展至其他食品类别（如焙烤食品、肉制品等），否则属于违规使用。 2. **不适宜人群**：公告明确要求，婴幼儿、孕妇和哺乳期妇女**不宜食用**。在产品标签上，必须清晰标注“不适宜人群”为上述三类人群。 3. **标签注意点**：除了标注不适宜人群，标签上还应明确标示**推荐食用量**（≤200毫克/天），并提示“每日食用量不应超过推荐食用量”。同时，…"
+    },
+    {
+      "id": "DEMO2-Q-010B",
+      "page": "/regulations",
+      "title": "乳铁蛋白专项法规查询",
+      "query": "乳铁蛋白能否用于婴幼儿配方食品？如果用于婴配或特膳，需要注意什么？",
+      "pass": true,
+      "duration_ms": 2561,
+      "sawDone": true,
+      "checks": 2,
+      "hasDbHit": true,
+      "dbIngredients": [
+        "乳铁蛋白",
+        "需要注意什么"
+      ],
+      "riskyPositive": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "不构成法律建议"
+      ],
+      "evidenceHits": [
+        "乳铁蛋白"
+      ],
+      "publicEvidenceMention": true,
+      "verificationPresent": true,
+      "errors": [],
+      "summaryExcerpt": "根据数据库结果，乳铁蛋白在GB 14880-2012中明确允许用于婴幼儿配方食品，且可按生产需要适量使用。但需注意，该标准仅规定了“能用”，未涉及具体添加量上限或纯度要求，实际使用时需结合产品标准（如GB 10765婴配国标）确认最终用量。 另外，乳铁蛋白属于高敏感原料，在婴幼儿配方食品中宣称功能（如“增强免疫力”）属于高风险行为，应严格避免。建议重点核实原料的纯度、来源（如牛乳来源）及供应商资质，并确保标签仅标注营养事实，不涉及任何功效暗示。 ⚠️ 仅供参考，不构成法律建议。"
+    },
+    {
+      "id": "DEMO2-Q-010C",
+      "page": "/regulations",
+      "title": "DHA / Omega-3 专项法规查询",
+      "query": "DHA 藻油和鱼油 Omega-3 做普通食品或儿童产品时，需要注意哪些法规边界？",
+      "pass": true,
+      "duration_ms": 3833,
+      "sawDone": true,
+      "checks": 2,
+      "hasDbHit": true,
+      "dbIngredients": [
+        "DHA（二十二碳六烯酸）",
+        "需要注意哪些法规边界"
+      ],
+      "riskyPositive": [],
+      "supplierMislabel": [],
+      "uncertainty": [
+        "人工复核",
+        "不构成法律建议"
+      ],
+      "evidenceHits": [
+        "DHA",
+        "鱼油",
+        "Omega-3"
+      ],
+      "publicEvidenceMention": true,
+      "verificationPresent": true,
+      "errors": [],
+      "summaryExcerpt": "根据您查询的原料和数据库匹配结果，补充以下专业解读： 1. **关于普通食品路径**：DHA藻油和鱼油Omega-3作为普通食品原料时，**不能宣称任何保健功能**（如“益智”、“保护心血管”）。只能描述其作为脂肪酸的营养事实（如“含有Omega-3”）。若产品面向儿童，需特别注意标签和宣传用语，避免使用“促进大脑发育”等暗示功效的词汇，否则可能被认定为普通食品违法宣传保健功能。 2. **关于儿童产品**：DHA藻油虽可用于儿童营养粉等，但需严格区分其使用路径。若作为**营养强化剂**，必须符合GB 14880中针对儿童用调制乳粉等类别的用量规定；若作…"
+    }
+  ]
+}
