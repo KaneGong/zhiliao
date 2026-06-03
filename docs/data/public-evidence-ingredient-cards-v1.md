@@ -1673,3 +1673,585 @@
   - `SRC-CFSA-GB31644-2018` — GB 31644-2018 食品安全国家标准 复合调味料（CFSA 标准文本详情页）
   - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
   - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+# 第四批扩展（2026-06-03）
+
+## 褪黑素
+
+- ID: `PE-MELATONIN`
+- Aliases: 褪黑素, Melatonin, N-乙酰-5-甲氧基色胺
+- Regulatory identity: 褪黑素已进入辅酶Q10等五种保健食品原料目录及备案技术要求体系，主要按保健食品路径复核；不得将其外推为普通食品可自由添加或可宣称改善睡眠。
+- Applicable paths: `health_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 保健食品睡眠方向（需注册/备案路径复核）
+  - 普通食品助眠概念需求的风险纠偏
+  - 夜间场景产品中的禁用/替代表达审查
+- Prohibited / risky expressions:
+  - 改善睡眠
+  - 治疗失眠
+  - 助眠
+  - 调节褪黑素分泌
+  - 无依赖安睡
+  - 镇静
+  - 抗焦虑
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 普通食品路径不得直接添加褪黑素并宣传助眠；如用户坚持功能卖点，应进入保健食品路径复核。
+  - 保健食品也需按目录、剂型、用量、不适宜人群和标签警示执行。
+  - 儿童、孕妇、哺乳期、驾驶/操作机械人群等敏感提示需人工复核。
+- Manual review points:
+  - 核对辅酶Q10等五种保健食品原料目录和备案产品剂型/技术要求。
+  - 确认目标产品是普通食品、保健食品还是跨境/海外产品，不得混用监管路径。
+  - 普通食品方案中应改为风味、夜间场景或营养事实路线，不输出助眠承诺。
+  - 索取供应商规格、纯度、COA、标签建议和中国保健食品资料；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-SAMR-HF-COQ10-MELATONIN-2020` — 国家市场监督管理总局 国家卫生健康委员会 国家中医药管理局关于发布辅酶Q10等五种保健食品原料目录的公告（2020年第54号）
+  - `SRC-SAMR-HF-COQ10-MELATONIN-TECH-2023` — 市场监管总局关于发布《辅酶Q10等五种保健食品原料备案产品剂型及技术要求》的公告
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+
+## 酪蛋白水解肽 / Lactium
+
+- ID: `PE-LACTIUM-CASEIN-HYDROLYSATE`
+- Aliases: 酪蛋白水解肽, 乳蛋白水解物, Lactium, Alpha-casozepine, Casein hydrolysate
+- Regulatory identity: Lactium/酪蛋白水解肽可作为供应商公开产品线识别，但本卡未收录其在中国普通食品中承接睡眠、压力或情绪功能声称的官方批准依据；乳源、水解工艺、目标食品类别和标签边界均需人工复核。
+- Applicable paths: `general_food`, `novel_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 乳基饮品/营养粉中的乳蛋白水解物研发设想
+  - 助眠/舒压软糖需求的风险纠偏
+  - 乳源肽类原料索资和法规身份核查
+- Prohibited / risky expressions:
+  - 改善睡眠
+  - 缓解压力
+  - 抗焦虑
+  - 放松神经
+  - 镇静
+  - 治疗失眠
+  - 调节情绪
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 乳源原料需提示乳过敏风险；乳蛋白、乳肽、酪蛋白水解物和商品名 Lactium 不能混同。
+  - 供应商公开资料不等于中国法规允许；普通食品不得承接睡眠、焦虑或压力功能。
+  - 如进入儿童、孕妇或特殊膳食场景，需单独复核。
+- Manual review points:
+  - 确认原料真实身份、生产工艺、分子量范围和是否为普通食品已有配料或需新食品原料审查。
+  - 核对目标食品类别、执行标准、配料名称和乳源过敏标识。
+  - 审查所有睡眠/压力/情绪相关话术，默认进入高风险表达。
+  - 索取供应商规格、COA、食品级资质、中国法规声明和标签建议；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-INGREDIA-LACTIUM-OFFICIAL` — Ingredia Health / Lactium 官方产品信息入口
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-NHC-GB7718-2025-QA` — GB 7718-2025 预包装食品标签通则问答
+
+
+## GABA 衍生/复配边界
+
+- ID: `PE-GABA-COMPLEX-BOUNDARY`
+- Aliases: GABA复配, γ-氨基丁酸复配, GABA + 茶氨酸, GABA + 酸枣仁, 夜间复配原料
+- Regulatory identity: GABA 已有单独证据卡；本卡用于处理 GABA 与茶氨酸、酸枣仁、褪黑素、乳肽等复配时的助眠/舒压表达边界。复配不改变每个原料的法规身份，也不得把多原料叠加推导为保健功能。
+- Applicable paths: `novel_food`, `general_food`, `health_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 夜间风味软糖/饮品的普通食品研发路线
+  - 助眠需求的风险纠偏
+  - 多原料配方中的标签和不适宜人群复核
+- Prohibited / risky expressions:
+  - 助眠
+  - 改善睡眠
+  - 安神
+  - 抗焦虑
+  - 舒缓压力
+  - 镇静
+  - 提高睡眠质量
+  - 治疗失眠
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 复配产品必须逐一确认 GABA、茶氨酸、酸枣仁/提取物、褪黑素等原料身份和适用食品类别。
+  - 不得用“多重助眠因子”“天然安睡配方”等话术暗示保健或药理效果。
+  - 不适宜人群和标签提示需按最高风险原料处理。
+- Manual review points:
+  - 逐一回到各原料证据卡和公告复核，不接受“复配后默认可用”。
+  - 如包含褪黑素或其他保健食品目录原料，应提示普通食品路径高风险。
+  - 把可打样路线限定为口味、质构、场景和营养事实，不输出助眠功效。
+  - 供应商复配预混料需索取完整配方、各单体含量、COA、法规声明和标签建议；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-NHC-NEWFOOD-CATALOG-2023` — 三新食品目录及适用的食品安全标准公告解读 / 目录 PDF
+  - `SRC-SAMR-HF-COQ10-MELATONIN-2020` — 国家市场监督管理总局 国家卫生健康委员会 国家中医药管理局关于发布辅酶Q10等五种保健食品原料目录的公告（2020年第54号）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+
+## 白芸豆提取物
+
+- ID: `PE-WHITE-KIDNEY-BEAN-EXTRACT`
+- Aliases: 白芸豆提取物, 白芸豆, White kidney bean extract, Phaseolus vulgaris extract, Phase 2
+- Regulatory identity: 白芸豆提取物常见于体重管理市场，但本卡未收录其在中国普通食品中用于减肥、阻断淀粉、控糖等功能表达的官方批准依据；如仅作为植物来源配料，也需确认提取物规格、食品属性和目标食品类别。
+- Applicable paths: `general_food`, `health_food`, `claim_labeling`
+- Confidence: `reference_only`
+- Manual review required: `true`
+- Application scenarios:
+  - 代餐/轻食产品的植物配料风险审查
+  - 体重管理概念的高风险纠偏
+  - 白芸豆提取物索资和标签审查
+- Prohibited / risky expressions:
+  - 减肥
+  - 阻断碳水
+  - 阻断淀粉吸收
+  - 控糖
+  - 降糖
+  - 减少热量吸收
+  - 燃脂
+  - 瘦身
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 普通食品不得承诺减肥、控糖或阻断吸收效果。
+  - 白芸豆整粒食品、白芸豆粉、白芸豆提取物和商品化 Phase 2 等规格不能混同。
+  - 如涉及糖尿病、肥胖、儿童、孕妇等人群，必须人工复核。
+- Manual review points:
+  - 确认原料是普通食材粉、提取物、酶活标准化产品还是复配预混料。
+  - 核对食品属性、执行标准、添加量、检测指标和配料标识。
+  - 所有体重管理、控糖和阻断吸收话术默认高风险。
+  - 索取供应商提取比例、酶活/标志物、COA、污染物、法规声明和标签建议；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-AMPLIO-PHASE2-OFFICIAL` — Phase 2® White Kidney Bean Extract 官方产品信息入口
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 绿茶提取物 / EGCG
+
+- ID: `PE-GREEN-TEA-EGCG`
+- Aliases: 绿茶提取物, 茶多酚, EGCG, 表没食子儿茶素没食子酸酯, Epigallocatechin gallate
+- Regulatory identity: 表没食子儿茶素没食子酸酯（EGCG）曾随雨生红球藻等在 2010 年第17号公告中作为新资源食品相关条目出现；绿茶提取物、茶多酚、咖啡因和 EGCG 标准化提取物不能混同，使用范围、摄入量和标签需按公告/标准人工复核。
+- Applicable paths: `novel_food`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 茶饮/固体饮料中的茶来源原料审查
+  - 抗氧化概念产品的风险纠偏
+  - 体重管理/燃脂需求的禁用话术审查
+- Prohibited / risky expressions:
+  - 减肥
+  - 燃脂
+  - 降脂
+  - 护肝
+  - 排毒
+  - 抗氧化抗衰
+  - 提高代谢
+  - 控糖
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 绿茶粉、绿茶提取物、茶多酚、EGCG 和咖啡因含量需分别确认。
+  - 高 EGCG 或含咖啡因产品需关注摄入量、敏感人群和标签提示。
+  - 不得把抗氧化研究或供应商资料直接转化为普通食品功效声称。
+- Manual review points:
+  - 核对 2010年第17号公告及后续目录中 EGCG 的使用范围、质量规格和推荐摄入。
+  - 确认目标产品是否是茶饮料、固体饮料、补充剂或其他食品类别。
+  - 复核咖啡因含量和每日摄入提示。
+  - 索取供应商 EGCG/茶多酚/咖啡因指标、COA、农残和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-NHC-HAEMATOCOCCUS-EGCG-2010-17` — 关于批准雨生红球藻等新资源食品的公告（2010年第17号）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 雨生红球藻 / 虾青素
+
+- ID: `PE-HAEMATOCOCCUS-ASTAXANTHIN`
+- Aliases: 雨生红球藻, 虾青素, Astaxanthin, Haematococcus pluvialis
+- Regulatory identity: 雨生红球藻见 2010年第17号新资源食品公告；实际使用需回到公告核对来源、工艺、食用量、不适宜人群和标签要求。虾青素含量、油剂/粉剂形态和护眼/抗氧化声称需另行复核。
+- Applicable paths: `novel_food`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 抗氧化概念软糖/饮料的风险审查
+  - 眼部营养复配中的法规路径提醒
+  - 运动/美容抗氧化概念的标签纠偏
+- Prohibited / risky expressions:
+  - 护眼
+  - 改善视力
+  - 抗衰老
+  - 强效抗氧化
+  - 保护心血管
+  - 抗炎
+  - 提高免疫
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 需按公告确认推荐食用量和不适宜人群；儿童、孕妇、哺乳期等人群不得默认适用。
+  - 雨生红球藻、虾青素油、虾青素微囊粉和合成虾青素不能混同。
+  - 不得用“护眼/抗衰/抗炎”等包装普通食品功效。
+- Manual review points:
+  - 核对 2010年第17号公告条款、来源和推荐食用量。
+  - 确认虾青素含量、载体、抗氧化剂、油脂来源和配料标识。
+  - 复核目标食品类别和每日摄入量。
+  - 索取供应商规格、虾青素含量、稳定性、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-NHC-HAEMATOCOCCUS-EGCG-2010-17` — 关于批准雨生红球藻等新资源食品的公告（2010年第17号）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 辅酶 Q10
+
+- ID: `PE-COENZYME-Q10`
+- Aliases: 辅酶Q10, 辅酶 Q10, Coenzyme Q10, CoQ10, 泛醌
+- Regulatory identity: 辅酶Q10已进入辅酶Q10等五种保健食品原料目录和备案技术要求，主要按保健食品原料路径复核；不得外推为普通食品可自由添加并宣称抗疲劳、保护心脏或抗氧化。
+- Applicable paths: `health_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 保健食品备案/注册路径评估
+  - 成人营养品方向的原料边界提示
+  - 普通食品中抗疲劳/心血管卖点的风险纠偏
+- Prohibited / risky expressions:
+  - 保护心脏
+  - 改善心血管
+  - 抗疲劳
+  - 增强精力
+  - 抗衰老
+  - 抗氧化治疗
+  - 改善三高
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 普通食品不得因含辅酶Q10而表达保健功能。
+  - 保健食品也需按目录、剂型、用量、适宜/不适宜人群和技术要求复核。
+  - 与维生素、矿物质、运动营养复配时仍需逐项确认路径。
+- Manual review points:
+  - 核对辅酶Q10等五种保健食品原料目录和备案技术要求。
+  - 确认目标产品是普通食品还是保健食品。
+  - 复核剂型、用量、标签、不适宜人群和功能声称。
+  - 索取供应商规格、纯度、晶型/来源、COA、稳定性和保健食品资料；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-SAMR-HF-COQ10-MELATONIN-2020` — 国家市场监督管理总局 国家卫生健康委员会 国家中医药管理局关于发布辅酶Q10等五种保健食品原料目录的公告（2020年第54号）
+  - `SRC-SAMR-HF-COQ10-MELATONIN-TECH-2023` — 市场监管总局关于发布《辅酶Q10等五种保健食品原料备案产品剂型及技术要求》的公告
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+
+## 磷脂酰丝氨酸 PS
+
+- ID: `PE-PHOSPHATIDYLSERINE`
+- Aliases: 磷脂酰丝氨酸, PS, Phosphatidylserine
+- Regulatory identity: 磷脂酰丝氨酸见 2010年第15号新资源食品公告；使用需回到公告核对来源、工艺、食用量、不适宜人群和标签要求。不得把 PS 推导为改善记忆、提高专注或儿童脑力功能。
+- Applicable paths: `novel_food`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 成人营养粉/饮料中的新食品原料路径评估
+  - 脑力/学习场景产品的高风险纠偏
+  - 儿童产品需求的人工复核提醒
+- Prohibited / risky expressions:
+  - 改善记忆
+  - 提高专注力
+  - 提升学习效率
+  - 促进大脑发育
+  - 抗焦虑
+  - 预防认知衰退
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 需按公告确认来源和推荐食用量；婴幼儿、儿童、孕妇等场景需谨慎复核。
+  - 大豆来源/葵花来源 PS、复配磷脂和普通磷脂不能混同。
+  - 不得把脑力/记忆研究转化为普通食品声称。
+- Manual review points:
+  - 核对 2010年第15号公告中 PS 的范围、质量规格和标签要求。
+  - 确认来源、载体、含量、产品剂型和每日摄入量。
+  - 审查儿童、学生、记忆、专注等营销话术。
+  - 索取供应商来源、含量、溶剂残留、过敏原、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-NHC-PS-2010-15` — 关于批准蔗糖聚酯、玉米低聚肽粉、磷脂酰丝氨酸等3种物品为新资源食品的公告（2010年第15号）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 低聚异麦芽糖 IMO
+
+- ID: `PE-IMO`
+- Aliases: 低聚异麦芽糖, IMO, Isomaltooligosaccharide, 异麦芽低聚糖
+- Regulatory identity: 低聚异麦芽糖常作为低聚糖/碳水化合物配料用于食品；本卡重点约束标签、营养声称、膳食纤维/益生元表达和糖/能量标识。具体产品标准、纯度、糖组成和目标食品类别需人工复核。
+- Applicable paths: `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 膳食纤维/低糖概念饮料的标签审查
+  - 益生元概念产品的风险纠偏
+  - 软糖、固体饮料、烘焙中的甜味/质构配料
+- Prohibited / risky expressions:
+  - 益生元改善肠道
+  - 调节肠道菌群
+  - 治疗便秘
+  - 降糖
+  - 减肥
+  - 零糖不升糖
+  - 增强免疫
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 低聚异麦芽糖、膳食纤维、糖醇、低聚果糖等不能混同。
+  - 如作“膳食纤维”“低糖/无糖”“益生元”相关表达，需按 GB 28050、检测方法和广告边界复核。
+  - 摄入量较高时可能涉及胃肠不适提示，需按配方人工评估。
+- Manual review points:
+  - 确认 IMO 含量、糖组成、DE 值/纯度、是否计入膳食纤维和检测方法。
+  - 核对营养标签中糖、碳水、能量和可能的膳食纤维标示。
+  - 不得把益生元或肠道功能研究写成普通食品功效承诺。
+  - 索取供应商规格、糖谱、检测报告、COA 和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+  - `SRC-NHC-GB28050-2025-QA` — GB 28050-2025 预包装食品营养标签通则问答
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+
+
+## D-阿洛酮糖
+
+- ID: `PE-D-ALLULOSE`
+- Aliases: D-阿洛酮糖, D-Allulose, 阿洛酮糖, 无花果糖, Rare sugar
+- Regulatory identity: D-阿洛酮糖已见 2025年第4号“三新食品”公告；使用需严格按公告中的新食品原料范围、生产工艺、质量规格、适用范围和标签要求复核，不得外推为所有零糖饮料或所有工艺产品均可使用。
+- Applicable paths: `novel_food`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 低糖/减糖饮料和软糖研发方向
+  - 甜味替代配方中的新食品原料路径复核
+  - 零糖/低热量标签审查
+- Prohibited / risky expressions:
+  - 零负担随便吃
+  - 不升糖
+  - 降糖
+  - 减肥
+  - 控糖
+  - 糖尿病友好
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 必须按 2025年第4号公告确认生产工艺、质量规格、食品类别、使用量和标签要求。
+  - D-阿洛酮糖不是甜菊糖苷/罗汉果甜苷等食品添加剂，路径不能混同。
+  - 营养标签中能量、糖、碳水化合物和“零糖/低糖”声称需按 GB 28050 复核。
+- Manual review points:
+  - 核对 2025年第4号公告和官方解读。
+  - 确认供应商产品是否符合公告工艺和质量规格。
+  - 核对目标食品类别、用量、营养标签和宣称。
+  - 索取供应商工艺声明、纯度、糖谱、COA、检测报告和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-NHC-D-ALLULOSE-2025-4` — 关于D-阿洛酮糖等20种“三新食品”的公告（2025年第4号）
+  - `SRC-NHC-D-ALLULOSE-2025-INTERP` — 解读《关于D-阿洛酮糖等20种“三新食品”的公告》（2025年第4号）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 甜菊糖苷
+
+- ID: `PE-STEVIOL-GLYCOSIDES`
+- Aliases: 甜菊糖苷, Steviol glycosides, 甜菊糖, 甜菊苷
+- Regulatory identity: 甜菊糖苷主要按食品添加剂/甜味剂路径处理，需依据 GB 2760 核对食品类别、功能和最大使用量；不得因“天然来源”而认为可无限量或任意食品使用。
+- Applicable paths: `food_additive`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 低糖饮料/软糖甜味体系
+  - 复配甜味剂方案
+  - 减糖标签和添加剂使用量复核
+- Prohibited / risky expressions:
+  - 天然所以不限量
+  - 零糖不升糖
+  - 降糖
+  - 糖尿病适用
+  - 减肥
+  - 无风险甜味剂
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+- Unsuitable groups / label notes:
+  - 必须按 GB 2760 食品类别和最大使用量执行。
+  - 甜菊糖苷、甜菊叶粉、复配甜味剂和香精不能混同。
+  - 营养标签和“无糖/低糖”声称仍需按 GB 28050 复核，不由甜味剂身份自动成立。
+- Manual review points:
+  - 核对 GB 2760 中甜菊糖苷的适用食品类别、功能和最大使用量。
+  - 确认是否与赤藓糖醇、阿洛酮糖、罗汉果甜苷等复配，并逐项复核。
+  - 复核配料表中食品添加剂标示和营养标签。
+  - 索取供应商规格、有效成分、杂质、COA 和合规声明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB2760-2024` — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 罗汉果甜苷
+
+- ID: `PE-MOGROSIDE`
+- Aliases: 罗汉果甜苷, 罗汉果苷, Mogroside, Monk fruit extract
+- Regulatory identity: 罗汉果甜苷作为甜味剂/食品添加剂使用时需依据 GB 2760 核对食品类别、功能和使用量；罗汉果果实、罗汉果提取物和罗汉果甜苷不能混同。
+- Applicable paths: `food_additive`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 低糖饮料/软糖甜味体系
+  - 天然甜味概念产品的合规审查
+  - 复配甜味剂方案
+- Prohibited / risky expressions:
+  - 天然所以不限量
+  - 清肺润喉治疗
+  - 降糖
+  - 糖尿病适用
+  - 减肥
+  - 零风险甜味剂
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+- Unsuitable groups / label notes:
+  - 必须区分食品添加剂罗汉果甜苷与普通罗汉果原料/提取物。
+  - 使用范围和最大使用量按 GB 2760 复核。
+  - “无糖/低糖/低能量”标签需按 GB 28050 检测和声称条件确认。
+- Manual review points:
+  - 核对 GB 2760 中罗汉果甜苷的适用食品类别和最大使用量。
+  - 确认供应商产品是甜味剂、提取物还是复配甜味剂。
+  - 复核配料表、添加剂标示、营养标签和宣传语。
+  - 索取供应商规格、有效成分、COA、溶剂残留和合规声明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB2760-2024` — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 藻蓝蛋白 / 螺旋藻
+
+- ID: `PE-SPIRULINA-PHYCOCYANIN`
+- Aliases: 藻蓝蛋白, 螺旋藻, Spirulina, Phycocyanin, Spirulina blue
+- Regulatory identity: 螺旋藻在辅酶Q10等五种保健食品原料目录中属于保健食品原料方向之一；藻蓝蛋白/螺旋藻蓝用于着色等场景时又可能涉及食品添加剂路径。两者不能混同，必须按实际原料身份、功能目的和食品类别复核。
+- Applicable paths: `health_food`, `food_additive`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 天然蓝色食品配色方案（添加剂路径复核）
+  - 螺旋藻营养/保健食品路径评估
+  - 儿童软糖/饮料色彩概念风险审查
+- Prohibited / risky expressions:
+  - 增强免疫
+  - 排毒
+  - 抗疲劳
+  - 抗氧化抗衰
+  - 改善贫血
+  - 促进儿童发育
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 螺旋藻粉、藻蓝蛋白、螺旋藻蓝食品添加剂和保健食品原料路径不能混同。
+  - 如以着色为目的，应按 GB 2760 食品添加剂路径复核。
+  - 如以营养/功能为目的，应进入保健食品或普通食品标签边界复核。
+- Manual review points:
+  - 确认原料真实身份：螺旋藻粉、藻蓝蛋白提取物、食品添加剂或保健食品原料。
+  - 核对 GB 2760、保健食品原料目录和目标食品类别。
+  - 复核儿童、免疫、抗疲劳、排毒等高风险表达。
+  - 索取供应商来源、纯度、色价、蛋白含量、COA、重金属/微生物和法规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-SAMR-HF-COQ10-MELATONIN-2020` — 国家市场监督管理总局 国家卫生健康委员会 国家中医药管理局关于发布辅酶Q10等五种保健食品原料目录的公告（2020年第54号）
+  - `SRC-SAMR-HF-COQ10-MELATONIN-TECH-2023` — 市场监管总局关于发布《辅酶Q10等五种保健食品原料备案产品剂型及技术要求》的公告
+  - `SRC-CFSA-GB2760-2024` — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+
+
+## 姜黄 / 姜黄素
+
+- ID: `PE-TURMERIC-CURCUMIN`
+- Aliases: 姜黄, 姜黄素, Curcumin, Turmeric, 姜黄提取物
+- Regulatory identity: 姜黄素作为着色剂等食品添加剂使用时需按 GB 2760 食品添加剂路径复核；姜黄粉、姜黄提取物、姜黄素单体和复配色素不能混同。普通食品不得承接抗炎、护肝、抗氧化治疗等功能。
+- Applicable paths: `food_additive`, `general_food`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 黄色/金色食品着色方案
+  - 植物提取物饮料/软糖风险审查
+  - 抗炎/护肝/抗氧化概念纠偏
+- Prohibited / risky expressions:
+  - 抗炎
+  - 护肝
+  - 抗氧化治疗
+  - 改善关节炎
+  - 抗癌
+  - 排毒
+  - 降脂
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 姜黄素作为食品添加剂时需按 GB 2760 核对食品类别和使用量。
+  - 姜黄香辛料、姜黄提取物和食品添加剂姜黄素不是同一法规身份。
+  - 植物提取物涉及溶剂残留、重金属、农残和配料名称复核。
+- Manual review points:
+  - 确认使用目的：着色、调味、植物提取物概念还是功能诉求。
+  - 核对 GB 2760 中姜黄/姜黄素相关条目和食品类别。
+  - 复核配料表、添加剂标示、颜色稳定性和标签宣传。
+  - 索取供应商规格、色价/含量、溶剂残留、COA 和合规说明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-CFSA-GB2760-2024` — GB 2760-2024 食品安全国家标准 食品添加剂使用标准（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）
+
+
+## 牛初乳 / 免疫球蛋白方向
+
+- ID: `PE-BOVINE-COLOSTRUM-IGG`
+- Aliases: 牛初乳, Bovine colostrum, 免疫球蛋白, IgG, 初乳粉
+- Regulatory identity: 牛初乳属于高敏乳源方向；原卫生部复函明确婴幼儿配方食品中不得添加牛初乳。普通食品中牛初乳/免疫球蛋白相关应用仍需按产品标准、食品属性、乳源过敏和标签声称逐项复核，不得宣称增强免疫。
+- Applicable paths: `general_food`, `infant_special_dietary`, `claim_labeling`
+- Confidence: `official_reference`
+- Manual review required: `true`
+- Application scenarios:
+  - 成人营养粉/乳制品方向的高风险审查
+  - 儿童/婴幼儿产品需求的禁止/待复核提醒
+  - 免疫球蛋白卖点的标签纠偏
+- Prohibited / risky expressions:
+  - 增强免疫力
+  - 提高抵抗力
+  - 适合婴幼儿
+  - 替代母乳
+  - 促进儿童发育
+  - 抗病毒
+  - 治疗腹泻
+  - 治疗
+  - 预防疾病
+  - 改善疾病
+  - 调节机体功能
+- Unsuitable groups / label notes:
+  - 婴幼儿配方食品中不得添加牛初乳；儿童、婴幼儿和特殊膳食场景必须强制人工复核。
+  - 乳源过敏、乳糖、蛋白质来源和配料标识需提示。
+  - 免疫球蛋白含量不得直接转化为增强免疫力普通食品声称。
+- Manual review points:
+  - 核对原卫生部复函和目标产品标准。
+  - 确认产品是否涉及婴幼儿配方、特殊膳食或儿童普通食品。
+  - 复核乳源过敏、IgG 指标、微生物、污染物和标签表达。
+  - 索取供应商原料来源、杀菌工艺、IgG 含量、COA、食品级资质和法规声明；Public Evidence 不等于 Supplier Verified。
+- Sources:
+  - `SRC-NHC-COLOSTRUM-2012-335` — 卫生部办公厅关于牛初乳产品适用标准问题的复函（卫办监督函〔2012〕335号）
+  - `SRC-CFSA-GB7718-2025` — GB 7718-2025 食品安全国家标准 预包装食品标签通则（CFSA 标准文本详情页）
+  - `SRC-CFSA-GB28050-2025` — GB 28050-2025 食品安全国家标准 预包装食品营养标签通则（CFSA 标准文本详情页）

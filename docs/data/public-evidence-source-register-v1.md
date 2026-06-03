@@ -227,3 +227,66 @@ Public Evidence v1 只把官方法规/国家标准/供应商官网或官方资�
 - Publisher: 国家市场监督管理总局
 - URL: https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/tssps/art/2023/art_9da176b2f8244a00a239996f863470e1.html
 - Notes: 用于 NMN 食品属性和保健食品原料目录申报路径的监管公开口径；不能据此认定 NMN 可直接用于普通食品。
+
+## SRC-SAMR-HF-COQ10-MELATONIN-2020 — 国家市场监督管理总局 国家卫生健康委员会 国家中医药管理局关于发布辅酶Q10等五种保健食品原料目录的公告（2020年第54号）
+
+- Type: `official_notice`
+- Publisher: 国家市场监督管理总局 / 国家卫生健康委员会 / 国家中医药管理局（CFE-SAMR 收录）
+- URL: https://www.cfe-samr.org.cn/zcfg/bjsp_134/gsgg/ba/202208/t20220802_4411.html
+- Notes: 用于辅酶Q10、褪黑素、螺旋藻等保健食品原料目录路径判断；不等于普通食品可宣称对应保健功能。
+
+## SRC-SAMR-HF-COQ10-MELATONIN-TECH-2023 — 市场监管总局关于发布《辅酶Q10等五种保健食品原料备案产品剂型及技术要求》的公告
+
+- Type: `official_notice`
+- Publisher: 国家市场监督管理总局
+- URL: https://www.samr.gov.cn/tssps/zcwj/art/2023/art_b33234de9d3d4335af4766a3f089cd07.html
+- Notes: 用于辅酶Q10、褪黑素、螺旋藻等备案产品剂型和技术要求复核；只适用于保健食品路径，不得外推普通食品。
+
+## SRC-NHC-PS-2010-15 — 关于批准蔗糖聚酯、玉米低聚肽粉、磷脂酰丝氨酸等3种物品为新资源食品的公告（2010年第15号）
+
+- Type: `official_notice`
+- Publisher: 原卫生部 / 国家卫生健康委公开页面
+- URL: https://www.nhc.gov.cn/sps/c100088/201011/8ca833cb01214e5e89cf7462f5dbfdbf.shtml
+- Notes: 用于磷脂酰丝氨酸（PS）新资源食品公告、食用量、适用范围和不适宜人群复核。
+
+## SRC-NHC-HAEMATOCOCCUS-EGCG-2010-17 — 关于批准雨生红球藻等新资源食品的公告（2010年第17号）
+
+- Type: `official_notice`
+- Publisher: 原卫生部 / 国家卫生健康委公开页面
+- URL: https://www.nhc.gov.cn/sps/c100088/201011/65417d81ac5c423eb33ad2021aa198ad.shtml
+- Notes: 用于雨生红球藻、表没食子儿茶素没食子酸酯（EGCG）等新资源食品/新食品原料路径复核。
+
+## SRC-NHC-D-ALLULOSE-2025-4 — 关于D-阿洛酮糖等20种“三新食品”的公告（2025年第4号）
+
+- Type: `official_notice`
+- Publisher: 国家卫生健康委
+- URL: https://www.nhc.gov.cn/sps/c100088/202507/63194b55e9fd4a6daa74f59a06cfd792.shtml
+- Notes: 用于 D-阿洛酮糖新食品原料批准范围、工艺、质量规格和标签/适用范围复核。
+
+## SRC-NHC-D-ALLULOSE-2025-INTERP — 解读《关于D-阿洛酮糖等20种“三新食品”的公告》（2025年第4号）
+
+- Type: `official_interpretation`
+- Publisher: 国家卫生健康委
+- URL: https://www.nhc.gov.cn/sps/c100087/202507/f7de435b03e049d3a5b3acd8f6eabd72.shtml
+- Notes: 用于 D-阿洛酮糖等三新食品公告解读；不得据此扩大到未公告工艺、原料形态或食品类别。
+
+## SRC-NHC-COLOSTRUM-2012-335 — 卫生部办公厅关于牛初乳产品适用标准问题的复函（卫办监督函〔2012〕335号）
+
+- Type: `official_reply`
+- Publisher: 原卫生部 / 国家卫生健康委公开页面
+- URL: https://www.nhc.gov.cn/zwgkzt/wsbysj/201204/54516.shtml
+- Notes: 用于牛初乳产品标准、婴幼儿配方食品中不得添加牛初乳等高敏边界复核。
+
+## SRC-INGREDIA-LACTIUM-OFFICIAL — Ingredia Health / Lactium 官方产品信息入口
+
+- Type: `official_supplier_public`
+- Publisher: Ingredia / Lactium
+- URL: https://ingredia-health.com/human/stress/
+- Notes: 用于识别 Lactium/酪蛋白水解肽供应商公开产品信息；不构成中国法规允许或平台供应商核验。
+
+## SRC-AMPLIO-PHASE2-OFFICIAL — Phase 2® White Kidney Bean Extract 官方产品信息入口
+
+- Type: `official_supplier_public`
+- Publisher: Amplio Ingredients
+- URL: https://amplio-ingredients.com/ingredients/phase-2/
+- Notes: 用于识别白芸豆提取物商品化资料；不能作为中国普通食品合规、减肥或控糖声称依据。

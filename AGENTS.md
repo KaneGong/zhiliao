@@ -166,3 +166,9 @@ dig +short zhiliao-ai.cn
 - 第三批重点原料包括叶黄素/玉米黄质、葡萄籽、接骨木莓、蔓越莓、NMN、肌酸、左旋肉碱、BCAA/EAA、叶酸、铁、硒、维生素 E、维生素 B12、β-葡聚糖、酵母抽提物。
 - 主控补修旧 `src/data/regulations.json` 中叶黄素记录，避免把儿童软糖/护眼场景解释得过宽；叶黄素、玉米黄质、护眼表达统一按待复核和高风险声称处理。
 - 本地 `npm run verify`、`npm run smoke:local`、GQ-014/GQ-018 回归、新增 NMN/叶黄素/肌酸专项 API 回归均通过。
+
+### 2026-06-03 — Public Evidence v1 第四批扩展验收
+- 主控会话完成第四批 15 张高频/高风险原料证据卡，Public Evidence 当前为 60 cards / 8 paths / 41 sources。
+- 第四批重点覆盖褪黑素、酪蛋白水解肽/Lactium、GABA 复配边界、白芸豆、绿茶 EGCG、雨生红球藻/虾青素、辅酶 Q10、PS、IMO、D-阿洛酮糖、甜菊糖苷、罗汉果甜苷、藻蓝蛋白/螺旋藻、姜黄/姜黄素、牛初乳/免疫球蛋白。
+- 新增来源包括保健食品原料目录、PS 新资源食品公告、雨生红球藻/EGCG 新资源食品公告、D-阿洛酮糖三新食品公告、牛初乳官方复函及少量供应商官方公开入口。
+- 所有第四批新增卡均保持 `manual_review_required: true`；Public Evidence 不等于 Supplier Verified，供应商公开资料仅作为索资线索。
